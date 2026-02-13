@@ -1,0 +1,281 @@
+<div class="custom-grid-div">
+  <div class="custom-header">
+    <h2 class="title h2">
+      {{ section.settings.textheading }}
+    </h2>
+    <div class="sub-heading {{ section.settings.text_style }}">
+      {{ section.settings.text }}
+    </div>
+  </div>
+  <div class="grid custom-grid-inner">
+    {% for block in section.blocks %}
+      {% if block.settings['img-div'] != blank %}
+        <div
+          class="grid-inner grid_join_wide-{{ forloop.index }}"
+          style=""
+          aria-hidden="true"
+          tabindex="-1"
+          role="option"
+          aria-describedby="slick-slide{{ forloop.index0 }}"
+        >
+          <img src="{{ block.settings.img-div | img_url:'' }}" alt="">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+    .custom-header .title{
+          margin: 0 0 25px;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 36px;
+      color: #231f20;
+      text-align:center;
+    }
+    .sub-heading.body{
+  max-width: 705px;
+      margin: 0 auto 50px;
+    }
+      .sub-heading.body p{
+        font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #3C3B3C;
+      }
+    .custom-grid-inner{
+          display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 20px;
+      margin: 30px 0 0;
+
+    }
+    .grid-inner.grid_join_wide-1 {
+       grid-row: span 2;
+      grid-column: span 2;
+  }
+  .grid-inner.grid_join_wide-2 {
+      grid-column: span 2;
+  }
+  .grid-inner.grid_join_wide-3 {
+      grid-column: span 2;
+  }
+
+    .custom-grid-inner .grid-inner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .custom-grid-inner ul.slick-dots{
+    width:100%;
+  }
+    @media (min-width:768px) and (max-width:991px){
+    .custom-grid-inner .grid{
+      width:100%;
+    }
+    /* .custom-grid-inner {
+      display:flex;
+       } */
+        .custom-grid-inner .grid-inner{
+        position:relative;
+              display:flex;
+        padding-top:100%;
+      }
+    .custom-grid-inner .grid-inner img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+        }
+  }
+  /* mobile */
+  @media (max-width:767px){
+    .custom-header .title{
+       font-size: 20px;
+      line-height:28px;
+    }
+      .sub-heading.body{
+  max-width: 100%;
+      margin: 0 auto;
+    }
+      .sub-heading.body p{
+        font-size: 12px;
+  line-height: 20px;
+      }
+      .custom-grid-inner {
+      display:flex;
+       }
+    .custom-grid-inner .grid{
+      width:100%;
+    }
+        .custom-grid-inner .grid-inner{
+        position:relative;
+              display:block !important;
+        padding-top:100%;
+      }
+        .custom-grid-inner .grid-inner img{
+              width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+        }
+  }
+  @media (max-width:480px){
+      .custom-header .title{
+       font-size: 20px;
+      line-height:28px;
+    }
+        .sub-heading.body{
+  max-width: 100%;
+      margin: 0 auto;
+    }
+      .sub-heading.body p{
+        font-size: 12px;
+  line-height: 20px;
+      }
+      .custom-grid-inner {
+      display:flex;
+        width: 100%;
+      }
+  .custom-grid-inner .grid{
+      width:100%;
+
+    }
+        .custom-grid-inner .grid-inner{
+        position:relative;
+        padding-top:100%;
+          display:block !important;
+      }
+        .custom-grid-inner .grid-inner img{
+              width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+        }
+     .custom-grid-inner div{
+       width:100%;
+     }
+  }
+</style>
+
+<script>
+    $(document).ready(function(){
+      $('.custom-grid-inner').slick({
+        dots: true,
+        arrows:false,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+      {
+        breakpoint: 9999999999,
+        settings: "unslick"
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+          ,
+      {
+        breakpoint: 0,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+
+
+      });
+</script>
+
+{% schema %}
+{
+  "name": "custom grid",
+  "class": "section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "textheading",
+    "label": "heading"
+  },
+       {
+        "type": "richtext",
+        "id": "text",
+        "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "label": "Content"
+      },
+        {
+        "type": "select",
+        "id": "text_style",
+        "options": [
+          {
+            "value": "body",
+            "label": "t:sections.new-image-with-text.blocks.text.settings.text_style.options__1.label"
+          },
+          {
+            "value": "subtitle",
+            "label": "t:sections.new-image-with-text.blocks.text.settings.text_style.options__2.label"
+          }
+        ],
+        "default": "body",
+        "label": "Text style"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "Image",
+      "name":"Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img-div",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "custom grid"
+    }
+  ]
+}
+{% endschema %}

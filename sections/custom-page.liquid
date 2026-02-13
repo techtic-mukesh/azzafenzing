@@ -1,0 +1,36 @@
+<section class="custom-page-text">
+<div class="page-width">
+<h1>{{ section.settings.head }}</h1>
+{% for block in section.blocks %} 
+<span>{{ block.settings.head2 }}</span>  
+<p>{{ block.settings.paragraph }}</p> 
+{% endfor %}  
+</div>  
+</section>  
+
+{% schema %}
+  {
+    "name": "custom page section",
+    "settings": [
+      {"id":"head", "type":"text", "label":"Heading"}
+      
+    ],
+
+     "blocks":[
+        { 
+          "type": "Text", "name":"Text",
+          "settings":[
+               
+      {"id":"head2", "type":"text", "label":"Sub Heading"},               
+      {"id":"paragraph", "type":"textarea", "label":"Paragraph"}
+           
+          ]
+        }
+      
+    ],    
+
+    "presets":[
+      {"name":"custom page section", "category":"category" }
+    ]
+  }
+{% endschema %}

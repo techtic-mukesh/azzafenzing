@@ -1,0 +1,630 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header_img_banner_iDXCqj": {
+      "type": "header-img-banner",
+      "blocks": {
+        "heading_jVDN3C": {
+          "type": "heading",
+          "settings": {
+            "heading": "TRUE FENCING BRAND",
+            "heading_size": "h0"
+          }
+        },
+        "text_UfKNdP": {
+          "type": "text",
+          "settings": {
+            "text": "OF CHAMPIONS",
+            "text_style": "subtitle"
+          }
+        },
+        "text_nbhBcw": {
+          "type": "text",
+          "settings": {
+            "text": "The Future of Fencing is finally here. Are you ready for it?",
+            "text_style": "body"
+          }
+        },
+        "buttons_nEMahR": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "https://www.azzafencing.com/collections/all/Adults",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "image_ynfFTY": {
+          "type": "image",
+          "settings": {
+            "lable_txt": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/74641d728aab49488ebe26e5ad0e5ab1.mp4",
+            "video_img": "shopify://shop_images/HKOC6523_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jVDN3C",
+        "text_UfKNdP",
+        "text_nbhBcw",
+        "buttons_nEMahR",
+        "image_ynfFTY"
+      ],
+      "settings": {
+        "unique_class": "hedaer-img-banner",
+        "image": "shopify://shop_images/Mask_group_1.png",
+        "image_tab": "shopify://shop_images/Mask_group_1.png",
+        "image_mobile": "shopify://shop_images/Rectangle_631.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "desktop_content_position_second": "top-center"
+      }
+    },
+    "579745f4-e462-42ae-b235-3de740f0e9e0": {
+      "type": "brand-logo",
+      "blocks": {
+        "03977be5-8aed-4832-8d46-992ae4f715ec": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/Notre_dame_1dd855f6-8786-41f7-bda4-6ed48f09adfa.png"
+          }
+        },
+        "bannner_Y6AzgK": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/Logo-FFE-300dpi.png"
+          }
+        },
+        "bannner_UQUYpf": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/logo_federscherma_1_84efca33-4365-43ad-9abb-c4b8d07cfc95.png"
+          }
+        },
+        "bannner_z4Nqk6": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/Minato_Fencing_JPN_REDIM.png"
+          }
+        }
+      },
+      "block_order": [
+        "03977be5-8aed-4832-8d46-992ae4f715ec",
+        "bannner_Y6AzgK",
+        "bannner_UQUYpf",
+        "bannner_z4Nqk6"
+      ],
+      "settings": {
+        "head": "they trust us"
+      }
+    },
+    "recently_viewed_products_UPCBVQ": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed",
+        "heading_tag": "h2",
+        "subheading": "",
+        "maximum_products": 4,
+        "columns": "4",
+        "mobile_columns": "1",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "index_collection_list_ebaCkX": {
+      "type": "index-collection-list",
+      "blocks": {
+        "image_HzTzhU": {
+          "type": "image",
+          "settings": {
+            "heading": "Adults",
+            "text": "<p>High-performance sneakers designed for agility, comfort, and durability.</p>",
+            "image": "shopify://shop_images/Rectangle_4.png",
+            "colelction_link": "https://www.azzafencing.com/collections/all/Adults"
+          }
+        },
+        "image_7mJeXG": {
+          "type": "image",
+          "settings": {
+            "heading": "Kids",
+            "text": "<p>Comfortable and durable, providing support and agility for young fencers.</p>",
+            "image": "shopify://shop_images/Rectangle_4_f50ce413-596b-457e-ace6-eac9eb44f4ad.png",
+            "colelction_link": "https://www.azzafencing.com/collections/all/Kids"
+          }
+        }
+      },
+      "block_order": [
+        "image_HzTzhU",
+        "image_7mJeXG"
+      ],
+      "settings": {
+        "heading": "Our Categories",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "collection_list": [],
+        "collection_listing_aspect_ratio": "square",
+        "label_style": "overlay",
+        "overlay_title_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_title_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "multicolumn_N7KtcF": {
+      "type": "multicolumn-svg",
+      "blocks": {
+        "column_WFamVX": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_730_8195)\">\n<path d=\"M25.1426 31.3855L25.0912 31.3852L24.361 28.8245L23.2341 29.1458L23.871 31.3793L22.1115 31.3708L20.205 26.4457L22.23 25.6247L22.9019 27.9811L24.0288 27.6597L23.178 24.676C22.507 22.3228 21.9586 21.8959 20.2861 21.555L17.6875 21.0252L18.9249 18.0714L19.3208 19.1757C19.7106 20.2626 20.5928 20.868 21.5685 20.7185L25.6771 20.0878C26.1068 20.0217 26.4891 19.7807 26.7535 19.409C26.9559 19.1244 27.0742 18.7841 27.0997 18.4311L39.9999 13.6868L39.5954 12.5869L26.8278 17.2826C26.4686 16.6942 25.801 16.3372 25.0725 16.4005L22.7142 16.608L21.0733 12.0945L19.3738 11.3023C19.5587 10.9866 19.6975 10.637 19.7777 10.26L20.1843 8.34966C20.3791 7.43428 20.2041 6.49547 19.6916 5.70579C19.179 4.91628 18.3928 4.3741 17.4774 4.17933C16.5619 3.98465 15.6231 4.15957 14.8336 4.67206C14.044 5.18455 13.5019 5.97087 13.3071 6.88617L12.9005 8.79653C12.7592 9.46081 12.817 10.1217 13.0325 10.7178L11.6583 10.7853L8.76642 8.49114L9.92008 6.77172C10.4594 5.96767 10.3018 4.89901 9.55337 4.28597C9.14111 3.94832 8.61096 3.78793 8.09862 3.8466C7.64535 3.8984 7.2495 4.11652 6.98395 4.46074L6.08467 5.62697L7.0127 6.34258L7.91206 5.17612C8.00222 5.05924 8.13565 5.02159 8.23174 5.01065C8.42799 4.98784 8.64463 5.05612 8.81088 5.19221C9.14681 5.46736 9.11689 5.86532 8.94705 6.11852L7.19067 8.73653L11.2755 11.9772L13.7086 11.8576C14.19 12.4026 14.8432 12.8039 15.6075 12.9665C15.8532 13.0188 16.0983 13.0439 16.34 13.0439C17.1747 13.0439 17.9664 12.7436 18.587 12.2282L20.1381 12.9512L21.9204 17.854L25.1753 17.5676C25.4787 17.5415 25.841 17.7069 25.9197 18.1347C25.9585 18.346 25.9133 18.5683 25.7987 18.7294C25.7426 18.8082 25.6452 18.9068 25.4993 18.9293L21.3907 19.56C20.8025 19.6501 20.5188 19.0445 20.424 18.78L19.0096 14.836L16.3695 21.1383L13.6313 24.1732L10.2941 20.8736L10.8455 14.3753L5.55694 9.70753C5.18328 9.37769 5.10117 8.82161 5.3739 8.46794L6.27334 7.30147L5.34531 6.58586L4.44587 7.75233C3.79299 8.59903 3.94041 9.84378 4.78149 10.5861L9.62805 14.8637L9.11845 20.8701L3.27182 28.17L2.10575 32.6012C0.909908 32.8215 0 33.8562 0 35.0913V36.1654H4.25228C5.35437 36.1654 6.09483 35.4151 6.09483 34.2985V33.2575L8.42041 28.3095L13.7413 25.6338L19.0215 26.6345L21.1233 32.0642V33.1267C21.1233 34.0561 21.693 34.9936 22.9659 34.9936H27.7087V33.9172C27.7088 32.528 26.5576 31.3923 25.1426 31.3855ZM15.4716 5.65478C15.8586 5.40361 16.2986 5.27385 16.7463 5.27385C16.8129 5.27385 16.8797 5.27744 16.9466 5.28322C16.27 5.78415 15.7811 6.52039 15.5995 7.37374L15.5182 7.75584L14.3721 7.51194L14.4534 7.12983C14.583 6.5207 14.9446 5.99681 15.4716 5.65478ZM14.0468 9.0402L14.1281 8.65809L15.2743 8.90199L15.193 9.28402C15.0114 10.1374 15.1581 11.0089 15.5722 11.742C14.4711 11.3614 13.7983 10.2084 14.0468 9.0402ZM17.0662 11.7551C16.4483 11.1966 16.1644 10.3498 16.3392 9.528L16.7458 7.61764C16.9205 6.79632 17.5242 6.13883 18.3153 5.88009C18.4637 6.01524 18.5962 6.17032 18.7087 6.34367C19.0507 6.8707 19.1677 7.49639 19.0381 8.10552L18.6316 10.0159C18.4517 10.8614 17.8338 11.503 17.0662 11.7551ZM4.27368 28.9675L6.98833 28.6015L5.13586 32.5428L3.33018 32.553L4.27368 28.9675ZM4.92297 34.2985C4.92297 34.5968 4.85344 34.9935 4.25228 34.9935H1.17545C1.2274 34.292 1.83403 33.7332 2.5723 33.7291L4.92289 33.7158L4.92297 34.2985ZM7.80066 27.3094L5.17929 27.663L9.73774 21.9714L12.6633 24.8642L7.80066 27.3094ZM14.7889 24.6396L17.0824 22.0977L20.0521 22.703C21.1255 22.9219 21.4269 22.9836 21.9011 24.4935L19.3902 25.5116L14.7889 24.6396ZM22.966 33.8217C22.3647 33.8217 22.2952 33.425 22.2952 33.1266V32.5435L25.1369 32.5573C25.8758 32.5609 26.4827 33.1197 26.5335 33.8218H22.966V33.8217Z\" fill=\"#E81F25\"></path>\n<path d=\"M16.1238 15.6343L16.5761 14.5538L17.6566 15.0062L17.2042 16.0866L16.1238 15.6343Z\" fill=\"#E81F25\"></path>\n<path d=\"M15.2178 17.7952L15.6701 16.7146L16.7506 17.167L16.2982 18.2475L15.2178 17.7952Z\" fill=\"#E81F25\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_730_8195\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title": "Made by Fencers",
+            "text": "<p>Designed by Fencing Professionals.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pwyayX": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_730_8204)\">\n<path d=\"M39.9606 28.5717C39.733 26.2296 38.5337 24.0981 36.5839 22.5698C35.8319 21.9803 34.9778 21.4877 34.036 21.0953V10.5355C34.036 10.3122 33.917 10.1059 33.7235 9.99423L17.3305 0.529775C17.1372 0.418135 16.8989 0.418135 16.7055 0.529775L0.312576 9.99423C0.119139 10.1059 7.62939e-05 10.3122 7.62939e-05 10.5355V29.4645C7.62939e-05 29.6877 0.119139 29.8941 0.312576 30.0057L16.7055 39.4702C16.8022 39.5259 16.9102 39.5539 17.018 39.5539C17.1259 39.5539 17.2339 39.526 17.3305 39.4702L33.7235 30.0057C33.852 29.9315 33.9466 29.8151 33.9964 29.6801C34.4228 30.2302 34.7181 30.847 34.8576 31.497C35.373 33.8984 33.8199 36.2331 30.8044 37.5901C30.5148 37.7204 30.369 38.0471 30.4653 38.3497C30.5491 38.613 30.7931 38.7852 31.0604 38.7851C31.1003 38.7851 31.1407 38.7813 31.1812 38.7733C34.0744 38.2056 36.4423 36.8596 38.029 34.8809C39.4927 33.0559 40.1787 30.8152 39.9606 28.5717ZM17.018 19.2783L12.4485 16.6401L27.5915 7.89727L32.161 10.5355L17.018 19.2783ZM7.69453 13.8954L22.8375 5.15259L26.3415 7.17563L11.1985 15.9184L7.69453 13.8954ZM10.5736 17.0009L10.5735 23.0114L7.06961 20.9884L7.06953 14.9779L10.5736 17.0009ZM17.018 1.79274L21.5875 4.43095L6.44453 13.1737L1.87508 10.5355L17.018 1.79274ZM1.25008 11.6181L5.81953 14.2563L5.81961 21.3493C5.81961 21.5726 5.93867 21.7789 6.13211 21.8906L10.886 24.6352C10.9827 24.6909 11.0906 24.7189 11.1985 24.7189C11.3064 24.7189 11.4144 24.691 11.511 24.6352C11.7045 24.5235 11.8235 24.3172 11.8235 24.0939L11.8236 17.7227L16.393 20.3609V37.8465L1.25008 29.1037V11.6181ZM17.643 37.8464V20.3609L32.786 11.6181V20.6491C31.4861 20.257 30.0513 20.0327 28.51 19.9852V17.9638C28.51 17.7211 28.3694 17.5002 28.1495 17.3976C27.9295 17.2949 27.6699 17.3288 27.4838 17.4845L20.2581 23.5322C20.1109 23.6555 20.0285 23.8395 20.0346 24.0315C20.0408 24.2234 20.1348 24.4019 20.2896 24.5154L27.5153 29.8166C27.7053 29.9559 27.9574 29.9767 28.1675 29.8702C28.3776 29.7638 28.5101 29.5482 28.5101 29.3127V27.2114C30.1652 27.3003 31.6191 27.7456 32.7441 28.5125C32.7584 28.5223 32.7719 28.5326 32.7861 28.5424V29.1037L17.643 37.8464ZM34.917 36.0093C35.0714 35.8076 35.2127 35.6003 35.3406 35.3877C36.1269 34.0809 36.3825 32.6448 36.0798 31.2347C35.7619 29.7532 34.8273 28.4196 33.4481 27.4795C31.9751 26.4755 30.0513 25.9447 27.885 25.9447C27.5398 25.9447 27.26 26.2245 27.26 26.5697V28.0788L21.6717 23.9789L27.26 19.3018V20.6005C27.26 20.9456 27.5398 21.2255 27.885 21.2255C35.3442 21.2255 38.3817 25.2478 38.7166 28.6924C38.9618 31.2167 37.8122 34.1575 34.917 36.0093Z\" fill=\"#E81F25\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_730_8204\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title": "14 days free return ",
+            "text": "<p>Free returns for 14 days.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mFcNUe": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M6.66667 16.9766H15.3333C15.702 16.9766 16 16.678 16 16.31C16 15.942 15.702 15.6433 15.3333 15.6433H6.66667C6.298 15.6433 6 15.942 6 16.31C6 16.678 6.298 16.9766 6.66667 16.9766Z\" fill=\"#E81F25\"></path>\n<path d=\"M24 19.6433H6.66667C6.298 19.6433 6 19.942 6 20.31C6 20.678 6.298 20.9766 6.66667 20.9766H24C24.3687 20.9766 24.6667 20.678 24.6667 20.31C24.6667 19.942 24.3687 19.6433 24 19.6433Z\" fill=\"#E81F25\"></path>\n<path d=\"M24 23.6433H6.66667C6.298 23.6433 6 23.942 6 24.31C6 24.678 6.298 24.9766 6.66667 24.9766H24C24.3687 24.9766 24.6667 24.678 24.6667 24.31C24.6667 23.942 24.3687 23.6433 24 23.6433Z\" fill=\"#E81F25\"></path>\n<path d=\"M36.048 1.68998L13.2867 1.64331C11.1067 1.64331 9.33333 3.41664 9.33333 5.59664V9.01264L3.95333 9.02398C1.77333 9.02398 0 10.7973 0 12.9773V27.0713C0 29.2513 1.77333 31.024 3.95333 31.024H8V37.6906C8 37.966 8.16933 38.2133 8.42667 38.3126C8.50467 38.3426 8.586 38.3573 8.66667 38.3573C8.85067 38.3573 9.03133 38.2806 9.16 38.1393L15.6293 31.0226L26.7133 30.9773C28.8933 30.9773 30.6667 29.204 30.6667 27.0246V26.9493L34.1733 30.8066C34.302 30.948 34.4827 31.0246 34.6667 31.0246C34.7473 31.0246 34.8287 31.01 34.9067 30.98C35.164 30.8806 35.3333 30.6333 35.3333 30.358V23.6913H36.0467C38.2267 23.6913 40 21.918 40 19.7386V5.64331C40 3.46398 38.2273 1.69064 36.048 1.68998ZM29.3333 27.024C29.3333 28.4686 28.158 29.6433 26.7107 29.6433L15.3307 29.69C15.144 29.6906 14.9653 29.77 14.84 29.908L9.33333 35.966V30.3566C9.33333 29.9886 9.03533 29.69 8.66667 29.69H3.95333C2.50867 29.69 1.33333 28.5146 1.33333 27.0706V12.9766C1.33333 11.532 2.50867 10.3566 3.95467 10.3566L10 10.344C10.0007 10.344 10.0007 10.344 10.0013 10.344L26.7133 10.3093C28.158 10.3093 29.3333 11.4846 29.3333 12.9293V25.2233V27.024ZM38.6667 19.7373C38.6667 21.182 37.4913 22.3566 36.0467 22.3566H34.6667C34.298 22.3566 34 22.6553 34 23.0233V28.6326L30.6667 24.966V12.93C30.6667 10.75 28.8933 8.97664 26.712 8.97664L10.6667 9.00931V5.59598C10.6667 4.15131 11.842 2.97598 13.2853 2.97598L36.046 3.02264C36.0467 3.02264 36.0467 3.02264 36.0473 3.02264C37.492 3.02264 38.6673 4.19798 38.6673 5.64264L38.6667 19.7373Z\" fill=\"#E81F25\"></path>\n</svg>",
+            "title": "Chat available 7 days",
+            "text": "<p>Chat support available daily.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_DYPttX": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_730_8220)\">\n<path d=\"M10.7594 7.75312L11.7187 9.4C11.8052 9.53604 11.9409 9.6334 12.0975 9.67176C12.2541 9.71011 12.4194 9.68648 12.559 9.60581C12.6985 9.52513 12.8015 9.39366 12.8464 9.23884C12.8914 9.08402 12.8747 8.91784 12.8 8.775L11.5281 6.5875C11.4452 6.44507 11.3093 6.34119 11.1501 6.29846C10.9909 6.25574 10.8213 6.27763 10.6781 6.35937L8.49062 7.60937C8.34683 7.69225 8.24184 7.82886 8.19877 7.98915C8.15569 8.14943 8.17805 8.32026 8.26093 8.46406C8.34381 8.60786 8.48042 8.71284 8.64071 8.75592C8.80099 8.79899 8.97183 8.77663 9.11562 8.69375L10.7594 7.75312Z\" fill=\"#E81F25\"></path>\n<path d=\"M13.575 30.2655C13.658 30.408 13.7939 30.5118 13.953 30.5546C14.1122 30.5973 14.2819 30.5754 14.425 30.4937L16.6125 29.2437C16.7563 29.1608 16.8613 29.0242 16.9044 28.8639C16.9474 28.7036 16.9251 28.5328 16.8422 28.389C16.7593 28.2452 16.6227 28.1402 16.4624 28.0971C16.3021 28.054 16.1313 28.0764 15.9875 28.1593L14.3438 29.0999L13.3844 27.453C13.2979 27.317 13.1622 27.2196 13.0056 27.1813C12.8491 27.1429 12.6837 27.1666 12.5442 27.2472C12.4046 27.3279 12.3016 27.4594 12.2567 27.6142C12.2118 27.769 12.2284 27.9352 12.3031 28.078L13.575 30.2655Z\" fill=\"#E81F25\"></path>\n<path d=\"M5.15938 9.52814L2.97188 10.7781C2.90053 10.8192 2.83799 10.874 2.78788 10.9394C2.73776 11.0047 2.70105 11.0793 2.67985 11.1589C2.65865 11.2384 2.65338 11.3214 2.66435 11.403C2.67532 11.4846 2.7023 11.5632 2.74376 11.6344L4.01563 13.8219C4.10211 13.9579 4.23781 14.0553 4.39439 14.0937C4.55096 14.132 4.71629 14.1084 4.85586 14.0277C4.99542 13.947 5.09842 13.8156 5.14333 13.6607C5.18824 13.5059 5.1716 13.3397 5.09688 13.1969L4.12501 11.5625L5.77813 10.625C5.84933 10.584 5.91175 10.5293 5.96183 10.4642C6.01191 10.399 6.04866 10.3246 6.06999 10.2452C6.09132 10.1659 6.0968 10.0831 6.08614 10.0016C6.07547 9.92012 6.04886 9.84153 6.00782 9.77033C5.96678 9.69913 5.91212 9.63671 5.84696 9.58663C5.7818 9.53655 5.70741 9.4998 5.62805 9.47847C5.54868 9.45715 5.46589 9.45166 5.38441 9.46233C5.30292 9.47299 5.22433 9.4996 5.15313 9.54064L5.15938 9.52814Z\" fill=\"#E81F25\"></path>\n<path d=\"M14.8187 15.5593C14.3293 15.2278 13.7681 15.0176 13.1814 14.9459C12.5946 14.8743 11.9993 14.9433 11.4445 15.1472C10.8897 15.3512 10.3914 15.6843 9.9908 16.1189C9.59019 16.5535 9.29877 17.0773 9.14062 17.6468C9.02352 18.073 8.9925 18.5183 9.04938 18.9567C9.10625 19.3951 9.24988 19.8177 9.47187 20.1999C9.73375 20.6509 10.099 21.0333 10.5375 21.3156C10.6767 21.4036 10.8451 21.4331 11.0059 21.3976C11.1668 21.3622 11.3071 21.2647 11.3965 21.1264C11.4859 20.988 11.517 20.8199 11.4831 20.6587C11.4492 20.4976 11.3531 20.3563 11.2156 20.2656C10.9418 20.0904 10.7136 19.8526 10.55 19.5718C10.4116 19.332 10.3223 19.067 10.2874 18.7922C10.2525 18.5175 10.2727 18.2386 10.3469 17.9718C10.4523 17.5963 10.6451 17.2511 10.9093 16.9643C11.1735 16.6774 11.5018 16.4571 11.8674 16.3212C12.233 16.1853 12.6255 16.1378 13.0129 16.1824C13.4004 16.227 13.7718 16.3626 14.0969 16.5781C14.2003 16.6523 14.2965 16.736 14.3844 16.8281C14.4412 16.8874 14.5092 16.9349 14.5844 16.9679C14.6596 17.001 14.7406 17.0189 14.8227 17.0206C14.9048 17.0223 14.9865 17.0079 15.063 16.9781C15.1395 16.9482 15.2094 16.9036 15.2687 16.8468C15.328 16.79 15.3756 16.722 15.4086 16.6468C15.4416 16.5716 15.4595 16.4906 15.4613 16.4085C15.463 16.3264 15.4486 16.2447 15.4188 16.1682C15.3889 16.0916 15.3443 16.0217 15.2875 15.9624C15.144 15.8139 14.9871 15.6789 14.8187 15.5593Z\" fill=\"#E81F25\"></path>\n<path d=\"M14.8594 6.12503C14.9606 6.12504 15.0603 6.10047 15.1499 6.05344C15.2395 6.0064 15.3164 5.9383 15.3739 5.855C15.4314 5.77169 15.4677 5.67567 15.4799 5.57519C15.4921 5.47471 15.4797 5.37278 15.4437 5.27815L14.5437 2.91565C14.4849 2.76067 14.3669 2.63541 14.2157 2.56742C14.0645 2.49944 13.8925 2.49431 13.7375 2.55315C13.5825 2.612 13.4572 2.73 13.3893 2.8812C13.3213 3.0324 13.3161 3.20442 13.375 3.3594L14.275 5.71878C14.3195 5.8379 14.3993 5.94062 14.5037 6.01321C14.6081 6.0858 14.7322 6.12481 14.8594 6.12503Z\" fill=\"#E81F25\"></path>\n<path d=\"M39.9031 33.8188C39.0438 32.4719 31.4813 20.625 30.4313 19.5969L30.2125 19.3813C29.2219 18.4063 28.1031 17.3 26.5875 17.3H26.5625C25.4906 17.3 23.3 17.4594 22.3406 17.5313L15.8219 0.403172C15.763 0.248928 15.6455 0.124234 15.4951 0.0563164C15.3446 -0.0116012 15.1734 -0.0172254 15.0188 0.0406718L2.90313 4.58755C2.8261 4.61637 2.75552 4.66011 2.69543 4.71626C2.63535 4.77242 2.58693 4.83988 2.55296 4.91478C2.519 4.98968 2.50015 5.07055 2.49749 5.15275C2.49484 5.23495 2.50844 5.31686 2.5375 5.3938L2.95 6.47817C3.00885 6.63316 3.12685 6.75842 3.27805 6.8264C3.42925 6.89438 3.60127 6.89952 3.75625 6.84067C3.91124 6.78183 4.0365 6.66382 4.10448 6.51262C4.17247 6.36142 4.1776 6.18941 4.11875 6.03442L3.92813 5.53755L14.8656 1.42817L22.3656 21.1532H22.3406C22.3299 21.0693 22.3022 20.9885 22.2594 20.9157L12.375 3.90317C12.292 3.76075 12.1562 3.65686 11.997 3.61414C11.8378 3.57141 11.6681 3.5933 11.525 3.67505L0.312504 10.1125C0.241148 10.1536 0.178615 10.2084 0.128499 10.2738C0.0783823 10.3391 0.04167 10.4137 0.0204715 10.4933C-0.000726963 10.5728 -0.00599383 10.6558 0.00497356 10.7374C0.015941 10.819 0.0429264 10.8976 0.0843794 10.9688L12.85 32.8782C12.8686 32.9069 12.8895 32.9341 12.9125 32.9594C12.9252 32.9768 12.9388 32.9934 12.9531 33.0094C12.9757 33.0299 12.9997 33.0487 13.025 33.0657C13.0646 33.1024 13.1131 33.1282 13.1656 33.1407C13.2354 33.1752 13.3129 33.1914 13.3906 33.1875C13.4445 33.1871 13.498 33.1798 13.55 33.1657L13.5969 33.1469C13.6325 33.1355 13.667 33.1208 13.7 33.1032L16.3938 31.5407C16.3021 31.9759 16.3464 32.4288 16.5209 32.838C16.6953 33.2472 16.9913 33.5929 17.3688 33.8282C17.8313 34.1407 21.6313 36.15 22.7219 36.15C23.4 36.15 24.7313 35.575 25.5063 35.2125C26.1674 36.4398 27.092 37.5055 28.2136 38.3332C29.3352 39.1609 30.6262 39.7301 31.9938 40H32.0844C32.1665 40.006 32.2489 39.9957 32.327 39.9698C32.4051 39.9439 32.4773 39.9029 32.5396 39.849C32.6018 39.7952 32.6529 39.7296 32.6898 39.6561C32.7267 39.5825 32.7487 39.5024 32.7547 39.4204C32.7606 39.3383 32.7504 39.2558 32.7245 39.1777C32.6985 39.0996 32.6575 39.0274 32.6037 38.9651C32.5498 38.9029 32.4843 38.8519 32.4107 38.815C32.3372 38.7781 32.2571 38.756 32.175 38.75C30.9839 38.5106 29.8611 38.0088 28.8881 37.2813C27.9152 36.5537 27.1165 35.6186 26.55 34.5438C26.306 34.0505 26.0911 33.5434 25.9063 33.025C25.4625 31.8657 25.0063 30.6688 24.2188 29.9844C23.8031 29.6219 22.275 28.4219 20.5094 27.0219L17.9844 25.0219C17.1156 24.3344 14.475 22.2375 13.9656 21.7375C13.7832 21.5815 13.634 21.3905 13.5266 21.1758C13.4193 20.9611 13.356 20.7271 13.3406 20.4875C13.3801 20.0059 13.604 19.5581 13.9656 19.2375C14.4938 18.7032 15.3156 18.7344 16.4031 19.325L26.875 25C26.9653 25.0488 27.0662 25.0745 27.1688 25.075C27.3092 25.0786 27.4468 25.0348 27.5593 24.9506C27.6718 24.8664 27.7527 24.7467 27.7888 24.6109C27.8249 24.4751 27.8142 24.3311 27.7584 24.2021C27.7026 24.0731 27.605 23.9667 27.4813 23.9L24.0625 22.0563C24.0559 22.0222 24.0465 21.9888 24.0344 21.9563L22.8125 18.75C23.8719 18.675 25.675 18.5563 26.5781 18.55C27.5781 18.55 28.4281 19.3875 29.325 20.2719L29.5469 20.4907C30.2656 21.1938 35.4844 29.2407 38.8375 34.4907C38.8801 34.563 38.9368 34.6261 39.0043 34.676C39.0718 34.726 39.1487 34.7618 39.2303 34.7814C39.312 34.801 39.3967 34.8039 39.4795 34.79C39.5623 34.7761 39.6415 34.7457 39.7123 34.7005C39.7831 34.6554 39.844 34.5964 39.8915 34.5272C39.939 34.4579 39.9721 34.3798 39.9887 34.2975C40.0054 34.2152 40.0053 34.1304 39.9884 34.0482C39.9716 33.9659 39.9383 33.8879 39.8906 33.8188H39.9031ZM24.3906 32.5688C24.5156 32.8813 24.6375 33.1938 24.7531 33.4813C24.8344 33.6938 24.9125 33.8969 24.9938 34.1063C24.0719 34.5344 23.0594 34.9282 22.7219 34.9313C22.1219 34.9157 18.8156 33.3094 18.0531 32.8125C17.8448 32.6896 17.692 32.4909 17.6268 32.2579C17.5616 32.025 17.5889 31.7758 17.7031 31.5625C17.7588 31.417 17.846 31.2855 17.9583 31.1774C18.0707 31.0694 18.2055 30.9875 18.3531 30.9375C18.7719 31.25 19.2594 31.5625 19.7094 31.8375C20.075 32.0657 20.4188 32.2813 20.6094 32.4282C20.9469 32.6938 21.5688 32.7782 22.2219 32.7782C22.9498 32.7711 23.6756 32.6989 24.3906 32.5625V32.5688ZM23.8094 31.4157C23.0625 31.5344 21.6813 31.6313 21.3781 31.4594C21.1344 31.2688 20.7813 31.05 20.3719 30.7907C19.9625 30.5313 19.5188 30.2563 19.1469 29.9813L20.9375 28.95C22.1563 29.9125 23.125 30.6719 23.4125 30.9375C23.5666 31.0772 23.7012 31.2369 23.8125 31.4125L23.8094 31.4157ZM13.075 18.3688C12.7755 18.6432 12.5341 18.9748 12.365 19.3441C12.1959 19.7134 12.1026 20.1128 12.0906 20.5188C12.1077 20.9223 12.2066 21.3181 12.3812 21.6823C12.5557 22.0465 12.8024 22.3715 13.1063 22.6375C13.4906 23.0125 14.7594 24.0532 17.2219 26.0063L19.75 28.0063L19.8875 28.1125L13.6156 31.7157L1.48125 10.8844L11.6094 5.0688L20.3313 20.0407L16.9969 18.2344C14.9594 17.1313 13.75 17.6969 13.075 18.3688Z\" fill=\"#E81F25\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_730_8220\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title": "Pay in 3 installments",
+            "text": "<p>Interest-free.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_WFamVX",
+        "column_pwyayX",
+        "column_mFcNUe",
+        "column_DYPttX"
+      ],
+      "settings": {
+        "title": "Our Key Benefits",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_slider_r7hVKB": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "collection_j8NfE8": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": true,
+            "collection": "azza-fencing-15-14",
+            "collection_name": "First collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_j8NfE8"
+      ],
+      "settings": {
+        "heading": "Find Your Perfect Fit",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "maximum_products": 8,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "solid",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "index_img_with_text_UVDqXH": {
+      "type": "index-img-with-text",
+      "blocks": {
+        "heading_kGGawj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Innovative Performance",
+            "heading_size": "h1"
+          }
+        },
+        "text_9E6nPe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Step into the future of fencing with footwear designed for the next generation of athletes. Experience unparalleled agility, support, and durability, helping you reach new heights in your performance. </p><p>Whether you're training or competing, our innovative designs ensure you stay ahead of the game and excel with every move.</p>",
+            "text_style": "body"
+          }
+        },
+        "icon_dkkNek": {
+          "type": "icon",
+          "settings": {
+            "checkbox-id": true,
+            "checkicon1_img": true,
+            "iconimg-txt": "",
+            "icon1_img": "shopify://shop_images/Frame_1171275187.png",
+            "icon1_txt": "Intertek",
+            "checkicon2_img": true,
+            "iconimg2-txt": "",
+            "icon2_img": "shopify://shop_images/Frame_1171275187_1.png",
+            "icon2_txt": "Intertek",
+            "checkicon3_img": false,
+            "iconimg3-txt": "",
+            "icon3_img": "shopify://shop_images/Frame_1171275187_2.png",
+            "icon3_txt": ""
+          }
+        },
+        "button_DYk7yA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore now",
+            "button_link": "shopify://products/15-14-red"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kGGawj",
+        "text_9E6nPe",
+        "icon_dkkNek",
+        "button_DYk7yA"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/RED_details.png",
+        "mobile_image": "shopify://shop_images/RED_details_mobile.png",
+        "border": false,
+        "border-color": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "index_img_with_text_nByVme": {
+      "type": "index-img-with-text",
+      "blocks": {
+        "heading_NjLpYB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pioneering fencing shoes that honor our planet's well-being.",
+            "heading_size": "h1"
+          }
+        },
+        "text_GYtpKj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Innovative footwear isn't enough. At Azza, we prioritize recycled materials to help do our part for a better tomorrow. We are proud to be leading the fencing footwear industry through a sustainability lens.</p>",
+            "text_style": "body"
+          }
+        },
+        "icon_dDUrUf": {
+          "type": "icon",
+          "settings": {
+            "checkbox-id": true,
+            "checkicon1_img": true,
+            "iconimg-txt": "",
+            "icon1_img": "shopify://shop_images/bottle_1.png",
+            "icon1_txt": "Recycled PET",
+            "checkicon2_img": true,
+            "iconimg2-txt": "",
+            "icon2_img": "shopify://shop_images/leaves_1.png",
+            "icon2_txt": "Recycled EVA",
+            "checkicon3_img": true,
+            "iconimg3-txt": "",
+            "icon3_img": "shopify://shop_images/water-drop_1.png",
+            "icon3_txt": "Waterbased PU"
+          }
+        },
+        "button_YgQNcJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore now",
+            "button_link": "shopify://products/azza-15-14-electric-fencing-shoes"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NjLpYB",
+        "text_GYtpKj",
+        "icon_dDUrUf",
+        "button_YgQNcJ"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_25.png",
+        "border": false,
+        "border-color": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "8ff8cc82-7ad5-468d-84ee-bf13073eb69b": {
+      "type": "custom-community",
+      "blocks": {
+        "686c9870-2439-45c4-9852-be49145bd9f5": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Rectangle_14.png",
+            "tab_image": "shopify://shop_images/Rectangle_14.png",
+            "mobile_image": "shopify://shop_images/Rectangle_14.png",
+            "play_btn": false,
+            "author-date": "",
+            "name": "Mara Navarria",
+            "country-image": "shopify://shop_images/Flag_of_Italy_svg_35613d72-6696-4676-9155-5bb2fe528414.png",
+            "country": "Italy",
+            "info": "Mara Navarria is an Italian Epee fencer, World Champion in Wuxi 2018 and Bronze medalist in Tokyo Olympic Games.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "ca6d7eb3-9693-4c81-849e-71f8578146b1": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Rectangle_14_1.png",
+            "tab_image": "shopify://shop_images/Rectangle_14_1.png",
+            "mobile_image": "shopify://shop_images/Rectangle_14_1.png",
+            "play_btn": false,
+            "author-date": "",
+            "name": "Anne Sauer",
+            "country-image": "shopify://shop_images/1200px-Flag_of_Germany_svg_fe716ab9-37e8-4243-9e90-6800c8f61e3d.webp",
+            "country": "Germany",
+            "info": "Anne Sauer is a German Foil fencer. She is ranked top 10 in the World. \nAnne won the Shanghai Grand Prix in May 2023 and is winner of several world cup medals in 2021 and 2022",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "a1469ce2-1ce2-4afa-8c49-44d50ce1b693": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Rectangle_14_2.png",
+            "tab_image": "shopify://shop_images/Rectangle_14_2.png",
+            "mobile_image": "shopify://shop_images/Rectangle_14_2.png",
+            "play_btn": false,
+            "author-date": "",
+            "name": "Margaux Rifkiss",
+            "country-image": "shopify://shop_images/Flag_of_France_svg.webp",
+            "country": "France",
+            "info": "Margaux is a French Sabre fencer. She has participated in several world cups and has won European Games in 2023 in Poland and Silver medal in Milan 2023 World Championships team competitions",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "9b4fe0b6-bac9-4e65-8844-d9d15cfcb5d9": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Adberrahman_Tolba_w-430_h-400.png",
+            "tab_image": "shopify://shop_images/Abderrahman_Tolba.jpg",
+            "mobile_image": "shopify://shop_images/Abderrahman_Tolba.jpg",
+            "play_btn": false,
+            "author-date": "",
+            "name": "Abderrahman Tolba",
+            "country-image": "shopify://shop_images/Flag_of_Egypt_svg.webp",
+            "country": "Egypt",
+            "info": "Abdelrahman Tolba is an Egyptian Foil fencer. In 2023, he won bronze medal in Cadet World Championships in Plovdiv 2023, bronze medal in African Championships individual competition and gold medal in team event",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "4a483d09-4082-48ae-acc2-a84fa014924d": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/5_d65f2041-be4b-4669-8bb7-a733abdcc8dd.png",
+            "tab_image": "shopify://shop_images/Mate_Koch_Tamas.jpg",
+            "mobile_image": "shopify://shop_images/Mate_Koch_Tamas.jpg",
+            "play_btn": false,
+            "author-date": "",
+            "name": "Mate Koch Tamas",
+            "country-image": "shopify://shop_images/Flag-Hungary.webp",
+            "country": "Hungary",
+            "info": "Máté Tamás Koch is a Hungarian Epee fencer. He is the 2023 World Individual Champion in Milan and European Team Champion in the same year.\nMate, has won several medals in World Cup events during his young career",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "50f935b2-3ff2-4f0d-be62-f6995c315b90": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_acdf9050-b2c5-41b6-ae48-eeaa6a6c9acd.png",
+            "tab_image": "shopify://shop_images/4_a52482e9-06a1-4893-8314-d9c9f9b7485f.png",
+            "mobile_image": "shopify://shop_images/4_a52482e9-06a1-4893-8314-d9c9f9b7485f.png",
+            "play_btn": false,
+            "author-date": "",
+            "name": "Minobe Kazuyasu",
+            "country-image": "shopify://shop_images/Flag_of_Japan_svg.png",
+            "country": "Japan",
+            "info": "Minobe Kazuyasu, is a Japanese Epee fencer, 2016 team Asian champion, two-time Olympian, and 2021 team Olympic champion.\nKazuyasu won Silver Medal in 2022 individual world championships in Cairo and bronze medal in team event.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "2bc1891f-b266-4ffd-b352-e28c1bbfdb52": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Noam_Duchene_New.png",
+            "tab_image": "shopify://shop_images/Noam_Duchene_New.png",
+            "mobile_image": "shopify://shop_images/Noam_Duchene_New.png",
+            "play_btn": false,
+            "author-date": "",
+            "name": "Noam Duchene",
+            "country-image": "shopify://shop_images/Flag_of_France_svg_9805be9d-09d8-44d8-a8ec-c121718bdf8f.webp",
+            "country": "France",
+            "info": "Noam Duchene is a French Epee fencer. In 2023, he won the bronze medal in Plovdiv cadet-junior World Championships",
+            "but-text": "",
+            "but-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "686c9870-2439-45c4-9852-be49145bd9f5",
+        "ca6d7eb3-9693-4c81-849e-71f8578146b1",
+        "a1469ce2-1ce2-4afa-8c49-44d50ce1b693",
+        "9b4fe0b6-bac9-4e65-8844-d9d15cfcb5d9",
+        "4a483d09-4082-48ae-acc2-a84fa014924d",
+        "50f935b2-3ff2-4f0d-be62-f6995c315b90",
+        "2bc1891f-b266-4ffd-b352-e28c1bbfdb52"
+      ],
+      "settings": {
+        "bg-color": "#ffffff",
+        "unique_class": "Athletes",
+        "section_title": "#TeamAzza",
+        "section_desc": "The community of professionals ready to shape the future with us.\n<br><br>Join us to connect, collaborate, and innovate, making impactful changes and driving progress together.",
+        "section_button": "Read More",
+        "button_url": "shopify://pages/teamazza"
+      }
+    },
+    "index_review_xQCRQM": {
+      "type": "index-review",
+      "settings": {
+        "heading": "What Fencers Are Saying"
+      }
+    },
+    "1718609924fcc6ebba": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "index_text_img_KJhPNX": {
+      "type": "index-text-img",
+      "blocks": {
+        "heading_kfgjdt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Azza Besbes",
+            "heading_lable": "Who we are",
+            "heading_size": "h1"
+          }
+        },
+        "text_MzEkf4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Founder of Azza Fencing</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "caption_RXdkML": {
+          "type": "caption",
+          "settings": {
+            "caption": "",
+            "caption-subtxt": "Finally I’ve decided it’s time for a fencer to offer the best fencing shoes to its peers",
+            "captionimg": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_8kjFxk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Frustrated by subpar fencing shoe quality? It's time for a change. Our brand is here to revolutionize the game.</p><p>No more settling for less. Step into excellence and elevate your performance on the strip. Together, let's raise the bar for fencing excellence.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_RCj8qb": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/who-we-are"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kfgjdt",
+        "text_MzEkf4",
+        "caption_RXdkML",
+        "text_8kjFxk",
+        "button_RCj8qb"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_17.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "header_img_banner_iDXCqj",
+    "579745f4-e462-42ae-b235-3de740f0e9e0",
+    "recently_viewed_products_UPCBVQ",
+    "index_collection_list_ebaCkX",
+    "multicolumn_N7KtcF",
+    "featured_collection_slider_r7hVKB",
+    "index_img_with_text_UVDqXH",
+    "index_img_with_text_nByVme",
+    "8ff8cc82-7ad5-468d-84ee-bf13073eb69b",
+    "index_review_xQCRQM",
+    "1718609924fcc6ebba",
+    "index_text_img_KJhPNX"
+  ]
+}

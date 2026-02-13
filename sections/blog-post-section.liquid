@@ -1,0 +1,358 @@
+{% assign paginate_by = 10 %}
+{% if section.settings.display_option == 'slider' %}
+  <section class="section-blog-post">
+  <div class="section">
+    <div class="section-blog-title">
+      <h2 class="ff-heading fs-heading-3-base section-introduction__heading">{{ section.settings.title }}</h2>
+    </div>
+    {%- assign blog = blogs[section.settings.blog] -%}
+    {% paginate blog.articles by paginate_by %}
+      <div class="section-blog-inner">
+        <div class="slick-slider">
+          {%- for article in blog.articles -%}
+            <div class="slick-slide">
+              <div class="section-blog-first-detail">
+                <div class="section-blog-first-info">
+                  <div class="section-blog-image">
+                    <a href="{{ article.url }}">
+                      <img src="{{ article.image | img_url:'master' }}" alt="{{ article.title }}">
+                    </a>
+                  </div>
+                  <div class="section-blog-detail">
+                    <div class="section-blog-info">
+                      <a href="{{ article.url }}">
+                        <h3>{{ article.title }}</h3>
+                      </a>
+                      <p>{{ article.published_at | time_tag: format: 'date' }}</p>
+                    </div>
+                    <div class="section-blog-icon">
+                      <a href="{{ article.url }}">
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2 18.3334L19.3333 1M19.3333 1V17.6401M19.3333 1H2.69333" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="blog__pagination animation animation--blog-pagination">
+        {% if paginate.pages > 1 %}
+          {% render 'pagination', paginate: paginate, type: 'general.pagination.blog_posts' %}
+        {% endif %}
+      </div>
+    {% endpaginate %}
+  </div>
+</section>
+
+{% else %}
+<section class="section-blog-post">
+  <div class="section">
+    <div class="section-blog-title">
+      <h2 class=" ff-heading fs-heading-3-base section-introduction__heading">{{ section.settings.title }}</h2>
+    </div>
+    {%- assign blog = blogs[section.settings.blog] -%}
+    {% paginate blog.articles by paginate_by %}
+      <div class="section-blog-inner">
+        <div class="section-blog-first">
+          {%- for article in blog.articles limit: 2 -%}
+            <div class="section-blog-first-detail">
+              <div class="section-blog-first-info">
+                <div class="section-blog-image">
+                  <a href="{{ article.url }}"
+                    ><img src="{{ article.image | img_url:'master' }}" alt="{{ article.title }}"
+                  ></a>
+                </div>
+                <div class="section-blog-detail">
+                  <div class="section-blog-info">
+                    <a href="{{ article.url }}">section-blog-title
+                      <h3>{{ article.title }}</h3>
+                    </a>
+                    <p>{{ article.published_at | time_tag: format: 'date' }}</p>
+                  </div>
+                  <div class="section-blog-icon">
+                    <a href="{{ article.url }}">
+                      <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 18.3334L19.3333 1M19.3333 1V17.6401M19.3333 1H2.69333" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="section-blog-post-second">
+        {%- for article in blog.articles offset: 2 -%}
+          <div class="section-blog-post-second-detail">
+            <div class="section-second-inner">
+              <div class="section-blog-second-image">
+                <a href="{{ article.url }}">
+                  <img src="{{ article.image | img_url:'master' }}" alt="{{ article.title }}"
+                ></a>
+              </div>
+              <div class="section-blog-second-info flex-grow">
+                <a href="{{ article.url }}">
+                  <h3>{{ article.title }}</h3>
+                </a>
+              </div>
+              <p class="section-blog-date">{{ article.published_at | time_tag: format: 'date' }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="blog__pagination animation animation--blog-pagination">
+        {% if paginate.pages > 1 %}
+          {% render 'pagination', paginate: paginate, type: 'general.pagination.blog_posts' %}
+        {% endif %}
+      </div>
+    {% endpaginate %}
+  </div>
+</section>
+{% endif %}
+<style>
+    .section-blog-title{
+      margin-bottom:30px;
+    }
+    .section-blog-first{
+      display:flex;
+      flex-wrap:wrap;
+      margin-bottom:50px;
+    }
+    .section-blog-first-detail{
+      width:100%;
+      padding:0 10px;
+
+    }
+    .section-blog-first-info{
+       position:relative;
+      height:100%;
+    }
+    .section-blog-second{
+      display:flex;
+      height:max-content;
+    }
+    .section-blog-detail{
+      display:flex;
+      position: absolute;
+      bottom: 4%;
+      left: 0;
+      padding: 15px;
+      color: #fff;
+    }
+    .section-blog-info{
+      width:90%;
+    }
+    .section-blog-icon{
+      width:10%;
+          text-align: center;
+    }
+    .section-blog-image {
+      height: 100%;
+    }
+    .section-blog-image img{
+      width:100%;
+       height: 100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+
+    }
+    .section-blog-info h3{
+      color:#FFF;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+          margin-bottom: 5px;
+    }
+    .section-blog-info p{
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    .section-blog-icon svg{
+      width:17px;
+      height:17px;
+    }
+    .section-blog-second-detail{
+      width:50%;
+      padding:0 10px;
+      display:flex;
+    }
+    .section-second-inner{
+       display:flex;
+      flex-direction:column;
+    }
+    .section-blog-second-info h3{
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 26px;
+          margin-bottom: 15px;
+    }
+    .section-blog-date{
+          font-size: 14px;
+      line-height: 22px;
+    }
+    .section-blog-second-image{
+      position: relative;
+      overflow: hidden;
+      padding-top: 70%;
+      margin-bottom:20px;
+    }
+    .section-blog-second-image img{
+          width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      object-fit: cover;
+    }
+    .flex-grow{
+      flex:1 0 auto;
+    }
+
+       .section-blog-post-second{
+     display:flex;
+     flex-wrap:wrap;
+       margin-top: 30px;
+   }
+    .section-blog-post-second-detail{
+      width:25%;
+      padding:0 10px;
+      display:flex;
+      margin-bottom:40px;
+    }
+     @media (min-width:992px) and (max-width:1199px){
+      .section-blog-info {
+      width: 85%;
+      }
+      .section-blog-icon {
+        width: 15%;
+      }
+    }
+  @media (min-width:768px) and (max-width:991px){
+    .section-blog-info {
+      width: 85%;
+      }
+      .section-blog-icon {
+        width: 15%;
+      }
+       .section-blog-info h3 {
+      font-size: 18px;
+      line-height: 26px;
+    }
+    .section-blog-second-info h3 {
+      font-size: 15px;
+      line-height: 25px;
+    }
+    .section-blog-post-second-detail {
+      width: 33%;
+    }
+  }
+  @media (max-width:767px){
+  .section-blog-first {
+      margin-bottom: 0;
+  }
+    .section-blog-first-detail {
+      width: 100%;
+      padding: 0;
+      margin-bottom:20px;
+    }
+    .section-blog-post-second-detail {
+      width: 100%;
+      padding: 0;
+       margin-bottom:20px;
+    }
+    .section-blog-post-second {
+      margin-top: 0;
+  }
+    .section-blog-post .section{
+      padding-top:0;
+    }
+    .section-blog-info h3{
+    font-size: 16px;
+      line-height: 24px;
+  }
+    .section-blog-info p {
+      font-size: 14px;
+      line-height: 24px;
+  }
+    .section-blog-second-info h3 {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 10px;
+  }
+  }
+  .slick-slider
+  {
+    display:flex !important;
+  }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.slick-slider').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type":"text",
+      "id":"title",
+      "label":"Title",
+      "default":"Blog"
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "select",
+      "id": "display_option",
+      "label": "Choose Display Option",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "default",
+          "label": "Default"
+        }
+      ],
+      "default": "default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog- Post-Section"
+    }
+  ]
+}
+{% endschema %}

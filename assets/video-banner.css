@@ -1,0 +1,56 @@
+.video-banner{
+  overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+
+.video-overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* ou 50px selon ton besoin */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.36), rgba(0,0,0,0));
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+
+.videolinked{
+  height: 100vh; display: block; width: 100% !important; position: relative;
+}
+
+.contentonvideo{
+  position: absolute;
+  top: 50%;
+  left: 5%; 
+  transform: translateY(-50%); 
+  color: white; 
+  font-size: 2rem; 
+  font-weight: bold;
+  text-align: left; 
+  max-width: 90%;
+}
+
+.contentonvideo button {
+    color: #fff;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 2px 30px;
+    border: 1px solid white;
+    font-family: inherit;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    padding-bottom: 6px;
+}
+
+.contentonvideo button:hover{
+opacity:0.8;
+transition: opacity 0.2s ease;
+}
+
+
+

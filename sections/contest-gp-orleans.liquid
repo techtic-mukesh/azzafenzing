@@ -1,0 +1,302 @@
+<style>
+  /* General styles */
+.contest-section {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #FFF;
+  color: #131212;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.contest-section header {
+  background-color: #e81f25;
+  padding: 15px;
+  text-align: center;
+}
+
+.contest-section header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #FFF;
+}
+
+.contest-section main {
+  padding: 20px;
+}
+
+.contest h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #131212;
+}
+
+.question p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.answers label {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #e81f25;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.answers label:hover {
+  background-color: #e81f25;
+  color: #FFF;
+}
+
+.answers input {
+  margin-right: 10px;
+}
+
+#submit-btn {
+  display: block;
+  width: 100%;
+  background-color: #e81f25;
+  color: #FFF;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+  background-color: #bf1a20;
+}
+
+#response-message {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#info-form-container {
+  margin-top: 20px;
+  background-color: #FFF;
+  padding: 20px;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+}
+
+#info-form-container h2 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#contact-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#contact-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #E2E2E2;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#submit-info-btn {
+  display: block;
+  width: 100%;
+  background-color: #e81f25;
+  color: #FFF;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#submit-info-btn:hover {
+  background-color: #bf1a20;
+}
+
+.contest-section footer {
+  background-color: #131212;
+  text-align: center;
+  padding: 10px;
+  color: #FFF;
+  font-size: 12px;
+}
+
+</style>
+<div class="contest-section">
+  <header>
+    <h1>Jeu Concours GP d'Orléans 2024 </h1>
+  </header>
+
+  <main>
+    <section class="contest">
+      <h2>Répondez à la question pour tenter de gagner une paire de chaussures Azza Fencing.</h2>
+      <form id="contest-form">
+        <div class="question">
+          <p id="question-text">QUI A GAGNÉ L'ÉPREUVE INDIVIDUELLE DU SABRE DAME AUX JEUX OLYMPIQUES DE PARIS 2024 ?</p>
+        </div>
+
+        <div class="answers">
+          <label>
+            <input type="radio" name="answer" value="Anne Lise Touya">Anne Lise Touya
+          </label>
+          <label>
+            <input type="radio" name="answer" value="Laura Flessel">Laura Flessel
+          </label>
+          <label>
+            <input type="radio" name="answer" value="Manon Apithy-Brunet">Manon Apithy-Brunet
+          </label>
+        </div>
+
+        <button type="button" id="submit-btn">Valider votre réponse</button>
+        <p id="response-message"></p>
+      </form>
+
+      <div id="info-form-container" style="display: none;">
+        <h2>Veuillez renseigner vos informations pour être contacté</h2>
+        <form id="contact-form">
+          <label for="first-name">Prénom</label>
+          <input type="text" id="first-name" name="first-name" required>
+
+          <label for="last-name">Nom</label>
+          <input type="text" id="last-name" name="last-name" required>
+
+          <label for="email">Adresse mail</label>
+          <input type="email" id="email" name="email" required>
+
+          <button type="submit" id="submit-info-btn">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Azza Fencing. All Rights Reserved.</p>
+  </footer>
+</div>
+
+ <script>
+  document.getElementById('submit-btn').addEventListener('click', function() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    const responseMessage = document.getElementById('response-message');
+    
+    if (selectedAnswer) {
+      const answer = selectedAnswer.value;
+      document.getElementById('contest-form').style.display = 'none';
+      document.getElementById('info-form-container').style.display = 'block';
+      // if (answer === 'a') {
+      //   responseMessage.textContent = 'Bravo, vous avez répondu correctement !';
+      //   responseMessage.style.color = 'green';
+
+        
+      // } else {
+      //   responseMessage.textContent = 'Désolé, votre réponse est incorrecte. Réessayez !';
+      //   responseMessage.style.color = 'red';
+      // }
+    } else {
+      responseMessage.textContent = 'Veuillez sélectionner une réponse.';
+      responseMessage.style.color = 'orange';
+    }
+  });
+     document.getElementById('submit-info-btn').addEventListener('click', function() {
+var companyId = 'R3QQkY';
+var url = `https://a.klaviyo.com/client/subscriptions?company_id=${companyId}`;
+var email = document.getElementById("email");
+var first_name = document.getElementById("first-name");
+var last_name = document.getElementById("last-name");
+var selectedAns = document.querySelector('input[name="answer"]:checked');
+var data = {
+  data: {
+    type: "subscription",
+    attributes: {
+      profile: {
+        data: {
+          type: "profile",
+          attributes: {
+            email:email.value,// Replace with a valid email address
+            first_name:first_name.value,
+            last_name:last_name.value,
+            properties: {
+            "OLYMPIC WINNER":selectedAns.value            }
+          }
+        }
+      }
+    },
+    relationships: {
+      list: {
+        data: {
+          type: "list",
+          id: "VtFCpD" // Replace with the actual List ID
+        }
+      }
+    }
+  }
+};
+
+var options = {
+  method: 'POST',
+  headers: {
+    revision: '2024-10-15',
+    'content-type': 'application/vnd.api+json'
+  },
+  body: JSON.stringify(data)
+};
+
+fetch(url, options).then(json => {
+    console.log('Success:', json);
+    window.location.href = '/pages/thank-you';
+  }).catch(err => console.error('Error details:', err));
+
+   });
+   
+</script>
+{% schema %}
+{
+  "name": "New-section-quiz",
+  "class":"section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Titre du concours",
+      "id": "title",
+      "default": "Jeu Concours GP d'Orléans 2024"
+    },
+    {
+      "type": "textarea",
+      "label": "Question du concours",
+      "id": "question",
+      "default": "Quel est le sponsor principal du GP d'Orléans 2024?"
+    },
+    {
+      "type": "textarea",
+      "label": "Option de réponse A",
+      "id": "answer_a",
+      "default": "Azza Fencing"
+    },
+    {
+      "type": "textarea",
+      "label": "Option de réponse B",
+      "id": "answer_b",
+      "default": "Adidas"
+    },
+    {
+      "type": "textarea",
+      "label": "Option de réponse C",
+      "id": "answer_c",
+      "default": "Nike"
+    }
+  ]
+}
+{% endschema %}
+
+

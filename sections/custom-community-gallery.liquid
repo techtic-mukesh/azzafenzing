@@ -1,0 +1,509 @@
+<div
+  class="{{ section.settings.unique_class }} custom-community custom-community-gallary"
+  data-section-id="{{ section.id }}"
+  data-section-type="custom-community"
+>
+  <div class="custom_community_main">
+    <div class="custom-community-inner">
+      <p class="custom-title">{{ section.settings.section_title }}</p>
+      {% if section.settings.section_desc != blank %}
+        <p>{{ section.settings.section_desc }}</p>
+      {% endif %}
+      {% if section.settings.section_button != blank %}
+        <a href="{{ section.settings.button_url }}">
+          {{- section.settings.section_button }}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 15.8333L15.8333 4.99997M15.8333 4.99997V15.4M15.8333 4.99997H5.43333" stroke="#231F20" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+    {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+    {%- liquid
+      assign prioritize_loading = false
+      if section.index == 1
+        assign prioritize_loading = true
+      endif
+      assign placeholder_aspect_ratio = 'square'
+    -%}
+    <div class="custom-community-slider-wrapper">
+      <div class="slider_wrapper">
+        {% for block in section.blocks %}
+          <div class="slider_class">
+            <div class="slider-gallery">
+              <div class="slide_padding">
+                <div class="image_wrapper ">
+                  {% if block.settings.image1 != blank %}
+                    <div class="img-wraper active img-wrap-{{ forloop.index }}">
+                      {%- render 'image',
+                        wrapper_class: 'lazyload',
+                        image: block.settings.image1,
+                        sizes: image_sizes,
+                        animate: true,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading,
+                        placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                        placeholder_name: 'lifestyle-2'
+                      -%}
+                    </div>
+                  {% endif %}
+
+                  {% comment %}
+                    {% if block.settings.play_btn != blank %}
+                    <div class="play-icon">
+                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="56" height="56" rx="28" fill="#E81F25"></rect>
+                                <path d="M37 26.2679C38.3333 27.0377 38.3333 28.9623 37 29.7321L25 36.6603C23.6667 37.4301 22 36.4678 22 34.9282L22 21.0718C22 19.5322 23.6667 18.5699 25 19.3397L37 26.2679Z" fill="white"></path>
+                              </svg>
+                    </div>
+                    {% endif %}
+                  {% endcomment %}
+                </div>
+                <div class="content">
+                  <div class="content-author-date">
+                    <p>{{ block.settings['author-date'] }}</p>
+                  </div>
+                  <div class="content-author-name">
+                    <div class="country_wrapper">
+                      {% if block.settings['country-image'] != blank %}
+                        <img
+                          src="{{ block.settings.country-image | img_url:'master' }}"
+                          class="lazyload"
+                          alt="{{shop.name}}"
+                        >
+                      {% endif %}
+                    </div>
+                    <p class="sub-title">{{ block.settings.name }}</p>
+                  </div>
+                  {% if block.settings.info != blank %}
+                    <p class="custom_comunity_p">{{ block.settings.info }}</p>
+                  {% endif %}
+                  {% if block.settings['but-link'] != blank %}
+                    <a href="{{ block.settings.but-link }}">{{ block.settings['but-text'] }} </a>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="media-gellary-slide">
+                <div
+                  class="slide-1 active"
+                  data-id="img-wrap-{{ forloop.index }}"
+                  data-img="{{ block.settings.image1 | img_url:'master' }}"
+                  data-vid-id="vid-wrap-{{ forloop.index }}"
+                >
+                  <img src="{{ block.settings.image1 | img_url:'150x150' }}" alt="title">
+                </div>
+                <div
+                  class="slide-1"
+                  data-id="img-wrap-{{ forloop.index }}"
+                  data-img="{{ block.settings.image2| img_url:'master' }}"
+                  data-vid-id="vid-wrap-{{ forloop.index }}"
+                >
+                  <img src="{{ block.settings.image2 | img_url:'150x150' }}" alt="title">
+                </div>
+                <div
+                  class="slide-1"
+                  data-id="img-wrap-{{ forloop.index }}"
+                  data-img="{{ block.settings.image3 | img_url:'master' }}"
+                  data-vid-id="vid-wrap-{{ forloop.index }}"
+                >
+                  <img src="{{ block.settings.image3 | img_url:'150x150' }}" alt="title">
+                </div>
+
+                {% if block.settings.video_url != blank %}
+                  <div
+                    class="slide-1 vid"
+                    data-id="vid-popup-{{ forloop.index }}"
+                    data-img-id="img-wrap-{{ forloop.index }}"
+                  >
+                    <img src="{{ block.settings.video_thumb | img_url:'150x150' }}" alt="title">
+                    <div
+                      class="play-icon"
+                      data-id="vid-popup-{{ forloop.index }}"
+                      data-img-id="img-wrap-{{ forloop.index }}"
+                    >
+                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="56" height="56" rx="28" fill="#E81F25"></rect>
+                        <path d="M37 26.2679C38.3333 27.0377 38.3333 28.9623 37 29.7321L25 36.6603C23.6667 37.4301 22 36.4678 22 34.9282L22 21.0718C22 19.5322 23.6667 18.5699 25 19.3397L37 26.2679Z" fill="white"></path>
+                      </svg>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% for block in section.blocks %}
+  {% if block.settings.video_url != blank %}
+    <div class="vid-popup  vid-popup-{{ forloop.index }}">
+      <div class="video-popup-modal">
+        <div class="video-popup-close">
+          <button class="video-close-button" type="button">
+            {% render 'icon-close' %}
+          </button>
+        </div>
+        <div class="vid-wrapper-popup">
+          <div class="video-modal-content">
+            <div class="prd-video-inner-div">
+              <video
+                src="{{ block.settings.video_url }}"
+                controls="false"
+                class="video"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+<style>
+  .section.custom-gallery {
+     overflow: unset !important;
+     z-index: unset !important;
+   }
+               .custom-community-gallary .custom_community_main{
+                 display:unset;
+               }
+                .custom-community-gallary .custom-community-inner{
+                   width:100%;
+                 }
+                 .custom-community-gallary .custom-community-slider-wrapper{
+                   width:100%;
+                 }
+                 .custom-community-gallary .slide_padding{
+                       position: relative;
+                   margin:0;
+                   width:calc(100% - 25% );
+                 aspect-ratio:1;
+                   overflow:hidden;
+                 }
+                 .custom-community-gallary .content{
+                   margin-bottom: 10px;
+                   position: absolute;
+                   bottom: 0px;
+                   left: 0;
+                       width: 100%;
+                   margin-bottom: 0;
+                       padding: 100px 16px 12px;
+                   color: #fff;
+                   background: linear-gradient(0deg, rgba(13, 15, 21, 0.6) 29.98%, rgba(13, 15, 21, 0) 100%);
+                 }
+                 .custom-community-gallary  .slider-gallery .image_wrapper  img{
+                 aspect-ratio: 1;
+                 object-fit: contain;
+               }
+                  .custom-community-gallary  .slider-gallery {
+                   display: flex;
+                   margin: 13px;
+                   margin-left:0;
+                    align-items:flex-end;
+               }
+                  .custom-community-gallary  .media-gellary-slide {
+                  width:calc(25% - 13px);
+                   margin-left: 13px;
+                    height:100%;
+                   /* display: inline-grid;
+                   grid-gap: 15px; */
+               }
+             .custom-community-gallary  .media-gellary-slide .slide-1{
+                      width:100%;
+                   height:100%;
+                     position:relative;
+                   pointer-events:all;
+                     cursor:pointer;
+                   aspect-ratio:1;
+                     margin-bottom:13px;
+                   }
+               .custom-community-gallary  .play-icon{
+                 right:unset;
+                 bottom:unset;
+                   top: 50%;
+                   left: 50%;
+                   transform: translate(-50%, -50%);
+                 pointer-events:all;
+                 }
+
+     .custom-community-gallary .media-gellary-slide .slide-1 img{
+         margin: auto;
+         object-fit: cover;
+         aspect-ratio: 1;
+         width: 100%;
+       }
+
+       .slide-1.active{
+         display:none;
+       }
+     .custom-community-gallary .vid-wrap video{
+       width: 100%;
+       object-fit: contain;
+       height: 100%;
+       aspect-ratio: 12 / 9;
+       pointer-events:none;
+     }
+
+
+                   .custom-community-gallary  .media-gellary-slide .slide-1 img{
+                   width:100%;
+                   height:100%;
+                   margin-bottom:13px;
+                   object-fit:cover;
+                   aspect-ratio:1;
+                 }
+         .custom-community-gallary .media-gellary-slide .vid{
+           margin-bottom:0px;
+         }
+                   .custom-community-gallary  .media-gellary-slide .vids-5:last-child img{
+                     margin-bottom:0;
+                   }
+                   .custom-community-gallary .content .sub-title{
+                   color:#fff;
+                 }
+                 .custom-community-gallary .custom_comunity_p{
+                   color:#fff;
+                 }
+                 .custom-community-gallary .slider_wrapper button.slick-arrow{
+                       top: -12%;
+                 }
+                  .custom-community-gallary .slider_wrapper button.slick-prev{
+                       left: 92%;
+                 }
+                 .custom-community-gallary .custom_comunity_p{
+                   margin-bottom:10px;
+                 }
+                 .custom-community-gallary .vid-wrap{
+                   width:100%;
+                  display:none;
+                 height:100%;
+                 }
+         .custom-community-gallary .vid-wrap video{
+           width:100%;
+           object-fit:contain;
+           height:auto;
+           position:relative;
+         }
+       .custom-community-gallary .img-wraper{
+         display:none;
+       }
+       .custom-community-gallary .img-wraper.active{
+           display:block;
+         }
+     .vid-popup{
+     visibility:hidden;
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: #0009;
+       z-index: 999999999;
+       visibility: hidden;
+       display: none;
+
+     }
+       .vid-popup.active{
+         display:block;
+         visibility:visible;
+       }
+      .vid-popup .video-popup-modal {
+       background: #fff;
+       position: fixed;
+       top: 3%;
+       left: 10%;
+       bottom: 3%;
+       right: 10%;
+       overflow-x: hidden;
+       padding: 0 20px 30px;
+     }
+
+     .video-popup-close {
+       display: flex;
+       flex-wrap: wrap;
+       width: 100%;
+       justify-content: flex-end;
+       align-items: center;
+       padding: 20px 0;
+   }
+     .video-modal-content {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+   }
+     .prd-video-inner-div {
+       width: 100%;
+       width: auto;
+   }
+     .prd-video-inner-div video {
+       height: 80vh;
+       width: auto;
+       max-width: 100%;
+   }
+     @media (max-width:560px){
+                   .custom-community-gallary .slide_padding{
+                     width:100%;
+                   }
+                   .custom-community-gallary .slider-gallery{
+                   flex-direction: column;
+             gap:15px;
+                   }
+                   .custom-community-gallary .media-gellary-slide{
+                     width:100%;
+                     margin-left:0px;
+                     display:flex;
+                     gap:10px;
+                   }
+                   .custom-community-gallary .play-icon svg{
+                     height:20px;
+                     width:20px;
+                   }
+                   .custom-community-gallary .content{
+                     padding:15px;
+                   }
+                   .custom-community-gallary .content .sub-title{
+           font-size: 12px;
+           font-weight: 500;
+           line-height: 22px;
+                   }
+                   .custom-community-gallary .custom_comunity_p{
+                     font-size: 10px;
+                     font-weight: 400;
+                     line-height: 17px;
+                     text-align: left;
+                   }
+       .custom-community-slider-wrapper  ul.slick-dots{
+                     text-align:left;
+                   }
+                 }
+</style>
+
+{% schema %}
+{
+  "name": "custom-community-gellary",
+  "class": "section custom-gallery",
+    "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"],
+    "templates": ["password"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Background Color",
+    "default": "#fff"
+    },
+     {
+      "type":"text",
+      "id":"unique_class",
+      "label":"Don't Change This Text",
+      "info":"Don't remove this text"
+    },
+    {
+      "type":"text",
+      "id":"section_title",
+      "label": "Enter Section Title"
+    },
+     {
+      "type":"textarea",
+      "id":"section_desc",
+      "label": "Enter Section Description"
+    },
+    {
+                      "type":"text",
+                      "id":"section_button",
+                      "label": "Enter Button Text"
+                    },
+                     {
+                      "type":"url",
+                      "id":"button_url",
+                      "label": "Select Button URL"
+                    }
+  ],
+  "blocks":[
+    {
+            "type":"text",
+            "name":"cm-slider",
+            "settings":[
+    {
+      "type":"image_picker",
+      "id": "desktop_image",
+      "label"  : "Chooce Image"
+    },
+              {
+      "type": "checkbox",
+                "id": "play_btn",
+                "label": "Play Icon",
+                "default":true
+              },
+              {
+                "type": "text",
+                "id": "author-date",
+                "label": "Date"
+              },
+  {
+  "type":"text",
+  "id":"name",
+  "label": "Enter Name"
+  },
+  {
+     "type":"image_picker",
+     "id": "country-image",
+     "label"  : "Chooce Icon"
+   },
+  {
+     "type":"text",
+     "id":"country",
+     "label": "Enter Country Name"
+   },
+   {
+     "type":"textarea",
+     "id":"info",
+     "label": "Enter Text"
+   },
+   {
+     "type":"text",
+     "id":"but-text",
+     "label": "Button Text"
+   },
+   {
+     "type":"url",
+     "id":"but-link",
+     "label": "Button Link"
+   },
+                 {
+      "type":"image_picker",
+      "id": "image1",
+      "label"  : "Chooce Image"
+    },
+                 {
+      "type":"image_picker",
+      "id": "image2",
+      "label"  : "Chooce Image"
+    },
+                 {
+      "type":"image_picker",
+      "id": "image3",
+      "label"  : "Chooce Image"
+    },
+              {
+                "type":"image_picker",
+                "id":"video_thumb",
+                "label":"Video Thumb"
+              },
+              {
+                "type":"url",
+                "id":"video_url",
+                "label":"Video Url"
+              }
+   ]
+              }
+  ],
+  "presets":[{"name":"custom-community-gellary"}]
+}
+{% endschema %}

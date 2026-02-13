@@ -1,0 +1,172 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "breadcrumbs_pages_Gf78QP": {
+      "type": "breadcrumbs-pages",
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": false
+      }
+    },
+    "image_banner_performance_a6qhDK": {
+      "type": "image-banner-performance",
+      "settings": {
+        "unique_class": "",
+        "image": "shopify://shop_images/sustainable-hero-2.jpg",
+        "image_mobile": "shopify://shop_images/Sustainibility_mobile_banner.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "adapt_height_first_image": true,
+        "show_text_box": true,
+        "heading": "<p>Sustainability</p>",
+        "banner_text": ""
+      }
+    },
+    "index_img_with_text_NWPjcQ": {
+      "type": "index-img-with-text",
+      "blocks": {
+        "heading_UzjcpM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pioneering fencing shoes that honor our planet's well-being..",
+            "heading_size": "h1"
+          }
+        },
+        "text_PAWmGE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Saving the planet is important and we are doing our part.</p><p>We Prioritize Recycled Polyethylene Terephthalate materials (PET) in our products, which is an eco-friendly material made from post-consumer plastic bottles requiring less energy than virgin polyester and contributes to a lower carbon footprint.</p><p>Literally turning trash into materials for your next favorite shoes to wear on the strip. We fight for the cause with a sword in our hand. Just like Zorro, but in Real life. Why aren't other brands doing it too?</p>",
+            "text_style": "body"
+          }
+        },
+        "button_X9ixqW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_UzjcpM",
+        "text_PAWmGE",
+        "button_X9ixqW"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/sustainable-right.png",
+        "border": false,
+        "border-color": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "science_cprkY9": {
+      "type": "science",
+      "blocks": {
+        "featured_content_FCDpgQ": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Recycled Materials",
+            "description": "We prioritize sustainability by utilizing recycled PET (Polyethylene Terephthalate) in our products. Recycled PET is derived from post-consumer plastic bottles, reducing the need for new plastic production and minimizing plastic waste. This eco-friendly material requires less energy compared to virgin polyester, contributing to a lower carbon footprint and energy conservation. <br>By repurposing existing plastic, we eliminate the production of new plastics, reducing reliance on fossil fuels and minimizing pollution."
+          }
+        },
+        "featured_content_LDNxBB": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Recycled Cardboard",
+            "description": "We are proud to incorporate recycled cardboard in our products, prioritizing sustainability and reducing our environmental impact. By utilizing recycled cardboard, we contribute to the reduction of greenhouse gas emissions, resulting in a lower carbon footprint.<br>This eco-friendly material helps conserve natural resources and minimizes waste by repurposing existing cardboard materials."
+          }
+        },
+        "featured_content_6bUeJ7": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Recycled EVA",
+            "description": "Recycled EVA (Ethylene Vinyl Acetate) offers numerous environmental benefits, including a lower energy consumption compared to virgin polyester. By utilizing recycled EVA, we reduce our carbon footprint and contribute to energy conservation. Additionally, recycled EVA eliminates the need for the production of new plastics, further reducing our reliance on fossil fuels and minimizing plastic waste.  We are proud to offer high-quality fencing shoes that not only deliver exceptional performance but also prioritize environmental responsibility."
+          }
+        },
+        "featured_content_z4bEk6": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Waterbased PU",
+            "description": "Utilizing Water-based PU (polyurethane) finishes, provides a more consistent appearance, and  are better for the environment as they don't emit nearly the same level of off-gassing smells. They also have a lower VOC content, which leads to a better impact for every shoe we make."
+          }
+        }
+      },
+      "block_order": [
+        "featured_content_FCDpgQ",
+        "featured_content_LDNxBB",
+        "featured_content_6bUeJ7",
+        "featured_content_z4bEk6"
+      ],
+      "settings": {
+        "main_title": "Focused on Recycled Materials, because it is the right thing to do.",
+        "no_of_column": "2"
+      }
+    },
+    "sustainable_image_wi7V4x": {
+      "type": "sustainable-image",
+      "blocks": {
+        "image_jMzaDK": {
+          "type": "image",
+          "settings": {
+            "image_tab": "shopify://shop_images/sustainability-img-1.png",
+            "image_tab_class": ""
+          }
+        },
+        "image_nf6Aey": {
+          "type": "image",
+          "settings": {
+            "image_tab": "shopify://shop_images/sustainability-img-2.jpg",
+            "image_tab_class": ""
+          }
+        },
+        "image_6imHgt": {
+          "type": "image",
+          "settings": {
+            "image_tab": "shopify://shop_images/sustainability-img-3.jpg",
+            "image_tab_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_jMzaDK",
+        "image_nf6Aey",
+        "image_6imHgt"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_pages_Gf78QP",
+    "image_banner_performance_a6qhDK",
+    "index_img_with_text_NWPjcQ",
+    "science_cprkY9",
+    "sustainable_image_wi7V4x"
+  ]
+}

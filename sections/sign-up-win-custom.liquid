@@ -1,0 +1,139 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="contact-head {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h1>
+      <p>{{ section.settings.subheading }}</p>
+    {%- else -%}
+    {%- endif -%}
+    <div class="form-and-text">
+      <div class="get-in-touch white color-lightgreen">
+        <h3 class="subheading">{{ section.settings.headingget }}</h3>
+      </div>
+      <div class="right-side-subscribe">{{ section.settings.html_div }}</div>
+    </div>
+  </div>
+</div>
+<style>
+    .subheading{
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: .02em;
+      color: #000;
+      font-family: Aileron-Bold;
+      margin: 0 0 50px;
+    }
+  .contact .form-and-text{
+        justify-content: space-between;
+  }
+  .contact .get-in-touch{
+      width:calc( 50% - 20px );
+    }
+    .right-side-subscribe{
+      width:calc( 50% - 20px );
+    }
+    @media (max-width: 749px){
+       .contact .get-in-touch{
+       width: 100%;
+      padding-right: 0;
+      text-align: center;
+
+       }
+      .right-side-subscribe{
+       width: 100%;
+      padding-right: 0;
+      text-align: center;
+    }
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Sign Up and Win",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Contact form",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h0",
+          "label": "h0"
+        }
+      ],
+      "default": "h1",
+      "label": "h1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "padding bottom",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "headingget",
+      "label": "enter first heading"
+    },
+    {
+      "type":"html",
+      "id":"html_div",
+      "label":"Html Code For kalaviyo Form"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sign Up and Win"
+    }
+  ]
+}
+{% endschema %}

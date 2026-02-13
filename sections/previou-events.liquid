@@ -1,0 +1,70 @@
+<section class="Previou-Events">
+  <div class="page-width">
+    <h3>{{ section.settings.Previou }}</h3>
+    <ul class="Previou-slider">
+      {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+      {%- liquid
+        assign prioritize_loading = false
+        if section.index == 1
+          assign prioritize_loading = true
+        endif
+        assign placeholder_aspect_ratio = 'square'
+      -%}
+      {% for block in section.blocks %}
+        <li>
+          {%- render 'image',
+            wrapper_class: 'lazyload',
+            image: block.settings.image2,
+            sizes: image_sizes,
+            animate: true,
+            include_placeholder: true,
+            animate: true,
+            prioritize_loading: prioritize_loading,
+            placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+            placeholder_name: 'lifestyle-2'
+          -%}
+          <div class="contact">
+            <h4>{{ block.settings['evet-name'] }}</h4>
+            <span>{{ block.settings['evet-name'] }}</span>
+            <span>{{ block.settings.date }}</span>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<style></style>
+
+{% schema %}
+ {
+   "name": "Previou Events Section",
+   "settings": [
+     {"id":"Previou", "type":"text", "label":"Heading"}
+   ],
+
+
+    "blocks":[
+       {
+         "type": "bannner", "name":"banner",
+         "settings":[
+
+           { "type":"image_picker", "id":"image2", "label":"Banner" },
+           { "type":"text", "id":"evet-name", "label":"Event Name" },
+           { "type":"text", "id":"locat", "label":"Location" },
+           { "type":"text", "id":"date", "label":"Date" }
+
+         ]
+       }
+
+   ],
+
+
+"presets":[
+  {"name":"Previou Events Section", "category":"category"}
+]
+
+ }
+{% endschema %}

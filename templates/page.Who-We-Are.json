@@ -1,0 +1,344 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "breadcrumbs_pages_tWp4hN": {
+      "type": "breadcrumbs-pages",
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": false
+      }
+    },
+    "index_text_img_XEAipm": {
+      "type": "index-text-img",
+      "blocks": {
+        "heading_9RUACz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Azza Besbes",
+            "heading_lable": "WHO WE ARE",
+            "heading_size": "h1"
+          }
+        },
+        "text_LRzEtK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Founder of Azza Fencing</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "caption_MjMPEk": {
+          "type": "caption",
+          "settings": {
+            "caption": "",
+            "caption-subtxt": "Finally I’ve decided it’s time for a fencer to offer the best fencing shoes to its peers",
+            "captionimg": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_Q8rtip": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Frustrated by subpar fencing shoe quality? It's time for a change. Our brand is here to revolutionize the game.</p><p>No more settling for less. Step into excellence and elevate your performance on the strip. Together, let's raise the bar for fencing excellence.</p>",
+            "text_style": "body"
+          }
+        },
+        "subtitle_B3iAqM": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>A legacy spanning the 2008, 2012, and 2016 Summer Olympics.</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "subtitle_XD6xPr": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>A remarkable achievement: silver medalist at the 2017 World Championships.</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "subtitle_MwhUYK": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>An outstanding record: 11-time African champion.</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_Hcihxb": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9RUACz",
+        "text_LRzEtK",
+        "caption_MjMPEk",
+        "text_Q8rtip",
+        "subtitle_B3iAqM",
+        "subtitle_XD6xPr",
+        "subtitle_MwhUYK",
+        "button_Hcihxb"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_17.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_community_hDXfHr": {
+      "type": "custom-community",
+      "blocks": {
+        "text_J7G3nQ": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Group_468.png",
+            "tab_image": "shopify://shop_images/Group_468.png",
+            "mobile_image": "shopify://shop_images/Group_468.png",
+            "play_btn": false,
+            "author-date": "May 2020",
+            "name": "Research Phase",
+            "country": "",
+            "info": "In-Depth research based on the Hong Kong Research Institute of Textile &amp; Apparel, as well as partnering with CTC to frame the technical requirements and the brand vision.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_xciGFy": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ellipse_43_45a0aecb-c154-452c-b5c8-155199210e46.png",
+            "tab_image": "shopify://shop_images/Ellipse_43_45a0aecb-c154-452c-b5c8-155199210e46.png",
+            "mobile_image": "shopify://shop_images/Ellipse_43_45a0aecb-c154-452c-b5c8-155199210e46.png",
+            "play_btn": false,
+            "author-date": "Nov 2020",
+            "name": "Initial Sample Creation",
+            "country": "",
+            "info": "Partnering up with footwear experts around the world to kick-off the design and development process",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_yJVfpf": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ellipse_43_1.png",
+            "tab_image": "shopify://shop_images/Ellipse_43_1.png",
+            "mobile_image": "shopify://shop_images/Ellipse_43_1.png",
+            "play_btn": false,
+            "author-date": "March 2021",
+            "name": "First Prototype Phase",
+            "country": "",
+            "info": "Sampling of AF version 1 with a well-known footwear factory based in China. Creating a first set of samples for the testing phase.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_KPPqp9": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ellipse_44.png",
+            "tab_image": "shopify://shop_images/Ellipse_44.png",
+            "mobile_image": "shopify://shop_images/Ellipse_44.png",
+            "play_btn": false,
+            "author-date": "July 2021",
+            "name": "Research Phase",
+            "country": "",
+            "info": "Testing the samples under real conditions during the Tokyo Olympics. Receiving feedback by professional athletes and the testing institute.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_HXg8DJ": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ellipse_45.png",
+            "tab_image": "shopify://shop_images/Ellipse_45.png",
+            "mobile_image": "shopify://shop_images/Ellipse_45.png",
+            "play_btn": false,
+            "author-date": "Dec. 2021",
+            "name": "Design Revisions",
+            "country": "",
+            "info": "Incorporating feedback and test results. Refining the design and technical features leading to versions 2 &amp; 3. Further testing and refinement.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_PqkkHW": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ellipse_46.png",
+            "tab_image": "shopify://shop_images/Ellipse_46.png",
+            "mobile_image": "shopify://shop_images/Ellipse_46.png",
+            "play_btn": false,
+            "author-date": "Jan 2022",
+            "name": "Final Sample Sign-Off",
+            "country": "",
+            "info": "The final samples are now ready for bulk production, offering modern colorways that cater to contemporary tastes.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_mfiRaN": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ellipse_47.png",
+            "tab_image": "shopify://shop_images/Ellipse_47.png",
+            "mobile_image": "shopify://shop_images/Ellipse_47.png",
+            "play_btn": false,
+            "author-date": "Jun. 2022",
+            "name": "Pre-Sales",
+            "country": "",
+            "info": "The formal pre-sales process begins, and accounts start to see the momentum of the future of fencing footwear.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_mfiRaK": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ellipse_45.png",
+            "tab_image": "shopify://shop_images/Ellipse_45.png",
+            "mobile_image": "shopify://shop_images/Ellipse_45.png",
+            "play_btn": false,
+            "author-date": "Dec. 2022",
+            "name": "Production and Product Delivery",
+            "country": "",
+            "info": "Production is now complete, and we have started delivering our top-quality fencing shoes to our valued customers.",
+            "but-text": "",
+            "but-link": ""
+          }
+        },
+        "text_mfiRal": {
+          "type": "text",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Group_468.png",
+            "tab_image": "shopify://shop_images/Group_468.png",
+            "mobile_image": "shopify://shop_images/Group_468.png",
+            "play_btn": false,
+            "author-date": "Mar. 2023",
+            "name": "Second collection Planning begins",
+            "country": "",
+            "info": "After receiving great sales and great feedback from our customers, we begin working on our second collection, gearing up for the 2024 Paris Olympic Games. More Innovation to come.",
+            "but-text": "",
+            "but-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_J7G3nQ",
+        "text_xciGFy",
+        "text_yJVfpf",
+        "text_KPPqp9",
+        "text_HXg8DJ",
+        "text_PqkkHW",
+        "text_mfiRaN",
+        "text_mfiRaK",
+        "text_mfiRal"
+      ],
+      "settings": {
+        "bg-color": "#f8f9fa",
+        "unique_class": "Athletes whoo",
+        "section_title": "Timeline",
+        "section_desc": "Azza Fencing started from a simple idea that Fencers deserved better. This set us off on a journey to make the best fencing shoe in the market based off of real fencing insights. And we are just getting started...",
+        "section_button": "",
+        "button_url": ""
+      }
+    },
+    "custom_grid_box_XVXm9V": {
+      "type": "custom-grid-box",
+      "blocks": {
+        "image_gbJbVx": {
+          "type": "Image",
+          "settings": {
+            "img-div": "shopify://shop_images/Rectangle_28.png"
+          }
+        },
+        "image_BfG3QP": {
+          "type": "Image",
+          "settings": {
+            "img-div": "shopify://shop_images/Rectangle_29.png"
+          }
+        },
+        "image_PKKfWa": {
+          "type": "Image",
+          "settings": {
+            "img-div": "shopify://shop_images/Rectangle_30.png"
+          }
+        },
+        "image_GhXtFD": {
+          "type": "Image",
+          "settings": {
+            "img-div": "shopify://shop_images/Rectangle_31.png"
+          }
+        },
+        "image_JLnYm8": {
+          "type": "Image",
+          "settings": {
+            "img-div": "shopify://shop_images/Rectangle_32.png"
+          }
+        },
+        "image_kqyCJK": {
+          "type": "Image",
+          "settings": {
+            "img-div": "shopify://shop_images/Rectangle_34.png"
+          }
+        },
+        "image_nfgDdq": {
+          "type": "Image",
+          "settings": {
+            "img-div": "shopify://shop_images/Rectangle_33.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_gbJbVx",
+        "image_BfG3QP",
+        "image_PKKfWa",
+        "image_GhXtFD",
+        "image_JLnYm8",
+        "image_kqyCJK",
+        "image_nfgDdq"
+      ],
+      "settings": {
+        "textheading": "We Are Always by Your Side",
+        "text": "<p>Our brand is created by fencers, for fencers. We are dedicated to not only providing top-quality gear but also to connecting with our fellow fencers. We love meeting you, hearing your feedback, and discussing how we can make our products even better. Follow our news and updates to find out when and where you can meet us next!</p>",
+        "text_style": "body"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_pages_tWp4hN",
+    "index_text_img_XEAipm",
+    "custom_community_hDXfHr",
+    "custom_grid_box_XVXm9V"
+  ]
+}

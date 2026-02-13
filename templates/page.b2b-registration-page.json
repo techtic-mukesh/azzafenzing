@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "9ae087e0-8873-4db3-bcfd-bb9ef2295fb8": {
+      "type": "custom-page",
+      "blocks": {
+        "5cb6ef94-69e2-4291-9dde-d6d51180a154": {
+          "type": "Text",
+          "settings": {
+            "head2": "Edition Août 2022",
+            "paragraph": "CONDITIONS GENERALES DE VENTE A DISTANCE \n\nAUX CONSOMMATEURS\n\n \n\n \n\nIdentité du vendeur (la « Société »)\n\n \n\nDénomination sociale : AZZA FENCING\n\nForme : SAS\n\nN°RCS 890044779\n\nN°TVA FR23890044779\n\nSiège social 28 Avenue des Pépinières F94260 Fresnes (France)\n\n \n\n\nAdresse électronique contact@azzafencing.com\n\n \n\nSite internet : www.azzafencing.com \n\nDirecteur ou du codirecteur de la publication Mme Azza Besbes\n\n \n\nPrestataire  d’hébergement Shopify\n\nDénomination sociale Shopify Inc\n\nAdresse 151 O’Connor Street, Ground Floor, Ottawa, ON K2P 2L8. Canad"
+          }
+        },
+        "5dddbcb0-3731-44cd-bd96-8ba05e66da64": {
+          "type": "Text",
+          "settings": {
+            "head2": "Périmètre d’application des Conditions générales",
+            "paragraph": "Les présentes Conditions générales s’appliquent à toutes commandes livrables en France métropolitaine par Azza Fencing, passées à compter du 08 août 2022."
+          }
+        },
+        "b03857f3-338c-4b19-8149-86bea7ca2f3f": {
+          "type": "Text",
+          "settings": {
+            "head2": "Caractéristiques essentielles des Prestations",
+            "paragraph": "Les Produits objets des présentes consistent en des chaussures de sport conçues pour la pratique de l’escrime et de sports de salle et de raquette, tels que le badminton, le squash, le handball et le padel à titre d’exemples. Ils sont décrits plus précisément quant à leur spécificité et leur qualité dans le catalogue de la Société."
+          }
+        },
+        "9d2e2097-ba70-4425-bf8c-28ab70e2b601": {
+          "type": "Text",
+          "settings": {
+            "head2": "Commande ",
+            "paragraph": "S’agissant des personnes physiques, le Client déclare être âgé d’au moins 18 ans et avoir la capacité juridique ou être titulaire d’une autorisation parentale lui permettant d’effectuer une commande sur le Site. Le Client garantit la véracité et l’exactitude des informations qu’il communique lors de son achat."
+          }
+        },
+        "23c33cef-dcec-4d72-83c0-84262de196ee": {
+          "type": "Text",
+          "settings": {
+            "head2": "",
+            "paragraph": "Pour acheter des Produits, vous devez sélectionner par un clic le produit sur l’un des espaces d’exposition en ligne et/ou dans le catalogue  du site internet de la marque www.azzafencing.com, puis renseigner le formulaire accessible à la rubrique « mon panier » (les rubriques obligatoires sont signalées par un astérisque). Nous vous invitons à relire attentivement le récapitulatif qui s’affiche ensuite à l’écran, avant de confirmer votre commande et procéder au paiement en ligne. Sous réserve de l’exercice du droit de rétractation détaillé plus bas, la vente des Produits est définitivement conclue à compter du paiement ; jusqu’à ce dernier, il vous est possible d’annuler la commande en cours ou de rectifier des erreurs."
+          }
+        },
+        "e6aa9496-d0d1-4aca-97f1-f70c6754cd0a": {
+          "type": "Text",
+          "settings": {
+            "head2": "",
+            "paragraph": "Une fois le paiement effectué, un accusé de réception vous est envoyé à l’adresse email mentionnée sur le formulaire de commande, accompagné d’un formulaire de rétractation. Nous vous invitons à le conserver pour faciliter le suivi de votre commande."
+          }
+        },
+        "2d3c2129-d3e1-48d1-8600-322ba3a50d49": {
+          "type": "Text",
+          "settings": {
+            "head2": "Prix Tarif",
+            "paragraph": "Les Produits sont fournis selon le prix mentionné au catalogue au jour de la commande. Ledit prix sera ferme et non révisable. Sauf précision contraire, les prix sont TTC."
+          }
+        },
+        "e39bce04-1940-4864-9007-7c4384a59b58": {
+          "type": "Text",
+          "settings": {
+            "head2": "Frais de livraison à la charge du Client",
+            "paragraph": "Les frais de livraison sont à la charge du Client. Ils sont mentionnés dans la rubrique Panier avant le paiement, de façon distincte du prix des Produits. Les transporteurs sont choisis par la Société ou ses fournisseurs."
+          }
+        },
+        "a05b4475-1a9e-4c43-bbef-c67a0ade05ae": {
+          "type": "Text",
+          "settings": {
+            "head2": "Réserve de propriété ",
+            "paragraph": "La Société se réserve, jusqu’à leur complet paiement, en ce compris les frais et pénalités de retard y afférant, un droit de propriété sur les Produits lui permettant d’en reprendre possession en quelques lieux et mains qu’ils se trouvent."
+          }
+        },
+        "3b6c38b2-65ee-4cc1-8aca-0bd0c013b553": {
+          "type": "Text",
+          "settings": {
+            "head2": "",
+            "paragraph": "Modalités de paiement\n\n \n\nPaiement comptant\n\n \n\nLes commandes sont payables comptant, au siège d’Azza Fencing. \n\n \n\nMoyens de paiement \n\n \n\nLes paiements s’effectuent en euros au siège de la Société par carte bancaire ou par virement."
+          }
+        }
+      },
+      "block_order": [
+        "5cb6ef94-69e2-4291-9dde-d6d51180a154",
+        "5dddbcb0-3731-44cd-bd96-8ba05e66da64",
+        "b03857f3-338c-4b19-8149-86bea7ca2f3f",
+        "9d2e2097-ba70-4425-bf8c-28ab70e2b601",
+        "23c33cef-dcec-4d72-83c0-84262de196ee",
+        "e6aa9496-d0d1-4aca-97f1-f70c6754cd0a",
+        "2d3c2129-d3e1-48d1-8600-322ba3a50d49",
+        "e39bce04-1940-4864-9007-7c4384a59b58",
+        "a05b4475-1a9e-4c43-bbef-c67a0ade05ae",
+        "3b6c38b2-65ee-4cc1-8aca-0bd0c013b553"
+      ],
+      "disabled": true,
+      "settings": {
+        "head": "Terms & Conditions"
+      }
+    },
+    "custom_liquid_8pK8c8": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom_liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"samitaWS-registrationForm\" data-id=\"MTExODQ=\"></div>",
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "9ae087e0-8873-4db3-bcfd-bb9ef2295fb8",
+    "custom_liquid_8pK8c8"
+  ]
+}

@@ -1,0 +1,147 @@
+{%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+{% assign paginate_by = 7 %}
+{%- liquid
+  assign prioritize_loading = false
+  if section.index == 1
+    assign prioritize_loading = true
+  endif
+  assign placeholder_aspect_ratio = 'square'
+-%}
+{% assign blog = blogs[section.settings.blog] %}
+<section class="latest-blog-post">
+  <div class="section">
+    <div class="latest-blog-title">
+      <h2 class=" ff-heading fs-heading-3-base section-introduction__heading">{{ section.settings.title }}</h2>
+    </div>
+    {% paginate blog.articles by paginate_by %}
+      <div class="latest-blog-inner">
+        <div class="latest-blog-first">
+          {%- for article in blog.articles limit: 1 -%}
+            <div class="latest-blog-first-detail">
+              <div class="latest-blog-image">
+                <a href="{{ article.url }}">
+                  {%- if article.image != blank -%}
+                    {%- render 'image',
+                      wrapper_class: 'lazyload',
+                      image: article.image,
+                      sizes: image_sizes,
+                      animate: true,
+                      include_placeholder: true,
+                      animate: true,
+                      prioritize_loading: prioritize_loading,
+                      placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                      placeholder_name: 'lifestyle-2'
+                    -%}
+                  {% endif %}
+                </a>
+              </div>
+              <div class="latest-blog-detail">
+                <div class="latest-blog-info">
+                  <a href="{{ article.url }}">
+                    <h3>{{ article.title }}</h3>
+                  </a>
+                  <p>{{ article.published_at | time_tag: format: 'date' }}</p>
+                </div>
+                <div class="latest-blog-icon">
+                  <a href="{{ article.url }}">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 18.3334L19.3333 1M19.3333 1V17.6401M19.3333 1H2.69333" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="latest-blog-second">
+          {%- for article in blog.articles offset: 1 limit: 2 -%}
+            <div class="latest-blog-second-detail">
+              <div class="latest-second-inner">
+                <div class="latest-blog-second-image">
+                  <a href="{{ article.url }}">
+                    {%- if article.image != blank -%}
+                      {%- render 'image',
+                        wrapper_class: 'lazyload',
+                        image: article.image,
+                        sizes: image_sizes,
+                        animate: true,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading,
+                        placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                        placeholder_name: 'lifestyle-2'
+                      -%}
+                    {% endif %}
+                  </a>
+                </div>
+                <div class="latest-blog-second-info flex-grow">
+                  <a href="{{ article.url }}">
+                    <h3>{{ article.title }}</h3>
+                  </a>
+                </div>
+                <p class="latest-blog-date">{{ article.published_at | time_tag: format: 'date' }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="latest-blog-post-second">
+        {%- for article in blog.articles offset: 3 -%}
+          <div class="latest-blog-post-second-detail">
+            <div class="latest-second-inner">
+              <div class="latest-blog-second-image">
+                <a href="{{ article.url }}">
+                  {%- if article.image != blank -%}
+                    {%- render 'image',
+                      wrapper_class: 'lazyload',
+                      image: article.image,
+                      sizes: image_sizes,
+                      animate: true,
+                      include_placeholder: true,
+                      animate: true,
+                      prioritize_loading: prioritize_loading,
+                      placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                      placeholder_name: 'lifestyle-2'
+                    -%}
+                  {% endif %}
+                </a>
+              </div>
+              <div class="latest-blog-second-info flex-grow">
+                <a href="{{ article.url }}">
+                  <h3>{{ article.title }}</h3>
+                </a>
+              </div>
+              <p class="latest-blog-date">{{ article.published_at | time_tag: format: 'date' }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="blog__pagination animation animation--blog-pagination">
+        {% if paginate.pages > 1 %}
+          {% render 'pagination', paginate: paginate, type: 'general.pagination.blog_posts' %}
+        {% endif %}
+      </div>
+    {% endpaginate %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Latest Blog Post",
+  "settings": [
+    {
+      "type":"text",
+      "id":"title",
+      "label":"Title",
+      "default":"What’s New"
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    }
+  ]
+}
+{% endschema %}

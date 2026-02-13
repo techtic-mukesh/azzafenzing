@@ -1,0 +1,68 @@
+<html class="no-js html-{{ page.title }}" lang="{{ request.locale.iso_code }}" style="--announcement-height: 1px;">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% if template contains 'page.sign-up-win-english'
+      or template contains 'page.sign-up-win-french'
+      or template contains 'page.sign-up-win-italian'
+      or template contains 'page.sign-up-win-with-coupan-code'
+      or template contains 'page.page.subscribe-and-win-shipping'
+    %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+    {% render 'meta-description' %}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png">
+    {%- endif -%}
+
+    {%- capture seo_title -%}
+      {%- if request.page_type == 'search' and search.performed == true -%}
+        {{ 'search.heading' | t: count: search.results_count }}:
+        {{ 'search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+      {%- else -%}
+        {{ page_title }}
+      {%- endif -%}
+      {%- if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' -%}
+        &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif -%}
+      {%- if current_page != 1 -%}
+        &ndash; {{ 'general.meta.page' | t: page: current_page }}
+      {%- endif -%}
+      {%- assign escaped_page_title = page_title | escape -%}
+      {%- unless escaped_page_title contains shop.name -%}
+        &ndash; {{ shop.name }}
+      {%- endunless -%}
+    {%- endcapture -%}
+    <title>
+      {% if template.name contains 'collection' %}
+        Fencing Collections - Azza Fencing
+      {% elsif template.name contains 'collection' and collection.url contains 'all' %}
+        Fencing Collections - Azza Fencing
+      {% elsif template.name contains 'search' %}
+        Search - Azza Fencing
+      {% else %}
+        {{ page_title }}
+        {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+        {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {% endif %}
+    </title>
+
+    {% render 'social-meta-tags' %}
+
+    {% render 'theme-setup' %}
+    {% render 'theme-setting-vars' %}
+    {%- render 'theme-globals' -%}
+
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ request.page_type | handle }}">
+          {{ content_for_layout }}
+        </body>
+      

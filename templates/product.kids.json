@@ -1,0 +1,644 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fil_ariane_ms_dPrjKn": {
+      "type": "fil-ariane-ms",
+      "name": "Fil d'ariane Allstar",
+      "settings": {
+        "color": "#000000",
+        "color_bg": "#FFFFFF"
+      }
+    },
+    "main": {
+      "type": "main-product--default",
+      "blocks": {
+        "review_count_4Y6QXU": {
+          "type": "review-count",
+          "settings": {
+            "enable_review_badge": true
+          }
+        },
+        "product_header": {
+          "type": "product_header",
+          "settings": {
+            "show_divider": false,
+            "show_vendor": false,
+            "show_sku": false,
+            "show_discount": false,
+            "discount_format": "percent_off",
+            "show_product_rating": true,
+            "show_sale_badge": false,
+            "show_custom_badges": false
+          }
+        },
+        "icon_with_text_BDDYM8": {
+          "type": "icon-with-text",
+          "disabled": true,
+          "settings": {
+            "icon_1": "shopify://shop_images/Frame_ship.png",
+            "title_1": "Free Shipping",
+            "icon_2": "shopify://shop_images/Frame_check.png",
+            "title_2": "Express Shipping",
+            "icon_3": "shopify://shop_images/Frame_check.png",
+            "title_3": "Super Quality"
+          }
+        },
+        "swatches_custom_GLYrRK": {
+          "type": "swatches-custom",
+          "settings": {
+            "enable_swatch": true,
+            "title": "Select Model"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_popup_option": "Size, Taille, TAILLE",
+            "variant_popup_icon": "none",
+            "variant_popup_text": "See Size Chart",
+            "variant_popup_page": "kids-size-chart",
+            "swatch_size": "medium",
+            "chip_layout": "natural"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "text_font_class": "fs-body-100",
+            "column_placement": "right",
+            "display_as_collapsible_row": false,
+            "expand_by_default": true
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+            "show_labels": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "enable_sticky_atc_bar_desktop": false,
+            "enable_sticky_atc_bar_mobile": false,
+            "divider_width": "none"
+          }
+        },
+        "product_callouts_rVNqfN": {
+          "type": "product_callouts",
+          "settings": {
+            "title": "",
+            "title_tag": "h4",
+            "add_box": false,
+            "add_dividers": false,
+            "icon_1": "package-closed",
+            "custom_icon_image_1": "shopify://shop_images/trophy_2_1.png",
+            "svg_icon_1": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_748_30949)\">\n<path d=\"M21.8652 2.31441C21.534 1.92497 21.0511 1.70171 20.5402 1.70171H18.8633V1.17717C18.8633 0.528095 18.3352 0 17.6861 0H6.31461C5.66549 0 5.13749 0.528095 5.13749 1.17713V1.70166H3.46044C2.94954 1.70166 2.46654 1.92497 2.13542 2.31436C1.80767 2.69972 1.66601 3.20588 1.74687 3.70299C2.1875 6.41237 3.89258 8.80595 6.3125 10.1189C6.53361 10.6505 6.78402 11.154 7.06288 11.6231C7.9536 13.122 9.06093 14.1578 10.2798 14.6588C10.4033 15.9077 9.57225 17.0909 8.32068 17.3728C8.31801 17.3735 8.31613 17.3744 8.31351 17.375C8.06924 17.4334 7.88741 17.6525 7.88741 17.9147V20.4629H6.85682C5.93797 20.4629 5.19046 21.2105 5.19046 22.1293V23.4445C5.19046 23.7513 5.43913 24 5.74592 24H18.3078C18.6146 24 18.8633 23.7513 18.8633 23.4445V22.1293C18.8633 21.2105 18.1158 20.4629 17.1969 20.4629H16.1663V17.9147C16.1663 17.6521 15.9838 17.4326 15.7389 17.3747C15.7366 17.3742 15.7343 17.3734 15.7321 17.3728C14.471 17.089 13.6384 15.8939 13.7749 14.6356C14.9725 14.1266 16.0604 13.0999 16.938 11.6232C17.2169 11.1541 17.4672 10.6505 17.6884 10.1188C20.1082 8.80581 21.8132 6.41228 22.2538 3.70299C22.3346 3.20588 22.193 2.69977 21.8652 2.31441ZM2.84337 3.52463C2.8145 3.34712 2.86358 3.17288 2.98161 3.03404C3.10137 2.89322 3.27584 2.81251 3.46039 2.81251H5.13744V3.83448C5.13744 5.43695 5.34196 6.98917 5.72957 8.40869C4.20631 7.20498 3.15753 5.4564 2.84337 3.52463ZM17.1969 21.5739C17.5032 21.5739 17.7524 21.8231 17.7524 22.1294V22.8892H6.30135V22.1294C6.30135 21.8231 6.55054 21.5739 6.85682 21.5739H17.1969ZM15.0553 18.4702V20.463H8.99845V18.4702H15.0553ZM10.4552 17.3593C10.5925 17.2082 10.718 17.0443 10.8303 16.869C11.2005 16.2906 11.3947 15.6335 11.4035 14.9624C11.6008 14.9892 11.7999 15.0036 12.0007 15.0036C12.2192 15.0036 12.4357 14.9869 12.65 14.9551C12.6627 15.8569 13.0137 16.7105 13.6039 17.3593H10.4552V17.3593ZM17.7523 3.83452C17.7523 6.57104 17.1239 9.13558 15.9829 11.0556C14.8958 12.8851 13.4815 13.8927 12.0006 13.8927C10.5195 13.8927 9.10509 12.8852 8.01782 11.0557C6.87679 9.13563 6.24838 6.57109 6.24838 3.83462V1.17713C6.24838 1.14056 6.2781 1.11089 6.31457 1.11089H17.686C17.7226 1.11089 17.7523 1.14061 17.7523 1.17713V3.83452ZM21.1573 3.52463C20.8431 5.45626 19.7944 7.2048 18.2712 8.4086C18.6588 6.98908 18.8633 5.43695 18.8633 3.83452V2.81255H20.5402C20.7248 2.81255 20.8992 2.89332 21.019 3.03408C21.137 3.17288 21.1861 3.34712 21.1573 3.52463Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n<path d=\"M15.3723 5.70295C15.3069 5.50195 15.133 5.35542 14.9238 5.32495L13.2477 5.08139L12.4981 3.56254C12.4045 3.37298 12.2114 3.25293 12 3.25293C11.7886 3.25293 11.5955 3.37298 11.5019 3.56254L10.7523 5.08139L9.07617 5.32495C8.86692 5.35532 8.69311 5.5019 8.62777 5.703C8.56247 5.90414 8.61694 6.12483 8.76835 6.27244L9.98124 7.45467L9.69488 9.12404C9.65911 9.33244 9.74475 9.543 9.91585 9.66732C10.0868 9.79158 10.3137 9.80794 10.5008 9.7096L12 8.92149L13.4992 9.7096C13.5804 9.7523 13.6692 9.77335 13.7575 9.77335C13.8727 9.77335 13.9873 9.73758 14.0841 9.66727C14.2552 9.54296 14.3408 9.3324 14.305 9.12399L14.0187 7.45463L15.2316 6.27239C15.3831 6.12483 15.4375 5.90409 15.3723 5.70295ZM13.0343 6.86297C12.9033 6.99056 12.8436 7.17441 12.8745 7.35464L13.0199 8.20261L12.2584 7.80225C12.1776 7.75969 12.0887 7.7385 12 7.7385C11.9112 7.7385 11.8224 7.75978 11.7415 7.80225L10.98 8.20261L11.1254 7.35464C11.1564 7.17445 11.0966 6.99061 10.9657 6.86297L10.3497 6.2625L11.201 6.13875C11.3819 6.1125 11.5383 5.99883 11.6192 5.8349L12 5.06343L12.3807 5.8349C12.4617 5.99883 12.618 6.11245 12.7989 6.13875L13.6503 6.2625L13.0343 6.86297Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_748_30949\">\n<rect width=\"24\" height=\"24\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "text_1": "<p>Made from olympic fencer insights</p>",
+            "icon_2": "paper-airplane",
+            "custom_icon_image_2": "shopify://shop_images/security_1.png",
+            "svg_icon_2": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M21.2191 6.6646C21.2078 6.07063 21.197 5.50952 21.197 4.96668C21.197 4.5414 20.8524 4.19662 20.427 4.19662C17.1337 4.19662 14.6263 3.25017 12.5363 1.21804C12.2373 0.927268 11.7615 0.927371 11.4626 1.21804C9.37277 3.25017 6.86577 4.19662 3.5727 4.19662C3.14743 4.19662 2.80265 4.5414 2.80265 4.96668C2.80265 5.50962 2.79197 6.07094 2.78057 6.66501C2.67502 12.1926 2.53046 19.7629 11.7472 22.9576C11.8289 22.9859 11.9142 23.0001 11.9994 23.0001C12.0846 23.0001 12.1699 22.9859 12.2516 22.9576C21.469 19.7628 21.3247 12.1923 21.2191 6.6646ZM11.9995 21.4128C4.0949 18.5413 4.21442 12.251 4.32048 6.69438C4.32685 6.36089 4.33301 6.03767 4.33732 5.72082C7.42165 5.59063 9.88809 4.65599 11.9995 2.81668C14.1111 4.65599 16.5779 5.59073 19.6625 5.72082C19.6668 6.03757 19.6729 6.36058 19.6793 6.69386C19.7853 12.2507 19.9047 18.5412 11.9995 21.4128Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n<path d=\"M14.6514 9.32511L10.9347 13.0416L9.34869 11.4556C9.04796 11.155 8.56036 11.155 8.25973 11.4556C7.959 11.7564 7.959 12.2439 8.25973 12.5447L10.3902 14.6752C10.5405 14.8255 10.7377 14.9006 10.9347 14.9006C11.1317 14.9006 11.3289 14.8255 11.4792 14.6752L15.7403 10.4142C16.0411 10.1134 16.0411 9.62584 15.7404 9.32521C15.4397 9.02448 14.9521 9.02437 14.6514 9.32511Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n</svg>",
+            "text_2": "<p>Enhanced KPU + Wrapping Rubber for MORE LUNGE PROTECTION</p>",
+            "icon_3": "chat",
+            "custom_icon_image_3": "shopify://shop_images/soles_1.png",
+            "svg_icon_3": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_748_30964)\">\n<path d=\"M6.61733 0.988281C2.97586 0.988281 1 5.14996 1 8.25609C1 9.08416 1.12065 9.90614 1.35859 10.6992L4.27855 20.4323C4.73344 21.949 6.12997 23.0114 7.74487 23.0114C9.74038 23.0114 11.3638 21.388 11.3638 19.3925V5.73483C11.3638 3.11757 9.23458 0.988281 6.61733 0.988281ZM7.74487 21.7159C6.71086 21.7159 5.8165 21.0505 5.51936 20.0601L4.2672 15.8863H10.0684V19.3925C10.0684 20.6736 9.02605 21.7159 7.74487 21.7159ZM10.0684 14.5908H3.87855L2.5994 10.327C1.58638 6.95007 3.4114 2.28376 6.61733 2.28376C8.52021 2.28376 10.0684 3.8319 10.0684 5.73483V14.5908Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M7.47754 6.81787H8.77302V8.11335H7.47754V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M3.59082 6.81787H4.8863V8.11335H3.59082V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M5.53418 4.875H6.82966V6.17048H5.53418V4.875Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M4.23828 9.40869H8.77246V10.7042H4.23828V9.40869Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M4.88672 12H8.77316V13.2955H4.88672V12Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M17.4057 0.988281C14.7885 0.988281 12.6592 3.11757 12.6592 5.73483V19.3925C12.6592 21.388 14.2827 23.0114 16.2782 23.0114C17.8591 23.0114 19.2799 21.9812 19.7445 20.4323L22.6645 10.6992C23.8837 6.63501 21.6982 0.988281 17.4057 0.988281ZM18.5037 20.0601C18.2065 21.0505 17.3122 21.7159 16.2782 21.7159C14.997 21.7159 13.9547 20.6736 13.9547 19.3925V15.8863H19.7558L18.5037 20.0601ZM21.4236 10.327L20.1445 14.5908H13.9547V5.73483C13.9547 3.8319 15.5028 2.28376 17.4057 2.28376C20.64 2.28376 22.4259 6.98583 21.4236 10.327Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.25 6.81787H16.5455V8.11335H15.25V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M19.1367 6.81787H20.4322V8.11335H19.1367V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M17.1943 4.875H18.4898V6.17048H17.1943V4.875Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.25 9.40869H19.7842V10.7042H15.25V9.40869Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.25 12H19.1364V13.2955H15.25V12Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M6.8291 17.8296H8.12458V19.1251H6.8291V17.8296Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.8984 17.8296H17.1939V19.1251H15.8984V17.8296Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_748_30964\">\n<rect width=\"24\" height=\"24\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "text_3": "<p>Directional Grooves for the BEST TRACTION in the sport</p>",
+            "icon_4": "none",
+            "custom_icon_image_4": "shopify://shop_images/smile_1.png",
+            "svg_icon_4": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M16.6484 10.5938C16.217 10.5938 15.8672 10.244 15.8672 9.8125C15.8672 9.59711 15.692 9.42188 15.4766 9.42188C15.2612 9.42188 15.0859 9.59711 15.0859 9.8125C15.0859 10.244 14.7362 10.5938 14.3047 10.5938C13.8732 10.5938 13.5234 10.244 13.5234 9.8125C13.5234 8.73555 14.3996 7.85938 15.4766 7.85938C16.5535 7.85938 17.4297 8.73555 17.4297 9.8125C17.4297 10.244 17.0799 10.5938 16.6484 10.5938ZM10.5156 9.8125C10.5156 8.73555 9.63945 7.85938 8.5625 7.85938C7.48555 7.85938 6.60938 8.73555 6.60938 9.8125C6.60938 10.244 6.95914 10.5938 7.39062 10.5938C7.82211 10.5938 8.17188 10.244 8.17188 9.8125C8.17188 9.59711 8.34711 9.42188 8.5625 9.42188C8.77789 9.42188 8.95312 9.59711 8.95312 9.8125C8.95312 10.244 9.30289 10.5938 9.73438 10.5938C10.1659 10.5938 10.5156 10.244 10.5156 9.8125ZM17.1743 20.5589C17.5433 20.3353 17.6613 19.8549 17.4377 19.4859C17.2142 19.1168 16.7338 18.9989 16.3648 19.2224C15.0525 20.0173 13.5432 20.4375 12 20.4375C7.34754 20.4375 3.5625 16.6525 3.5625 12C3.5625 7.34754 7.34754 3.5625 12 3.5625C16.6525 3.5625 20.4375 7.34754 20.4375 12C20.4375 13.6636 19.9428 15.283 19.0068 16.683C18.767 17.0417 18.8634 17.5269 19.2221 17.7667C19.5808 18.0065 20.066 17.9101 20.3057 17.5514C21.4141 15.8935 22 13.9739 22 12C22 9.32891 20.9598 6.8177 19.0711 4.92891C17.1823 3.0402 14.6711 2 12 2C9.32891 2 6.8177 3.0402 4.92891 4.92891C3.0402 6.8177 2 9.32891 2 12C2 14.6711 3.0402 17.1823 4.92891 19.0711C6.8177 20.9598 9.32891 22 12 22C13.8286 22 15.6179 21.5017 17.1743 20.5589ZM15.3594 13.3672C15.105 13.3672 14.8797 13.4893 14.737 13.6775C14.737 13.6775 13.7207 14.7734 12 14.7734C10.2793 14.7734 9.26297 13.6775 9.26297 13.6775C9.12031 13.4893 8.895 13.3672 8.64062 13.3672C8.20914 13.3672 7.85938 13.717 7.85938 14.1484C7.85938 14.3707 7.95266 14.5709 8.10172 14.7131C8.24301 14.8698 9.62902 16.3359 12 16.3359C14.371 16.3359 15.757 14.8698 15.8983 14.7131C16.0473 14.5709 16.1406 14.3707 16.1406 14.1484C16.1406 13.717 15.7909 13.3672 15.3594 13.3672Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n</svg>",
+            "text_4": "<p>Augmented performance Cushioning for MORE COMFORT</p>",
+            "icon_5": "none",
+            "custom_icon_image_5": "shopify://shop_images/Frame_749d408e-105f-425b-aae3-4601296f34a4.png",
+            "svg_icon_5": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M7.5 12.4286L10.2 15L16.5 9\" stroke=\"#E81F25\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M12 21C16.9705 21 21 16.9705 21 12C21 7.02943 16.9705 3 12 3C7.02943 3 3 7.02943 3 12C3 16.9705 7.02943 21 12 21Z\" stroke=\"#E81F25\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "text_5": "<p>Lightweight for optimum agility </p>",
+            "icon_6": "chat",
+            "svg_icon_6": "",
+            "text_6": "",
+            "display_as_collapsible_row": false,
+            "expand_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "review_count_4Y6QXU",
+        "product_header",
+        "icon_with_text_BDDYM8",
+        "swatches_custom_GLYrRK",
+        "variant_picker",
+        "description",
+        "quantity_selector",
+        "buy_buttons",
+        "product_callouts_rVNqfN"
+      ],
+      "settings": {
+        "enable_sticky_product_details": true,
+        "show_breadcrumbs": false,
+        "show_navigation_buttons": false,
+        "show_featured_media_first": false,
+        "gallery_style": "thumbnails",
+        "gallery_style_mobile": "carousel",
+        "gallery_size": "large",
+        "gallery_overflow": "1",
+        "enable_video_looping": true,
+        "enable_product_lightbox": true,
+        "image_aspect_ratio": "square",
+        "enable_multiple_variant_media": false,
+        "enable_mobile_carousel_looping": true,
+        "show_mobile_carousel_images_full_width": true,
+        "hide_mobile_carousel_dots": false,
+        "enable_gift_card_recipient": false,
+        "enable_animation": true,
+        "inventory_trashold": 10,
+        "prefix_variant": "SELECT",
+        "in_stock_label": "In Stock",
+        "out_stock_label": "Out Of Stock",
+        "low_inventory_text": "Few pieces left",
+        "out_of_stock_popup_label": "Email Me When In Stock",
+        "outofstock_heading": "Size Out of Stock",
+        "outofstock_subheading": "Receive a notification when your size is back in stock."
+      }
+    },
+    "product-tabs": {
+      "type": "product-tabs",
+      "blocks": {
+        "performance_Ufa6at": {
+          "type": "performance",
+          "settings": {
+            "tab_heading": "Performance",
+            "heading": "",
+            "heading_tag": "h3",
+            "title_row_1": "{{ product.metafields.product.heading1.value }}",
+            "text_row_1": "<p>{{ product.metafields.product.textfield1 | metafield_tag }}</p>",
+            "image_row_1": "{{ product.metafields.product.image1.value }}",
+            "title_row_2": "{{ product.metafields.product.heading2.value }}",
+            "text_row_2": "<p>{{ product.metafields.product.textfield2 | metafield_tag }}</p>",
+            "image_row_2": "{{ product.metafields.product.image2.value }}",
+            "title_row_3": "{{ product.metafields.product.heading3.value }}",
+            "text_row_3": "<p>{{ product.metafields.product.textfield3 | metafield_tag }}</p>",
+            "image_row_3": "{{ product.metafields.product.image3.value }}",
+            "title_row_4": "{{ product.metafields.product.heading4.value }}",
+            "text_row_4": "<p>{{ product.metafields.product.textfield4 | metafield_tag }}</p>",
+            "image_row_4": "{{ product.metafields.product.image4.value }}",
+            "title_row_5": "{{ product.metafields.product.heading5.value }}",
+            "text_row_5": "<p>{{ product.metafields.product.textfield5 | metafield_tag }}</p>",
+            "image_row_5": "{{ product.metafields.product.image5.value }}",
+            "title_row_6": "{{ product.metafields.product.heading6.value }}",
+            "text_row_6": "<p>{{ product.metafields.product.textfield6 | metafield_tag }}</p>",
+            "image_row_6": "{{ product.metafields.product.image6.value }}"
+          }
+        },
+        "block-0": {
+          "type": "product_description",
+          "settings": {
+            "tab_heading": "Details",
+            "heading": "",
+            "heading_font_class": "fs-heading-3-base",
+            "heading_tag": "h3",
+            "content_width": "full",
+            "text_max_width": 700,
+            "title_material": "Material Composition:",
+            "svg_column_1": "",
+            "icon_column_1": "shopify://shop_images/icon_recycle.png",
+            "title_column_1": "Recycled Materials",
+            "description_column_1": "<p>80% post production waste leading to efficient and real recycling.</p>",
+            "svg_column_2": "",
+            "icon_column_2": "shopify://shop_images/icon_cardboadrd.png",
+            "title_column_2": "Recycled EVA",
+            "description_column_2": "<p>80% post production waste leading to efficient and real recycling.</p>",
+            "svg_column_3": "",
+            "icon_column_3": "shopify://shop_images/icon_water.png",
+            "title_column_3": "Waterbased PU",
+            "description_column_3": "<p>80% post production waste leading to efficient and real recycling.</p>",
+            "svg_column_4": "",
+            "icon_column_4": "shopify://shop_images/icon_eva.png",
+            "title_column_4": "Recycled Cardboard",
+            "description_column_4": "<p>80% post production waste leading to efficient and real recycling.</p>",
+            "link": "shopify://pages/sustainability",
+            "link_label": "Learn More About Sustainability",
+            "title_video": "Overview",
+            "description_video": "<p>Join us to connect, collaborate, and innovate, making impactful changes and driving progress together.</p>",
+            "video_url": "{{ product.metafields.custom.video_url.value }}",
+            "video_img": "{{ product.metafields.custom.video_poster.value }}"
+          }
+        },
+        "one_column_4gdFJh": {
+          "type": "one_column",
+          "settings": {
+            "tab_heading": "Delivery",
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>The shipping duration typically varies based on the destination.</p><p>For Standard International, it usually takes between 7 and 10 working days</p><p>Orders shipped within the European Union will have their VAT calculated based on the delivery country</p><p>Please note that orders dispatched outside of the EU may be subject to customs clearance charges, for which Azza Fencing cannot be held responsible</p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "content_width": "full",
+            "text_max_width": 700,
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text"
+          }
+        },
+        "one_column_t8YPt9": {
+          "type": "one_column",
+          "settings": {
+            "tab_heading": "Return Policy",
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>You have a 14-day window from the arrival date for returns. Once we receive the order back, we'll promptly process the refund </p><p>Please send returns to our office address located in France</p><p>If you want to exchange, please place a new order once you get your refund</p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "content_width": "custom",
+            "text_max_width": 700,
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text"
+          }
+        },
+        "one_column_LWix4d": {
+          "type": "one_column",
+          "settings": {
+            "tab_heading": "Size Guide",
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>Runs slightly narrow to true size.</p><p>Our sizes are in EU Men , US Men and UK Men Click <a href=\"https://cdn.shopify.com/s/files/1/0647/1915/9535/files/IMG-20240605-WA0002.jpg?v=1717593521\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0647/1915/9535/files/azza_fencing_sizeguide.jpg\">here </a>for detailed size table </p><p>If you have questions please reach out to contact@azzafencing.com</p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "content_width": "custom",
+            "text_max_width": 700,
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text"
+          }
+        },
+        "reviews_dYHtji": {
+          "type": "reviews",
+          "settings": {
+            "tab_heading": "Reviews",
+            "heading": "",
+            "heading_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "performance_Ufa6at",
+        "block-0",
+        "one_column_4gdFJh",
+        "one_column_t8YPt9",
+        "one_column_LWix4d",
+        "reviews_dYHtji"
+      ],
+      "settings": {
+        "tab_alignment": "left",
+        "tab_spacing": 40,
+        "font_choice": "ff-heading",
+        "tab_font_size": "fs-body-150",
+        "background_color": "",
+        "text_color": "#000000",
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "1718446316c1bbaf2b": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "multi-column": {
+      "type": "multi-column",
+      "blocks": {
+        "image_column_NBkXG6": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/fast_800x540_aa418038-d8a8-4a95-9ef1-5f6c4260a139.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Fast",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Enhance your agility with our fencing shoes, meticulously crafted using strong yet lightweight materials. Discover the winning combination of durability, comfort, and lightweight design in our fencing shoes. Embrace the confidence to lunge fearlessly, enjoy unmatched comfort, and unleash your full potential with every step.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_column_ETYxqb": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/light_800x540_b3354af6-2e12-4e05-93c4-3560e0dd35cd.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Lightweight",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Enhance your agility with our fencing shoes, meticulously crafted using strong yet lightweight materials. Discover the winning combination of durability, comfort, and lightweight design in our fencing shoes.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_column_jcLjEr": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/comfortable_800x540_9d57925e-481b-4dfa-bc9a-71afb9179df0.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Comfortable",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Experience sublime comfort with our fencing shoes' cushioning lining and perfect foot lock. The carefully designed interior provides a plush feel, while the foot lock feature ensures a secure and stable fit, enhancing your overall comfort during intense bouts.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_column_33AbXg": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/supportive_800x540_f3ec393b-e8f5-4a8f-aa7c-d957e10682fc.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Supportive",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Indulge in the ultimate comfort and dynamic response of our fencing shoes' high-density midsole. With its perfect blend of cushioning and rebound, it absorbs impact and propels you forward, optimizing your performance on the strip.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_NBkXG6",
+        "image_column_ETYxqb",
+        "image_column_jcLjEr",
+        "image_column_33AbXg"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Perfomance",
+        "heading_tag": "h2",
+        "subheading": "",
+        "heading_font_class": "fs-heading-2-base",
+        "heading_alignment": "center",
+        "content_vertical_alignment": "top",
+        "content_background_padding": "small",
+        "columns": "4",
+        "column_spacing": 4,
+        "row_spacing": 8,
+        "column_alignment": "left",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "column_spacing_mobile": 4,
+        "row_spacing_mobile": 8,
+        "column_alignment_mobile": "left",
+        "background_behind_columns": true,
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "button_label": "Learn More",
+        "button_link": "shopify://pages/performance"
+      }
+    },
+    "2b10a1f7-8343-4b14-a60f-28496c3946cd": {
+      "type": "product_science",
+      "blocks": {
+        "template--16716003377391__2b10a1f7-8343-4b14-a60f-28496c3946cd-1668668128b6877259-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Recycled PET",
+            "textarea": "<p>Requires less energy than virgin polyester and does not require the production of new plastics.</p>",
+            "image_science": "shopify://shop_images/pet.png"
+          }
+        },
+        "82326d43-29fe-4974-a3cb-e0c119182977": {
+          "type": "heading",
+          "settings": {
+            "heading": "Recycled EVA",
+            "textarea": "<p>80% post production waste leading to efficient and real recycling.</p>",
+            "image_science": "shopify://shop_images/image_8.png"
+          }
+        },
+        "79d2ed94-ec82-48ba-b696-a54bc3aeb18a": {
+          "type": "heading",
+          "settings": {
+            "heading": "Waterbased PU",
+            "textarea": "<p>Composed of water-based polyurethane resin, which is pollution-free, non-toxic and does not contain harmful chemicals.</p>",
+            "image_science": "shopify://shop_images/pu.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--16716003377391__2b10a1f7-8343-4b14-a60f-28496c3946cd-1668668128b6877259-0",
+        "82326d43-29fe-4974-a3cb-e0c119182977",
+        "79d2ed94-ec82-48ba-b696-a54bc3aeb18a"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_1": "Science",
+        "desktop_image": "shopify://shop_images/azza_sience_sneaker.png",
+        "tab_image": "shopify://shop_images/Rectangle_1510_3.png",
+        "mobile_image": "shopify://shop_images/Rectangle_1510_2.png",
+        "button_label": "Read More",
+        "button_link": "shopify://pages/sustainability"
+      }
+    },
+    "featured_collection_slider_bF77Lk": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "collection_MCfMND": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": false,
+            "collection": "azza-fencing-15-14",
+            "collection_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_MCfMND"
+      ],
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "maximum_products": 8,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "collection_faq_kEqEXp": {
+      "type": "collection-faq",
+      "blocks": {
+        "collection_faq_zPWRdq": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Are fencing shoes necessary for fencing?",
+            "faq_ans": "<p>Fencing shoes are designed with features that cater to the sport's unique demands. They provide<br/>optimal traction on the fencing strip, lightweight construction for swift movements, and support for<br/>quick changes in direction. These features can offer fencers an advantage in terms of agility,<br/>stability, and reducing the risk of certain injuries. Investing in a pair of Azza Fencing shoes could be<br/>beneficial in optimizing your performance and preventing injuries.</p><p>Using footwear not intended for a specific sport can increase the risk of injuries. Inappropriate<br/>shoes may not provide the necessary support and stability, potentially leading to ankle sprains,<br/>knee injuries, back pain or other discomfort.</p>"
+          }
+        },
+        "collection_faq_rCFQem": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Have you tried fencing shoes during a game?",
+            "faq_ans": "<p>Our founder Azza Besbes is a former professional fencer. She fenced on professional circuit for 15+<br/>years and had used 50+ different pairs including specific fencing shoes but also regular athletic<br/>footwear. Azza confirms that specific fencing shoes are necessary to maintain good grip on the<br/>track and ensure stability while changing direction.</p><p>Using fencing footwear during training or bouts is necessary to feel confident on the strip and<br/>execute movements correctly and stress free. The most import for beginner or professional fencers<br/>is to choose the right fencing shoes in which they feel comfortable and balanced.</p>"
+          }
+        },
+        "collection_faq_AMyziU": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Are fencing shoes different from other shoes? What is special about them?",
+            "faq_ans": "<p>Azza Fencing’s founder teamed up with shoes expert and professional fencers to design the fencing<br/>shoes that fit fencers needs in term of security, performance, lightweight and agility.</p><p>Our fencing shoes offer to fencers’ specific requirements proper to their sport:</p><p>- <strong>Sole design and grip:</strong> The outsole design includes engineered grooves providing optimal<br/>traction on the fencing strip while allowing for quick and precise footwork.<br/>- <strong>Ankle support:</strong> The heel construction ensures stability and agility in the same time prioritizing<br/>extensive support to secure ankle and Achille’s tendon from brutal direction change and<br/>sudden braking.<br/>- <strong>Lightweight and flexibility:</strong> Fencing shoes are designed to be lightweight and flexible to<br/>support quick and agile footwork, allowing fencers to execute lunges, retreats, and quick<br/>direction changes efficiently.<br/>- <strong>Breathability:</strong> Azza Fencing shoes prioritize breathability to keep the feet cool during intense<br/>matches and training sessions and avoid slipping in the shoes when feet are wet.<br/>- <strong>Cushioning and impact absorption:</strong> The midsole is shock absorbing thanks to a highly<br/>cushioned sustainable material made of recycled EVA. The sole absorbs the impact of jumps,<br/>repetitive lunges, and sudden stops.</p>"
+          }
+        },
+        "collection_faq_CzRLRG": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Can you play badminton or squash in fencing shoes?",
+            "faq_ans": "<p>We think shoes are engineered to provide the right combination of traction, support, cushioning,<br/>and durability for the movements and demands of each sport. But we can tell that fencing has<br/>common features with badminton and squash with lateral footwork, high jumps and lunges.</p><p>Just as fencing shoes, badminton footwear is lightweight and flexible, emphasizing maneuverability<br/>to aid in swift court coverage and dynamic movements. They also provide good ankle support to<br/>prevent injuries during the frequent lateral movements and jumps required in the sport. The sole<br/>pattern is crafted to provide grip and enable rapid lateral movements on badminton court’s<br/>wooden or synthetic surface.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collection_faq_zPWRdq",
+        "collection_faq_rCFQem",
+        "collection_faq_AMyziU",
+        "collection_faq_CzRLRG"
+      ],
+      "settings": {
+        "faq_title": "FAQ",
+        "faq_title_details": "We love our Fencing culture, but we know it can be confusing at times. Please look through our Frequently asked questions and let us know if you need any other Fencing information. We are happy to help.",
+        "btn_title": "Contact Us",
+        "btn_url": "shopify://pages/contact"
+      }
+    },
+    "1718166109d801a793": {
+      "type": "apps",
+      "custom_css": [
+        "h2 {font-family: Poppins; font-size: 26px; font-weight: 600; line-height: 36px;}"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "d71df2af-ba99-428a-9772-57ebe99ef94d": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-0": {
+          "type": "text_content",
+          "settings": {
+            "width": "800",
+            "title": "Get our latest news and offers!",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base",
+            "text": "<p>Join our email list and be the first to know about new limited edition products, material innovations, and get discount.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-1": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "Sign up",
+            "footer_text": "<p>You can unsubscribe at any time. See our <a href='/pages/privacy-policy'><strong>Privacy Policy</strong></a> and <a href='/pages/terms-and-conditions'><strong>Terms</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-0",
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "spacing_mode": "between",
+        "alignment": "left",
+        "background_image": "shopify://shop_images/round_shape.png",
+        "background_image_mobile": "shopify://shop_images/round_shape_mobile.png",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "background_color": "#f5f5f5",
+        "text_color": "#000000",
+        "input_color": "#000000",
+        "input_background": "#ffffff",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "fil_ariane_ms_dPrjKn",
+    "main",
+    "product-tabs",
+    "1718446316c1bbaf2b",
+    "multi-column",
+    "2b10a1f7-8343-4b14-a60f-28496c3946cd",
+    "featured_collection_slider_bF77Lk",
+    "collection_faq_kEqEXp",
+    "1718166109d801a793",
+    "d71df2af-ba99-428a-9772-57ebe99ef94d"
+  ]
+}

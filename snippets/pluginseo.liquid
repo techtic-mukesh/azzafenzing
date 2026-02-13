@@ -1,0 +1,29 @@
+{% comment %}
+  version: 1.8.1
+{% endcomment %}
+
+{%- comment -%}
+  ----------------------------------------------------------------------------------
+   Plug in SEO Plus for Shopify
+
+   Copyright (c) 2024 Plug in Useful
+
+   This file is subject to the license at https://www.pluginseo.com/eula
+  ----------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- assign licensedTo = 'eaf86ba2-1ec2-4d38-8568-c399e7fbf2e0' -%}
+{%- assign apiUrl = 'https://api.pluginseo.com' -%}
+{%- assign appProxyPath = '/apps/pseo-app-proxy-prd' -%}
+{%- assign pluginseoVerbose = false -%}
+{%- assign pageUnderscoreTitle = 'page' | append: '_' | append: 'title' -%}
+{%- assign pageUnderscoreDescription = 'page' | append: '_' | append: 'description' -%}
+{%- assign rootTemplate = template | split: '.' | first -%}
+
+{%- include 'pluginseo-langify' -%}
+{%- include 'pluginseo-page-title' -%}
+{%- include 'pluginseo-meta-description' -%}
+{%- include 'pluginseo-structured-data' -%}
+{%- include 'pluginseo-not-found' -%}
+
+<meta name="pluginseo" content="Plug in SEO Plus" data-ptf="{{- pTF -}}" data-mdf="{{- mDF -}}" />

@@ -1,0 +1,1013 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fil_ariane_ms_ni86Vd": {
+      "type": "fil-ariane-ms",
+      "name": "Fil d'ariane Allstar",
+      "settings": {
+        "color": "#0c0c0d",
+        "color_bg": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-product--default",
+      "blocks": {
+        "review_count_4Y6QXU": {
+          "type": "review-count",
+          "disabled": true,
+          "settings": {
+            "enable_review_badge": true
+          }
+        },
+        "product_header": {
+          "type": "product_header",
+          "settings": {
+            "show_divider": false,
+            "show_vendor": false,
+            "show_sku": false,
+            "show_discount": false,
+            "discount_format": "percent_off",
+            "show_product_rating": true,
+            "show_sale_badge": false,
+            "show_custom_badges": false
+          }
+        },
+        "divider_czYCaY": {
+          "type": "divider",
+          "settings": {
+            "divider_color": "#e0e0e0",
+            "divider_margin_top": 28,
+            "divider_margin_botton": 28,
+            "hide_on_mobile": false
+          }
+        },
+        "swatches_custom_GLYrRK": {
+          "type": "swatches-custom",
+          "settings": {
+            "enable_swatch": false,
+            "title": "Select Model"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_popup_option": "Size, Taille, TAILLE",
+            "variant_popup_icon": "none",
+            "variant_popup_text": "See Size Chart",
+            "variant_popup_page": "size-chart",
+            "swatch_size": "medium",
+            "chip_layout": "natural"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "text_font_class": "fs-body-100",
+            "column_placement": "right",
+            "display_as_collapsible_row": false,
+            "expand_by_default": true
+          }
+        },
+        "product_callouts_Vr4ErH": {
+          "type": "product_callouts",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_tag": "h4",
+            "add_box": false,
+            "add_dividers": false,
+            "icon_1": "bank",
+            "custom_icon_image_1": "shopify://shop_images/1376_53d72a3e-ef60-4709-b918-fdb9f61eaba3.jpg",
+            "svg_icon_1": "",
+            "text_1": "<p><strong>Few pieces left</strong></p>",
+            "icon_2": "paper-airplane",
+            "svg_icon_2": "",
+            "text_2": "",
+            "icon_3": "chat",
+            "svg_icon_3": "",
+            "text_3": "",
+            "icon_4": "none",
+            "svg_icon_4": "",
+            "text_4": "",
+            "icon_5": "none",
+            "svg_icon_5": "",
+            "text_5": "",
+            "icon_6": "chat",
+            "svg_icon_6": "",
+            "text_6": "",
+            "display_as_collapsible_row": false,
+            "expand_by_default": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+            "show_labels": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "enable_sticky_atc_bar_desktop": false,
+            "enable_sticky_atc_bar_mobile": false,
+            "divider_width": "none"
+          }
+        },
+        "featured_products_X7TVFk": {
+          "type": "featured_products",
+          "settings": {
+            "heading": "You May Also Like",
+            "heading_tag": "h3",
+            "column_placement": "right",
+            "max_products": 10,
+            "product_source": "custom-product-list",
+            "product_list": [
+              "softshell-jacket-white",
+              "15-14-falcon-fencing-shoes",
+              "azza-5-4-rookie-fencing-shoes",
+              "azza-15-14-gold-fencing-shoes",
+              "light-t-shirt-pattern-black-white",
+              "15-14-tiger-fencing-shoes",
+              "t-shirt-pattern-olympic-white-copy",
+              "azza-15-14-wave-fencing-shoes",
+              "azza-15-14-blue-fencing-shoes",
+              "t-shirt-pattern-olympic-white"
+            ],
+            "enable_swiper_mobile": true,
+            "display_as_collapsible_row": false,
+            "expand_by_default": true
+          }
+        },
+        "accordion_xmQnm7": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": true,
+            "column_placement": "right",
+            "heading": "Product Details",
+            "heading_tag": "h3",
+            "content": "{{ product.description }}",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion_VFcVgJ": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Shipping & Delivery",
+            "heading_tag": "h3",
+            "content": "<p>The shipping duration typically varies based on the destination.<br/><br/>For Standard International, it usually takes between 7 and 10 working days<br/><br/>Orders shipped within the European Union will have their VAT calculated based on the delivery country<br/><br/>Please note that orders dispatched outside of the EU may be subject to customs clearance charges, for which Azza Fencing cannot be held responsible</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion_Gmnz6V": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Size Guide",
+            "heading_tag": "h3",
+            "content": "<p>Runs slightly narrow to true size.<br/><br/>Our sizes are in EU Men , US Men and UK Men Click <a href=\"https://cdn.shopify.com/s/files/1/0647/1915/9535/files/New_Size_Chart.png?v=1723279820\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0647/1915/9535/files/New_Size_Chart.png?v=1723279820\">here </a>for detailed size table<br/><br/>If you have questions please reach out to contact@azzafencing.com</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion_7cUjgy": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "right",
+            "heading": "Return Policy",
+            "heading_tag": "h3",
+            "content": "<p>You have a 14-day window from the arrival date for returns. Once we receive the order back, we'll promptly process the refund<br/><br/>Please send returns to our office address located in France<br/><br/>If you want to exchange, please place a new order once you get your refund</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "product_callouts_rVNqfN": {
+          "type": "product_callouts",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_tag": "h4",
+            "add_box": false,
+            "add_dividers": false,
+            "icon_1": "package-closed",
+            "custom_icon_image_1": "shopify://shop_images/trophy_2_1.png",
+            "svg_icon_1": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_748_30949)\">\n<path d=\"M21.8652 2.31441C21.534 1.92497 21.0511 1.70171 20.5402 1.70171H18.8633V1.17717C18.8633 0.528095 18.3352 0 17.6861 0H6.31461C5.66549 0 5.13749 0.528095 5.13749 1.17713V1.70166H3.46044C2.94954 1.70166 2.46654 1.92497 2.13542 2.31436C1.80767 2.69972 1.66601 3.20588 1.74687 3.70299C2.1875 6.41237 3.89258 8.80595 6.3125 10.1189C6.53361 10.6505 6.78402 11.154 7.06288 11.6231C7.9536 13.122 9.06093 14.1578 10.2798 14.6588C10.4033 15.9077 9.57225 17.0909 8.32068 17.3728C8.31801 17.3735 8.31613 17.3744 8.31351 17.375C8.06924 17.4334 7.88741 17.6525 7.88741 17.9147V20.4629H6.85682C5.93797 20.4629 5.19046 21.2105 5.19046 22.1293V23.4445C5.19046 23.7513 5.43913 24 5.74592 24H18.3078C18.6146 24 18.8633 23.7513 18.8633 23.4445V22.1293C18.8633 21.2105 18.1158 20.4629 17.1969 20.4629H16.1663V17.9147C16.1663 17.6521 15.9838 17.4326 15.7389 17.3747C15.7366 17.3742 15.7343 17.3734 15.7321 17.3728C14.471 17.089 13.6384 15.8939 13.7749 14.6356C14.9725 14.1266 16.0604 13.0999 16.938 11.6232C17.2169 11.1541 17.4672 10.6505 17.6884 10.1188C20.1082 8.80581 21.8132 6.41228 22.2538 3.70299C22.3346 3.20588 22.193 2.69977 21.8652 2.31441ZM2.84337 3.52463C2.8145 3.34712 2.86358 3.17288 2.98161 3.03404C3.10137 2.89322 3.27584 2.81251 3.46039 2.81251H5.13744V3.83448C5.13744 5.43695 5.34196 6.98917 5.72957 8.40869C4.20631 7.20498 3.15753 5.4564 2.84337 3.52463ZM17.1969 21.5739C17.5032 21.5739 17.7524 21.8231 17.7524 22.1294V22.8892H6.30135V22.1294C6.30135 21.8231 6.55054 21.5739 6.85682 21.5739H17.1969ZM15.0553 18.4702V20.463H8.99845V18.4702H15.0553ZM10.4552 17.3593C10.5925 17.2082 10.718 17.0443 10.8303 16.869C11.2005 16.2906 11.3947 15.6335 11.4035 14.9624C11.6008 14.9892 11.7999 15.0036 12.0007 15.0036C12.2192 15.0036 12.4357 14.9869 12.65 14.9551C12.6627 15.8569 13.0137 16.7105 13.6039 17.3593H10.4552V17.3593ZM17.7523 3.83452C17.7523 6.57104 17.1239 9.13558 15.9829 11.0556C14.8958 12.8851 13.4815 13.8927 12.0006 13.8927C10.5195 13.8927 9.10509 12.8852 8.01782 11.0557C6.87679 9.13563 6.24838 6.57109 6.24838 3.83462V1.17713C6.24838 1.14056 6.2781 1.11089 6.31457 1.11089H17.686C17.7226 1.11089 17.7523 1.14061 17.7523 1.17713V3.83452ZM21.1573 3.52463C20.8431 5.45626 19.7944 7.2048 18.2712 8.4086C18.6588 6.98908 18.8633 5.43695 18.8633 3.83452V2.81255H20.5402C20.7248 2.81255 20.8992 2.89332 21.019 3.03408C21.137 3.17288 21.1861 3.34712 21.1573 3.52463Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n<path d=\"M15.3723 5.70295C15.3069 5.50195 15.133 5.35542 14.9238 5.32495L13.2477 5.08139L12.4981 3.56254C12.4045 3.37298 12.2114 3.25293 12 3.25293C11.7886 3.25293 11.5955 3.37298 11.5019 3.56254L10.7523 5.08139L9.07617 5.32495C8.86692 5.35532 8.69311 5.5019 8.62777 5.703C8.56247 5.90414 8.61694 6.12483 8.76835 6.27244L9.98124 7.45467L9.69488 9.12404C9.65911 9.33244 9.74475 9.543 9.91585 9.66732C10.0868 9.79158 10.3137 9.80794 10.5008 9.7096L12 8.92149L13.4992 9.7096C13.5804 9.7523 13.6692 9.77335 13.7575 9.77335C13.8727 9.77335 13.9873 9.73758 14.0841 9.66727C14.2552 9.54296 14.3408 9.3324 14.305 9.12399L14.0187 7.45463L15.2316 6.27239C15.3831 6.12483 15.4375 5.90409 15.3723 5.70295ZM13.0343 6.86297C12.9033 6.99056 12.8436 7.17441 12.8745 7.35464L13.0199 8.20261L12.2584 7.80225C12.1776 7.75969 12.0887 7.7385 12 7.7385C11.9112 7.7385 11.8224 7.75978 11.7415 7.80225L10.98 8.20261L11.1254 7.35464C11.1564 7.17445 11.0966 6.99061 10.9657 6.86297L10.3497 6.2625L11.201 6.13875C11.3819 6.1125 11.5383 5.99883 11.6192 5.8349L12 5.06343L12.3807 5.8349C12.4617 5.99883 12.618 6.11245 12.7989 6.13875L13.6503 6.2625L13.0343 6.86297Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_748_30949\">\n<rect width=\"24\" height=\"24\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "text_1": "<p>Made from olympic fencer insights</p>",
+            "icon_2": "paper-airplane",
+            "custom_icon_image_2": "shopify://shop_images/security_1.png",
+            "svg_icon_2": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M21.2191 6.6646C21.2078 6.07063 21.197 5.50952 21.197 4.96668C21.197 4.5414 20.8524 4.19662 20.427 4.19662C17.1337 4.19662 14.6263 3.25017 12.5363 1.21804C12.2373 0.927268 11.7615 0.927371 11.4626 1.21804C9.37277 3.25017 6.86577 4.19662 3.5727 4.19662C3.14743 4.19662 2.80265 4.5414 2.80265 4.96668C2.80265 5.50962 2.79197 6.07094 2.78057 6.66501C2.67502 12.1926 2.53046 19.7629 11.7472 22.9576C11.8289 22.9859 11.9142 23.0001 11.9994 23.0001C12.0846 23.0001 12.1699 22.9859 12.2516 22.9576C21.469 19.7628 21.3247 12.1923 21.2191 6.6646ZM11.9995 21.4128C4.0949 18.5413 4.21442 12.251 4.32048 6.69438C4.32685 6.36089 4.33301 6.03767 4.33732 5.72082C7.42165 5.59063 9.88809 4.65599 11.9995 2.81668C14.1111 4.65599 16.5779 5.59073 19.6625 5.72082C19.6668 6.03757 19.6729 6.36058 19.6793 6.69386C19.7853 12.2507 19.9047 18.5412 11.9995 21.4128Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n<path d=\"M14.6514 9.32511L10.9347 13.0416L9.34869 11.4556C9.04796 11.155 8.56036 11.155 8.25973 11.4556C7.959 11.7564 7.959 12.2439 8.25973 12.5447L10.3902 14.6752C10.5405 14.8255 10.7377 14.9006 10.9347 14.9006C11.1317 14.9006 11.3289 14.8255 11.4792 14.6752L15.7403 10.4142C16.0411 10.1134 16.0411 9.62584 15.7404 9.32521C15.4397 9.02448 14.9521 9.02437 14.6514 9.32511Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n</svg>",
+            "text_2": "<p>Enhanced KPU + Wrapping Rubber for MORE LUNGE PROTECTION</p>",
+            "icon_3": "chat",
+            "custom_icon_image_3": "shopify://shop_images/soles_1.png",
+            "svg_icon_3": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_748_30964)\">\n<path d=\"M6.61733 0.988281C2.97586 0.988281 1 5.14996 1 8.25609C1 9.08416 1.12065 9.90614 1.35859 10.6992L4.27855 20.4323C4.73344 21.949 6.12997 23.0114 7.74487 23.0114C9.74038 23.0114 11.3638 21.388 11.3638 19.3925V5.73483C11.3638 3.11757 9.23458 0.988281 6.61733 0.988281ZM7.74487 21.7159C6.71086 21.7159 5.8165 21.0505 5.51936 20.0601L4.2672 15.8863H10.0684V19.3925C10.0684 20.6736 9.02605 21.7159 7.74487 21.7159ZM10.0684 14.5908H3.87855L2.5994 10.327C1.58638 6.95007 3.4114 2.28376 6.61733 2.28376C8.52021 2.28376 10.0684 3.8319 10.0684 5.73483V14.5908Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M7.47754 6.81787H8.77302V8.11335H7.47754V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M3.59082 6.81787H4.8863V8.11335H3.59082V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M5.53418 4.875H6.82966V6.17048H5.53418V4.875Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M4.23828 9.40869H8.77246V10.7042H4.23828V9.40869Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M4.88672 12H8.77316V13.2955H4.88672V12Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M17.4057 0.988281C14.7885 0.988281 12.6592 3.11757 12.6592 5.73483V19.3925C12.6592 21.388 14.2827 23.0114 16.2782 23.0114C17.8591 23.0114 19.2799 21.9812 19.7445 20.4323L22.6645 10.6992C23.8837 6.63501 21.6982 0.988281 17.4057 0.988281ZM18.5037 20.0601C18.2065 21.0505 17.3122 21.7159 16.2782 21.7159C14.997 21.7159 13.9547 20.6736 13.9547 19.3925V15.8863H19.7558L18.5037 20.0601ZM21.4236 10.327L20.1445 14.5908H13.9547V5.73483C13.9547 3.8319 15.5028 2.28376 17.4057 2.28376C20.64 2.28376 22.4259 6.98583 21.4236 10.327Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.25 6.81787H16.5455V8.11335H15.25V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M19.1367 6.81787H20.4322V8.11335H19.1367V6.81787Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M17.1943 4.875H18.4898V6.17048H17.1943V4.875Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.25 9.40869H19.7842V10.7042H15.25V9.40869Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.25 12H19.1364V13.2955H15.25V12Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M6.8291 17.8296H8.12458V19.1251H6.8291V17.8296Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n<path d=\"M15.8984 17.8296H17.1939V19.1251H15.8984V17.8296Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.3\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_748_30964\">\n<rect width=\"24\" height=\"24\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "text_3": "<p>Directional Grooves for the BEST TRACTION in the sport</p>",
+            "icon_4": "none",
+            "custom_icon_image_4": "shopify://shop_images/smile_1.png",
+            "svg_icon_4": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M16.6484 10.5938C16.217 10.5938 15.8672 10.244 15.8672 9.8125C15.8672 9.59711 15.692 9.42188 15.4766 9.42188C15.2612 9.42188 15.0859 9.59711 15.0859 9.8125C15.0859 10.244 14.7362 10.5938 14.3047 10.5938C13.8732 10.5938 13.5234 10.244 13.5234 9.8125C13.5234 8.73555 14.3996 7.85938 15.4766 7.85938C16.5535 7.85938 17.4297 8.73555 17.4297 9.8125C17.4297 10.244 17.0799 10.5938 16.6484 10.5938ZM10.5156 9.8125C10.5156 8.73555 9.63945 7.85938 8.5625 7.85938C7.48555 7.85938 6.60938 8.73555 6.60938 9.8125C6.60938 10.244 6.95914 10.5938 7.39062 10.5938C7.82211 10.5938 8.17188 10.244 8.17188 9.8125C8.17188 9.59711 8.34711 9.42188 8.5625 9.42188C8.77789 9.42188 8.95312 9.59711 8.95312 9.8125C8.95312 10.244 9.30289 10.5938 9.73438 10.5938C10.1659 10.5938 10.5156 10.244 10.5156 9.8125ZM17.1743 20.5589C17.5433 20.3353 17.6613 19.8549 17.4377 19.4859C17.2142 19.1168 16.7338 18.9989 16.3648 19.2224C15.0525 20.0173 13.5432 20.4375 12 20.4375C7.34754 20.4375 3.5625 16.6525 3.5625 12C3.5625 7.34754 7.34754 3.5625 12 3.5625C16.6525 3.5625 20.4375 7.34754 20.4375 12C20.4375 13.6636 19.9428 15.283 19.0068 16.683C18.767 17.0417 18.8634 17.5269 19.2221 17.7667C19.5808 18.0065 20.066 17.9101 20.3057 17.5514C21.4141 15.8935 22 13.9739 22 12C22 9.32891 20.9598 6.8177 19.0711 4.92891C17.1823 3.0402 14.6711 2 12 2C9.32891 2 6.8177 3.0402 4.92891 4.92891C3.0402 6.8177 2 9.32891 2 12C2 14.6711 3.0402 17.1823 4.92891 19.0711C6.8177 20.9598 9.32891 22 12 22C13.8286 22 15.6179 21.5017 17.1743 20.5589ZM15.3594 13.3672C15.105 13.3672 14.8797 13.4893 14.737 13.6775C14.737 13.6775 13.7207 14.7734 12 14.7734C10.2793 14.7734 9.26297 13.6775 9.26297 13.6775C9.12031 13.4893 8.895 13.3672 8.64062 13.3672C8.20914 13.3672 7.85938 13.717 7.85938 14.1484C7.85938 14.3707 7.95266 14.5709 8.10172 14.7131C8.24301 14.8698 9.62902 16.3359 12 16.3359C14.371 16.3359 15.757 14.8698 15.8983 14.7131C16.0473 14.5709 16.1406 14.3707 16.1406 14.1484C16.1406 13.717 15.7909 13.3672 15.3594 13.3672Z\" fill=\"#E81F25\" stroke=\"#E81F25\" stroke-width=\"0.5\"></path>\n</svg>",
+            "text_4": "<p>Augmented performance Cushioning for MORE COMFORT</p>",
+            "icon_5": "none",
+            "custom_icon_image_5": "shopify://shop_images/Frame_749d408e-105f-425b-aae3-4601296f34a4.png",
+            "svg_icon_5": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M7.5 12.4286L10.2 15L16.5 9\" stroke=\"#E81F25\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M12 21C16.9705 21 21 16.9705 21 12C21 7.02943 16.9705 3 12 3C7.02943 3 3 7.02943 3 12C3 16.9705 7.02943 21 12 21Z\" stroke=\"#E81F25\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "text_5": "<p>A-NYLON plate technology & heel rubber wrap for MORE STABILITY</p>",
+            "icon_6": "chat",
+            "svg_icon_6": "",
+            "text_6": "",
+            "display_as_collapsible_row": false,
+            "expand_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "review_count_4Y6QXU",
+        "product_header",
+        "divider_czYCaY",
+        "swatches_custom_GLYrRK",
+        "variant_picker",
+        "description",
+        "product_callouts_Vr4ErH",
+        "quantity_selector",
+        "buy_buttons",
+        "featured_products_X7TVFk",
+        "accordion_xmQnm7",
+        "accordion_VFcVgJ",
+        "accordion_Gmnz6V",
+        "accordion_7cUjgy",
+        "product_callouts_rVNqfN"
+      ],
+      "settings": {
+        "enable_sticky_product_details": true,
+        "show_breadcrumbs": false,
+        "show_navigation_buttons": false,
+        "show_featured_media_first": false,
+        "gallery_style": "grid",
+        "gallery_style_mobile": "carousel",
+        "gallery_size": "large",
+        "gallery_overflow": "never",
+        "enable_video_looping": true,
+        "enable_product_lightbox": true,
+        "image_aspect_ratio": "square",
+        "enable_multiple_variant_media": false,
+        "enable_mobile_carousel_looping": false,
+        "show_mobile_carousel_images_full_width": false,
+        "hide_mobile_carousel_dots": false,
+        "enable_gift_card_recipient": false,
+        "enable_animation": false,
+        "inventory_trashold": 10,
+        "prefix_variant": "SELECT",
+        "in_stock_label": "In Stock",
+        "out_stock_label": "Out Of Stock",
+        "low_inventory_text": "Few pieces left",
+        "out_of_stock_popup_label": "Email Me When In Stock",
+        "outofstock_heading": "Size Out of Stock",
+        "outofstock_subheading": "Receive a notification when your size is back in stock."
+      }
+    },
+    "compfort_performance_slider_tJj3dz": {
+      "type": "compfort-performance-slider",
+      "blocks": {
+        "slide_MEjkLc": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873245.png",
+            "title": "",
+            "description": "",
+            "show_connecting_line": false
+          }
+        },
+        "slide_eMMLTy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873248.png",
+            "title": "",
+            "description": "",
+            "show_connecting_line": false
+          }
+        },
+        "slide_jmmch6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873250.png",
+            "title": "",
+            "description": "",
+            "show_connecting_line": false
+          }
+        },
+        "slide_K9daUP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873249.png",
+            "title": "",
+            "description": "",
+            "show_connecting_line": false
+          }
+        },
+        "slide_a6BWJF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873245.png",
+            "title": "",
+            "description": "",
+            "show_connecting_line": false
+          }
+        },
+        "slide_QCKteH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873248.png",
+            "title": "",
+            "description": "",
+            "show_connecting_line": false
+          }
+        },
+        "slide_twqxjh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873250.png",
+            "title": "",
+            "description": "",
+            "show_connecting_line": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_MEjkLc",
+        "slide_eMMLTy",
+        "slide_jmmch6",
+        "slide_K9daUP",
+        "slide_a6BWJF",
+        "slide_QCKteH",
+        "slide_twqxjh"
+      ],
+      "name": "Performance Slider",
+      "settings": {
+        "title": "Crafted for Comfort. Built for Performance.",
+        "title_alignment": "center",
+        "show_card": false,
+        "background_color": "#fafafa",
+        "background_overlay": false,
+        "overlay_opacity": 30,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "related_products_Ca67BM": {
+      "type": "related-products",
+      "name": "Related Products",
+      "settings": {
+        "title": "Related Products",
+        "max_products": 6,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "azza_in_everyday_JWLzAj": {
+      "type": "azza-in-everyday",
+      "blocks": {
+        "media_item_mY3nGr": {
+          "type": "media_item",
+          "settings": {
+            "media_type": "video",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/4604cb9fe0be45eb99bbf179ab43204f.mp4"
+          }
+        },
+        "media_item_Ucx8w7": {
+          "type": "media_item",
+          "settings": {
+            "media_type": "video",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/fcde8e547d854679924756c4ba627bb2.mp4"
+          }
+        },
+        "media_item_79WF9R": {
+          "type": "media_item",
+          "settings": {
+            "media_type": "video",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/c01abdc6ed8947c0b3141d976819d682.mp4"
+          }
+        },
+        "media_item_WWVAMA": {
+          "type": "media_item",
+          "settings": {
+            "media_type": "video",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/6ccacf9c347f49359043b085fad805cf.mp4"
+          }
+        },
+        "media_item_hXGwac": {
+          "type": "media_item",
+          "settings": {
+            "media_type": "video",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/293f1d7afba54222999a6c8d6a5311a7.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "media_item_mY3nGr",
+        "media_item_Ucx8w7",
+        "media_item_79WF9R",
+        "media_item_WWVAMA",
+        "media_item_hXGwac"
+      ],
+      "name": "Azza In Everyday",
+      "settings": {
+        "title": "Azza In Everyday",
+        "title_alignment": "center",
+        "background_color": "#000000",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "multicolumn_svg_FVPbFV": {
+      "type": "multicolumn-svg",
+      "blocks": {
+        "column_wbUKDY": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_730_8195)\">\n<path d=\"M25.1426 31.3855L25.0912 31.3852L24.361 28.8245L23.2341 29.1458L23.871 31.3793L22.1115 31.3708L20.205 26.4457L22.23 25.6247L22.9019 27.9811L24.0288 27.6597L23.178 24.676C22.507 22.3228 21.9586 21.8959 20.2861 21.555L17.6875 21.0252L18.9249 18.0714L19.3208 19.1757C19.7106 20.2626 20.5928 20.868 21.5685 20.7185L25.6771 20.0878C26.1068 20.0217 26.4891 19.7807 26.7535 19.409C26.9559 19.1244 27.0742 18.7841 27.0997 18.4311L39.9999 13.6868L39.5954 12.5869L26.8278 17.2826C26.4686 16.6942 25.801 16.3372 25.0725 16.4005L22.7142 16.608L21.0733 12.0945L19.3738 11.3023C19.5587 10.9866 19.6975 10.637 19.7777 10.26L20.1843 8.34966C20.3791 7.43428 20.2041 6.49547 19.6916 5.70579C19.179 4.91628 18.3928 4.3741 17.4774 4.17933C16.5619 3.98465 15.6231 4.15957 14.8336 4.67206C14.044 5.18455 13.5019 5.97087 13.3071 6.88617L12.9005 8.79653C12.7592 9.46081 12.817 10.1217 13.0325 10.7178L11.6583 10.7853L8.76642 8.49114L9.92008 6.77172C10.4594 5.96767 10.3018 4.89901 9.55337 4.28597C9.14111 3.94832 8.61096 3.78793 8.09862 3.8466C7.64535 3.8984 7.2495 4.11652 6.98395 4.46074L6.08467 5.62697L7.0127 6.34258L7.91206 5.17612C8.00222 5.05924 8.13565 5.02159 8.23174 5.01065C8.42799 4.98784 8.64463 5.05612 8.81088 5.19221C9.14681 5.46736 9.11689 5.86532 8.94705 6.11852L7.19067 8.73653L11.2755 11.9772L13.7086 11.8576C14.19 12.4026 14.8432 12.8039 15.6075 12.9665C15.8532 13.0188 16.0983 13.0439 16.34 13.0439C17.1747 13.0439 17.9664 12.7436 18.587 12.2282L20.1381 12.9512L21.9204 17.854L25.1753 17.5676C25.4787 17.5415 25.841 17.7069 25.9197 18.1347C25.9585 18.346 25.9133 18.5683 25.7987 18.7294C25.7426 18.8082 25.6452 18.9068 25.4993 18.9293L21.3907 19.56C20.8025 19.6501 20.5188 19.0445 20.424 18.78L19.0096 14.836L16.3695 21.1383L13.6313 24.1732L10.2941 20.8736L10.8455 14.3753L5.55694 9.70753C5.18328 9.37769 5.10117 8.82161 5.3739 8.46794L6.27334 7.30147L5.34531 6.58586L4.44587 7.75233C3.79299 8.59903 3.94041 9.84378 4.78149 10.5861L9.62805 14.8637L9.11845 20.8701L3.27182 28.17L2.10575 32.6012C0.909908 32.8215 0 33.8562 0 35.0913V36.1654H4.25228C5.35437 36.1654 6.09483 35.4151 6.09483 34.2985V33.2575L8.42041 28.3095L13.7413 25.6338L19.0215 26.6345L21.1233 32.0642V33.1267C21.1233 34.0561 21.693 34.9936 22.9659 34.9936H27.7087V33.9172C27.7088 32.528 26.5576 31.3923 25.1426 31.3855ZM15.4716 5.65478C15.8586 5.40361 16.2986 5.27385 16.7463 5.27385C16.8129 5.27385 16.8797 5.27744 16.9466 5.28322C16.27 5.78415 15.7811 6.52039 15.5995 7.37374L15.5182 7.75584L14.3721 7.51194L14.4534 7.12983C14.583 6.5207 14.9446 5.99681 15.4716 5.65478ZM14.0468 9.0402L14.1281 8.65809L15.2743 8.90199L15.193 9.28402C15.0114 10.1374 15.1581 11.0089 15.5722 11.742C14.4711 11.3614 13.7983 10.2084 14.0468 9.0402ZM17.0662 11.7551C16.4483 11.1966 16.1644 10.3498 16.3392 9.528L16.7458 7.61764C16.9205 6.79632 17.5242 6.13883 18.3153 5.88009C18.4637 6.01524 18.5962 6.17032 18.7087 6.34367C19.0507 6.8707 19.1677 7.49639 19.0381 8.10552L18.6316 10.0159C18.4517 10.8614 17.8338 11.503 17.0662 11.7551ZM4.27368 28.9675L6.98833 28.6015L5.13586 32.5428L3.33018 32.553L4.27368 28.9675ZM4.92297 34.2985C4.92297 34.5968 4.85344 34.9935 4.25228 34.9935H1.17545C1.2274 34.292 1.83403 33.7332 2.5723 33.7291L4.92289 33.7158L4.92297 34.2985ZM7.80066 27.3094L5.17929 27.663L9.73774 21.9714L12.6633 24.8642L7.80066 27.3094ZM14.7889 24.6396L17.0824 22.0977L20.0521 22.703C21.1255 22.9219 21.4269 22.9836 21.9011 24.4935L19.3902 25.5116L14.7889 24.6396ZM22.966 33.8217C22.3647 33.8217 22.2952 33.425 22.2952 33.1266V32.5435L25.1369 32.5573C25.8758 32.5609 26.4827 33.1197 26.5335 33.8218H22.966V33.8217Z\" fill=\"#E81F25\"></path>\n<path d=\"M16.1238 15.6343L16.5761 14.5538L17.6566 15.0062L17.2042 16.0866L16.1238 15.6343Z\" fill=\"#E81F25\"></path>\n<path d=\"M15.2178 17.7952L15.6701 16.7146L16.7506 17.167L16.2982 18.2475L15.2178 17.7952Z\" fill=\"#E81F25\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_730_8195\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title": "Made by Fencers",
+            "text": "<p>Designed by Fencing Professionals.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_P3ADEe": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_730_8204)\">\n<path d=\"M39.9606 28.5717C39.733 26.2296 38.5337 24.0981 36.5839 22.5698C35.8319 21.9803 34.9778 21.4877 34.036 21.0953V10.5355C34.036 10.3122 33.917 10.1059 33.7235 9.99423L17.3305 0.529775C17.1372 0.418135 16.8989 0.418135 16.7055 0.529775L0.312576 9.99423C0.119139 10.1059 7.62939e-05 10.3122 7.62939e-05 10.5355V29.4645C7.62939e-05 29.6877 0.119139 29.8941 0.312576 30.0057L16.7055 39.4702C16.8022 39.5259 16.9102 39.5539 17.018 39.5539C17.1259 39.5539 17.2339 39.526 17.3305 39.4702L33.7235 30.0057C33.852 29.9315 33.9466 29.8151 33.9964 29.6801C34.4228 30.2302 34.7181 30.847 34.8576 31.497C35.373 33.8984 33.8199 36.2331 30.8044 37.5901C30.5148 37.7204 30.369 38.0471 30.4653 38.3497C30.5491 38.613 30.7931 38.7852 31.0604 38.7851C31.1003 38.7851 31.1407 38.7813 31.1812 38.7733C34.0744 38.2056 36.4423 36.8596 38.029 34.8809C39.4927 33.0559 40.1787 30.8152 39.9606 28.5717ZM17.018 19.2783L12.4485 16.6401L27.5915 7.89727L32.161 10.5355L17.018 19.2783ZM7.69453 13.8954L22.8375 5.15259L26.3415 7.17563L11.1985 15.9184L7.69453 13.8954ZM10.5736 17.0009L10.5735 23.0114L7.06961 20.9884L7.06953 14.9779L10.5736 17.0009ZM17.018 1.79274L21.5875 4.43095L6.44453 13.1737L1.87508 10.5355L17.018 1.79274ZM1.25008 11.6181L5.81953 14.2563L5.81961 21.3493C5.81961 21.5726 5.93867 21.7789 6.13211 21.8906L10.886 24.6352C10.9827 24.6909 11.0906 24.7189 11.1985 24.7189C11.3064 24.7189 11.4144 24.691 11.511 24.6352C11.7045 24.5235 11.8235 24.3172 11.8235 24.0939L11.8236 17.7227L16.393 20.3609V37.8465L1.25008 29.1037V11.6181ZM17.643 37.8464V20.3609L32.786 11.6181V20.6491C31.4861 20.257 30.0513 20.0327 28.51 19.9852V17.9638C28.51 17.7211 28.3694 17.5002 28.1495 17.3976C27.9295 17.2949 27.6699 17.3288 27.4838 17.4845L20.2581 23.5322C20.1109 23.6555 20.0285 23.8395 20.0346 24.0315C20.0408 24.2234 20.1348 24.4019 20.2896 24.5154L27.5153 29.8166C27.7053 29.9559 27.9574 29.9767 28.1675 29.8702C28.3776 29.7638 28.5101 29.5482 28.5101 29.3127V27.2114C30.1652 27.3003 31.6191 27.7456 32.7441 28.5125C32.7584 28.5223 32.7719 28.5326 32.7861 28.5424V29.1037L17.643 37.8464ZM34.917 36.0093C35.0714 35.8076 35.2127 35.6003 35.3406 35.3877C36.1269 34.0809 36.3825 32.6448 36.0798 31.2347C35.7619 29.7532 34.8273 28.4196 33.4481 27.4795C31.9751 26.4755 30.0513 25.9447 27.885 25.9447C27.5398 25.9447 27.26 26.2245 27.26 26.5697V28.0788L21.6717 23.9789L27.26 19.3018V20.6005C27.26 20.9456 27.5398 21.2255 27.885 21.2255C35.3442 21.2255 38.3817 25.2478 38.7166 28.6924C38.9618 31.2167 37.8122 34.1575 34.917 36.0093Z\" fill=\"#E81F25\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_730_8204\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title": "14 days free return ",
+            "text": "<p>Free returns for 14 days.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ANibAi": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M6.66667 16.9766H15.3333C15.702 16.9766 16 16.678 16 16.31C16 15.942 15.702 15.6433 15.3333 15.6433H6.66667C6.298 15.6433 6 15.942 6 16.31C6 16.678 6.298 16.9766 6.66667 16.9766Z\" fill=\"#E81F25\"></path>\n<path d=\"M24 19.6433H6.66667C6.298 19.6433 6 19.942 6 20.31C6 20.678 6.298 20.9766 6.66667 20.9766H24C24.3687 20.9766 24.6667 20.678 24.6667 20.31C24.6667 19.942 24.3687 19.6433 24 19.6433Z\" fill=\"#E81F25\"></path>\n<path d=\"M24 23.6433H6.66667C6.298 23.6433 6 23.942 6 24.31C6 24.678 6.298 24.9766 6.66667 24.9766H24C24.3687 24.9766 24.6667 24.678 24.6667 24.31C24.6667 23.942 24.3687 23.6433 24 23.6433Z\" fill=\"#E81F25\"></path>\n<path d=\"M36.048 1.68998L13.2867 1.64331C11.1067 1.64331 9.33333 3.41664 9.33333 5.59664V9.01264L3.95333 9.02398C1.77333 9.02398 0 10.7973 0 12.9773V27.0713C0 29.2513 1.77333 31.024 3.95333 31.024H8V37.6906C8 37.966 8.16933 38.2133 8.42667 38.3126C8.50467 38.3426 8.586 38.3573 8.66667 38.3573C8.85067 38.3573 9.03133 38.2806 9.16 38.1393L15.6293 31.0226L26.7133 30.9773C28.8933 30.9773 30.6667 29.204 30.6667 27.0246V26.9493L34.1733 30.8066C34.302 30.948 34.4827 31.0246 34.6667 31.0246C34.7473 31.0246 34.8287 31.01 34.9067 30.98C35.164 30.8806 35.3333 30.6333 35.3333 30.358V23.6913H36.0467C38.2267 23.6913 40 21.918 40 19.7386V5.64331C40 3.46398 38.2273 1.69064 36.048 1.68998ZM29.3333 27.024C29.3333 28.4686 28.158 29.6433 26.7107 29.6433L15.3307 29.69C15.144 29.6906 14.9653 29.77 14.84 29.908L9.33333 35.966V30.3566C9.33333 29.9886 9.03533 29.69 8.66667 29.69H3.95333C2.50867 29.69 1.33333 28.5146 1.33333 27.0706V12.9766C1.33333 11.532 2.50867 10.3566 3.95467 10.3566L10 10.344C10.0007 10.344 10.0007 10.344 10.0013 10.344L26.7133 10.3093C28.158 10.3093 29.3333 11.4846 29.3333 12.9293V25.2233V27.024ZM38.6667 19.7373C38.6667 21.182 37.4913 22.3566 36.0467 22.3566H34.6667C34.298 22.3566 34 22.6553 34 23.0233V28.6326L30.6667 24.966V12.93C30.6667 10.75 28.8933 8.97664 26.712 8.97664L10.6667 9.00931V5.59598C10.6667 4.15131 11.842 2.97598 13.2853 2.97598L36.046 3.02264C36.0467 3.02264 36.0467 3.02264 36.0473 3.02264C37.492 3.02264 38.6673 4.19798 38.6673 5.64264L38.6667 19.7373Z\" fill=\"#E81F25\"></path>\n</svg>",
+            "title": "Chat available 7 days",
+            "text": "<p>Chat support available daily.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_e8XRAQ": {
+          "type": "column",
+          "settings": {
+            "svg_content": "<svg width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_730_8220)\">\n<path d=\"M10.7594 7.75312L11.7187 9.4C11.8052 9.53604 11.9409 9.6334 12.0975 9.67176C12.2541 9.71011 12.4194 9.68648 12.559 9.60581C12.6985 9.52513 12.8015 9.39366 12.8464 9.23884C12.8914 9.08402 12.8747 8.91784 12.8 8.775L11.5281 6.5875C11.4452 6.44507 11.3093 6.34119 11.1501 6.29846C10.9909 6.25574 10.8213 6.27763 10.6781 6.35937L8.49062 7.60937C8.34683 7.69225 8.24184 7.82886 8.19877 7.98915C8.15569 8.14943 8.17805 8.32026 8.26093 8.46406C8.34381 8.60786 8.48042 8.71284 8.64071 8.75592C8.80099 8.79899 8.97183 8.77663 9.11562 8.69375L10.7594 7.75312Z\" fill=\"#E81F25\"></path>\n<path d=\"M13.575 30.2655C13.658 30.408 13.7939 30.5118 13.953 30.5546C14.1122 30.5973 14.2819 30.5754 14.425 30.4937L16.6125 29.2437C16.7563 29.1608 16.8613 29.0242 16.9044 28.8639C16.9474 28.7036 16.9251 28.5328 16.8422 28.389C16.7593 28.2452 16.6227 28.1402 16.4624 28.0971C16.3021 28.054 16.1313 28.0764 15.9875 28.1593L14.3438 29.0999L13.3844 27.453C13.2979 27.317 13.1622 27.2196 13.0056 27.1813C12.8491 27.1429 12.6837 27.1666 12.5442 27.2472C12.4046 27.3279 12.3016 27.4594 12.2567 27.6142C12.2118 27.769 12.2284 27.9352 12.3031 28.078L13.575 30.2655Z\" fill=\"#E81F25\"></path>\n<path d=\"M5.15938 9.52814L2.97188 10.7781C2.90053 10.8192 2.83799 10.874 2.78788 10.9394C2.73776 11.0047 2.70105 11.0793 2.67985 11.1589C2.65865 11.2384 2.65338 11.3214 2.66435 11.403C2.67532 11.4846 2.7023 11.5632 2.74376 11.6344L4.01563 13.8219C4.10211 13.9579 4.23781 14.0553 4.39439 14.0937C4.55096 14.132 4.71629 14.1084 4.85586 14.0277C4.99542 13.947 5.09842 13.8156 5.14333 13.6607C5.18824 13.5059 5.1716 13.3397 5.09688 13.1969L4.12501 11.5625L5.77813 10.625C5.84933 10.584 5.91175 10.5293 5.96183 10.4642C6.01191 10.399 6.04866 10.3246 6.06999 10.2452C6.09132 10.1659 6.0968 10.0831 6.08614 10.0016C6.07547 9.92012 6.04886 9.84153 6.00782 9.77033C5.96678 9.69913 5.91212 9.63671 5.84696 9.58663C5.7818 9.53655 5.70741 9.4998 5.62805 9.47847C5.54868 9.45715 5.46589 9.45166 5.38441 9.46233C5.30292 9.47299 5.22433 9.4996 5.15313 9.54064L5.15938 9.52814Z\" fill=\"#E81F25\"></path>\n<path d=\"M14.8187 15.5593C14.3293 15.2278 13.7681 15.0176 13.1814 14.9459C12.5946 14.8743 11.9993 14.9433 11.4445 15.1472C10.8897 15.3512 10.3914 15.6843 9.9908 16.1189C9.59019 16.5535 9.29877 17.0773 9.14062 17.6468C9.02352 18.073 8.9925 18.5183 9.04938 18.9567C9.10625 19.3951 9.24988 19.8177 9.47187 20.1999C9.73375 20.6509 10.099 21.0333 10.5375 21.3156C10.6767 21.4036 10.8451 21.4331 11.0059 21.3976C11.1668 21.3622 11.3071 21.2647 11.3965 21.1264C11.4859 20.988 11.517 20.8199 11.4831 20.6587C11.4492 20.4976 11.3531 20.3563 11.2156 20.2656C10.9418 20.0904 10.7136 19.8526 10.55 19.5718C10.4116 19.332 10.3223 19.067 10.2874 18.7922C10.2525 18.5175 10.2727 18.2386 10.3469 17.9718C10.4523 17.5963 10.6451 17.2511 10.9093 16.9643C11.1735 16.6774 11.5018 16.4571 11.8674 16.3212C12.233 16.1853 12.6255 16.1378 13.0129 16.1824C13.4004 16.227 13.7718 16.3626 14.0969 16.5781C14.2003 16.6523 14.2965 16.736 14.3844 16.8281C14.4412 16.8874 14.5092 16.9349 14.5844 16.9679C14.6596 17.001 14.7406 17.0189 14.8227 17.0206C14.9048 17.0223 14.9865 17.0079 15.063 16.9781C15.1395 16.9482 15.2094 16.9036 15.2687 16.8468C15.328 16.79 15.3756 16.722 15.4086 16.6468C15.4416 16.5716 15.4595 16.4906 15.4613 16.4085C15.463 16.3264 15.4486 16.2447 15.4188 16.1682C15.3889 16.0916 15.3443 16.0217 15.2875 15.9624C15.144 15.8139 14.9871 15.6789 14.8187 15.5593Z\" fill=\"#E81F25\"></path>\n<path d=\"M14.8594 6.12503C14.9606 6.12504 15.0603 6.10047 15.1499 6.05344C15.2395 6.0064 15.3164 5.9383 15.3739 5.855C15.4314 5.77169 15.4677 5.67567 15.4799 5.57519C15.4921 5.47471 15.4797 5.37278 15.4437 5.27815L14.5437 2.91565C14.4849 2.76067 14.3669 2.63541 14.2157 2.56742C14.0645 2.49944 13.8925 2.49431 13.7375 2.55315C13.5825 2.612 13.4572 2.73 13.3893 2.8812C13.3213 3.0324 13.3161 3.20442 13.375 3.3594L14.275 5.71878C14.3195 5.8379 14.3993 5.94062 14.5037 6.01321C14.6081 6.0858 14.7322 6.12481 14.8594 6.12503Z\" fill=\"#E81F25\"></path>\n<path d=\"M39.9031 33.8188C39.0438 32.4719 31.4813 20.625 30.4313 19.5969L30.2125 19.3813C29.2219 18.4063 28.1031 17.3 26.5875 17.3H26.5625C25.4906 17.3 23.3 17.4594 22.3406 17.5313L15.8219 0.403172C15.763 0.248928 15.6455 0.124234 15.4951 0.0563164C15.3446 -0.0116012 15.1734 -0.0172254 15.0188 0.0406718L2.90313 4.58755C2.8261 4.61637 2.75552 4.66011 2.69543 4.71626C2.63535 4.77242 2.58693 4.83988 2.55296 4.91478C2.519 4.98968 2.50015 5.07055 2.49749 5.15275C2.49484 5.23495 2.50844 5.31686 2.5375 5.3938L2.95 6.47817C3.00885 6.63316 3.12685 6.75842 3.27805 6.8264C3.42925 6.89438 3.60127 6.89952 3.75625 6.84067C3.91124 6.78183 4.0365 6.66382 4.10448 6.51262C4.17247 6.36142 4.1776 6.18941 4.11875 6.03442L3.92813 5.53755L14.8656 1.42817L22.3656 21.1532H22.3406C22.3299 21.0693 22.3022 20.9885 22.2594 20.9157L12.375 3.90317C12.292 3.76075 12.1562 3.65686 11.997 3.61414C11.8378 3.57141 11.6681 3.5933 11.525 3.67505L0.312504 10.1125C0.241148 10.1536 0.178615 10.2084 0.128499 10.2738C0.0783823 10.3391 0.04167 10.4137 0.0204715 10.4933C-0.000726963 10.5728 -0.00599383 10.6558 0.00497356 10.7374C0.015941 10.819 0.0429264 10.8976 0.0843794 10.9688L12.85 32.8782C12.8686 32.9069 12.8895 32.9341 12.9125 32.9594C12.9252 32.9768 12.9388 32.9934 12.9531 33.0094C12.9757 33.0299 12.9997 33.0487 13.025 33.0657C13.0646 33.1024 13.1131 33.1282 13.1656 33.1407C13.2354 33.1752 13.3129 33.1914 13.3906 33.1875C13.4445 33.1871 13.498 33.1798 13.55 33.1657L13.5969 33.1469C13.6325 33.1355 13.667 33.1208 13.7 33.1032L16.3938 31.5407C16.3021 31.9759 16.3464 32.4288 16.5209 32.838C16.6953 33.2472 16.9913 33.5929 17.3688 33.8282C17.8313 34.1407 21.6313 36.15 22.7219 36.15C23.4 36.15 24.7313 35.575 25.5063 35.2125C26.1674 36.4398 27.092 37.5055 28.2136 38.3332C29.3352 39.1609 30.6262 39.7301 31.9938 40H32.0844C32.1665 40.006 32.2489 39.9957 32.327 39.9698C32.4051 39.9439 32.4773 39.9029 32.5396 39.849C32.6018 39.7952 32.6529 39.7296 32.6898 39.6561C32.7267 39.5825 32.7487 39.5024 32.7547 39.4204C32.7606 39.3383 32.7504 39.2558 32.7245 39.1777C32.6985 39.0996 32.6575 39.0274 32.6037 38.9651C32.5498 38.9029 32.4843 38.8519 32.4107 38.815C32.3372 38.7781 32.2571 38.756 32.175 38.75C30.9839 38.5106 29.8611 38.0088 28.8881 37.2813C27.9152 36.5537 27.1165 35.6186 26.55 34.5438C26.306 34.0505 26.0911 33.5434 25.9063 33.025C25.4625 31.8657 25.0063 30.6688 24.2188 29.9844C23.8031 29.6219 22.275 28.4219 20.5094 27.0219L17.9844 25.0219C17.1156 24.3344 14.475 22.2375 13.9656 21.7375C13.7832 21.5815 13.634 21.3905 13.5266 21.1758C13.4193 20.9611 13.356 20.7271 13.3406 20.4875C13.3801 20.0059 13.604 19.5581 13.9656 19.2375C14.4938 18.7032 15.3156 18.7344 16.4031 19.325L26.875 25C26.9653 25.0488 27.0662 25.0745 27.1688 25.075C27.3092 25.0786 27.4468 25.0348 27.5593 24.9506C27.6718 24.8664 27.7527 24.7467 27.7888 24.6109C27.8249 24.4751 27.8142 24.3311 27.7584 24.2021C27.7026 24.0731 27.605 23.9667 27.4813 23.9L24.0625 22.0563C24.0559 22.0222 24.0465 21.9888 24.0344 21.9563L22.8125 18.75C23.8719 18.675 25.675 18.5563 26.5781 18.55C27.5781 18.55 28.4281 19.3875 29.325 20.2719L29.5469 20.4907C30.2656 21.1938 35.4844 29.2407 38.8375 34.4907C38.8801 34.563 38.9368 34.6261 39.0043 34.676C39.0718 34.726 39.1487 34.7618 39.2303 34.7814C39.312 34.801 39.3967 34.8039 39.4795 34.79C39.5623 34.7761 39.6415 34.7457 39.7123 34.7005C39.7831 34.6554 39.844 34.5964 39.8915 34.5272C39.939 34.4579 39.9721 34.3798 39.9887 34.2975C40.0054 34.2152 40.0053 34.1304 39.9884 34.0482C39.9716 33.9659 39.9383 33.8879 39.8906 33.8188H39.9031ZM24.3906 32.5688C24.5156 32.8813 24.6375 33.1938 24.7531 33.4813C24.8344 33.6938 24.9125 33.8969 24.9938 34.1063C24.0719 34.5344 23.0594 34.9282 22.7219 34.9313C22.1219 34.9157 18.8156 33.3094 18.0531 32.8125C17.8448 32.6896 17.692 32.4909 17.6268 32.2579C17.5616 32.025 17.5889 31.7758 17.7031 31.5625C17.7588 31.417 17.846 31.2855 17.9583 31.1774C18.0707 31.0694 18.2055 30.9875 18.3531 30.9375C18.7719 31.25 19.2594 31.5625 19.7094 31.8375C20.075 32.0657 20.4188 32.2813 20.6094 32.4282C20.9469 32.6938 21.5688 32.7782 22.2219 32.7782C22.9498 32.7711 23.6756 32.6989 24.3906 32.5625V32.5688ZM23.8094 31.4157C23.0625 31.5344 21.6813 31.6313 21.3781 31.4594C21.1344 31.2688 20.7813 31.05 20.3719 30.7907C19.9625 30.5313 19.5188 30.2563 19.1469 29.9813L20.9375 28.95C22.1563 29.9125 23.125 30.6719 23.4125 30.9375C23.5666 31.0772 23.7012 31.2369 23.8125 31.4125L23.8094 31.4157ZM13.075 18.3688C12.7755 18.6432 12.5341 18.9748 12.365 19.3441C12.1959 19.7134 12.1026 20.1128 12.0906 20.5188C12.1077 20.9223 12.2066 21.3181 12.3812 21.6823C12.5557 22.0465 12.8024 22.3715 13.1063 22.6375C13.4906 23.0125 14.7594 24.0532 17.2219 26.0063L19.75 28.0063L19.8875 28.1125L13.6156 31.7157L1.48125 10.8844L11.6094 5.0688L20.3313 20.0407L16.9969 18.2344C14.9594 17.1313 13.75 17.6969 13.075 18.3688Z\" fill=\"#E81F25\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_730_8220\">\n<rect width=\"40\" height=\"40\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "title": "Pay in 3 installments",
+            "text": "<p>Interest-free.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_wbUKDY",
+        "column_P3ADEe",
+        "column_ANibAi",
+        "column_e8XRAQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Our Key Benefits",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-tabs": {
+      "type": "product-tabs",
+      "blocks": {
+        "performance_Ufa6at": {
+          "type": "performance",
+          "settings": {
+            "tab_heading": "Performance",
+            "heading": "",
+            "heading_tag": "h3",
+            "title_row_1": "{{ product.metafields.product.heading1.value }}",
+            "text_row_1": "<p>{{ product.metafields.product.textfield1 | metafield_tag }}</p>",
+            "image_row_1": "{{ product.metafields.product.image1.value }}",
+            "title_row_2": "{{ product.metafields.product.heading2.value }}",
+            "text_row_2": "<p>{{ product.metafields.product.textfield2 | metafield_tag }}</p>",
+            "image_row_2": "{{ product.metafields.product.image2.value }}",
+            "title_row_3": "{{ product.metafields.product.heading3.value }}",
+            "text_row_3": "<p>{{ product.metafields.product.textfield3 | metafield_tag }}</p>",
+            "image_row_3": "{{ product.metafields.product.image3.value }}",
+            "title_row_4": "{{ product.metafields.product.heading4.value }}",
+            "text_row_4": "<p>{{ product.metafields.product.textfield4 | metafield_tag }}</p>",
+            "image_row_4": "{{ product.metafields.product.image4.value }}",
+            "title_row_5": "{{ product.metafields.product.heading5.value }}",
+            "text_row_5": "<p>{{ product.metafields.product.textfield5 | metafield_tag }}</p>",
+            "image_row_5": "{{ product.metafields.product.image5.value }}",
+            "title_row_6": "{{ product.metafields.product.heading6.value }}",
+            "text_row_6": "<p>{{ product.metafields.product.textfield6 | metafield_tag }}</p>",
+            "image_row_6": "{{ product.metafields.product.image6.value }}"
+          }
+        },
+        "block-0": {
+          "type": "product_description",
+          "settings": {
+            "tab_heading": "Details",
+            "heading": "",
+            "heading_font_class": "fs-heading-3-base",
+            "heading_tag": "h3",
+            "content_width": "full",
+            "text_max_width": 700,
+            "title_material": "Material Composition:",
+            "svg_column_1": "<svg width=\"80\" height=\"80\" viewbox=\"0 0 80 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"80\" height=\"80\" fill=\"#F8F9FA\"></rect>\n<path d=\"M27.6827 51.0355L28.0954 51.0646C28.4231 51.0879 28.7097 50.84 28.7329 50.511C28.7561 50.1821 28.5083 49.8966 28.1794 49.8734L26.147 49.7301C25.7715 49.7036 25.4706 50.019 25.5115 50.391C25.5115 50.3911 25.734 52.4131 25.7344 52.4162C25.8201 53.1955 27.0052 53.0482 26.9213 52.2856L26.8815 51.9243C28.0946 52.8694 29.5765 53.3832 31.14 53.3832C32.8168 53.3832 34.4362 52.7776 35.6997 51.678C35.9484 51.4615 35.9746 51.0844 35.7581 50.8356C35.5417 50.5868 35.1646 50.5607 34.9157 50.7772C33.8695 51.6876 32.5286 52.1891 31.1399 52.1891C29.8751 52.189 28.674 51.7838 27.6827 51.0355Z\" fill=\"black\"></path>\n<path d=\"M32.9987 39.7374C32.6806 39.6493 32.3519 39.8357 32.264 40.1534C32.176 40.4712 32.3621 40.8003 32.68 40.8882C35.1615 41.5755 36.8947 43.8562 36.8947 46.4345C36.8947 46.7517 36.8682 47.0656 36.8175 47.3746L36.6798 46.9894C36.5688 46.6789 36.2272 46.5173 35.9167 46.6281C35.6062 46.7391 35.4444 47.0807 35.5554 47.3912C35.5554 47.3912 36.2394 49.3058 36.2409 49.3098C36.3685 49.667 36.7809 49.8108 37.1014 49.6262L38.8664 48.6082C39.152 48.4435 39.25 48.0784 39.0853 47.7927C38.9205 47.507 38.5554 47.409 38.2698 47.5738L37.9628 47.7509C38.0456 47.3194 38.0889 46.8796 38.0889 46.4346C38.0887 43.3213 35.9956 40.5674 32.9987 39.7374Z\" fill=\"black\"></path>\n<path d=\"M25.7371 42.0647C24.7404 43.2957 24.1914 44.8477 24.1914 46.4345C24.1914 47.0714 24.2777 47.7026 24.4478 48.3105C24.5217 48.5742 24.7614 48.7468 25.0225 48.7468C25.4069 48.7468 25.7039 48.3681 25.5978 47.9887C25.4568 47.4855 25.3855 46.9626 25.3855 46.4345C25.3855 45.1203 25.84 43.8353 26.6651 42.8162C27.3098 42.0201 28.1586 41.4109 29.1064 41.0513C29.1064 41.0513 28.8962 41.379 28.8955 41.3801C28.664 41.741 28.9577 42.2996 29.3976 42.2996C29.5941 42.2996 29.7867 42.2025 29.9007 42.0248L31.0006 40.3098C31.1935 40.0089 31.0566 39.5716 30.7252 39.4353C30.7191 39.4328 28.841 38.6602 28.841 38.6602C28.1151 38.3614 27.6924 39.4789 28.3866 39.7645C28.387 39.7646 28.7441 39.9115 28.7441 39.9115C27.5751 40.3425 26.5285 41.0874 25.7371 42.0647Z\" fill=\"black\"></path>\n<path d=\"M59.0572 42.8892L59.0571 37.6255C59.057 36.7538 58.8382 35.8877 58.4242 35.1209L56.5439 31.6371C56.2835 31.1544 56.1458 30.6095 56.1458 30.0613V28.9264C56.7531 28.8828 57.2342 28.376 57.2342 27.7577V25.2948C57.2342 24.6479 56.708 24.1217 56.0612 24.1217H51.9862C51.6564 24.1217 51.3891 24.3891 51.3891 24.7188C51.3891 25.0485 51.6564 25.3158 51.9862 25.3158H56.0401V27.7366H47.7175V25.3158H49.2255C49.5553 25.3158 49.8225 25.0485 49.8225 24.7188C49.8225 24.3891 49.5553 24.1217 49.2255 24.1217H47.6964C47.0496 24.1217 46.5235 24.6479 46.5235 25.2948V27.7577C46.5235 28.377 47.0061 28.8844 47.6149 28.9266L47.6132 30.0636C47.6124 30.6101 47.4748 31.1533 47.2152 31.6344L46.9748 32.0796C46.7678 31.7629 46.5291 31.4673 46.2583 31.1964L43.5616 28.4997C43.3494 28.2876 43.2326 28.0056 43.2326 27.7057V25.2823C43.8585 25.1441 44.3284 24.5857 44.3284 23.9189V21.0124C44.3284 20.2421 43.7017 19.6155 42.9313 19.6155H35.555C34.7846 19.6155 34.158 20.2421 34.158 21.0124V23.9189C34.158 24.5857 34.6279 25.144 35.2538 25.2823V27.7057C35.2538 28.0057 35.137 28.2877 34.9248 28.4997L32.2283 31.1964C31.1857 32.2389 30.6115 33.625 30.6115 35.0994V36.1867C28.0181 36.3335 25.619 37.4345 23.8033 39.3255C23.5749 39.5633 23.5826 39.9413 23.8205 40.1696C24.0583 40.3981 24.4362 40.3902 24.6646 40.1525C26.3917 38.3539 28.7158 37.3632 31.2085 37.3632C36.2103 37.3632 40.2796 41.4325 40.2796 46.4343C40.2796 51.4362 36.2103 55.5055 31.2085 55.5055C26.2067 55.5055 22.1375 51.4362 22.1375 46.4344C22.1375 44.9736 22.4927 43.5221 23.1648 42.237C23.3176 41.9448 23.2046 41.584 22.9124 41.4312C22.6204 41.2784 22.2595 41.3914 22.1066 41.6835C21.3455 43.1387 20.9434 44.7815 20.9434 46.4343C20.9434 51.8941 25.2281 56.3714 30.6115 56.6817V58.3568C30.6115 59.4749 31.5211 60.3845 32.6392 60.3845H45.8471C46.0609 60.3845 46.2703 60.3495 46.4718 60.2842C46.6923 60.3491 46.9253 60.3845 47.1666 60.3845H56.5908C57.9508 60.3845 59.0571 59.2781 59.0571 57.9183V53.0411C59.0571 52.3858 58.8375 51.7384 58.4389 51.2181L58.0623 50.7265C58.6558 50.3878 59.0571 49.7493 59.0571 49.0183V45.3905C59.0571 44.8939 58.8717 44.4401 58.5669 44.0937C58.87 43.7821 59.0572 43.3573 59.0572 42.8892ZM35.3521 21.0124C35.3521 20.9006 35.4431 20.8096 35.555 20.8096H42.9313C43.0432 20.8096 43.1342 20.9006 43.1342 21.0124V23.9189C43.1342 24.0307 43.0432 24.1217 42.9313 24.1217H35.555C35.4431 24.1217 35.3521 24.0307 35.3521 23.9189V21.0124ZM45.1905 44.0939C44.8858 44.4403 44.7004 44.8941 44.7004 45.3906V49.0185C44.7004 49.7494 45.1016 50.388 45.6951 50.7267L45.3185 51.2182C44.9199 51.7383 44.7004 52.3858 44.7004 53.0412V57.9184C44.7004 58.3835 44.8299 58.8189 45.0546 59.1905H32.6392C32.1796 59.1905 31.8056 58.8166 31.8056 58.3569V56.6817C37.1891 56.3714 41.4737 51.8941 41.4737 46.4343C41.4737 40.9746 37.189 36.4973 31.8056 36.187V35.0993C31.8056 33.9439 32.2556 32.8576 33.0726 32.0407L35.7692 29.344C36.2068 28.9064 36.4478 28.3245 36.4478 27.7057V25.3158H42.0385V27.7057C42.0385 28.3246 42.2794 28.9065 42.717 29.3441L45.4137 32.0407C45.7876 32.4147 46.0847 32.848 46.3004 33.3289L45.3331 35.1209C44.9191 35.8879 44.7003 36.754 44.7003 37.6256V42.8891C44.7004 43.3573 44.8875 43.7821 45.1905 44.0939ZM57.8631 57.9184C57.8631 58.6199 57.2923 59.1905 56.5909 59.1905H47.1666C46.4651 59.1905 45.8945 58.6198 45.8945 57.9184V53.0412C45.8945 52.6469 46.0265 52.2574 46.2663 51.9445L46.9609 51.038H56.7966L57.4912 51.9444C57.7311 52.2574 57.8631 52.6469 57.8631 53.0411L57.8631 57.9184ZM57.8631 49.0186C57.8631 49.4441 57.5168 49.7903 57.0913 49.7903H46.6661C46.2406 49.7903 45.8945 49.4441 45.8945 49.0186V45.3907C45.8945 44.9651 46.2407 44.619 46.6661 44.619H57.0913C57.5168 44.619 57.863 44.9652 57.863 45.3907V49.0186H57.8631ZM57.3275 43.4248H46.43C46.1347 43.4248 45.8944 43.1845 45.8944 42.8892V37.6257C45.8944 36.9514 46.0636 36.2814 46.3838 35.6881L48.2658 32.2016C48.619 31.5474 48.8061 30.8087 48.8072 30.0653L48.8089 28.9308H54.9516V30.0615C54.9516 30.807 55.1388 31.548 55.493 32.2044L57.3734 35.6883C57.6936 36.2815 57.8628 36.9514 57.8629 37.6257L57.863 42.8893C57.8631 43.1845 57.6228 43.4248 57.3275 43.4248Z\" fill=\"black\"></path>\n</svg>",
+            "icon_column_1": "shopify://shop_images/icon_recycle.png",
+            "title_column_1": "Recycled Materials",
+            "description_column_1": "<p>Requires less energy than virgin polyester and does not require the production of new plastics.</p>",
+            "svg_column_2": "<svg width=\"80\" height=\"80\" viewbox=\"0 0 80 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"80\" height=\"80\" fill=\"#F8F9FA\"></rect>\n<path d=\"M37.4518 58.55C37.4272 58.5367 34.9732 57.135 34.9732 51.2794C35.024 49.8059 34.7717 48.3377 34.2321 46.9657C33.6924 45.5937 32.8769 44.347 31.8359 43.303C31.1321 42.6335 30.296 42.1188 29.3814 41.7919C28.4667 41.465 27.4938 41.3333 26.5251 41.405C25.282 41.5288 24.0897 41.9616 23.0567 42.664C23.0235 40.1549 23.5268 37.6676 24.5329 35.3688C24.6032 35.2006 24.6054 35.0117 24.5391 34.8419C24.4727 34.6721 24.343 34.5347 24.1773 34.4587C24.0116 34.3828 23.8228 34.3741 23.6509 34.4347C23.4789 34.4952 23.3372 34.6202 23.2557 34.7832C23.2233 34.8535 21.2277 39.3116 21.7886 43.7107C20.001 45.4533 17.8809 48.5885 19.3227 52.9334C21.035 58.1008 26.7149 60.3847 32.4868 60.3847C34.0983 60.3849 35.705 60.2088 37.2781 59.8596C37.4172 59.8273 37.5431 59.7535 37.6392 59.6479C37.7353 59.5423 37.7969 59.4099 37.8159 59.2684C37.8351 59.1259 37.8106 58.9809 37.7456 58.8526C37.6805 58.7243 37.5781 58.6188 37.4518 58.55ZM20.6569 52.4934C20.2276 51.2869 20.1389 49.9856 20.4002 48.732C20.6616 47.4784 21.2631 46.321 22.1387 45.3865C22.4495 46.4619 22.9723 47.4642 23.6763 48.3344C24.3804 49.2045 25.2515 49.925 26.2383 50.4534C26.3189 50.501 26.4082 50.532 26.501 50.5446C26.5938 50.5573 26.6882 50.5512 26.7786 50.5268C26.869 50.5025 26.9536 50.4603 27.0275 50.4028C27.1014 50.3453 27.163 50.2736 27.2088 50.1919C27.2546 50.1103 27.2836 50.0203 27.2942 49.9272C27.3047 49.8342 27.2965 49.74 27.2702 49.6502C27.2438 49.5603 27.1998 49.4767 27.1406 49.4041C27.0815 49.3315 27.0084 49.2714 26.9258 49.2275C25.9872 48.7223 25.1722 48.0155 24.5394 47.1577C23.9066 46.3 23.4718 45.3126 23.2662 44.2667L23.3267 44.2133C24.2672 43.4271 25.42 42.9378 26.639 42.8074C27.4143 42.7477 28.1936 42.8532 28.9251 43.117C29.6567 43.3808 30.3239 43.7969 30.8827 44.3377C31.7801 45.2501 32.4813 46.3365 32.943 47.5301C33.4047 48.7237 33.6171 49.9992 33.5673 51.278C33.5673 55.3741 34.692 57.6045 35.6178 58.7405C29.4409 59.6888 22.4557 57.9195 20.6569 52.4934Z\" fill=\"black\"></path>\n<path d=\"M46.5602 31.7148C47.0621 30.5704 47.2692 29.3186 47.1626 28.0735C49.3664 29.2738 51.2879 30.9317 52.7982 32.9358C52.8635 33.0255 52.9492 33.0985 53.0482 33.1487C53.1471 33.1989 53.2566 33.225 53.3676 33.2248C53.516 33.225 53.6606 33.1777 53.7802 33.0898C53.8552 33.0355 53.9187 32.9669 53.9671 32.888C54.0156 32.8091 54.0479 32.7214 54.0623 32.63C54.0768 32.5386 54.073 32.4452 54.0512 32.3552C54.0295 32.2652 53.9902 32.1804 53.9356 32.1057C53.8899 32.0431 50.9832 28.1199 46.8695 26.4532C46.2298 24.0421 44.5357 20.6574 40.0389 19.785C33.1978 18.4607 27.293 25.1155 25.2059 32.0501C25.1659 32.1871 25.1685 32.3331 25.2135 32.4686C25.2585 32.6041 25.3436 32.7227 25.4576 32.8086C25.5727 32.8949 25.7112 32.9443 25.8549 32.9502C25.9986 32.9561 26.1407 32.9182 26.2625 32.8416C26.2864 32.8269 28.7102 31.3739 33.8157 34.2433C35.5628 35.2546 37.5396 35.8022 39.5581 35.8341C40.4895 35.8382 41.4158 35.6958 42.3031 35.4123C43.2314 35.1272 44.0897 34.6508 44.8229 34.014C45.5561 33.3772 46.1479 32.594 46.5602 31.7148ZM34.5046 33.0167C31.7631 31.4751 29.6542 31.0526 28.1682 31.0526C27.7749 31.0511 27.3821 31.0831 26.9942 31.1482C29.1938 25.3025 34.1594 20.0838 39.7711 21.1663C41.0332 21.3832 42.2112 21.9434 43.176 22.7854C44.1408 23.6275 44.8552 24.7189 45.2408 25.9401C44.1507 25.6841 43.0205 25.6489 41.9167 25.8366C40.8128 26.0244 39.7578 26.4312 38.8137 27.0332C38.7339 27.0808 38.6644 27.1437 38.6091 27.2184C38.5538 27.293 38.5139 27.3779 38.4916 27.4681C38.4693 27.5583 38.4651 27.652 38.4793 27.7438C38.4934 27.8356 38.5256 27.9237 38.574 28.003C38.6224 28.0823 38.686 28.1512 38.7612 28.2057C38.8364 28.2603 38.9217 28.2994 39.0121 28.3208C39.1025 28.3422 39.1962 28.3454 39.2879 28.3304C39.3796 28.3153 39.4673 28.2823 39.5461 28.2331C40.4459 27.6621 41.461 27.2976 42.5185 27.166C43.576 27.0343 44.6495 27.1388 45.6618 27.4718C45.6674 27.4985 45.6738 27.5252 45.6787 27.5512C45.9035 28.7562 45.7653 30.0009 45.2815 31.1271C44.9541 31.833 44.4805 32.4611 43.892 32.9701C43.3035 33.4791 42.6136 33.8573 41.868 34.0795C40.633 34.4141 39.3427 34.4924 38.0764 34.3096C36.81 34.1268 35.5945 33.6868 34.5046 33.0167Z\" fill=\"black\"></path>\n<path d=\"M54.3901 35.0355C54.2593 35.0955 54.1497 35.1937 54.0758 35.3171C54.0019 35.4406 53.9671 35.5836 53.9761 35.7272C53.9761 35.7553 54.0942 38.5784 49.1335 41.689C47.8589 42.429 46.7497 43.4226 45.8745 44.6084C44.9992 45.7941 44.3765 47.1468 44.0448 48.5828C43.8512 49.5347 43.859 50.5166 44.0677 51.4652C44.2764 52.4139 44.6814 53.3084 45.2567 54.0911C46.0218 55.0785 47.0218 55.8588 48.1655 56.361C46.058 57.7216 43.6841 58.6163 41.2028 58.9851C41.0265 59.0088 40.8659 59.0985 40.7531 59.236C40.6404 59.3735 40.5839 59.5487 40.5952 59.7261C40.6064 59.9036 40.6845 60.0702 40.8136 60.1924C40.9428 60.3146 41.1135 60.3833 41.2913 60.3847C41.3221 60.3846 41.3529 60.3825 41.3834 60.3783C41.4607 60.3685 46.2985 59.6908 49.7289 56.8769C50.5689 57.0866 51.431 57.1952 52.2967 57.2003C53.5564 57.2168 54.8029 56.9429 55.9396 56.3998C57.0763 55.8567 58.0725 55.059 58.8511 54.0686C63.2874 48.6981 60.2696 40.3273 55.1767 35.1775C55.0756 35.0768 54.9461 35.0092 54.8056 34.9838C54.6651 34.9585 54.5201 34.9765 54.3901 35.0355ZM57.7643 53.1717C56.9703 54.1762 55.9151 54.9428 54.7144 55.3875C53.5136 55.8321 52.2137 55.9376 50.9569 55.6925C51.7025 54.8577 52.2736 53.8823 52.6366 52.8236C52.9996 51.7648 53.1472 50.6442 53.0707 49.5276C53.0676 49.4349 53.0459 49.3437 53.0069 49.2595C52.9679 49.1753 52.9124 49.0998 52.8437 49.0375C52.775 48.9752 52.6945 48.9272 52.607 48.8966C52.5194 48.8659 52.4266 48.8532 52.334 48.8591C52.2418 48.8636 52.1513 48.8862 52.0678 48.9257C51.9844 48.9651 51.9095 49.0207 51.8475 49.0891C51.7855 49.1575 51.7375 49.2374 51.7064 49.3244C51.6753 49.4113 51.6616 49.5035 51.6662 49.5958C51.7372 50.6592 51.5715 51.7252 51.1811 52.7169C50.7907 53.7086 50.1852 54.6015 49.4083 55.3311C49.383 55.3234 49.3563 55.3164 49.331 55.3079C48.1646 54.9296 47.137 54.2132 46.3786 53.2497C45.9163 52.6242 45.5919 51.9077 45.427 51.1476C45.2621 50.3874 45.2603 49.6009 45.4219 48.8401C45.7186 47.595 46.2672 46.4239 47.034 45.3991C47.8007 44.3742 48.7693 43.5173 49.88 42.8812C53.3505 40.702 54.6404 38.5686 55.1135 37.1788C59.1983 41.9069 61.4084 48.7663 57.7671 53.1731L57.7643 53.1717Z\" fill=\"black\"></path>\n</svg>",
+            "icon_column_2": "shopify://shop_images/icon_cardboadrd.png",
+            "title_column_2": "Recycled EVA",
+            "description_column_2": "<p>80% post production waste leading to efficient and real recycling.</p>",
+            "svg_column_3": "<svg width=\"80\" height=\"80\" viewbox=\"0 0 80 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"80\" height=\"80\" fill=\"#F8F9FA\"></rect>\n<path d=\"M35.7374 54.7007C31.805 53.478 29.163 49.8871 29.163 45.765C29.163 43.7502 29.7937 41.8306 30.9872 40.2138C31.0144 40.1769 31.039 40.1366 31.0595 40.0955C31.2567 39.7012 31.0965 39.2223 30.7022 39.0251C30.3452 38.8464 29.9183 38.9612 29.6943 39.2768C28.3022 41.1679 27.5664 43.4112 27.5664 45.765C27.5664 48.1486 28.3191 50.415 29.743 52.3189C31.1193 54.1591 33.0797 55.5465 35.2633 56.2254C35.3423 56.25 35.4221 56.2616 35.5006 56.2616C35.8409 56.2616 36.1563 56.0422 36.2627 55.7001C36.3936 55.279 36.1584 54.8317 35.7374 54.7007Z\" fill=\"black\"></path>\n<path d=\"M56.2004 38.2707C56.2004 36.7511 55.7268 35.3033 54.8306 34.0823L49.7771 26.5804C49.6287 26.3601 49.3806 26.2281 49.115 26.2281C48.8494 26.2281 48.6013 26.3601 48.4529 26.5804L46.3234 29.7415L39.7393 19.9678C39.591 19.7475 39.3428 19.6155 39.0773 19.6155C38.8117 19.6155 38.5635 19.7475 38.4152 19.9678L27.1128 36.7456C25.227 39.3083 24.2305 42.348 24.2305 45.5379C24.2305 53.7244 30.8907 60.3847 39.0773 60.3847C47.2638 60.3847 53.924 53.7244 53.924 45.5379C53.924 44.8844 53.8804 44.2297 53.7955 43.5852C55.2691 42.2859 56.2004 40.3851 56.2004 38.2707ZM49.115 28.4553L53.5062 34.974C53.515 34.9876 53.5242 35.0009 53.5339 35.014C54.2338 35.9618 54.6037 37.088 54.6037 38.2706C54.6037 41.2971 52.1415 43.7593 49.115 43.7593C46.0886 43.7593 43.6264 41.2971 43.6264 38.2706C43.6264 37.088 43.9963 35.9618 44.6962 35.014C44.7055 35.0015 44.7143 34.9887 44.7229 34.9755L46.984 31.6189C46.9881 31.6128 46.9924 31.6067 46.9964 31.6004L49.115 28.4553ZM52.3273 45.5379C52.3273 52.8441 46.3833 58.7881 39.0772 58.7881C31.771 58.7881 25.827 52.8441 25.827 45.5379C25.827 42.6844 26.7204 39.9657 28.4106 37.6759C28.4202 37.6629 28.4296 37.6493 28.4386 37.6353L39.0773 21.8426L45.361 31.1704L43.3994 34.0824C42.5033 35.3033 42.0297 36.7511 42.0297 38.2707C42.0297 42.1775 45.2082 45.356 49.115 45.356C50.2574 45.356 51.3373 45.0838 52.2939 44.6016C52.3157 44.9129 52.3273 45.2255 52.3273 45.5379Z\" fill=\"black\"></path>\n<path d=\"M46.2998 38.076C46.2998 37.6892 46.3786 37.3159 46.5339 36.9665C46.7131 36.5636 46.5316 36.0918 46.1288 35.9127C45.7259 35.7338 45.2541 35.9149 45.075 36.3179C44.8282 36.8729 44.7031 37.4643 44.7031 38.076C44.7031 39.5249 45.4229 40.8717 46.6284 41.6783C46.7648 41.7696 46.919 41.8131 47.0717 41.8131C47.3292 41.8131 47.582 41.6888 47.7359 41.4588C47.9811 41.0923 47.8828 40.5964 47.5163 40.3512C46.7546 39.8415 46.2998 38.991 46.2998 38.076Z\" fill=\"black\"></path>\n<path d=\"M38.6995 55.8067C38.5041 55.2931 37.7749 55.1466 37.3974 55.548C36.9481 55.9835 37.1899 56.7831 37.8062 56.8948C38.4171 57.0287 38.9497 56.3802 38.6995 55.8067Z\" fill=\"black\"></path>\n<path d=\"M48.6941 42.4061C49.2089 42.7626 49.946 42.3684 49.9355 41.7427C49.9471 41.1169 49.2085 40.7219 48.6941 41.0785C48.2279 41.3707 48.226 42.1149 48.6941 42.4061Z\" fill=\"black\"></path>\n</svg>",
+            "icon_column_3": "shopify://shop_images/icon_water.png",
+            "title_column_3": "Waterbased PU",
+            "description_column_3": "<p>Composed of water-based polyurethane resin, which is pollution-free, non-toxic and does not contain harmful chemicals.</p>",
+            "svg_column_4": "<svg width=\"80\" height=\"80\" viewbox=\"0 0 80 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"80\" height=\"80\" fill=\"#F8F9FA\"></rect>\n<path d=\"M59.3333 20H20.6667C20.4899 20 20.3203 20.0702 20.1953 20.1953C20.0702 20.3203 20 20.4899 20 20.6667V30C20 30.1768 20.0702 30.3464 20.1953 30.4714C20.3203 30.5964 20.4899 30.6667 20.6667 30.6667H22V59.3333C22 59.5101 22.0702 59.6797 22.1953 59.8047C22.3203 59.9298 22.4899 60 22.6667 60H57.3333C57.5101 60 57.6797 59.9298 57.8047 59.8047C57.9298 59.6797 58 59.5101 58 59.3333V30.6667H59.3333C59.5101 30.6667 59.6797 30.5964 59.8047 30.4714C59.9298 30.3464 60 30.1768 60 30V20.6667C60 20.4899 59.9298 20.3203 59.8047 20.1953C59.6797 20.0702 59.5101 20 59.3333 20ZM56.6667 58.6667H23.3333V30.6667H56.6667V58.6667ZM58.6667 29.3333H21.3333V21.3333H58.6667V29.3333Z\" fill=\"black\"></path>\n<path d=\"M32.0007 28.0001H48.0007C48.1775 28.0001 48.347 27.9298 48.4721 27.8048C48.5971 27.6798 48.6673 27.5102 48.6673 27.3334V23.3334C48.6673 23.1566 48.5971 22.987 48.4721 22.862C48.347 22.737 48.1775 22.6667 48.0007 22.6667H32.0007C31.8238 22.6667 31.6543 22.737 31.5292 22.862C31.4042 22.987 31.334 23.1566 31.334 23.3334V27.3334C31.334 27.5102 31.4042 27.6798 31.5292 27.8048C31.6543 27.9298 31.8238 28.0001 32.0007 28.0001ZM32.6673 24.0001H47.334V26.6667H32.6673V24.0001Z\" fill=\"black\"></path>\n<path d=\"M47.7343 36.8C47.6287 36.7209 47.5021 36.6748 47.3703 36.6677C47.2386 36.6606 47.1077 36.6927 46.9943 36.76L45.4876 37.66L42.5343 32.34C42.4764 32.237 42.3922 32.1513 42.2903 32.0915C42.1884 32.0318 42.0724 32.0002 41.9543 32H38.0476C37.9222 32.0086 37.801 32.0484 37.695 32.116C37.589 32.1836 37.5016 32.2766 37.4409 32.3867L33.1609 40.16C33.1171 40.2407 33.0904 40.3296 33.0825 40.4211C33.0747 40.5126 33.0858 40.6048 33.1152 40.6918C33.1446 40.7788 33.1917 40.8588 33.2535 40.9267C33.3153 40.9947 33.3904 41.0491 33.4743 41.0867L36.9943 42.6533C37.1503 42.7248 37.3279 42.7327 37.4897 42.6755C37.6514 42.6182 37.7846 42.5003 37.8609 42.3467L40.2009 37.6667L41.5943 40L40.3276 40.76C40.214 40.8275 40.1231 40.9273 40.0663 41.0467C40.0095 41.166 39.9895 41.2996 40.0088 41.4303C40.0281 41.5611 40.0858 41.6831 40.1746 41.781C40.2634 41.8789 40.3793 41.9481 40.5076 41.98L45.8409 43.3133C46.0124 43.3556 46.1937 43.3281 46.345 43.2369C46.4962 43.1456 46.605 42.9981 46.6476 42.8267L47.9809 37.4933C48.0129 37.3663 48.0066 37.2327 47.9627 37.1093C47.9188 36.9859 47.8393 36.8783 47.7343 36.8ZM36.9543 41.18L34.6809 40.1667L38.0476 34.0467L39.3943 36.3067L36.9543 41.18ZM39.1743 33.3333H41.5609L44.3476 38.3467L42.7409 39.3133L39.1743 33.3333ZM45.5143 41.86L42.3876 41.08L46.2943 38.7333L45.5143 41.86Z\" fill=\"black\"></path>\n<path d=\"M37.3338 50H34.0071L35.1671 47.88L36.3271 48.5733C36.43 48.6344 36.5475 48.6666 36.6671 48.6667C36.8146 48.6672 36.9579 48.6178 37.0738 48.5267C37.1785 48.4454 37.2567 48.3348 37.2983 48.2089C37.3398 48.083 37.3429 47.9476 37.3071 47.82L35.9738 43.1533C35.9314 43.0002 35.8353 42.8675 35.7031 42.7794C35.5709 42.6913 35.4114 42.6536 35.2538 42.6733L29.9205 43.34C29.7828 43.3572 29.654 43.4169 29.5519 43.5109C29.4498 43.6048 29.3795 43.7282 29.3509 43.864C29.3223 43.9997 29.3367 44.141 29.3922 44.2682C29.4477 44.3953 29.5415 44.502 29.6605 44.5733L30.8805 45.3067L28.0871 50.34C28.0375 50.4301 28.0088 50.5302 28.003 50.6329C27.9973 50.7356 28.0146 50.8382 28.0538 50.9333L29.7871 54.9333C29.84 55.052 29.9259 55.1529 30.0347 55.2239C30.1436 55.2948 30.2706 55.3328 30.4005 55.3333H37.3338C37.5106 55.3333 37.6802 55.2631 37.8052 55.1381C37.9302 55.013 38.0005 54.8435 38.0005 54.6667V50.6667C38.0005 50.4898 37.9302 50.3203 37.8052 50.1953C37.6802 50.0702 37.5106 50 37.3338 50ZM34.8471 44.0667L35.5605 46.56L32.0005 44.42L34.8471 44.0667ZM29.4071 50.7L32.0271 45.9933L34.0205 47.1933L30.6071 53.46L29.4071 50.7ZM36.6671 54H31.8271L33.2805 51.3333H36.6671V54Z\" fill=\"black\"></path>\n<path d=\"M51.9391 50.3865L48.8125 43.6065C48.7386 43.4468 48.6051 43.3225 48.4406 43.2601C48.276 43.1978 48.0936 43.2025 47.9325 43.2732L44.4191 44.8399C44.3364 44.8759 44.2619 44.9284 44.2002 44.9943C44.1385 45.0601 44.0909 45.1379 44.0603 45.2228C44.0298 45.3077 44.0168 45.3979 44.0224 45.488C44.0279 45.578 44.0517 45.666 44.0925 45.7465L46.2458 49.9999H43.3325V49.3332C43.333 49.2013 43.2938 49.0723 43.2201 48.963C43.1464 48.8536 43.0416 48.7689 42.9191 48.7199C42.7977 48.6688 42.6639 48.6549 42.5346 48.6798C42.4053 48.7047 42.2862 48.7674 42.1925 48.8599L38.8591 52.1932C38.7426 52.3119 38.6741 52.4694 38.6667 52.6355C38.6593 52.8017 38.7136 52.9647 38.8191 53.0932L42.1525 57.0932C42.2403 57.1986 42.3584 57.2744 42.4909 57.3102C42.6233 57.346 42.7635 57.34 42.8925 57.2932C43.0218 57.2473 43.1336 57.1623 43.2124 57.05C43.2912 56.9377 43.3332 56.8037 43.3325 56.6665V55.3332H49.3325C49.456 55.3346 49.5773 55.3009 49.6824 55.236C49.7874 55.1711 49.8718 55.0776 49.9258 54.9665L51.9258 50.9665C51.9723 50.8773 51.9977 50.7786 52 50.6781C52.0023 50.5775 51.9815 50.4778 51.9391 50.3865ZM41.9991 54.8265L40.2325 52.7065L41.9991 50.9399V54.8265ZM48.9191 53.9999H43.3325V51.3332H50.2525L48.9191 53.9999ZM47.7391 49.9999L45.5991 45.7732L47.8791 44.7599L50.2925 49.9999H47.7391Z\" fill=\"black\"></path>\n</svg>",
+            "icon_column_4": "shopify://shop_images/icon_eva.png",
+            "title_column_4": "Recycled Cardboard",
+            "description_column_4": "<p>Our packaging is made from recycled cardboard, reducing waste and supporting sustainability.</p><p></p>",
+            "link": "shopify://pages/sustainability",
+            "link_label": "Learn More About Sustainability",
+            "title_video": "Overview",
+            "description_video": "<p>Join us to connect, collaborate, and innovate, making impactful changes and driving progress together.</p>",
+            "video_url": "{{ product.metafields.custom.video_url.value }}",
+            "video_img": "{{ product.metafields.custom.video_poster.value }}"
+          }
+        },
+        "one_column_4gdFJh": {
+          "type": "one_column",
+          "settings": {
+            "tab_heading": "Delivery",
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>The shipping duration typically varies based on the destination.</p><p>For Standard International, it usually takes between 7 and 10 working days</p><p>Orders shipped within the European Union will have their VAT calculated based on the delivery country</p><p>Please note that orders dispatched outside of the EU may be subject to customs clearance charges, for which Azza Fencing cannot be held responsible</p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "content_width": "full",
+            "text_max_width": 700,
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text"
+          }
+        },
+        "one_column_t8YPt9": {
+          "type": "one_column",
+          "settings": {
+            "tab_heading": "Return Policy",
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>You have a 14-day window from the arrival date for returns. Once we receive the order back, we'll promptly process the refund </p><p>Please send returns to our office address located in France</p><p>If you want to exchange, please place a new order once you get your refund</p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "content_width": "custom",
+            "text_max_width": 700,
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text"
+          }
+        },
+        "one_column_LWix4d": {
+          "type": "one_column",
+          "settings": {
+            "tab_heading": "Size Guide",
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>Runs slightly narrow to true size.</p><p>Our sizes are in EU Men , US Men and UK Men Click <a href=\"https://cdn.shopify.com/s/files/1/0647/1915/9535/files/New_Size_Chart.png?v=1723279820\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0647/1915/9535/files/New_Size_Chart.png?v=1723279820\">here </a>for detailed size table </p><p>If you have questions please reach out to contact@azzafencing.com</p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "content_width": "custom",
+            "text_max_width": 700,
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text"
+          }
+        },
+        "reviews_dYHtji": {
+          "type": "reviews",
+          "settings": {
+            "tab_heading": "Reviews",
+            "heading": "",
+            "heading_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "performance_Ufa6at",
+        "block-0",
+        "one_column_4gdFJh",
+        "one_column_t8YPt9",
+        "one_column_LWix4d",
+        "reviews_dYHtji"
+      ],
+      "disabled": true,
+      "settings": {
+        "tab_alignment": "left",
+        "tab_spacing": 40,
+        "font_choice": "ff-heading",
+        "tab_font_size": "fs-body-150",
+        "background_color": "",
+        "text_color": "#000000",
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "multi-column": {
+      "type": "multi-column",
+      "blocks": {
+        "image_column_NBkXG6": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/fast_800x540_aa418038-d8a8-4a95-9ef1-5f6c4260a139.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Fast",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Enhance your agility with our fencing shoes, meticulously crafted using strong yet lightweight materials. Discover the winning combination of durability, comfort, and lightweight design in our fencing shoes. Embrace the confidence to lunge fearlessly, enjoy unmatched comfort, and unleash your full potential with every step.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_column_ETYxqb": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/light_800x540_b3354af6-2e12-4e05-93c4-3560e0dd35cd.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Lightweight",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Enhance your agility with our fencing shoes, meticulously crafted using strong yet lightweight materials. Discover the winning combination of durability, comfort, and lightweight design in our fencing shoes.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_column_jcLjEr": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/comfortable_800x540_9d57925e-481b-4dfa-bc9a-71afb9179df0.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Comfortable",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Experience sublime comfort with our fencing shoes' cushioning lining and perfect foot lock. The carefully designed interior provides a plush feel, while the foot lock feature ensures a secure and stable fit, enhancing your overall comfort during intense bouts.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "image_column_33AbXg": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify://shop_images/supportive_800x540_f3ec393b-e8f5-4a8f-aa7c-d957e10682fc.jpg",
+            "image_width": 100,
+            "aspect_ratio": "landscape",
+            "enable_image_crop_circle": false,
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "image_link": "",
+            "small_caption": "",
+            "accent": "",
+            "heading": "Supportive",
+            "heading_tag": "h6",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p>Indulge in the ultimate comfort and dynamic response of our fencing shoes' high-density midsole. With its perfect blend of cushioning and rebound, it absorbs impact and propels you forward, optimizing your performance on the strip.</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_NBkXG6",
+        "image_column_ETYxqb",
+        "image_column_jcLjEr",
+        "image_column_33AbXg"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Perfomance",
+        "heading_tag": "h2",
+        "subheading": "",
+        "heading_font_class": "fs-heading-2-base",
+        "heading_alignment": "center",
+        "content_vertical_alignment": "top",
+        "content_background_padding": "small",
+        "columns": "4",
+        "column_spacing": 4,
+        "row_spacing": 8,
+        "column_alignment": "left",
+        "enable_slider_mobile": false,
+        "columns_mobile": "1",
+        "column_spacing_mobile": 4,
+        "row_spacing_mobile": 8,
+        "column_alignment_mobile": "left",
+        "background_behind_columns": true,
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "button_label": "Learn More",
+        "button_link": "shopify://pages/performance"
+      }
+    },
+    "2b10a1f7-8343-4b14-a60f-28496c3946cd": {
+      "type": "product_science",
+      "blocks": {
+        "template--16716003377391__2b10a1f7-8343-4b14-a60f-28496c3946cd-1668668128b6877259-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Recycled PET",
+            "textarea": "<p>Requires less energy than virgin polyester and does not require the production of new plastics.</p>",
+            "image_science": "shopify://shop_images/pet.png"
+          }
+        },
+        "82326d43-29fe-4974-a3cb-e0c119182977": {
+          "type": "heading",
+          "settings": {
+            "heading": "Recycled EVA",
+            "textarea": "<p>80% post production waste leading to efficient and real recycling.</p>",
+            "image_science": "shopify://shop_images/image_8.png"
+          }
+        },
+        "79d2ed94-ec82-48ba-b696-a54bc3aeb18a": {
+          "type": "heading",
+          "settings": {
+            "heading": "Waterbased PU",
+            "textarea": "<p>Composed of water-based polyurethane resin, which is pollution-free, non-toxic and does not contain harmful chemicals.</p>",
+            "image_science": "shopify://shop_images/pu.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--16716003377391__2b10a1f7-8343-4b14-a60f-28496c3946cd-1668668128b6877259-0",
+        "82326d43-29fe-4974-a3cb-e0c119182977",
+        "79d2ed94-ec82-48ba-b696-a54bc3aeb18a"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_1": "Science",
+        "desktop_image": "shopify://shop_images/azza_sience_sneaker.png",
+        "tab_image": "shopify://shop_images/Rectangle_1510_3.png",
+        "mobile_image": "shopify://shop_images/Rectangle_1510_2.png",
+        "button_label": "Read More",
+        "button_link": "shopify://pages/sustainability"
+      }
+    },
+    "featured_collection_slider_bF77Lk": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "collection_MCfMND": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": false,
+            "collection": "azza-fencing-15-14",
+            "collection_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_MCfMND"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "maximum_products": 3,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "custom_faq_d8NkFi": {
+      "type": "custom-faq",
+      "blocks": {
+        "faq_item_ETCHMg": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Are fencing shoes necessary for fencing?",
+            "faq_ans": "<p>Fencing shoes are designed with features that cater to the sport's unique demands. They provide optimal traction on the fencing strip, lightweight construction for swift movements, and support for quick changes in direction. These features can offer fencers an advantage in terms of agility, stability, and reducing the risk of certain injuries. Investing in a pair of Azza Fencing shoes could be beneficial in optimizing your performance and preventing injuries. <br/><br/>Using footwear not intended for a specific sport can increase the risk of injuries. Inappropriate shoes may not provide the necessary support and stability, potentially leading to ankle sprains, knee injuries, back pain or other discomfort.</p>"
+          }
+        },
+        "faq_item_CBciBE": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Have you tried fencing shoes during a game?",
+            "faq_ans": "<p>Our founder Azza Besbes is a former professional fencer. She fenced on professional circuit for 15+<br/>years and had used 50+ different pairs including specific fencing shoes but also regular athletic<br/>footwear. Azza confirms that specific fencing shoes are necessary to maintain good grip on the<br/>track and ensure stability while changing direction.</p><p>Using fencing footwear during training or bouts is necessary to feel confident on the strip and<br/>execute movements correctly and stress free. The most import for beginner or professional fencers<br/>is to choose the right fencing shoes in which they feel comfortable and balanced.</p>"
+          }
+        },
+        "faq_item_MKKtQy": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Are fencing shoes different from other shoes? What is special about them?",
+            "faq_ans": "<p>Azza Fencing’s founder teamed up with shoes expert and professional fencers to design the fencing<br/>shoes that fit fencers needs in term of security, performance, lightweight and agility.</p><p>Our fencing shoes offer to fencers’ specific requirements proper to their sport:</p><p>- <strong>Sole design and grip:</strong> The outsole design includes engineered grooves providing optimal<br/>traction on the fencing strip while allowing for quick and precise footwork.<br/>- <strong>Ankle support:</strong> The heel construction ensures stability and agility in the same time prioritizing<br/>extensive support to secure ankle and Achille’s tendon from brutal direction change and<br/>sudden braking.<br/>- <strong>Lightweight and flexibility:</strong> Fencing shoes are designed to be lightweight and flexible to<br/>support quick and agile footwork, allowing fencers to execute lunges, retreats, and quick<br/>direction changes efficiently.<br/>- <strong>Breathability:</strong> Azza Fencing shoes prioritize breathability to keep the feet cool during intense<br/>matches and training sessions and avoid slipping in the shoes when feet are wet.<br/>- <strong>Cushioning and impact absorption:</strong> The midsole is shock absorbing thanks to a highly<br/>cushioned sustainable material made of recycled EVA. The sole absorbs the impact of jumps,<br/>repetitive lunges, and sudden stops.</p>"
+          }
+        },
+        "faq_item_nyVfmM": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Can you play badminton or squash in fencing shoes?",
+            "faq_ans": "<p>We think shoes are engineered to provide the right combination of traction, support, cushioning,<br/>and durability for the movements and demands of each sport. But we can tell that fencing has<br/>common features with badminton and squash with lateral footwork, high jumps and lunges.</p><p>Just as fencing shoes, badminton footwear is lightweight and flexible, emphasizing maneuverability<br/>to aid in swift court coverage and dynamic movements. They also provide good ankle support to<br/>prevent injuries during the frequent lateral movements and jumps required in the sport. The sole<br/>pattern is crafted to provide grip and enable rapid lateral movements on badminton court’s<br/>wooden or synthetic surface.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_ETCHMg",
+        "faq_item_CBciBE",
+        "faq_item_MKKtQy",
+        "faq_item_nyVfmM"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "faq_title": "FAQs",
+        "faq_title_details": "We love our Fencing culture, but we know it can be confusing at times. Please look through our Frequently asked questions and let us know if you need any other Fencing information. We are happy to help.",
+        "btn_title": "Contact Us",
+        "btn_url": "shopify://pages/contact",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "collection_faq_kEqEXp": {
+      "type": "collection-faq",
+      "blocks": {
+        "collection_faq_zPWRdq": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Are fencing shoes necessary for fencing?",
+            "faq_ans": "<p>Fencing shoes are designed with features that cater to the sport's unique demands. They provide<br/>optimal traction on the fencing strip, lightweight construction for swift movements, and support for<br/>quick changes in direction. These features can offer fencers an advantage in terms of agility,<br/>stability, and reducing the risk of certain injuries. Investing in a pair of Azza Fencing shoes could be<br/>beneficial in optimizing your performance and preventing injuries.</p><p>Using footwear not intended for a specific sport can increase the risk of injuries. Inappropriate<br/>shoes may not provide the necessary support and stability, potentially leading to ankle sprains,<br/>knee injuries, back pain or other discomfort.</p>"
+          }
+        },
+        "collection_faq_rCFQem": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Have you tried fencing shoes during a game?",
+            "faq_ans": "<p>Our founder Azza Besbes is a former professional fencer. She fenced on professional circuit for 15+<br/>years and had used 50+ different pairs including specific fencing shoes but also regular athletic<br/>footwear. Azza confirms that specific fencing shoes are necessary to maintain good grip on the<br/>track and ensure stability while changing direction.</p><p>Using fencing footwear during training or bouts is necessary to feel confident on the strip and<br/>execute movements correctly and stress free. The most import for beginner or professional fencers<br/>is to choose the right fencing shoes in which they feel comfortable and balanced.</p>"
+          }
+        },
+        "collection_faq_AMyziU": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Are fencing shoes different from other shoes? What is special about them?",
+            "faq_ans": "<p>Azza Fencing’s founder teamed up with shoes expert and professional fencers to design the fencing<br/>shoes that fit fencers needs in term of security, performance, lightweight and agility.</p><p>Our fencing shoes offer to fencers’ specific requirements proper to their sport:</p><p>- <strong>Sole design and grip:</strong> The outsole design includes engineered grooves providing optimal<br/>traction on the fencing strip while allowing for quick and precise footwork.<br/>- <strong>Ankle support:</strong> The heel construction ensures stability and agility in the same time prioritizing<br/>extensive support to secure ankle and Achille’s tendon from brutal direction change and<br/>sudden braking.<br/>- <strong>Lightweight and flexibility:</strong> Fencing shoes are designed to be lightweight and flexible to<br/>support quick and agile footwork, allowing fencers to execute lunges, retreats, and quick<br/>direction changes efficiently.<br/>- <strong>Breathability:</strong> Azza Fencing shoes prioritize breathability to keep the feet cool during intense<br/>matches and training sessions and avoid slipping in the shoes when feet are wet.<br/>- <strong>Cushioning and impact absorption:</strong> The midsole is shock absorbing thanks to a highly<br/>cushioned sustainable material made of recycled EVA. The sole absorbs the impact of jumps,<br/>repetitive lunges, and sudden stops.</p>"
+          }
+        },
+        "collection_faq_CzRLRG": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Can you play badminton or squash in fencing shoes?",
+            "faq_ans": "<p>We think shoes are engineered to provide the right combination of traction, support, cushioning,<br/>and durability for the movements and demands of each sport. But we can tell that fencing has<br/>common features with badminton and squash with lateral footwork, high jumps and lunges.</p><p>Just as fencing shoes, badminton footwear is lightweight and flexible, emphasizing maneuverability<br/>to aid in swift court coverage and dynamic movements. They also provide good ankle support to<br/>prevent injuries during the frequent lateral movements and jumps required in the sport. The sole<br/>pattern is crafted to provide grip and enable rapid lateral movements on badminton court’s<br/>wooden or synthetic surface.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collection_faq_zPWRdq",
+        "collection_faq_rCFQem",
+        "collection_faq_AMyziU",
+        "collection_faq_CzRLRG"
+      ],
+      "disabled": true,
+      "settings": {
+        "faq_title": "FAQ",
+        "faq_title_details": "We love our Fencing culture, but we know it can be confusing at times. Please look through our Frequently asked questions and let us know if you need any other Fencing information. We are happy to help.",
+        "btn_title": "Contact Us",
+        "btn_url": "shopify://pages/contact"
+      }
+    },
+    "d71df2af-ba99-428a-9772-57ebe99ef94d": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-0": {
+          "type": "text_content",
+          "settings": {
+            "width": "800",
+            "title": "Get our latest news and offers!",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base",
+            "text": "<p>Join our email list and be the first to know about new limited edition products, material innovations, and get discount.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-1": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "Sign up",
+            "footer_text": "<p>You can unsubscribe at any time. See our <a href='/pages/privacy-policy'><strong>Privacy Policy</strong></a> and <a href='/pages/terms-and-conditions'><strong>Terms</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-0",
+        "template--15305459073231__d71df2af-ba99-428a-9772-57ebe99ef94d-1668035253c173f759-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "spacing_mode": "between",
+        "alignment": "left",
+        "background_image": "shopify://shop_images/round_shape.png",
+        "background_image_mobile": "shopify://shop_images/round_shape_mobile.png",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "background_color": "#f5f5f5",
+        "text_color": "#000000",
+        "input_color": "#000000",
+        "input_background": "#ffffff",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "fil_ariane_ms_ni86Vd",
+    "main",
+    "compfort_performance_slider_tJj3dz",
+    "related_products_Ca67BM",
+    "azza_in_everyday_JWLzAj",
+    "multicolumn_svg_FVPbFV",
+    "product-tabs",
+    "multi-column",
+    "2b10a1f7-8343-4b14-a60f-28496c3946cd",
+    "featured_collection_slider_bF77Lk",
+    "custom_faq_d8NkFi",
+    "collection_faq_kEqEXp",
+    "d71df2af-ba99-428a-9772-57ebe99ef94d"
+  ]
+}

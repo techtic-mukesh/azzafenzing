@@ -1,0 +1,158 @@
+<div class="contest-section">
+  <header class="contest-header">
+    <svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <rect width="200" height="40" fill="url(#pattern0_743_28370)"></rect>
+      <defs>
+        <pattern id="pattern0_743_28370" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#image0_743_28370" transform="scale(0.005 0.025)"></use>
+        </pattern>
+        <image id="image0_743_28370" width="200" height="40" xlink:href="data:image/png;base64,..."></image>
+      </defs>
+    </svg>
+    <h1 style="padding: 10px 0px; color:#FFF;">Jeu Concours GP d'Orléans 2024</h1>
+  </header>
+
+  <main class="contest-main">
+    <section class="contest">
+      <h2>Répondez à la question pour tenter de gagner une paire de chaussures Azza Fencing.</h2>
+      <form id="contest-form">
+        <div class="question">
+          <p id="question-text">Quel est le sponsor principal du GP d'Orléans 2024?</p>
+        </div>
+
+        <div class="answers">
+          <label>
+            <input type="radio" name="answer" value="a"> Azza Fencing
+          </label>
+          <label>
+            <input type="radio" name="answer" value="b"> Adidas
+          </label>
+          <label>
+            <input type="radio" name="answer" value="c"> Nike
+          </label>
+        </div>
+
+        <button type="button" id="submit-btn">Valider votre réponse</button>
+        <p id="response-message"></p>
+      </form>
+
+      <!-- Klaviyo Embedded Form Section -->
+      <div id="info-form-container" style="display: none;">
+        <h2>Veuillez renseigner vos informations pour être contacté</h2>
+    <div class="klaviyo-form-XPMpCP"></div>      
+      </div>
+    </section>
+  </main>
+</div>
+
+<style>
+  .shopify-section-template--22662964216140__9ae087e0-8873-4db3-bcfd-bb9ef2295fb9
+  {
+    display:none;
+  }
+  .contest-section {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  .contest-header {
+    background-color: #131212;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .contest-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+
+  .contest {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .contest h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .contest .question {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .contest .answers label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .contest button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .contest button:hover {
+    background-color: #555;
+  }
+
+  .contest-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+
+  .klaviyo-form-QWxe2d {
+    margin-top: 20px;
+  }
+  .contest-header 
+</style>
+
+<script>
+  document.getElementById('submit-btn').addEventListener('click', function() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    const responseMessage = document.getElementById('response-message');
+    
+    if (selectedAnswer) {
+      const answer = selectedAnswer.value;
+      if (answer === 'a') {
+        responseMessage.textContent = 'Bravo, vous avez répondu correctement !';
+        responseMessage.style.color = 'green';
+        document.getElementById('info-form-container').style.display = 'block';
+      } else {
+        responseMessage.textContent = 'Désolé, votre réponse est incorrecte. Réessayez !';
+        responseMessage.style.color = 'red';
+      }
+    } else {
+      responseMessage.textContent = 'Veuillez sélectionner une réponse.';
+      responseMessage.style.color = 'orange';
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "GP d'Orléans 2024",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Jeu Concours GP d'Orléans 2024"
+    }
+  ]
+}
+{% endschema %}

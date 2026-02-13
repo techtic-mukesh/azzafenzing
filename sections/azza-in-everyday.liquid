@@ -1,0 +1,512 @@
+{%- liquid
+  assign section_id = section.id
+  assign section_title = section.settings.title
+  assign title_alignment = section.settings.title_alignment
+  assign background_color = section.settings.background_color | default: '#000000'
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+-%}
+
+{%- style -%}
+  .section-{{ section_id }}-padding {
+    padding-top: {{ padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section_id }}-padding {
+      padding-top: {{ padding_top }}px;
+      padding-bottom: {{ padding_bottom }}px;
+    }
+  }
+
+  .azza-everyday-section-{{ section_id }} {
+    background-color: {{ background_color }};
+  }
+{%- endstyle -%}
+
+<div class="azza-everyday-section azza-everyday-section-{{ section_id }} section-{{ section_id }}-padding" data-section-id="{{ section_id }}">
+  <div class="section">
+    {%- if section_title != blank -%}
+      <h2 class="azza-everyday-section__title azza-everyday-section__title--{{ title_alignment }}">
+        {{ section_title }}
+      </h2>
+    {%- endif -%}
+
+    <div class="azza-everyday-section__carousel" data-carousel-id="{{ section_id }}">
+      {%- for block in section.blocks -%}
+        <div class="azza-everyday-section__slide">
+          <div class="azza-everyday-section__card">
+            {%- if block.settings.media_type == 'video' and block.settings.video_url != blank -%}
+              <div class="azza-everyday-section__video-wrapper">
+                <video 
+                  class="azza-everyday-section__video" 
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline
+                  {% if block.settings.video_poster != blank %}poster="{{ block.settings.video_poster | img_url: '800x800' }}"{% endif %}
+                >
+                  <source src="{{ block.settings.video_url }}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            {%- elsif block.settings.image != blank -%}
+              <div class="azza-everyday-section__image-wrapper">
+                <img 
+                  src="{{ block.settings.image | img_url: '800x800' }}" 
+                  alt="{{ block.settings.image.alt | escape }}"
+                  loading="lazy"
+                  class="azza-everyday-section__image"
+                >
+              </div>
+            {%- else -%}
+              <div class="azza-everyday-section__placeholder">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.blocks.size > 1 -%}
+      <div class="azza-everyday-section__navigation">
+        <button type="button" class="azza-everyday-section__arrow azza-everyday-section__arrow--prev" aria-label="Previous">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button type="button" class="azza-everyday-section__arrow azza-everyday-section__arrow--next" aria-label="Next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .azza-everyday-section {
+    width: 100%;
+    position: relative;
+  }
+
+  .azza-everyday-section .page-width {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .azza-everyday-section__title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 40px 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 100%;
+  }
+
+  .azza-everyday-section__title--left {
+    text-align: left;
+  }
+
+  .azza-everyday-section__title--center {
+    text-align: center;
+  }
+
+  .azza-everyday-section__title--right {
+    text-align: right;
+  }
+
+  .azza-everyday-section__carousel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .azza-everyday-section__carousel .slick-list {
+    margin: 0 -10px;
+    overflow: hidden;
+  }
+
+  .azza-everyday-section__carousel .slick-track {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .azza-everyday-section__carousel .slick-slide {
+    padding: 0 10px;
+    box-sizing: border-box;
+    height: auto;
+  }
+
+  .azza-everyday-section__carousel .slick-slide > div {
+    width: 100%;
+    height: 100%;
+  }
+
+  .azza-everyday-section__card {
+    border-radius: 12px;
+    overflow: hidden;
+    /* background: #fff; */
+    position: relative;
+    /* aspect-ratio: 1; */
+    width: 100%;
+  }
+
+  .azza-everyday-section__image-wrapper,
+  .azza-everyday-section__video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .azza-everyday-section__image,
+  .azza-everyday-section__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .azza-everyday-section__placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+  .azza-everyday-section__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .azza-everyday-section__arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #686060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    padding: 0;
+  }
+
+  .azza-everyday-section__arrow:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+  }
+
+  .azza-everyday-section__arrow:active {
+    transform: scale(0.95);
+  }
+
+  .azza-everyday-section__arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .azza-everyday-section__arrow--prev svg,
+  .azza-everyday-section__arrow--next svg {
+    stroke: currentColor;
+  }
+
+  @media (max-width: 992px) {
+    .azza-everyday-section__carousel .slick-list {
+      margin: 0;
+      overflow: visible;
+    }
+
+    .azza-everyday-section__carousel .slick-slide {
+      padding: 0;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .azza-everyday-section__carousel .slick-slide.slick-center {
+      opacity: 1;
+    }
+
+    .azza-everyday-section__card {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+    .azza-everyday-section__slide {
+      padding-right: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .azza-everyday-section__title {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .azza-everyday-section__arrow {
+      width: 26px;
+      height: 26px;
+    }
+
+    .azza-everyday-section__arrow svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .azza-everyday-section .page-width {
+      padding: 0 15px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    function initAzzaEverydaySlider() {
+      const section = document.querySelector('[data-section-id="{{ section_id }}"]');
+      if (!section) return;
+
+      const carousel = section.querySelector('.azza-everyday-section__carousel');
+      const prevBtn = section.querySelector('.azza-everyday-section__arrow--prev');
+      const nextBtn = section.querySelector('.azza-everyday-section__arrow--next');
+
+      if (!carousel) return;
+
+      // Wait for jQuery and Slick to be available
+      if (typeof jQuery === 'undefined' || !jQuery.fn.slick) {
+        setTimeout(initAzzaEverydaySlider, 100);
+        return;
+      }
+
+      // Initialize Slick slider
+      jQuery(carousel).slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false,
+        dots: false,
+        variableWidth: false,
+        centerMode: false,
+        autoplay: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              centerMode: false
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: true,
+              centerPadding: '20px',
+              variableWidth: false
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: true,
+              centerPadding: '15px',
+              variableWidth: false
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: true,
+              centerPadding: '10px',
+              variableWidth: false
+            }
+          }
+        ]
+      });
+
+      // Navigation buttons
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          jQuery(carousel).slick('slickPrev');
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          jQuery(carousel).slick('slickNext');
+        });
+      }
+    }
+
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAzzaEverydaySlider);
+    } else {
+      initAzzaEverydaySlider();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Azza In Everyday",
+  "tag": "section",
+  "class": "azza-in-everyday-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Azza In Everyday"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "media_item",
+      "name": "Media Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "media_type",
+          "label": "Media Type",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "video",
+              "label": "Video"
+            }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Used when Media Type is set to Image"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "Shopify CDN video link (e.g., https://cdn.shopify.com/...). Used when Media Type is set to Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_poster",
+          "label": "Video Poster Image",
+          "info": "Optional: Thumbnail image shown before video plays"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Azza In Everyday",
+      "blocks": [
+        {
+          "type": "media_item",
+          "settings": {
+            "media_type": "image"
+          }
+        },
+        {
+          "type": "media_item",
+          "settings": {
+            "media_type": "image"
+          }
+        },
+        {
+          "type": "media_item",
+          "settings": {
+            "media_type": "image"
+          }
+        },
+        {
+          "type": "media_item",
+          "settings": {
+            "media_type": "image"
+          }
+        },
+        {
+          "type": "media_item",
+          "settings": {
+            "media_type": "image"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

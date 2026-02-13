@@ -1,0 +1,66 @@
+<div class="Instagram">
+  {% if section.settings.heading != blank %}
+  <div class="ff-heading fs-heading-3-base section-introduction__heading">
+    <h2 class="title h1">{{ section.settings.heading }}</h2>
+  </div>
+  {% endif %}
+  <!-- <div class="Instagram_content">
+    {% for block in section.blocks %}
+      {% if block.settings['post-img'] != blank %}
+        <div class="instragram_post">
+          <img src="{{ block.settings.post-img | img_url:'250x250' }}">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div> -->
+  <div id="insta-feed"></div>
+</div>
+<style>
+.Instagram{
+  padding:20px 0 40px;
+}
+    .Instagram_content{
+          display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+   .Instagram_content .instragram_post{
+         width: 14.65%;
+     width: calc(100% / 6 - 21px);
+      margin-right: 25px;
+   }
+     .Instagram_content .instragram_post:last-child{
+       margin-right:0;
+     }
+</style>
+{% schema %}
+{
+  "name": "Instagram",
+  "class": "section",
+  "settings": [
+              {
+      "type":"text",
+      "id":"heading",
+      "label": "Heading"
+    }
+  ],
+   "blocks": [
+  {
+    "type": "lnstagram",
+    "name": "gallery",
+      "settings": [
+           {
+      "type":"image_picker",
+      "id":"post-img",
+      "label": "Post Image"
+    }
+      ]
+  }
+   ],
+  "presets": [
+     {
+    "name": "Instagram"
+     }
+  ]
+}
+{% endschema %}

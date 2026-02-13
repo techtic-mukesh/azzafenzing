@@ -1,0 +1,354 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "breadcrumbs_pages_9Q3fLL": {
+      "type": "breadcrumbs-pages",
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": false
+      }
+    },
+    "index_img_with_text_eDUq7b": {
+      "type": "index-img-with-text",
+      "blocks": {
+        "heading_UGXdYR": {
+          "type": "heading",
+          "settings": {
+            "heading": "#TeamAzza",
+            "heading_size": "h1"
+          }
+        },
+        "text_NxJtCj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From the Olympic Fencer to the newest in the sport, if you are #TeamAzza, you are part of the fencing community who strives for footwear that is ready for the future of the sport.</p><p> No matter your skill level, Azza Fencing has something for you. We are proud to represent fencers who demand more from their product on every surface around the world.</p><p> Azza Fencing is the TRUE fencing brand of Champions, and we are just getting started. Join us in our quest to change the sport for the better, every single day, with great product and even greater impact.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_ELCiNW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "icon_wmpwax": {
+          "type": "icon",
+          "settings": {
+            "checkbox-id": true,
+            "checkicon1_img": true,
+            "iconimg-txt": "20+",
+            "icon1_txt": "Olympians",
+            "checkicon2_img": true,
+            "iconimg2-txt": "40+",
+            "icon2_txt": "World-Medalists",
+            "checkicon3_img": true,
+            "iconimg3-txt": "8k+",
+            "icon3_txt": "Members"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UGXdYR",
+        "text_NxJtCj",
+        "button_ELCiNW",
+        "icon_wmpwax"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Final_ALL_Fencers.jpg",
+        "border": true,
+        "border-color": "#012741",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_community_gallery_zhTKtz": {
+      "type": "custom-community-gallery",
+      "blocks": {
+        "text_VxhE4g": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Mara Navarria",
+            "country-image": "shopify://shop_images/Flag_of_Italy_svg_35613d72-6696-4676-9155-5bb2fe528414.png",
+            "country": "italy",
+            "info": "Mara Navarria is an Italian Epee fencer, World Champion in Wuxi 2018 and Bronze medalist in Tokyo Olympic Games.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/Rectangle_19_57809300-7abf-4b5a-bbfe-8d0d3cd289a4.png",
+            "image2": "shopify://shop_images/Rectangle_30_1.png",
+            "image3": "shopify://shop_images/Rectangle_29_1.png",
+            "video_thumb": "shopify://shop_images/Mara_Navarria_COVER-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/0654e409b7d9403ab4228852ed6be8dd.mp4"
+          }
+        },
+        "text_Ur9y9F": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Margaux Rifkiss",
+            "country-image": "shopify://shop_images/Flag_of_France_svg.webp",
+            "country": "France",
+            "info": "Margaux Rifkiss is a French Sabre fencer who in her career has a bronze medal at the World Cup in 2018.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/Rectangle_638.png",
+            "image2": "shopify://shop_images/Rectangle_34_1.png",
+            "image3": "shopify://shop_images/Rectangle_33_1.png",
+            "video_thumb": "shopify://shop_images/Margaux_Rifkiss_cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/3b02dc9dfacd400abcc535ec7b6576af.mp4"
+          }
+        },
+        "text_nGyaRY": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Samuel Gallagher Pelletier",
+            "country-image": "shopify://shop_images/canada.jpg",
+            "country": "Canada",
+            "info": "Samuel Gallagher Pelletier is a Canadian Epee fencer who won a Bronze medal at the Zone Championships in 2022.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/Gallagher_Pelletier_Sam.jpg",
+            "image2": "shopify://shop_images/2021.jpg",
+            "image3": "shopify://shop_images/AND09124.jpg",
+            "video_thumb": "shopify://shop_images/Samuel_Gallagher_Pelletier_COVER-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/acedb9ec8bc742d78cc742e790bff7e7.mp4"
+          }
+        },
+        "text_BBRnAH": {
+          "type": "text",
+          "settings": {
+            "play_btn": true,
+            "author-date": "",
+            "name": "Mate Tamas Koch",
+            "country-image": "shopify://shop_images/download.png",
+            "country": "Hungary",
+            "info": "Mate Tamas Koch is a Hungarian Epee fencer who most recently won the Men’s Epee competition at the 2023 World Fencing Championship.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/1000001799.jpg",
+            "image2": "shopify://shop_images/img_2_1690826231868.jpg",
+            "image3": "shopify://shop_images/LPA05397.jpg",
+            "video_thumb": "shopify://shop_images/Mate_Tamas_Koch_cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/40732bfc22604506a3045866137c5f9e.mp4"
+          }
+        },
+        "text_NnFMAr": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Martin Rubes",
+            "country-image": "shopify://shop_images/download_1_c594273b-6e19-4d7b-8aa0-d95e479dd74a.png",
+            "country": "Czech",
+            "info": "Martin rubes is a Czech Epee fencer who won a gold medal at the 2019 World University Games",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/DSC_4912.jpg",
+            "image2": "shopify://shop_images/rubes-martin-serm-1.jpg",
+            "image3": "shopify://shop_images/54520180_2174039249310574_7224207954776424448_n.jpg",
+            "video_thumb": "shopify://shop_images/Martin_Rubes_Cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/ad70c077d00e422987866b7d5739c087.mp4"
+          }
+        },
+        "text_gdW3FH": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Kazuyasu Minobe",
+            "country-image": "shopify://shop_images/download.jpg",
+            "country": "Japanese",
+            "info": "Minobe Kazuyasu is a Japanese Epee fencer who is a two-time Olympian and was a member of the Japanese team that won gold in the last Olympics.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/Black_and_white.jpg",
+            "image2": "shopify://shop_images/LPA04929.jpg",
+            "image3": "shopify://shop_images/LPA05397_d2f2a982-f1e7-49ad-b2ed-b02e9e061d86.jpg",
+            "video_thumb": "shopify://shop_images/Kazuyasu_Minobe_Cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/a439b0f0ca7e40a1a4759eac18f9a27e.mp4"
+          }
+        },
+        "text_nMcMnT": {
+          "type": "text",
+          "settings": {
+            "play_btn": true,
+            "author-date": "",
+            "name": "Johannes Poscharnig",
+            "country-image": "shopify://shop_images/download_55a1667c-f1db-4a6d-be9f-b6bc811940df.png",
+            "country": "Austria",
+            "info": "Johannes Poscharnig is an Austrian Foil fencer new to #TeamAzza who is dedicated to the sport as a fencer and as a coach/mentor.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/Johannes_Poscharnig_CIP_2015_teams.jpg",
+            "image2": "shopify://shop_images/Pointing.jpg",
+            "image3": "shopify://shop_images/johannes-poscharnig-kada-sport-mit-perspektive.jpg",
+            "video_thumb": "shopify://shop_images/Johannes_Poscharnig_Cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/43aa9f26644e4cacb212ecc71abf0ead.mp4"
+          }
+        },
+        "text_mfgwLp": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Dzhoan Feybi Bezhura",
+            "country-image": "shopify://shop_images/Flag_of_Ukraine_svg.png",
+            "country": "Ukraine",
+            "info": "Dhzoan Feybi Bezhora is a Ukrainian Epee fencer that has in her career 2 World Cup medals.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/image.jpg",
+            "image2": "shopify://shop_images/Dzhoan_Feybi_Bezhura_EG_2023.jpg",
+            "image3": "shopify://shop_images/DSC_3178.jpg",
+            "video_thumb": "shopify://shop_images/Dzhoan_Feybi_Bezhura_EG_2023.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/ce2be063224849f5b5e6bf774c252db8.mp4"
+          }
+        },
+        "text_nMeWaE": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Dora Goudoura",
+            "country-image": "shopify://shop_images/greece_flag.jpg",
+            "country": "Greek",
+            "info": "Dora Goudoura is a Greek Sabre fencer that has in her career 6 World Cup medals and 2 Grand Prix medals.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/dora-goudoura-fencing.webp",
+            "image2": "shopify://shop_images/dora-goudoura.jpg",
+            "image3": "shopify://shop_images/img_1_1690455721230.jpg",
+            "video_thumb": "shopify://shop_images/Dora_Goudoura_Cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/43aa9f26644e4cacb212ecc71abf0ead.mp4"
+          }
+        },
+        "text_tTJzkG": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Anne Sauer",
+            "country-image": "shopify://shop_images/download_2.jpg",
+            "country": "Germany",
+            "info": "Anne Sauer is a German Foil fencer that has in her career 3 World Cup medals and 5 Grand Prix medals.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/AUG_7877.jpg",
+            "image2": "shopify://shop_images/img_1_1690826085743.jpg",
+            "image3": "shopify://shop_images/DSC_4611.jpg",
+            "video_thumb": "shopify://shop_images/Anne_Sauer_Cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/d95aee95cc1244b5ba0485bf2762ac1d.mp4"
+          }
+        },
+        "text_Db8wQa": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Andrea Santarelli",
+            "country-image": "shopify://shop_images/Flag_of_Italy_svg.png",
+            "country": " Italy",
+            "info": "Andrea Santarelli is an Italian Epee fencer, 2022 team European champion, two-time Olympian, and 2016 team Olympic silver medalist.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/134616.jpg",
+            "image2": "shopify://shop_images/Andrea-Santarelli-Secondo-posto-BUDAPEST2019.jpg",
+            "image3": "shopify://shop_images/Andrea-Santarelli_-BUDAPEST2019.jpg",
+            "video_thumb": "shopify://shop_images/Andrea_Santarelli-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/8268029554334d1ea069fb729093c053.mp4"
+          }
+        },
+        "text_Pq4WfG": {
+          "type": "text",
+          "settings": {
+            "play_btn": false,
+            "author-date": "",
+            "name": "Abdelrahman Tolba",
+            "country-image": "shopify://shop_images/images.png",
+            "country": "Egypt",
+            "info": "Abdelrahman Tolba is an Egyptian Foil fencer, currently holding a 96.7% win ratio for events this year.",
+            "but-text": "",
+            "but-link": "",
+            "image1": "shopify://shop_images/DSC_9800.jpg",
+            "image2": "shopify://shop_images/Casablanca.jpg",
+            "image3": "shopify://shop_images/IMG-20230727-WA0042.jpg",
+            "video_thumb": "shopify://shop_images/Abdelrahman_Tolba_cover-01.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/ad480cc339354f0bb05ec63000ce3443.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "text_VxhE4g",
+        "text_Ur9y9F",
+        "text_nGyaRY",
+        "text_BBRnAH",
+        "text_NnFMAr",
+        "text_gdW3FH",
+        "text_nMcMnT",
+        "text_mfgwLp",
+        "text_nMeWaE",
+        "text_tTJzkG",
+        "text_Db8wQa",
+        "text_Pq4WfG"
+      ],
+      "settings": {
+        "bg-color": "rgba(0,0,0,0)",
+        "unique_class": "Athletes custom-community-slider",
+        "section_title": "Meet Our Ambassadors",
+        "section_desc": "",
+        "section_button": "",
+        "button_url": ""
+      }
+    },
+    "17186176926b89cb02": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "17186176607a78e3d3": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_pages_9Q3fLL",
+    "index_img_with_text_eDUq7b",
+    "custom_community_gallery_zhTKtz",
+    "17186176926b89cb02",
+    "17186176607a78e3d3"
+  ]
+}

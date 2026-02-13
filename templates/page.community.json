@@ -1,0 +1,573 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "1eb36d85-91d0-48b3-807c-0e2c85384eb0": {
+      "type": "image-banner",
+      "blocks": {
+        "template--16711187955951__1eb36d85-91d0-48b3-807c-0e2c85384eb0-166788316210b5f5ed-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "WE BELIEVE IN THE POWER OF COMMUNITIES TO CREATE VALUABLEPRODUCTS.",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "template--16711187955951__1eb36d85-91d0-48b3-807c-0e2c85384eb0-166788316210b5f5ed-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "unique_class": "",
+        "image": "shopify://shop_images/DSC05027.jpg",
+        "image_overlay_opacity": 100,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-2",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "slideshow_mqVDzh": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_hUngL6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/1_4e086897-f35a-496d-9a56-201483521f29.jpg",
+            "image_mobile": "shopify://shop_images/Calque_2_710fe0de-0ab4-491a-9c6b-fa4d0967896a.jpg",
+            "focal_point": "top",
+            "mobile_focal_point": "image_presentation",
+            "media_link": "",
+            "text_position": "center_center",
+            "text_position_mobile": "center_center",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-2",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link_1": "",
+            "link_text_1": "",
+            "button_style_1": "btn--primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_style_2": "btn--primary",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 34
+          }
+        },
+        "slide_qHrdKX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/2_facd1073-fdca-4e2a-8b23-4e4af55d4b2f.jpg",
+            "image_mobile": "shopify://shop_images/Calque_4.jpg",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "media_link": "",
+            "text_position": "center_center",
+            "text_position_mobile": "center_center",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-2",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link_1": "",
+            "link_text_1": "",
+            "button_style_1": "btn--primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_style_2": "btn--primary",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 40
+          }
+        },
+        "slide_tKd6kK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/3_31d68a64-9f75-4a0a-bf2f-c7e59b28ed97.jpg",
+            "image_mobile": "shopify://shop_images/Calque_3.jpg",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "media_link": "",
+            "text_position": "center_center",
+            "text_position_mobile": "center_center",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-2",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link_1": "",
+            "link_text_1": "",
+            "button_style_1": "btn--primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_style_2": "btn--primary",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 40
+          }
+        },
+        "slide_YUWHer": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Groupe_3_060c8c89-679b-4676-b7b0-8398b822f464.jpg",
+            "image_mobile": "shopify://shop_images/Courbes_5_jpg.jpg",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "media_link": "",
+            "text_position": "center_center",
+            "text_position_mobile": "center_center",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-2",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link_1": "",
+            "link_text_1": "",
+            "button_style_1": "btn--primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_style_2": "btn--primary",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 40
+          }
+        },
+        "slide_xbxkPh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Groupe_3_copie.jpg",
+            "image_mobile": "shopify://shop_images/Calque_12_189e38cb-f31d-44ba-888b-0b5e32958ea5.jpg",
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "media_link": "",
+            "text_position": "center_center",
+            "text_position_mobile": "center_center",
+            "accent": "",
+            "title": "",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-2",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "",
+            "text_font_class": "fs-body-100",
+            "link_1": "",
+            "link_text_1": "",
+            "button_style_1": "btn--primary",
+            "link_2": "",
+            "link_text_2": "",
+            "button_style_2": "btn--primary",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 40
+          }
+        }
+      },
+      "block_order": [
+        "slide_hUngL6",
+        "slide_qHrdKX",
+        "slide_tKd6kK",
+        "slide_YUWHer",
+        "slide_xbxkPh"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 55,
+        "mobile_height": 60,
+        "enable_autoplay": true,
+        "duration_autoplay": 4,
+        "navigation_alignment": "center",
+        "navigation_color_foreground": "#ffffff",
+        "navigation_color_background": "",
+        "navigation_background_opacity": 70,
+        "enable_animation": true,
+        "section_padding": "none"
+      }
+    },
+    "rich_text_TgRyYY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ecdApD": {
+          "type": "heading",
+          "settings": {
+            "title": "PARTNERS",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ecdApD"
+      ],
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "brand_logo_KjLD7K": {
+      "type": "brand-logo",
+      "blocks": {
+        "bannner_TmTLmP": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/CTC-logo.png"
+          }
+        },
+        "bannner_tN8eKc": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/USA_FENCING.jpg"
+          }
+        },
+        "bannner_i8hnPQ": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/Logo-FFE-300dpi.png"
+          }
+        },
+        "bannner_d4neN3": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/Academy_fencing_star_logo.png"
+          }
+        },
+        "bannner_C8bwXL": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/61Fa-pNEFXL._UF1000_1000_QL80.jpg"
+          }
+        },
+        "bannner_WKcUFm": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/Notre_dame_1dd855f6-8786-41f7-bda4-6ed48f09adfa.png"
+          }
+        },
+        "bannner_7dtU7P": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/ucsd_logo.jpg"
+          }
+        },
+        "bannner_tUFJfa": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/Minato_Fencing_JPN_REDIM.png"
+          }
+        },
+        "bannner_FjcwFt": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/USA_PARAFENCING.jpg"
+          }
+        },
+        "bannner_ifyMPM": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/logo_federscherma_1_84efca33-4365-43ad-9abb-c4b8d07cfc95.png"
+          }
+        }
+      },
+      "block_order": [
+        "bannner_TmTLmP",
+        "bannner_tN8eKc",
+        "bannner_i8hnPQ",
+        "bannner_d4neN3",
+        "bannner_C8bwXL",
+        "bannner_WKcUFm",
+        "bannner_7dtU7P",
+        "bannner_tUFJfa",
+        "bannner_FjcwFt",
+        "bannner_ifyMPM"
+      ],
+      "settings": {
+        "head": ""
+      }
+    },
+    "rich_text_4jzxmX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8QpKCz": {
+          "type": "heading",
+          "settings": {
+            "title": "AMBASSADORS",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8QpKCz"
+      ],
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "9f591952-9c4d-4bda-a812-a38e8a1af0bd": {
+      "type": "community-grid-slider",
+      "blocks": {
+        "image_DeKnEX": {
+          "type": "image",
+          "settings": {
+            "heading": "Magda Skarbonkiewicz",
+            "caption": "USA",
+            "text": "<p>Magda Skarbonkiewicz is an American Sabre fencer and one of the most dynamic rising talents in international fencing. A two-time Junior World Champion, she also claimed both individual and team gold at the 2023 Pan American Games, solidifying her place among the world’s elite. Known for her explosive speed, sharp timing, and fearless approach, Magda has made a strong impact in NCAA fencing, where she continues to excel with creativity and consistency. Balancing power with precision, she stands out as a symbol of the new generation of American fencing excellence, inspiring young athletes across the country.</p>",
+            "image": "shopify://shop_images/magda.jpg",
+            "textarea": "Magda Skarbonkiewicz is an American Sabre fencer and one of the most dynamic rising talents in international fencing. A two-time Junior World Champion, she also claimed both individual and team gold at the 2023 Pan American Games, solidifying her place among the world’s elite. Known for her explosive speed, sharp timing, and fearless approach, Magda has made a strong impact in NCAA fencing, where she continues to excel with creativity and consistency. Balancing power with precision, she stands out as a symbol of the new generation of American fencing excellence, inspiring young athletes across the country.",
+            "mainimage": "shopify://shop_images/magda.jpg"
+          }
+        },
+        "image_3VitJ9": {
+          "type": "image",
+          "settings": {
+            "heading": "Andrea Santarelli",
+            "caption": "Italy",
+            "text": "<p>Andrea Santarelli is an Italian Épée fencer and one of the most accomplished athletes of his generation. He captured Olympic gold in the team event at Paris 2024 after earning silver at the Tokyo 2020 Games, confirming his consistency at the sport’s highest level. A multiple World and European medalist, Andrea is celebrated for his calm precision, strategic intelligence, and remarkable composure under pressure. His refined technique and focus make him a central figure in Italian fencing and a model of discipline for younger athletes. Through years of excellence, he continues to inspire the global fencing community with his mastery.</p>",
+            "image": "shopify://shop_images/andrea.jpg",
+            "textarea": "Andrea Santarelli is an Italian Épée fencer and one of the most accomplished athletes of his generation. He captured Olympic gold in the team event at Paris 2024 after earning silver at the Tokyo 2020 Games, confirming his consistency at the sport’s highest level. A multiple World and European medalist, Andrea is celebrated for his calm precision, strategic intelligence, and remarkable composure under pressure. His refined technique and focus make him a central figure in Italian fencing and a model of discipline for younger athletes. Through years of excellence, he continues to inspire the global fencing community with his mastery.",
+            "mainimage": "shopify://shop_images/andrea.jpg"
+          }
+        },
+        "2ad12a1f-3810-4995-95af-1f8552ce662a": {
+          "type": "image",
+          "settings": {
+            "heading": "Anne Kleibrink",
+            "caption": "Germany",
+            "text": "<p>Anne Kleibrink is a German Foil fencer, multiple-time national champion, and winner of the Shanghai Grand Prix 2023. A consistent performer on the World Cup circuit, she has earned numerous international podiums both individually and with the German team. Known for her tactical intelligence, quick reactions, and relentless determination, Anne brings a refined mix of precision and speed to every bout. Her consistency and drive have established her among Germany’s most accomplished foil fencers. Balancing focus with creativity, she continues to represent the strength of German fencing and serves as an inspiration to the next generation of athletes.</p>",
+            "image": "shopify://shop_images/anne.jpg",
+            "textarea": "Anne Kleibrink is a German Foil fencer, multiple-time national champion, and winner of the Shanghai Grand Prix 2023. A consistent performer on the World Cup circuit, she has earned numerous international podiums both individually and with the German team. Known for her tactical intelligence, quick reactions, and relentless determination, Anne brings a refined mix of precision and speed to every bout. Her consistency and drive have established her among Germany’s most accomplished foil fencers. Balancing focus with creativity, she continues to represent the strength of German fencing and serves as an inspiration to the next generation of athletes.",
+            "mainimage": "shopify://shop_images/anne.jpg"
+          }
+        },
+        "312978cb-260d-4b74-85d8-dbdc6aa98e66": {
+          "type": "image",
+          "settings": {
+            "heading": "Abderrahman Tolba",
+            "caption": "Egypt",
+            "text": "<p>Abdelrahman Tolba is an Egyptian Foil fencer and one of the brightest young talents in international fencing. He earned bronze at the Cadet World Championships in Plovdiv 2023 and went on to win multiple medals at the African Championships, including individual and team podiums. In 2025, he captured the Junior World Champion title in Wuxi, confirming his position among the sport’s rising stars. Known for his speed, precision, and tactical intelligence, Abdelrahman combines agility with focus to dominate his bouts. With each season, he continues to strengthen his reputation as one of the most promising fencers of his generation.</p>",
+            "image": "shopify://shop_images/tolba.jpg",
+            "textarea": "Abdelrahman Tolba is an Egyptian Foil fencer and one of the brightest young talents in international fencing. He earned bronze at the Cadet World Championships in Plovdiv 2023 and went on to win multiple medals at the African Championships, including individual and team podiums. In 2025, he captured the Junior World Champion title in Wuxi, confirming his position among the sport’s rising stars. Known for his speed, precision, and tactical intelligence, Abdelrahman combines agility with focus to dominate his bouts. With each season, he continues to strengthen his reputation as one of the most promising fencers of his generation.",
+            "mainimage": "shopify://shop_images/tolba.jpg"
+          }
+        },
+        "image_WrXpzY": {
+          "type": "image",
+          "settings": {
+            "heading": "Giulia Rizzi",
+            "caption": "Italy",
+            "text": "<p>Giulia Rizzi is an Italian Épée fencer, Olympic gold medalist in the team event at the Paris 2024 Games and bronze medalist at Tokyo 2020. A European Champion in 2022 with multiple World Cup podiums and national titles, she remains a cornerstone of Italy’s elite fencing squad. Known for her composure, endurance, and technical precision, Giulia combines patience and determination to prevail in decisive moments. Her leadership and tactical mastery have made her one of the most respected figures in women’s épée. Representing Italian excellence, she continues to inspire the next generation with her dedication and consistency.</p>",
+            "image": "shopify://shop_images/giulia.jpg",
+            "textarea": "Giulia Rizzi is an Italian Épée fencer, Olympic gold medalist in the team event at the Paris 2024 Games and bronze medalist at Tokyo 2020. A European Champion in 2022 with multiple World Cup podiums and national titles, she remains a cornerstone of Italy’s elite fencing squad. Known for her composure, endurance, and technical precision, Giulia combines patience and determination to prevail in decisive moments. Her leadership and tactical mastery have made her one of the most respected figures in women’s épée. Representing Italian excellence, she continues to inspire the next generation with her dedication and consistency.",
+            "mainimage": "shopify://shop_images/giulia.jpg"
+          }
+        },
+        "image_T9eDXD": {
+          "type": "image",
+          "settings": {
+            "heading": "Gianpaolo Buzzacchino",
+            "caption": "Italy",
+            "text": "<p>Gianpaolo Buzzacchino is an Italian Foil fencer and one of the emerging names on the international stage. A multiple-time national medalist, he has represented Italy at numerous World Cup and Grand Prix events, gaining recognition for his speed, precision, and fluid modern style. Known for his disciplined mindset and strong technical foundation, Gianpaolo approaches every bout with focus and adaptability. His ability to combine sharp attacks with refined control has earned him respect among his peers. As he continues to progress through the senior circuit, he stands out as one of Italy’s most promising fencers for the future.</p>",
+            "image": "shopify://shop_images/giampaolo.jpg",
+            "textarea": "Gianpaolo Buzzacchino is an Italian Foil fencer and one of the emerging names on the international stage. A multiple-time national medalist, he has represented Italy at numerous World Cup and Grand Prix events, gaining recognition for his speed, precision, and fluid modern style. Known for his disciplined mindset and strong technical foundation, Gianpaolo approaches every bout with focus and adaptability. His ability to combine sharp attacks with refined control has earned him respect among his peers. As he continues to progress through the senior circuit, he stands out as one of Italy’s most promising fencers for the future.",
+            "mainimage": "shopify://shop_images/giampaolo.jpg"
+          }
+        },
+        "b8c1ebd5-63a8-44db-a626-cc58f0214af7": {
+          "type": "image",
+          "settings": {
+            "heading": "Noam Duchene",
+            "caption": "France",
+            "text": "<p>Noam Duchêne is a French Épée fencer and one of the brightest young athletes of his generation. He earned a bronze medal at the Cadet World Championships in Plovdiv 2023 and has since continued to impress on both the junior and senior international circuits. Known for his precision, reach, and composed tactical mindset, Noam demonstrates remarkable maturity for his age. His ability to adapt and control the rhythm of a bout has made him one of France’s most promising prospects. Representing the new wave of French fencing, he continues to grow into a strong presence on the world stage.</p>",
+            "image": "shopify://shop_images/noam.jpg",
+            "textarea": "Noam Duchêne is a French Épée fencer and one of the brightest young athletes of his generation. He earned a bronze medal at the Cadet World Championships in Plovdiv 2023 and has since continued to impress on both the junior and senior international circuits. Known for his precision, reach, and composed tactical mindset, Noam demonstrates remarkable maturity for his age. His ability to adapt and control the rhythm of a bout has made him one of France’s most promising prospects. Representing the new wave of French fencing, he continues to grow into a strong presence on the world stage.",
+            "mainimage": "shopify://shop_images/noam.jpg"
+          }
+        },
+        "image_LXBWHt": {
+          "type": "image",
+          "settings": {
+            "heading": "Michał Siess",
+            "caption": "Poland",
+            "text": "<p>Michał Siess is a Polish Foil fencer, individual gold medalist at the 2023 European Games and multiple-time European team bronze medalist in 2018 and 2022. A consistent performer on the World Cup circuit, he has established himself as one of Poland’s leading representatives in international fencing. Recognized for his tactical intelligence, precise footwork, and refined blade control, Michał combines experience with creativity in every match. His competitive spirit and disciplined approach continue to drive his success against the world’s best. As a key figure in Polish foil, he remains a model of consistency and determination on the global stage.</p>",
+            "image": "shopify://shop_images/siess.jpg",
+            "textarea": "Michał Siess is a Polish Foil fencer, individual gold medalist at the 2023 European Games and multiple-time European team bronze medalist in 2018 and 2022. A consistent performer on the World Cup circuit, he has established himself as one of Poland’s leading representatives in international fencing. Recognized for his tactical intelligence, precise footwork, and refined blade control, Michał combines experience with creativity in every match. His competitive spirit and disciplined approach continue to drive his success against the world’s best. As a key figure in Polish foil, he remains a model of consistency and determination on the global stage.",
+            "mainimage": "shopify://shop_images/siess.jpg"
+          }
+        },
+        "1e5d3c2b-3a29-4e7e-b68c-a5d0c8bff28a": {
+          "type": "image",
+          "settings": {
+            "heading": "Mate Koch Tamas",
+            "caption": "Hungary",
+            "text": "<p>Máté Tamás Koch is a Hungarian Épée fencer, World Champion in Milan 2023 and Olympic gold medalist in the team event at the Paris 2024 Games. A consistent and disciplined competitor, he has earned multiple World Cup medals in both individual and team events, strengthening Hungary’s proud fencing legacy. Known for his calm precision, tactical awareness, and mental composure, Máté excels in high-pressure situations with remarkable consistency. His intelligent approach and sharp technique have established him among the world’s elite in men’s épée. With every performance, he continues to embody Hungary’s fencing tradition and inspire future generations of athletes.</p>",
+            "image": "shopify://shop_images/mate.jpg",
+            "textarea": "Máté Tamás Koch is a Hungarian Épée fencer, World Champion in Milan 2023 and Olympic gold medalist in the team event at the Paris 2024 Games. A consistent and disciplined competitor, he has earned multiple World Cup medals in both individual and team events, strengthening Hungary’s proud fencing legacy. Known for his calm precision, tactical awareness, and mental composure, Máté excels in high-pressure situations with remarkable consistency. His intelligent approach and sharp technique have established him among the world’s elite in men’s épée. With every performance, he continues to embody Hungary’s fencing tradition and inspire future generations of athletes.",
+            "mainimage": "shopify://shop_images/mate.jpg"
+          }
+        },
+        "db3eecf3-7e62-4679-8ba4-ccd1871c881f": {
+          "type": "image",
+          "settings": {
+            "heading": "Margaux Rifkiss",
+            "caption": "France",
+            "text": "<p>Margaux Rifkiss is a French Sabre fencer, European Team Champion 2023 and World Team Silver Medalist the same year. A steady performer on the international circuit, she has secured multiple national podiums and continues to establish herself among the world’s elite. Known for her explosive power, precision, and unwavering determination, Margaux brings both energy and control to every match. Her modern approach and strong tactical sense make her a key figure in French sabre fencing. Representing a new generation of driven athletes, she continues to elevate her performance and inspire confidence in the growing strength of French fencing.</p>",
+            "image": "shopify://shop_images/riffk.jpg",
+            "textarea": "Margaux Rifkiss is a French Sabre fencer, European Team Champion 2023 and World Team Silver Medalist the same year. A steady performer on the international circuit, she has secured multiple national podiums and continues to establish herself among the world’s elite. Known for her explosive power, precision, and unwavering determination, Margaux brings both energy and control to every match. Her modern approach and strong tactical sense make her a key figure in French sabre fencing. Representing a new generation of driven athletes, she continues to elevate her performance and inspire confidence in the growing strength of French fencing.",
+            "mainimage": "shopify://shop_images/riffk.jpg"
+          }
+        },
+        "image_DzBPzf": {
+          "type": "image",
+          "settings": {
+            "heading": "Amita Berthier",
+            "caption": "Singapore",
+            "text": "<p>Amita Berthier is a Singaporean left-handed Foil fencer, two-time Olympian, and multiple SEA Games gold medalist. She made history in 2017 by becoming the first Singaporean to win a Junior World Cup title, marking a milestone for fencing in Southeast Asia. In 2023, she claimed a bronze medal at the Asian Fencing Championships in Wuxi and secured qualification for the Paris 2024 Olympic Games through world ranking points. Known for her sharp footwork, precision, and mental strength, Amita continues to push the boundaries of Singaporean fencing, inspiring young athletes across Asia with her trailblazing achievements and dedication.</p>",
+            "image": "shopify://shop_images/amita.jpg",
+            "textarea": "Amita Berthier is a Singaporean left-handed Foil fencer, two-time Olympian, and multiple SEA Games gold medalist. She made history in 2017 by becoming the first Singaporean to win a Junior World Cup title, marking a milestone for fencing in Southeast Asia. In 2023, she claimed a bronze medal at the Asian Fencing Championships in Wuxi and secured qualification for the Paris 2024 Olympic Games through world ranking points. Known for her sharp footwork, precision, and mental strength, Amita continues to push the boundaries of Singaporean fencing, inspiring young athletes across Asia with her trailblazing achievements and dedication.",
+            "mainimage": "shopify://shop_images/amita.jpg"
+          }
+        },
+        "image_yMLTbU": {
+          "type": "image",
+          "settings": {
+            "heading": "Tom Couderc",
+            "caption": "France",
+            "text": "<p>Tom Couderc is a French Sabre fencer and one of the most promising young talents of his generation. He captured bronze at the U17 European Championships in 2023 after earning team silver the previous year, marking his steady rise on the international stage. Competing regularly on both the European and World Cup circuits, Tom is recognized for his speed, explosive attacks, and composed tactical execution. His focus and determination allow him to perform with remarkable consistency against strong opposition. Representing the next generation of French sabre fencing, he continues to develop as a confident and ambitious athlete to watch.</p>",
+            "image": "shopify://shop_images/tom_koud.jpg",
+            "textarea": "Tom Couderc is a French Sabre fencer and one of the most promising young talents of his generation. He captured bronze at the U17 European Championships in 2023 after earning team silver the previous year, marking his steady rise on the international stage. Competing regularly on both the European and World Cup circuits, Tom is recognized for his speed, explosive attacks, and composed tactical execution. His focus and determination allow him to perform with remarkable consistency against strong opposition. Representing the next generation of French sabre fencing, he continues to develop as a confident and ambitious athlete to watch.",
+            "mainimage": "shopify://shop_images/tom_koud.jpg"
+          }
+        },
+        "0c75c723-94be-4a79-b19c-68a4ffc1a5aa": {
+          "type": "image",
+          "settings": {
+            "heading": "Minobe Kazuyasu",
+            "caption": "Japan",
+            "text": "<p>Minobe Kazuyasu is a Japanese Épée fencer, Olympic gold medalist in the team event at the Tokyo 2020 Games and individual silver medalist at the 2022 World Championships. A cornerstone of Japan’s fencing success, he has achieved numerous podiums at World Cup and Asian Championship events, showcasing exceptional consistency and skill. Renowned for his elegant technique, precise timing, and calm tactical control, Minobe combines experience with adaptability to excel under pressure. As one of the most respected names in men’s épée, he continues to inspire the growth of fencing in Japan and remains a symbol of excellence and discipline.</p>",
+            "image": "shopify://shop_images/minobe.jpg",
+            "textarea": "Minobe Kazuyasu is a Japanese Épée fencer, Olympic gold medalist in the team event at the Tokyo 2020 Games and individual silver medalist at the 2022 World Championships. A cornerstone of Japan’s fencing success, he has achieved numerous podiums at World Cup and Asian Championship events, showcasing exceptional consistency and skill. Renowned for his elegant technique, precise timing, and calm tactical control, Minobe combines experience with adaptability to excel under pressure. As one of the most respected names in men’s épée, he continues to inspire the growth of fencing in Japan and remains a symbol of excellence and discipline.",
+            "mainimage": "shopify://shop_images/4_1e86bc93-23fa-402c-bfb4-f5d85df91393.png"
+          }
+        },
+        "image_TUkxzC": {
+          "type": "image",
+          "settings": {
+            "heading": "kruz schembri",
+            "caption": "UVIslands",
+            "text": "<p>Kruz Schembri is a fencer representing the U.S. Virgin Islands, celebrated for his explosive style, precision, and fearless approach on the piste. He captured silver at the Cadet World Championships in Plovdiv 2023 and made history in 2025 by winning gold in épée at the Junior Pan American Games in Asunción, becoming the first athlete from the Virgin Islands to claim a Pan American fencing title. Competing internationally across both foil and épée, Kruz continues to impress with his versatility and determination. As one of the sport’s most promising young fencers, he represents a powerful symbol of emerging talent.</p>",
+            "image": "shopify://shop_images/kruz.jpg",
+            "textarea": "Kruz Schembri is a fencer representing the U.S. Virgin Islands, celebrated for his explosive style, precision, and fearless approach on the piste. He captured silver at the Cadet World Championships in Plovdiv 2023 and made history in 2025 by winning gold in épée at the Junior Pan American Games in Asunción, becoming the first athlete from the Virgin Islands to claim a Pan American fencing title. Competing internationally across both foil and épée, Kruz continues to impress with his versatility and determination. As one of the sport’s most promising young fencers, he represents a powerful symbol of emerging talent.",
+            "mainimage": "shopify://shop_images/kruz.jpg"
+          }
+        },
+        "039f9fa5-024c-47bb-8cdd-a0fb014d1e5c": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "heading": "Mara Navarria",
+            "caption": "Italy",
+            "text": "<p>Mara Navarria is an Italian Épée fencer, World Champion in Wuxi 2018, and Olympic bronze medalist at the Tokyo 2020 Games. A multiple-time Italian champion, she has earned numerous medals at World Cups and European Championships, including team gold at the Paris 2024 Olympic Games. Known for her tactical precision and powerful style, Mara continues to be one of the leading figures in women’s épée fencing.</p>",
+            "image": "shopify://shop_images/4_cbd6961f-1531-47db-8d8e-0742e77ccb80.png",
+            "textarea": "Mara Navarria is an Italian Épée fencer, World Champion in Wuxi 2018, and Olympic bronze medalist at the Tokyo 2020 Games. A multiple-time Italian champion, she has earned numerous medals at World Cups and European Championships, including team gold at the Paris 2024 Olympic Games. Known for her tactical precision and powerful style, Mara continues to be one of the leading figures in women’s épée fencing.",
+            "mainimage": "shopify://shop_images/7_3ae781a3-00aa-4a70-a63a-f6d54b0c9bc6.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_DeKnEX",
+        "image_3VitJ9",
+        "2ad12a1f-3810-4995-95af-1f8552ce662a",
+        "312978cb-260d-4b74-85d8-dbdc6aa98e66",
+        "image_WrXpzY",
+        "image_T9eDXD",
+        "b8c1ebd5-63a8-44db-a626-cc58f0214af7",
+        "image_LXBWHt",
+        "1e5d3c2b-3a29-4e7e-b68c-a5d0c8bff28a",
+        "db3eecf3-7e62-4679-8ba4-ccd1871c881f",
+        "image_DzBPzf",
+        "image_yMLTbU",
+        "0c75c723-94be-4a79-b19c-68a4ffc1a5aa",
+        "image_TUkxzC",
+        "039f9fa5-024c-47bb-8cdd-a0fb014d1e5c"
+      ],
+      "custom_css": [],
+      "settings": {
+        "main_title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1eb36d85-91d0-48b3-807c-0e2c85384eb0",
+    "slideshow_mqVDzh",
+    "rich_text_TgRyYY",
+    "brand_logo_KjLD7K",
+    "rich_text_4jzxmX",
+    "9f591952-9c4d-4bda-a812-a38e8a1af0bd"
+  ]
+}

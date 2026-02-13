@@ -1,0 +1,251 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich-text-1": {
+      "type": "rich-text",
+      "blocks": {
+        "block-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Contact us",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-1-base"
+          }
+        },
+        "block-1": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "block-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text area to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "block-1",
+        "block-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "blocks": {
+        "announcement_83Lmc3": {
+          "type": "announcement",
+          "settings": {
+            "contact_heading": "For Commercial Information",
+            "contact_description": "<p>12 Bd Louise Michel, 91000 Évry-Courcouronnes, France<br/>Open ⋅ Closes 6:00PM</p>",
+            "show_social": false,
+            "instagram_url": "",
+            "tiktok_url": "",
+            "facebook_url": "",
+            "linkedin_url": ""
+          }
+        },
+        "announcement_LDR7WD": {
+          "type": "announcement",
+          "settings": {
+            "contact_heading": "",
+            "contact_description": "",
+            "show_social": false,
+            "instagram_url": "",
+            "tiktok_url": "",
+            "facebook_url": "",
+            "linkedin_url": ""
+          }
+        },
+        "announcement_QgJ3Jm": {
+          "type": "announcement",
+          "settings": {
+            "contact_heading": "Customer Service",
+            "contact_description": "<p>Monday - Friday 10-18 CEST<br/>Mail: social@azzafencing.com</p>",
+            "show_social": false,
+            "instagram_url": "",
+            "tiktok_url": "",
+            "facebook_url": "",
+            "linkedin_url": ""
+          }
+        },
+        "announcement_kTPPLe": {
+          "type": "announcement",
+          "settings": {
+            "contact_heading": "We Are in Social:",
+            "contact_description": "<p>Join our email list and be the first to know about new limited edition products.</p>",
+            "show_social": true,
+            "instagram_url": "https://www.instagram.com/azzafencing/",
+            "tiktok_url": "https://www.tiktok.com/@azzafencing",
+            "facebook_url": "https://www.facebook.com/people/Azza-Fencing/100082818163555/",
+            "linkedin_url": "https://www.linkedin.com/company/azzafencing/"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_83Lmc3",
+        "announcement_LDR7WD",
+        "announcement_QgJ3Jm",
+        "announcement_kTPPLe"
+      ],
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": true,
+        "heading": "Contacts Us",
+        "description": "<p> We want to hear from you! Whether it's questions, feedback, reviews, information requests, team orders, or special requests, we are listening.</p>",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich-text-2": {
+      "type": "rich-text",
+      "blocks": {
+        "block-0": {
+          "type": "heading",
+          "settings": {
+            "title": "FAQ",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "block-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Below are some of are common questions:</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "block-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "collapsible-row-list": {
+      "type": "collapsible-row-list",
+      "blocks": {
+        "block-0": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "How do I know if my order is confirmed?",
+            "text": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>"
+          }
+        },
+        "block-1": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "Can I change my shipping address after my order is placed?",
+            "text": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>"
+          }
+        },
+        "block-2": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "Do you ship internationally?",
+            "text": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>"
+          }
+        },
+        "block-3": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "How long will it take until I receive my order?",
+            "text": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "block-1",
+        "block-2",
+        "block-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "heading_font_class": "fs-heading-3-base",
+        "subheading": "",
+        "subheading_tag": "h3",
+        "subheading_font_class": "fs-heading-5-base",
+        "heading_alignment": "left",
+        "item_heading_font": "body",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-bottom-only",
+        "content_width": "custom",
+        "custom_content_width": 850
+      }
+    },
+    "form": {
+      "type": "new-contact-form",
+      "disabled": true,
+      "settings": {
+        "alignment": "left_left",
+        "heading": "Contacts",
+        "heading_tag": "h2",
+        "heading_font_class": "fs-heading-3-base",
+        "text": "",
+        "show_recaptcha_terms": true,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich-text-1",
+    "contact-form",
+    "rich-text-2",
+    "collapsible-row-list",
+    "form"
+  ]
+}

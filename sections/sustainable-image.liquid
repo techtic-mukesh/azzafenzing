@@ -1,0 +1,84 @@
+<style>
+   /* body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+  */
+   .image-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 10px;
+         max-width: 1440px;
+     margin: 20px auto;
+   }
+
+   .image-item {
+     flex: 1 1 calc(33% - 5px); /* Adjust as needed */
+     max-width: calc(33% - 5px); /* Adjust as needed */
+   }
+
+   @media (max-width: 768px) {
+     .image-container {
+       gap: 20px;
+     }
+
+     .image-item:first-child {
+       flex: 1 1 100%;
+       max-width: 100%;
+
+     }
+     .image-item:nth-child(2),    .image-item:nth-child(3){
+       max-width:calc( 50% - 10px );
+       width:calc( 50% - 10px);
+             flex: 1 1 50%;
+     }
+   }
+</style>
+<div class="image-container">
+  {% for block in section.blocks %}
+    <div class="image-item">
+      {% if block.settings.image_tab != blank %}
+        <img
+          class="{% if block.settings.image_tab_class == '2_image' %}images_two{% endif %}"
+          src="{{ block.settings.image_tab | img_url: 'master' }}"
+        >
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "sustainable-images",
+"class":"section",
+  "settings": [
+  ],
+  "blocks":[
+    {
+      "type":"image",
+      "name":"Image",
+      "settings":[
+          {
+            "type": "image_picker",
+            "id": "image_tab",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "image_tab_class",
+            "label": "Class"
+          }
+
+      ]
+    }
+  ],
+ "presets": [
+   {
+      "name": "sustainable-images"
+    }
+  ]
+}
+{% endschema %}

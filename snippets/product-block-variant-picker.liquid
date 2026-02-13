@@ -1,0 +1,862 @@
+{%- liquid
+  assign swatch_options = settings.swatch_options | downcase | split: ', '
+  assign chip_options = settings.chip_options | downcase | split: ', '
+
+  # Sibling products
+  # Merchants often make the mistake of inputting sibling_collection instead of the
+  # documented siblings_collection. We now support both to help with support debt.
+  assign sibling_products = product.metafields.stiletto.sibling_collection.value.products | default: product.metafields.stiletto.siblings_collection.value.products
+  assign show_out_link = false
+  for v in product.variants
+    if v.available == false
+      assign show_out_link = true
+    endif
+  endfor
+  case settings.swatch_shape
+    when 'rectangle'
+      case block_settings.swatch_size
+        when 'large'
+          assign swatch_width = 72
+        when 'medium'
+          assign swatch_width = 60
+        else
+          assign swatch_width = 44
+      endcase
+    else
+      case block_settings.swatch_size
+        when 'large'
+          assign swatch_width = 48
+        when 'medium'
+          assign swatch_width = 38
+        else
+          assign swatch_width = 30
+      endcase
+  endcase
+
+  assign swatch_image_width = swatch_width | times: 2
+
+  capture swatch_style
+    echo '--swatch-width: [[sw]]px;' | replace: '[[sw]]', swatch_width
+    echo '--swatch-image-fit: [[sif]];' | replace: '[[sif]]', settings.swatch_image_fit
+  endcapture
+-%}
+
+{% comment %} Siblings {% endcomment %}
+{%- if show_siblings
+  and product.metafields.stiletto.sibling_option_name
+  and sibling_products
+  and settings.siblings_option_name != blank
+-%}
+  <div class="product__block product__block--medium" data-sibling-products>
+    {% comment %} <div class="product__label-wrapper">
+      <label class="product__label fs-body-100">
+        {{ settings.siblings_option_name }}:
+        <span class="t-opacity-70" data-sibling-label-value>
+          {{- product.metafields.stiletto.sibling_option_name -}}
+        </span>
+      </label>
+    </div> {% endcomment %}
+    <div class="product__color-swatches" style="{{ swatch_style }}">
+      <div class="product__color-swatches--inner">
+        {%- for sibling_product in sibling_products -%}
+          {% render 'product-swatch',
+            context: 'product-page',
+            prod: product,
+            forloop_index: forloop.index,
+            swatch_size: block_settings.swatch_size,
+            swatch_image_width: swatch_image_width,
+            sibling_product: sibling_product,
+            option_name: settings.siblings_option_name,
+            option_value: sibling_product.metafields.stiletto.sibling_option_name
+          %}
+        {%- endfor -%}
+
+        <button class="out-of-stock-trigger ">
+          {% render 'icon-mail' %}
+          {{ section.settings.out_of_stock_popup_label }}
+        </button>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{%- unless product.has_only_default_variant -%}
+  {%- liquid
+    assign variant_popup_page = pages[block_settings.variant_popup_page]
+    assign variant_popup_content_exists = false
+    assign variant_popup_option = ''
+
+    if block_settings.variant_popup_option != blank and block_settings.variant_popup_text != blank and variant_popup_page.content != blank
+      assign variant_popup_content_exists = true
+      assign variant_popup_option = block_settings.variant_popup_option | downcase
+      assign options_popup = variant_popup_option | split: ', '
+    endif
+  -%}
+
+
+
+
+  
+<div class="product-swatches">
+  <label class="product__label variant-label" style="justify-content:flex-start">
+    Model 
+    {% comment %} : <span class="current-product-name">({{ product.title }})</span> {% endcomment %}
+  </label>
+
+  {% for related_product in product.metafields.custom.other_products.value %}
+    {% assign is_current = false %}
+    {% if related_product.id == product.id %}
+      {% assign is_current = true %}
+    {% endif %}
+
+    {% if related_product.available %}
+      <a href="{{ related_product.url }}"
+         class="swatch{% if is_current %} active{% endif %}">
+        <img src="{{ related_product.images[0] | img_url: '80x80' }}"
+             alt="{{ related_product.title }}">
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% if product.metafields.custom.extra_information %}
+  <div class="custom_product_information">
+    <p>{{ product.metafields.custom.extra_information }}</p>
+  </div>
+{% endif %}
+<style>
+  .product-swatches {
+    margin-top: -20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .custom_product_information {
+      margin-top: 15px;
+      font-family: 'Inter',sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #6B7280;
+  }
+  .product__label.variant-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Inter',sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: capitalize !important;
+    color: #000;
+  }
+
+  .current-product-name {
+    font-weight: normal;
+    color: #555;
+  }
+
+  .swatch {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+
+  .swatch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swatch:hover {
+    border-color: black;
+  }
+
+  .swatch.active {
+    border: 1px solid #000;
+  }
+
+    @media (max-width: 767px) {
+      .swatch {
+        width: 74px;
+        height: 75px;
+        border-radius: 9px;
+      }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+  
+  <div
+    class="product__controls-group product__variants-wrapper product__block product__block--medium"
+    data-enable-dynamic-product-options="{{ settings.enable_dynamic_product_options }}"
+    data-current-variant-id="{{ product.selected_or_first_available_variant.id }}"
+    style="{{ swatch_style }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign option_name = option.name | downcase
+        assign show_popup_trigger = false
+        assign rendered_popup_trigger = ''
+        assign option_values = ''
+        if variant_popup_content_exists and option_name contains variant_popup_option
+          assign show_popup_trigger = true
+        endif
+        for k in options_popup
+          if k contains option_name
+            assign show_popup_trigger = true
+          endif
+        endfor
+      -%}
+      {% if show_popup_trigger %}
+        {% capture rendered_popup_trigger %}
+          {%
+            render 'product-block-information-popup' with
+            block: block,
+            popup_page_target: block_settings.variant_popup_page,
+            popup_page: variant_popup_page,
+            icon: block_settings.variant_popup_icon,
+            custom_icon_image: block_settings.custom_icon_image,
+            text: block_settings.variant_popup_text
+          %}
+        {% if show_out_link == true %}
+          <button class="out-of-stock-trigger">
+            {% render 'icon-mail' %}
+            {{ section.settings.out_of_stock_popup_label }}
+          </button>
+        {% endif %}
+
+          {% endcapture %}
+      {% endif %}
+
+      {% comment %}
+        All inputs that have `name=options[Name]` will be picked up by
+        ProductForm, registered as an option input, and made available
+        at ProductForm.optionsInputs
+      {% endcomment %}
+      {%- capture option_values -%}
+        <select
+          id="option{{ option.position }}"
+          name="options[{{ option.name | escape }}]"
+          class="
+            input
+            {% if settings.enable_dynamic_product_options %}
+              dynamic-variant-input
+            {% endif %}
+          "
+          data-index="option{{ forloop.index }}"
+        >
+          {%- for value in option.values -%}
+             {% if forloop.first  %}
+               {% assign first_option = value | split:' - ' %}
+              {% endif %}
+            <option
+              data-value-handle="{{ value | handleize }}--{{ forloop.index }}"
+              value="{{ value | escape }}"
+              {%- if option.selected_value == value -%}
+                selected="selected"
+              {%- endif -%}
+            >
+              {{ value }}
+            </option>
+          {%- endfor -%}
+        </select>
+      {%- endcapture -%}
+
+      {% capture rendered_option_inner %}
+        {%- if swatch_options contains option_name -%}
+          <!-- Handle swatches -->
+          <div
+            class="product__color-swatches"
+            data-option-buttons
+            data-product-option="option{{ option.position }}"
+          >
+            <div
+              class="
+                product__color-swatches--inner
+                {% if settings.enable_dynamic_product_options %}
+                  dynamic-variant-input-wrap
+                {% endif %}
+              "
+              data-index="option{{ forloop.index }}"
+            >
+              {%- for value in option.values -%}
+                {% render 'product-swatch',
+                  context: 'product-page',
+                  prod: product,
+                  forloop_index: forloop.index,
+                  swatch_size: block_settings.swatch_size,
+                  swatch_image_width: swatch_image_width,
+                  option_index: option.position,
+                  option_name: option_name,
+                  option_value: value,
+                  selected_value: option.selected_value
+                %}
+              {%- endfor -%}
+
+              {{ option_values }}
+            </div>
+
+          </div>
+        {%- elsif chip_options contains option_name -%}
+          {%- comment -%} Check if this is a size option - if so, use new selector instead of chips {%- endcomment -%}
+          {%- assign is_size_option = false -%}
+          {%- if option_name == 'size' or option_name contains 'size' -%}
+            {%- assign is_size_option = true -%}
+          {%- endif -%}
+          
+          {%- if is_size_option -%}
+            {%- comment -%} New custom size selector for size options configured as chips {%- endcomment -%}
+             <div
+                class="product-block-divider product__block product__block--medium"
+                style="border-top: 1px solid #E0E0E0; margin-top: 28px; margin-bottom: 28px;"
+                {{ block.shopify_attributes }}
+              ></div>
+            <div
+              class="custom-size-selector-wrapper
+                {% if settings.enable_dynamic_product_options %}
+                  dynamic-variant-input-wrap
+                {% endif %}"
+              data-index="option{{ forloop.index }}"
+            >
+              {{ option_values }}
+              
+              <button type="button" class="custom-size-selector-btn" data-size-selector-btn>
+                <span class="size-selector-text" data-selected-size-text>Select A Size</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-selector-chevron">
+                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              
+              <div class="custom-size-dropdown" data-size-dropdown>
+                <div class="size-dropdown-header">
+                  <div class="size-type-dropdown-wrapper">
+                    <select class="size-type-dropdown" data-size-type-dropdown>
+                      <option value="EU" selected>EU Size</option>
+                      <option value="US">US Size</option>
+                    </select>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-type-dropdown-chevron">
+                      <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <button type="button" class="size-dropdown-close" data-size-dropdown-close>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="size-dropdown-content" data-size-dropdown-content>
+                  {%- for value in option.values -%}
+                    {%- assign variant_for_value = null -%}
+                    {%- comment -%} Try to find variant by matching option value {%- endcomment -%}
+                    {%- for variant in product.variants -%}
+                      {%- if option.position == 1 and variant.option1 == value -%}
+                        {%- assign variant_for_value = variant -%}
+                        {%- break -%}
+                      {%- elsif option.position == 2 and variant.option2 == value -%}
+                        {%- assign variant_for_value = variant -%}
+                        {%- break -%}
+                      {%- elsif option.position == 3 and variant.option3 == value -%}
+                        {%- assign variant_for_value = variant -%}
+                        {%- break -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                    {%- comment -%} Fallback: try to find by title containing the value {%- endcomment -%}
+                    {%- if variant_for_value == null -%}
+                      {%- for variant in product.variants -%}
+                        {%- if variant.title contains value -%}
+                          {%- assign variant_for_value = variant -%}
+                          {%- break -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                    {%- assign eu_size = value | split: ' - ' | first | replace: 'EU', '' | replace: 'eu', '' | strip -%}
+                    {%- assign us_size = value | split: ' - ' | last | replace: 'US', '' | replace: 'us', '' | strip -%}
+                    {%- if variant_for_value -%}
+                      {%- assign inventory_count = variant_for_value.inventory_quantity | default: 0 -%}
+                      {%- assign is_available = variant_for_value.available | default: false -%}
+                    {%- else -%}
+                      {%- assign inventory_count = 0 -%}
+                      {%- assign is_available = false -%}
+                    {%- endif -%}
+                    {%- assign low_stock_threshold = section.settings.inventory_trashold | default: 5 | times: 1 -%}
+                    
+                    <div 
+                      class="size-option-item {% unless is_available %}size-option-out-of-stock{% endunless %} {% if option.selected_value == value %}size-option-selected{% endif %}"
+                      data-size-option
+                      data-option-value="{{ value | escape }}"
+                      data-option-handle="{{ value | handleize }}--{{ forloop.index }}"
+                      data-eu-size="{{ eu_size }}"
+                      data-us-size="{{ us_size }}"
+                      data-variant-id="{% if variant_for_value %}{{ variant_for_value.id }}{% else %}0{% endif %}"
+                      data-inventory-count="{{ inventory_count }}"
+                      data-is-available="{{ is_available }}"
+                    >
+                      <span class="size-option-number eu-size-display">{{ eu_size }}</span>
+                      <span class="size-option-number us-size-display" style="display: none;">{{ us_size }}</span>
+                      <span class="size-option-status">
+                        {%- if is_available -%}
+                          {%- if inventory_count > 0 and inventory_count <= low_stock_threshold -%}
+                            <span class="low-stock-text">Only {{ inventory_count }} left</span>
+                          {%- endif -%}
+                        {%- else -%}
+                          <button type="button" class="notify-me-btn" data-notify-me data-variant-id="{% if variant_for_value %}{{ variant_for_value.id }}{% else %}0{% endif %}">Notify me</button>
+                        {%- endif -%}
+                      </span>
+                    </div>
+                  {%- endfor -%}
+                </div>
+                <div class="size-dropdown-footer">
+                  {%- if variant_popup_content_exists and option_name contains variant_popup_option -%}
+                    <a 
+                      href="{{ variant_popup_page.url }}"
+                      class="size-guide-link product__information-popup"
+                      data-popup-trigger
+                      data-modal-content-id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                      data-size-guide-link
+                    >
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Size Guide
+                    </a>
+                    <div
+                      id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                      class="information-popup__content modal-content"
+                      aria-modal="true"
+                    >
+                      {{ variant_popup_page.content }}
+                    </div>
+                  {%- else -%}
+                    {%- if variant_popup_page != blank and variant_popup_page.content != blank -%}
+                      <a 
+                        href="{{ variant_popup_page.url }}"
+                        class="size-guide-link product__information-popup"
+                        data-popup-trigger
+                        data-modal-content-id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                        data-size-guide-link
+                      >
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Size Guide
+                      </a>
+                      <div
+                        id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                        class="information-popup__content modal-content"
+                        aria-modal="true"
+                      >
+                        {{ variant_popup_page.content }}
+                      </div>
+                    {%- else -%}
+                      <a href="#" class="size-guide-link" data-size-guide-link>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Size Guide
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          {%- else -%}
+            {%- comment -%} Original chips for non-size options {%- endcomment -%}
+            <div
+              class="
+                product__color-chips
+                {% if settings.enable_dynamic_product_options %}
+                  dynamic-variant-input-wrap
+                {% endif %}
+              "
+              data-option-buttons
+              data-product-option="option{{ option.position }}"
+              data-index="option{{ forloop.index }}"
+              data-layout="{{ block_settings.chip_layout }}"
+            >
+              {%- for value in option.values -%}
+                <button
+                  type="button"
+                  data-button
+                  data-label="{{ value | url_encode }}"
+                  aria-label="{{ value | replace: '"', "'" }}"
+                  data-option-value="{{ value | escape }}"
+                  data-option-handle="{{ value | handleize }}--{{ forloop.index }}"
+                  class="
+                    product__chip
+                    {% if option.selected_value == value %}
+                      selected
+                    {% endif %}
+                    {% if settings.enable_dynamic_product_options %}
+                      dynamic-variant-button
+                    {% endif %}
+                  ">
+                  <span class="eu-size">{{ value | split: ' - ' | first | replace:'EU','' | replace:'eu',''  | replace:'US','' | replace:'us','' }}</span>
+                  <span class="us-size">{{ value | split: ' - ' | last | replace:'US','' | replace:'us','' | replace:'EU','' | replace:'eu',''  }}</span>
+               </button>
+              {%- endfor -%}
+             {{ rendered_popup_trigger }}
+              {{ option_values }}
+            </div>
+          {%- endif -%}
+        {%- else -%}
+          {%- comment -%} Original select-wrapper - commented out for new design {%- endcomment -%}
+          {%- comment -%}
+          <div
+            class="
+              select-wrapper
+              {% if settings.enable_dynamic_product_options %}
+                dynamic-variant-input-wrap
+              {% endif %}
+            "
+            data-index="option{{ forloop.index }}"
+          >
+            {{ option_values }}
+
+            {% render 'icon' with icon: 'chevron-small' %}
+          </div>
+          {%- endcomment -%}
+          
+          {%- comment -%} New custom size selector design - show for size option or first option if not swatch/chip {%- endcomment -%}
+          {%- assign is_size_option = false -%}
+          {%- if option_name == 'size' or option_name contains 'size' -%}
+            {%- assign is_size_option = true -%}
+          {%- endif -%}
+          {%- if is_size_option or option.position == 1 -%}
+            <div
+              class="custom-size-selector-wrapper
+                {% if settings.enable_dynamic_product_options %}
+                  dynamic-variant-input-wrap
+                {% endif %}"
+              data-index="option{{ forloop.index }}"
+            >
+              {{ option_values }}
+              
+              <button type="button" class="custom-size-selector-btn" data-size-selector-btn>
+                <span class="size-selector-text" data-selected-size-text>Select A Size</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-selector-chevron">
+                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              
+              <div class="custom-size-dropdown" data-size-dropdown>
+                <div class="size-dropdown-header">
+                  <div class="size-type-dropdown-wrapper">
+                    <select class="size-type-dropdown" data-size-type-dropdown>
+                      <option value="EU">EU Size</option>
+                      <option value="US">US Size</option>
+                    </select>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-type-dropdown-chevron">
+                      <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <button type="button" class="size-dropdown-close" data-size-dropdown-close>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="size-dropdown-content" data-size-dropdown-content>
+                  {%- for value in option.values -%}
+                    {%- assign variant_for_value = null -%}
+                    {%- comment -%} Try to find variant by matching option value {%- endcomment -%}
+                    {%- for variant in product.variants -%}
+                      {%- if option.position == 1 and variant.option1 == value -%}
+                        {%- assign variant_for_value = variant -%}
+                        {%- break -%}
+                      {%- elsif option.position == 2 and variant.option2 == value -%}
+                        {%- assign variant_for_value = variant -%}
+                        {%- break -%}
+                      {%- elsif option.position == 3 and variant.option3 == value -%}
+                        {%- assign variant_for_value = variant -%}
+                        {%- break -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                    {%- comment -%} Fallback: try to find by title containing the value {%- endcomment -%}
+                    {%- if variant_for_value == null -%}
+                      {%- for variant in product.variants -%}
+                        {%- if variant.title contains value -%}
+                          {%- assign variant_for_value = variant -%}
+                          {%- break -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                    {%- assign eu_size = value | split: ' - ' | first | replace: 'EU', '' | replace: 'eu', '' | strip -%}
+                    {%- assign us_size = value | split: ' - ' | last | replace: 'US', '' | replace: 'us', '' | strip -%}
+                    {%- if variant_for_value -%}
+                      {%- assign inventory_count = variant_for_value.inventory_quantity | default: 0 -%}
+                      {%- assign is_available = variant_for_value.available | default: false -%}
+                    {%- else -%}
+                      {%- assign inventory_count = 0 -%}
+                      {%- assign is_available = false -%}
+                    {%- endif -%}
+                    {%- assign low_stock_threshold = section.settings.inventory_trashold | default: 5 | times: 1 -%}
+                    
+                    <div 
+                      class="size-option-item {% unless is_available %}size-option-out-of-stock{% endunless %} {% if option.selected_value == value %}size-option-selected{% endif %}"
+                      data-size-option
+                      data-option-value="{{ value | escape }}"
+                      data-option-handle="{{ value | handleize }}--{{ forloop.index }}"
+                      data-eu-size="{{ eu_size }}"
+                      data-us-size="{{ us_size }}"
+                      data-variant-id="{% if variant_for_value %}{{ variant_for_value.id }}{% else %}0{% endif %}"
+                      data-inventory-count="{{ inventory_count }}"
+                      data-is-available="{{ is_available }}"
+                    >
+                      <span class="size-option-number eu-size-display">{{ eu_size }}</span>
+                      <span class="size-option-number us-size-display" style="display: none;">{{ us_size }}</span>
+                      <span class="size-option-status">
+                        {%- if is_available -%}
+                          {%- if inventory_count > 0 and inventory_count <= low_stock_threshold -%}
+                            <span class="low-stock-text">Only {{ inventory_count }} left</span>
+                          {%- endif -%}
+                        {%- else -%}
+                          <button type="button" class="notify-me-btn" data-notify-me data-variant-id="{% if variant_for_value %}{{ variant_for_value.id }}{% else %}0{% endif %}">Notify me</button>
+                        {%- endif -%}
+                      </span>
+                    </div>
+                  {%- endfor -%}
+                </div>
+                <div class="size-dropdown-footer">
+                  {%- if variant_popup_content_exists and option_name contains variant_popup_option -%}
+                    <a 
+                      href="{{ variant_popup_page.url }}"
+                      class="size-guide-link product__information-popup"
+                      data-popup-trigger
+                      data-modal-content-id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                      data-size-guide-link
+                    >
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Size Guide
+                    </a>
+                    <div
+                      id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                      class="information-popup__content modal-content"
+                      aria-modal="true"
+                    >
+                      {{ variant_popup_page.content }}
+                    </div>
+                  {%- else -%}
+                    {%- if variant_popup_page != blank and variant_popup_page.content != blank -%}
+                      <a 
+                        href="{{ variant_popup_page.url }}"
+                        class="size-guide-link product__information-popup"
+                        data-popup-trigger
+                        data-modal-content-id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                        data-size-guide-link
+                      >
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Size Guide
+                      </a>
+                      <div
+                        id="modal-{{ block_settings.variant_popup_page }}-{{ block.id }}"
+                        class="information-popup__content modal-content"
+                        aria-modal="true"
+                      >
+                        {{ variant_popup_page.content }}
+                      </div>
+                    {%- else -%}
+                      <a href="#" class="size-guide-link" data-size-guide-link>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Size Guide
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          {%- else -%}
+            {%- comment -%} Keep original select-wrapper for non-size options {%- endcomment -%}
+            <div
+              class="
+                select-wrapper
+                {% if settings.enable_dynamic_product_options %}
+                  dynamic-variant-input-wrap
+                {% endif %}
+              "
+              data-index="option{{ forloop.index }}"
+            >
+              {{ option_values }}
+
+              {% render 'icon' with icon: 'chevron-small' %}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      {% endcapture %}
+
+      {% capture rendered_option %}
+        
+        <div class="js-enabled product__option" data-product-option>
+          {% comment %} <div class="product__label-wrapper">
+            <label class="product__label variant-label" for="option{{ option.position }}">
+              {{ section.settings.prefix_variant }} {{ option.name | upcase }} : 
+              
+              <span class="t-opacity-70" data-selected-value-for-option data-option-name="option{{ option.position }}">
+                {{- option.selected_value -}}
+              </span>
+              
+              <span class="label-inventory" data-low-text="{{ section.settings.low_inventory_text }}">{{ section.settings.low_inventory_text }}</span>
+            </label>
+          </div> {% endcomment %}
+          {% comment %} <select id="size-type" class="input custom-size-type">
+          {% for i in first_option %}
+              <option value="{{ i | slice:0,2  }}"{% if forloop.first %} selected {% endif %}>{{ i | slice:0,2 }}</option>
+            {% endfor %}
+        </select> {% endcomment %}
+            {{ rendered_option_inner }}
+        </div>
+      {% endcapture %}
+
+      {%- comment -%}Due to dynamic product options, options will be displayed in order of appearance{%- endcomment -%}
+      {{ rendered_option }}
+    {% endfor %}
+
+    {%- if settings.enable_dynamic_product_options -%}
+      <script type="application/json" data-variant-json>
+        {{ product.variants | json }}
+      </script>
+    {%- endif -%}
+  </div>
+{% endunless %}
+
+<script>
+  (function() {
+    // Handle size guide link clicks - directly open the modal
+    function handleSizeGuideClick(e) {
+      const sizeGuideLink = e.target.closest('[data-size-guide-link]');
+      if (!sizeGuideLink) return;
+      
+      // Check if it has the popup trigger attribute
+      if (!sizeGuideLink.hasAttribute('data-popup-trigger')) return;
+      
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Get the modal content ID from the link (not from e.target which might be SVG)
+      const modalContentId = sizeGuideLink.getAttribute('data-modal-content-id');
+      if (!modalContentId) {
+        console.warn('Size guide: modal content ID not found');
+        return;
+      }
+      
+      // Find the source content element
+      const sourceContent = document.getElementById(modalContentId);
+      if (!sourceContent) {
+        console.warn('Size guide: source content not found:', modalContentId);
+        return;
+      }
+      
+      // Find the modal container
+      const modal = document.querySelector('[data-modal]');
+      if (!modal) {
+        console.warn('Size guide: modal container not found');
+        return;
+      }
+      
+      // Find the modal content container
+      const modalContent = modal.querySelector('.modal__content');
+      if (!modalContent) {
+        console.warn('Size guide: modal content container not found');
+        return;
+      }
+      
+      // Clone the source content and insert into modal
+      const clonedContent = sourceContent.cloneNode(true);
+      modalContent.innerHTML = '';
+      modalContent.appendChild(clonedContent);
+      
+      // Remove narrow class if present
+      modal.classList.remove('modal--narrow');
+      
+      // Open the modal by adding active class
+      modal.classList.add('active');
+      document.body.setAttribute('data-fluorescent-overlay-open', 'true');
+      
+      // Wrap iframes and tables if needed (like the theme does)
+      const iframes = clonedContent.querySelectorAll('iframe');
+      iframes.forEach(function(iframe) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'iframe-wrapper';
+        wrapper.style.position = 'relative';
+        wrapper.style.paddingBottom = '56.25%';
+        wrapper.style.height = '0';
+        wrapper.style.overflow = 'hidden';
+        iframe.parentNode.insertBefore(wrapper, iframe);
+        wrapper.appendChild(iframe);
+        iframe.style.position = 'absolute';
+        iframe.style.top = '0';
+        iframe.style.left = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+      });
+      
+      // Focus trap activation (simplified)
+      const closeBtn = modal.querySelector('[data-modal-close]');
+      if (closeBtn) {
+        closeBtn.focus();
+      }
+    }
+    
+    // Add event listener when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('click', handleSizeGuideClick, true);
+      });
+    } else {
+      document.addEventListener('click', handleSizeGuideClick, true);
+    }
+    
+    // Also handle modal close
+    document.addEventListener('click', function(e) {
+      const closeBtn = e.target.closest('[data-modal-close]');
+      const modalWash = e.target.closest('.modal__wash');
+      const modal = document.querySelector('[data-modal]');
+      
+      if ((closeBtn || modalWash) && modal && modal.classList.contains('active')) {
+        e.preventDefault();
+        modal.classList.remove('active');
+        document.body.removeAttribute('data-fluorescent-overlay-open');
+      }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode === 27) {
+        const modal = document.querySelector('[data-modal].active');
+        if (modal) {
+          modal.classList.remove('active');
+          document.body.removeAttribute('data-fluorescent-overlay-open');
+        }
+      }
+    });
+  })();
+</script>

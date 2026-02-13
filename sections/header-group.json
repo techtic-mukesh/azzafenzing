@@ -1,0 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:groups.header_group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-1": {
+          "type": "announcement",
+          "settings": {
+            "title": "<p>{{ metaobjects.announcment_bar[\"returns-are-possible-up-to-14-days-after-receipt\"].returns_are_possible_up_to_14_days_after_receipt.value }}</p>",
+            "title_mobile": "<p>{{ metaobjects.announcment_bar[\"returns-are-possible-up-to-14-days-after-receipt\"].returns_are_possible_up_to_14_days_after_receipt.value }}</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-1"
+      ],
+      "settings": {
+        "lable_text": "",
+        "link_title": "",
+        "link_url": "",
+        "enable_sticky_announcement_bar": "never",
+        "autoplay_enabled": true,
+        "autoplay_delay": 4,
+        "color_background": "#383838",
+        "color_text": "#ffffff",
+        "enable_country_selector": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "layout": "logo-left_nav-center",
+        "enable_sticky_header": true,
+        "cart_icon": "bag",
+        "divider_width": "0px",
+        "enable_locale_selector": false,
+        "enable_country_selector": false,
+        "show_social_media": false,
+        "show_social_media_mobile": false,
+        "logo": "shopify://shop_images/azza_logo_header_1.png",
+        "m_logo": "shopify://shop_images/azza_logo_header_1.png",
+        "logo_width": 340,
+        "mobile_logo_width": 120,
+        "menu": "new-azza-desk-17-02-25",
+        "secondary_menu": "",
+        "enable_transparent_on_home": false,
+        "enable_transparent_template_list": "",
+        "logo_transparent": "shopify://shop_images/azza_logo_header_1.webp",
+        "color_text_transparent": "#ffffff",
+        "color_count_transparent": "#e81f25"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

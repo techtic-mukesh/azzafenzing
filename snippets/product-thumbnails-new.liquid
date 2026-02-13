@@ -1,0 +1,55 @@
+{%- comment -%}
+  Pass these variables into snippet:
+  Required:
+
+  * featured_media: { Object } Used to highlight the initial selected thumbnail.
+  * aspect_ratio: { String } Applies the media's aspect ratio setting to the thumbnails.
+
+  Optional:
+
+  * initial_variant_media_position: { Number } The first of a variant's media range. Used in conjunction with `next_variant_media_index` for multiple variant media.
+  * next_variant_media_index: { Number } The last of a variant's media range. Used in conjunction with `initial_variant_media_position` for multiple variant media.
+{%- endcomment -%}
+
+{% if product.media.size > 1 %}
+  <div class="product-thumbnails__items-1 gallery-thumb">
+    {% for media in product.media %}
+      {% if forloop.index < initial_variant_media_position or forloop.index > next_variant_media_index %}
+        {% continue %}
+      {% endif %}
+      <div class="product-thumbnails__item-1" data-index="{{ forloop.index }}">
+        <div
+          class="product-thumbnails__item-link-1"
+        >
+          {%
+            render 'image' with
+            image: media.preview_image,
+            id: media.id,
+            wrapper_class: 'product-thumbnails__item-image',
+            aspect_ratio: aspect_ratio
+          %}
+
+          {% case media.media_type %}
+            {% when 'video' %}
+              <div class="product-thumbnails__item-badge">
+<div title="Play video" class="play-gif" id="circle-play-b">
+                          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="56" height="56" rx="28" fill="#E81F25"></rect>
+                            <path d="M37 26.2679C38.3333 27.0377 38.3333 28.9623 37 29.7321L25 36.6603C23.6667 37.4301 22 36.4678 22 34.9282L22 21.0718C22 19.5322 23.6667 18.5699 25 19.3397L37 26.2679Z" fill="white"></path>
+                          </svg>
+                        </div>
+               </div>
+            {% when 'external_video' %}
+              <div class="product-thumbnails__item-badge">
+                {% render 'icon' with icon: 'play-badge' %}
+              </div>
+            {% when 'model' %}
+              <div class="product-thumbnails__item-badge">
+                {% render 'icon' with icon: '3d-badge' %}
+              </div>
+          {% endcase %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

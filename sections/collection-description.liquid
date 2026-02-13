@@ -1,0 +1,67 @@
+<section class="coll-description-info">
+  <div class="coll-description-info-inner">
+    <div class="coll-description-text show-more-height">
+      {% if section.settings.collection_description != blank %}
+        {{ section.settings.collection_description }}
+      {% else %}
+        {{ collection.description }}
+      {% endif %}
+    </div>
+    <div class="show-more">Read More</div>
+  </div>
+
+</section>
+
+<style>
+  .coll-description-info {
+    padding: 50px 0;
+}
+  .coll-description-info-inner {
+    padding: 0 40px;
+}
+  .coll-description-info .coll-description-info-inner .show-more-height {
+    height: 250px;
+    overflow: hidden;
+}
+  .coll-description-text p{
+    font-size:16px;
+    margin:16px 0;
+  }
+  .coll-description-info .coll-description-info-inner .show-more {
+    margin-top: 20px;
+    cursor: pointer;
+}
+  .show-more{
+    font-weight:600;
+  }
+</style>
+<script>
+   $(".show-more").click(function () {
+        if($(".coll-description-text").hasClass("show-more-height")) {
+            $(this).text("Read Less");
+        } else {
+            $(this).text("Read More");
+        }
+        $(".coll-description-text").toggleClass("show-more-height");
+    });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Collection Description",
+    "settings": [
+      {
+        "type":"richtext",
+        "id":"collection_description",
+        "label":"Collection Description"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

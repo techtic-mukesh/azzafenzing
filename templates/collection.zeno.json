@@ -1,0 +1,103 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "collection-top-banner",
+      "settings": {
+        "show_breadcrumbs": true,
+        "coll_banner_img": "shopify://shop_images/pc_store_banner.png",
+        "mob_coll_img": "shopify://shop_images/mobile_store_banner.png"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "filter122387878789": {
+          "type": "filter",
+          "settings": {
+            "filter_value": "Adults",
+            "filter_label": "Adults"
+          }
+        },
+        "filter122398898788": {
+          "type": "filter",
+          "settings": {
+            "filter_value": "Kids",
+            "filter_label": "Kids"
+          }
+        }
+      },
+      "block_order": [
+        "filter122387878789",
+        "filter122398898788"
+      ],
+      "settings": {
+        "columns_desktop": "4",
+        "columns_mobile": "1",
+        "rows": "4",
+        "show_item_count": false,
+        "show_sort": true,
+        "show_filters": true,
+        "enable_sticky_filter_bar": false,
+        "desktop_filter_location": "filter_bar",
+        "collapse_filter_bar": false,
+        "enable_sticky_filter_sidebar": false,
+        "collapse_filter_groups_desktop": false,
+        "collapse_filter_groups_mobile": false,
+        "show_swatch_filters": true,
+        "show_chip_filters": true,
+        "chip_layout": "natural",
+        "pagination": "infinite",
+        "enable_animation": true,
+        "divider_style": "none"
+      }
+    },
+    "collection-testimonial-sec": {
+      "type": "collection-testimonial-sec",
+      "disabled": true,
+      "settings": {}
+    },
+    "index_review_xQCRQM": {
+      "type": "index-review",
+      "settings": {
+        "heading": "What Fencers Are Saying"
+      }
+    },
+    "1718427002c0fa3c64": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_featured_reviews_carousel_4TgHbg": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/featured-reviews-carousel/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_featured_reviews_carousel_4TgHbg"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "zeno-collection": {
+      "type": "zeno-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "zeno-collection",
+    "collection-testimonial-sec",
+    "index_review_xQCRQM",
+    "1718427002c0fa3c64"
+  ]
+}

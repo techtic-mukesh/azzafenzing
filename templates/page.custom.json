@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "63d5af5a-a463-4974-99a5-d1e3de1be572": {
+      "type": "custom-page",
+      "blocks": {
+        "686580d1-d03f-4f5e-9aae-ce77e2b5e847": {
+          "type": "Text",
+          "settings": {
+            "head2": "Privacy Policy of www.azzafencing.com",
+            "paragraph": "This Application collects some Personal Data from its Users.\n\n\nThis document can be printed for reference by using the print command in the settings of any browser."
+          }
+        },
+        "46d0bdd8-7ad7-4360-9f83-0908854b66ab": {
+          "type": "Text",
+          "settings": {
+            "head2": "Owner and Data Controller",
+            "paragraph": "Azza Fencing SAS\n\n28 Avenue des pépinières\n94260 Fresnes\nFrance\n\nOwner contact email: contact@azzafencing.com"
+          }
+        },
+        "ec0cf9df-461f-4ddd-ab86-0e90bbf40e48": {
+          "type": "Text",
+          "settings": {
+            "head2": "Types of Data collected",
+            "paragraph": "Among the types of Personal Data that this Application collects, by itself or through third parties, there are: first name; last name; company name; country; email address; website; Tracker; Usage Data; billing address; shipping address; phone number; payment info; device information; purchase history; unique device identifiers for advertising (Google Advertiser ID or IDFA, for example)."
+          }
+        },
+        "ab254be9-3859-470a-ac4b-269de3735f87": {
+          "type": "Text",
+          "settings": {
+            "head2": "",
+            "paragraph": "Complete details on each type of Personal Data collected are provided in the dedicated sections of this privacy policy or by specific explanation texts displayed prior to the Data collection.\nPersonal Data may be freely provided by the User, or, in case of Usage Data, collected automatically when using this Application."
+          }
+        },
+        "816d3d25-c465-4bd0-a591-3b2a068e570f": {
+          "type": "Text",
+          "settings": {
+            "head2": "",
+            "paragraph": "Unless specified otherwise, all Data requested by this Application is mandatory and failure to provide this Data may make it impossible for this Application to provide its services. In cases where this Application specifically states that some Data is not mandatory, Users are free not to communicate this Data without consequences to the availability or the functioning of the Service.\nUsers who are uncertain about which Personal Data is mandatory are welcome to contact the Owner.\nAny use of Cookies – or of other tracking tools – by this Application or by the owners of third-party services used by this Application serves the purpose of providing the Service required by the User, in addition to any other purposes described in the present document and in the Cookie Policy, if available.\n\nUsers are responsible for any third-party Personal Data obtained, published or shared through this Application and confirm that they have the third party's consent to provide the Data to the Owner."
+          }
+        },
+        "0197b61c-722a-4e76-9e66-e4b5eaac4f87": {
+          "type": "Text",
+          "settings": {
+            "head2": "Mode and place of processing the Data",
+            "paragraph": "Methods of processing\nThe Owner takes appropriate security measures to prevent unauthorized access, disclosure, modification, or unauthorized destruction of the Data.\nThe Data processing is carried out using computers and/or IT enabled tools, following organizational procedures and modes strictly related to the purposes indicated. In addition to the Owner, in some cases, the Data may be accessible to certain types of persons in charge, involved with the operation of this Application (administration, sales, marketing, legal, system administration) or external parties (such as third-party technical service providers, mail carriers, hosting providers, IT companies, communications agencies) appointed, if necessary, as Data Processors by the Owner. The updated list of these parties may be requested from the Owner at any time."
+          }
+        }
+      },
+      "block_order": [
+        "686580d1-d03f-4f5e-9aae-ce77e2b5e847",
+        "46d0bdd8-7ad7-4360-9f83-0908854b66ab",
+        "ec0cf9df-461f-4ddd-ab86-0e90bbf40e48",
+        "ab254be9-3859-470a-ac4b-269de3735f87",
+        "816d3d25-c465-4bd0-a591-3b2a068e570f",
+        "0197b61c-722a-4e76-9e66-e4b5eaac4f87"
+      ],
+      "settings": {
+        "head": "Privacy Policy"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "63d5af5a-a463-4974-99a5-d1e3de1be572"
+  ]
+}

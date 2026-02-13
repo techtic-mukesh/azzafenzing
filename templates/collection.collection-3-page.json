@@ -1,0 +1,184 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header_img_banner_waNPbf": {
+      "type": "header-img-banner",
+      "name": "Header Image Banner",
+      "settings": {
+        "unique_class": "",
+        "image": "{{ collection.metafields.custom.banniere_desktop.value }}",
+        "image_tab": "{{ collection.metafields.custom.banniere_desktop.value }}",
+        "image_mobile": "{{ collection.metafields.custom.banniere_mobile.value }}",
+        "image_overlay_opacity": 10,
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false,
+        "desktop_content_position_second": "middle-left"
+      }
+    },
+    "fil_ariane_ms_AVgz66": {
+      "type": "fil-ariane-ms",
+      "disabled": true,
+      "name": "Fil d'ariane Allstar",
+      "settings": {
+        "color": "#000000",
+        "color_bg": "#ffffff"
+      }
+    },
+    "banner": {
+      "type": "collection-top-banner",
+      "disabled": true,
+      "settings": {
+        "show_breadcrumbs": true
+      }
+    },
+    "rich_text_K4qr48": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KRwG8E": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "{{ collection.title }}",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_TL8cDA": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.description }}",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KRwG8E",
+        "text_TL8cDA"
+      ],
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "full",
+        "custom_content_width": 1000
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "columns_desktop": "4",
+        "columns_mobile": "1",
+        "rows": "3",
+        "show_item_count": false,
+        "show_sort": true,
+        "show_filters": true,
+        "enable_sticky_filter_bar": false,
+        "desktop_filter_location": "filter_bar",
+        "collapse_filter_bar": false,
+        "enable_sticky_filter_sidebar": false,
+        "collapse_filter_groups_desktop": false,
+        "collapse_filter_groups_mobile": false,
+        "show_swatch_filters": true,
+        "show_chip_filters": true,
+        "chip_layout": "natural",
+        "pagination": "infinite",
+        "enable_animation": true,
+        "divider_style": "none"
+      }
+    },
+    "collection_faq_XxDY9E": {
+      "type": "collection-faq",
+      "blocks": {
+        "collection_faq_kt4qeT": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Are fencing shoes necessary for fencing?",
+            "faq_ans": "<p>Fencing shoes are designed with features that cater to the sport's unique demands. They provide optimal traction on the fencing strip, lightweight construction for swift movements, and support for quick changes in direction. These features can offer fencers an advantage in terms of agility,<br/>stability, and reducing the risk of certain injuries. Investing in a pair of Azza Fencing shoes could be beneficial in optimizing your performance and preventing injuries.</p><p>Using footwear not intended for a specific sport can increase the risk of injuries. Inappropriate shoes may not provide the necessary support and stability, potentially leading to ankle sprains, knee injuries, back pain or other discomfort.</p>"
+          }
+        },
+        "collection_faq_HkBW67": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Have you tried fencing shoes during a game?",
+            "faq_ans": "<p>Our founder Azza Besbes is a former professional fencer. She fenced on professional circuit for 15+ years and had used 50+ different pairs including specific fencing shoes but also regular athletic footwear. Azza confirms that specific fencing shoes are necessary to maintain good grip on the track and ensure stability while changing direction.</p><p>Using fencing footwear during training or bouts is necessary to feel confident on the strip and execute movements correctly and stress free. The most import for beginner or professional fencers is to choose the right fencing shoes in which they feel comfortable and balanced.</p>"
+          }
+        },
+        "collection_faq_qn4xQy": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Are fencing shoes different from other shoes? What is special about them?",
+            "faq_ans": "<p>Azza Fencing’s founder teamed up with shoes expert and professional fencers to design the fencing shoes that fit fencers needs in term of security, performance, lightweight and agility.</p><p>Our fencing shoes offer to fencers’ specific requirements proper to their sport:</p><p>- <strong>Sole design and grip:</strong> The outsole design includes engineered grooves providing optimal<br/>traction on the fencing strip while allowing for quick and precise footwork.<br/>- <strong>Ankle support:</strong> The heel construction ensures stability and agility in the same time prioritizing<br/>extensive support to secure ankle and Achille’s tendon from brutal direction change and<br/>sudden braking.<br/>- <strong>Lightweight and flexibility:</strong> Fencing shoes are designed to be lightweight and flexible to<br/>support quick and agile footwork, allowing fencers to execute lunges, retreats, and quick<br/>direction changes efficiently.<br/>- <strong>Breathability:</strong> Azza Fencing shoes prioritize breathability to keep the feet cool during intense<br/>matches and training sessions and avoid slipping in the shoes when feet are wet.<br/>- <strong>Cushioning and impact absorption:</strong> The midsole is shock absorbing thanks to a highly<br/>cushioned sustainable material made of recycled EVA. The sole absorbs the impact of jumps,<br/>repetitive lunges, and sudden stops.</p>"
+          }
+        },
+        "collection_faq_QrpVHT": {
+          "type": "collection_faq",
+          "settings": {
+            "faq_qus": "Can you play badminton or squash in fencing shoes?",
+            "faq_ans": "<p>We think shoes are engineered to provide the right combination of traction, support, cushioning, and durability for the movements and demands of each sport. But we can tell that fencing has<br/>common features with badminton and squash with lateral footwork, high jumps and lunges.</p><p>Just as fencing shoes, badminton footwear is lightweight and flexible, emphasizing maneuverability<br/>to aid in swift court coverage and dynamic movements. They also provide good ankle support to prevent injuries during the frequent lateral movements and jumps required in the sport. The sole<br/>pattern is crafted to provide grip and enable rapid lateral movements on badminton court’s wooden or synthetic surface.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collection_faq_kt4qeT",
+        "collection_faq_HkBW67",
+        "collection_faq_qn4xQy",
+        "collection_faq_QrpVHT"
+      ],
+      "name": "Collection Faq",
+      "settings": {
+        "faq_title": "FAQ",
+        "faq_title_details": "We love our Fencing culture, but we know it can be confusing at times. Please look through our Frequently asked questions and let us know if you need any other Fencing information. We are happy to help.",
+        "btn_title": "",
+        "btn_url": ""
+      }
+    },
+    "collection-testimonial-sec": {
+      "type": "collection-testimonial-sec",
+      "disabled": true,
+      "settings": {}
+    },
+    "1718427002c0fa3c64": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_featured_reviews_carousel_4TgHbg": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/featured-reviews-carousel/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_featured_reviews_carousel_4TgHbg"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "header_img_banner_waNPbf",
+    "fil_ariane_ms_AVgz66",
+    "banner",
+    "rich_text_K4qr48",
+    "product-grid",
+    "collection_faq_XxDY9E",
+    "collection-testimonial-sec",
+    "1718427002c0fa3c64"
+  ]
+}

@@ -1,0 +1,64 @@
+<section class="simple-banner" id="banner-{{ section.id }}">
+  {% assign image_pc = section.settings.image_pc %}
+  {% assign image_mobile = section.settings.image_mobile %}
+  {% assign default_pc = section.settings.default_pc %}
+  {% assign default_mobile = section.settings.default_mobile %}
+
+  <div class="banner-wrapper">
+    <picture>
+      <source media="(max-width: 768px)" srcset="{{ image_mobile | default: default_mobile | img_url: '800x' }}">
+      <img src="{{ image_pc | default: default_pc | img_url: '1600x' }}" alt="Bannière" loading="lazy" class="banner-image" />
+    </picture>
+  </div>
+
+  <style>
+    .simple-banner {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .banner-wrapper {
+      width: 100%;
+    }
+    .banner-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Azza Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_pc",
+      "label": "Image PC (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "default_pc",
+      "label": "Image PC par défaut"
+    },
+    {
+      "type": "image_picker",
+      "id": "default_mobile",
+      "label": "Image Mobile par défaut"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Azza Banner",
+      "category": "Bannières"
+    }
+  ]
+}
+{% endschema %}

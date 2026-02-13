@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Plus Jakarta Sans-Regular';
+    src:url('https://cdn.shopify.com/s/files/1/0647/1915/9535/files/PlusJakartaSans-Regular.ttf?v=1717653146') format('truetype');
+    font-style: normal;
+    font-display: swap;   
+    font-weight:400;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans-SemiBold';
+    src:url('https://cdn.shopify.com/s/files/1/0647/1915/9535/files/PlusJakartaSans-SemiBold.ttf?v=1717653199') format('truetype');
+    font-style: normal;
+    font-weight:600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans-Bold';
+    src:url('https://cdn.shopify.com/s/files/1/0647/1915/9535/files/PlusJakartaSans-Bold.ttf?v=1717653160') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans-ExtraBold';
+    src:url('https://cdn.shopify.com/s/files/1/0647/1915/9535/files/PlusJakartaSans-ExtraBold.ttf?v=1717655437') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+img{
+  height:auto;
+  width:auto;
+  max-width:100%;
+}
+ul{margin:0;padding:0;}
+li{margin:0;padding:0;list-style:none;}
+.tab_image,
+.mobile_image{display:none !important;}
+  @media(max-width:991px){
+    .tab_image{display:block!important;}
+    .desktop_image{display:none!important;}
+  }
+   @media(max-width:360px){
+     .mobile_image{display:block!important;}
+     .tab_image{display:none!important;}
+   }

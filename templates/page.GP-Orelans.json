@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "9ae087e0-8873-4db3-bcfd-bb9ef2295fb9": {
+      "type": "contest-gp-orleans",
+      "settings": {
+        "title": "Jeu Concours GP d'Orléans 2024",
+        "question": "Quel est le sponsor principal du GP d'Orléans 2024?",
+        "answer_a": "Azza Fencing",
+        "answer_b": "Adidas",
+        "answer_c": "Nike"
+      }
+    },
+    "mazars_challenge_international_paris_rpUjxh": {
+      "type": "Mazars-Challenge-International-Paris",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "9ae087e0-8873-4db3-bcfd-bb9ef2295fb9",
+    "mazars_challenge_international_paris_rpUjxh"
+  ]
+}

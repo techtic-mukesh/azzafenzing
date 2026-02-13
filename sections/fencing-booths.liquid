@@ -1,0 +1,136 @@
+<section class="fencing-booths">
+  <div class="page-width">
+    <h1>{{ section.settings.upcoming }}</h1>
+    <a href="{{ section.settings.url1 }}">{{ section.settings.sub1 }}</a>
+    <a href="{{ section.settings.url2 }}">{{ section.settings.sub2 }}</a>
+    <ul>
+      {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+      {%- liquid
+        assign prioritize_loading = false
+        if section.index == 1
+          assign prioritize_loading = true
+        endif
+        assign placeholder_aspect_ratio = 'square'
+      -%}
+      {% for block in section.blocks %}
+        <li>
+          {%- render 'image',
+            wrapper_class: 'lazyload',
+            image: block.settings.image,
+            sizes: image_sizes,
+            animate: true,
+            include_placeholder: true,
+            animate: true,
+            prioritize_loading: prioritize_loading,
+            placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+            placeholder_name: 'lifestyle-2'
+          -%}
+          <h4>{{ block.settings.sub }}</h4>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<style>
+    .Events .page-width {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+  }
+    .fencing-booths h1{
+      margin:32.2px 0;
+    }
+    .fencing-booths a {
+      text-align: left;
+      margin-bottom: 35px;
+      font-family: Poppins, sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      line-height:22.4px;
+  }
+    .fencing-booths a:nth-child(2) {
+      float: right;
+  }
+    .fencing-booths ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding:0;
+  }
+    .fencing-booths li h4 {
+      font-family: Poppins, sans-serif;
+      font-size: 22px;
+      position: absolute;
+      bottom: 10%;
+      text-transform: capitalize;
+      margin: 0;
+      content: "";
+      width: 100%;
+      color: #fff;
+      font-weight: 600;
+  }
+
+  .fencing-booths li {
+        margin: 0;
+      padding: 0;
+      list-style: none;
+      display: inline-block;
+      width: 49%;
+      position: relative;
+      text-align: center;
+      margin-bottom: 15px;
+      margin-right: 2%;
+  }
+    .fencing-booths li img {
+      width: 100%;
+  }
+    .fencing-booths li:nth-child(2n+2) {
+      margin-right: 0%;
+  }
+    @media screen and (min-width: 750px) {
+      .page-width {
+          padding: 0 50px;
+      }
+  }
+</style>
+
+{% schema %}
+ {
+   "name": "Fencing booths section",
+   "settings": [
+     {"id":"upcoming", "type":"text", "label":"Heading"},
+     { "type":"text", "id":"sub1", "label":"Sub Heading 1" },
+     { "type":"url", "id":"url1", "label":"Link 1" },
+     { "type":"text", "id":"sub2", "label":"Sub Heading 2" },
+     { "type":"url", "id":"url2", "label":"Link 2" }
+   ],
+
+
+    "blocks":[
+       {
+         "type": "bannner", "name":"banner", "limit":4,
+         "settings":[
+
+           { "type":"image_picker", "id":"image", "label":"Banner" },
+           { "type":"text", "id":"sub", "label":"Sub Heading" }
+
+         ]
+       }
+
+   ],
+
+
+"presets":[
+  {"name":"Fencing booths section", "category":"category"}
+]
+
+ }
+{% endschema %}

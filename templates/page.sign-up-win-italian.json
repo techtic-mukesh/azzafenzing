@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "sign_up_win_m6fFLe": {
+      "type": "sign-up-win-custom",
+      "settings": {
+        "heading": "VINCI O VINCI CON AZZA FENCING",
+        "heading_size": "h1",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "headingget": "ISCRIVETEVI PER PARTECIPARE AL GIOCO E VENITE ALLO STAND PER RITIRARE DIRETTAMENTE IL VOSTRO REGALO!",
+        "html_div": "<div class=\"klaviyo-form-QY3s5D\"></div>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sign_up_win_m6fFLe"
+  ]
+}

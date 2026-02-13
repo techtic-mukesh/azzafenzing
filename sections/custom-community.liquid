@@ -1,0 +1,270 @@
+<div
+  class="{{ section.settings.unique_class }} custom-community"
+  data-section-id="{{ section.id }}"
+  data-section-type="custom-community"
+>
+  <div class="custom_community_main">
+    <div class="custom-community-inner">
+      <p class="custom-title">{{ section.settings.section_title }}</p>
+      <p>{{ section.settings.section_desc }}</p>
+      {% if section.settings.section_button != blank %}
+        <a href="{{ section.settings.button_url }}">
+          {{- section.settings.section_button }}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 15.8333L15.8333 4.99997M15.8333 4.99997V15.4M15.8333 4.99997H5.43333" stroke="#231F20" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+    {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+    {%- liquid
+      assign prioritize_loading = false
+      if section.index == 1
+        assign prioritize_loading = true
+      endif
+      assign placeholder_aspect_ratio = 'square'
+    -%}
+    <div class="custom-community-slider-wrapper">
+      <div class="slider_wrapper">
+        {% for block in section.blocks %}
+          <div class="slider_class">
+            <div class="slide_padding">
+              <div class="image_wrapper">
+                {% if block.settings.desktop_image != blank %}
+                  {%- render 'image',
+                    wrapper_class: 'desktop_image lazyload',
+                    image: block.settings.desktop_image,
+                    sizes: image_sizes,
+                    animate: true,
+                    include_placeholder: true,
+                    animate: true,
+                    prioritize_loading: prioritize_loading,
+                    placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                    placeholder_name: 'lifestyle-2'
+                  -%}
+                {% endif %}
+                {% if block.settings.tab_image != blank %}
+                  {%- render 'image',
+                    wrapper_class: 'tab_image lazyload',
+                    image: block.settings.tab_image,
+                    sizes: image_sizes,
+                    animate: true,
+                    include_placeholder: true,
+                    animate: true,
+                    prioritize_loading: prioritize_loading
+                  -%}
+                {% endif %}
+                {% if block.settings.mobile_image != blank %}
+                  {%- render 'image',
+                    wrapper_class: 'mobile_image lazyload',
+                    image: block.settings.mobile_image,
+                    sizes: image_sizes,
+                    animate: true,
+                    include_placeholder: true,
+                    animate: true,
+                    prioritize_loading: prioritize_loading
+                  -%}
+                {% endif %}
+                {% if block.settings.play_btn != blank %}
+                  <div class="play-icon">
+                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="56" height="56" rx="28" fill="#E81F25"></rect>
+                      <path d="M37 26.2679C38.3333 27.0377 38.3333 28.9623 37 29.7321L25 36.6603C23.6667 37.4301 22 36.4678 22 34.9282L22 21.0718C22 19.5322 23.6667 18.5699 25 19.3397L37 26.2679Z" fill="white"></path>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="content">
+                <div class="content-author-date">
+                  <p>{{ block.settings['author-date'] }}</p>
+                </div>
+                <div class="content-author-name">
+                  <div class="country_wrapper">
+                    {% if block.settings['country-image'] != blank %}
+                      <img
+                        src="{{ block.settings.country-image | img_url:'master' }}"
+                        class="lazyload"
+                        alt="{{shop.name}}"
+                      >
+                    {% endif %}
+                    {% comment %}
+                      {% if block.settings.country != blank %}
+                        <p>{{ block.settings.country }}</p>
+                      {% endif %}
+                    {% endcomment %}
+                  </div>
+                  <p class="sub-title">{{ block.settings.name }}</p>
+                </div>
+                {% if block.settings.info != blank %}
+                  <p class="custom_comunity_p">{{ block.settings.info }}</p>
+                {% endif %}
+                {% if block.settings['but-link'] != blank %}
+                  <a href="{{ block.settings.but-link }}">{{ block.settings['but-text'] }} </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sectionbgdiv{
+    background-color: {{section.settings.bg-color}}
+  }
+    .Athletes.whoo .slide_padding{
+          display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+    }
+  .Athletes.whoo .custom-community-slider-wrapper .image_wrapper {
+      width: 100%;
+  }
+  .Athletes.whoo .content {
+      width: 100%;
+    padding-top:0;
+    padding-bottom:10px;
+  }
+    .content-author-date p{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #231F20;
+  margin-bottom:15px;
+    }
+    .Athletes.whoo .slick-list.draggable{
+      padding-left:0 !important;
+    }
+    .Athletes.whoo .content .sub-title{
+      font-size:20px;
+    }
+    .Athletes.whoo .slider_class{
+  border-right: 1px solid #E2E2E2;
+    }
+    @media (max-width:767px){
+  .Athletes.whoo ul.slick-dots{
+    text-align:left;
+  }
+  }
+  @media (max-width:480px){
+    .Athletes.whoo ul.slick-dots{
+    text-align:left;
+  }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "custom-community",
+  "class": "section sectionbgdiv",
+    "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"],
+    "templates": ["password"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg-color",
+      "label": "Background Color",
+    "default": "#fff"
+    },
+     {
+      "type":"text",
+      "id":"unique_class",
+      "label":"Don't Change This Text",
+      "info":"Don't remove this text"
+    },
+    {
+      "type":"text",
+      "id":"section_title",
+      "label": "Enter Section Title"
+    },
+     {
+      "type":"textarea",
+      "id":"section_desc",
+      "label": "Enter Section Description"
+    },
+    {
+                      "type":"text",
+                      "id":"section_button",
+                      "label": "Enter Button Text"
+                    },
+                     {
+                      "type":"url",
+                      "id":"button_url",
+                      "label": "Select Button URL"
+                    }
+  ],
+  "blocks":[
+    {
+            "type":"text",
+            "name":"cm-slider",
+            "settings":[
+    {
+      "type":"image_picker",
+      "id": "desktop_image",
+      "label"  : "Chooce Image"
+    },
+    {
+      "type":"image_picker",
+      "id": "tab_image",
+      "label"  : "Chooce Image"
+    },
+    {
+      "type":"image_picker",
+      "id": "mobile_image",
+      "label"  : "Chooce Image"
+    },
+              {
+      "type": "checkbox",
+                "id": "play_btn",
+                "label": "Play Icon",
+                "default":true
+              },
+              {
+                "type": "text",
+                "id": "author-date",
+                "label": "Date"
+              },
+  {
+  "type":"text",
+  "id":"name",
+  "label": "Enter Name"
+  },
+  {
+     "type":"image_picker",
+     "id": "country-image",
+     "label"  : "Chooce Icon"
+   },
+  {
+     "type":"text",
+     "id":"country",
+     "label": "Enter Country Name"
+   },
+   {
+     "type":"textarea",
+     "id":"info",
+     "label": "Enter Text"
+   },
+   {
+     "type":"text",
+     "id":"but-text",
+     "label": "Button Text"
+   },
+   {
+     "type":"url",
+     "id":"but-link",
+     "label": "Button Link"
+   }
+   ]
+              }
+  ],
+  "presets":[{"name":"custom-community"}]
+}
+{% endschema %}

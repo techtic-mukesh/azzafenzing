@@ -1,0 +1,14 @@
+{%- liquid
+  if comment.status == 'pending'
+    assign number_of_comments = article.comments_count | plus: 1
+  else
+    assign number_of_comments = article.comments_count
+  endif
+-%}
+
+{% schema %}
+{
+  "name": "Article Comment",
+  "settings": []
+}
+{% endschema %}

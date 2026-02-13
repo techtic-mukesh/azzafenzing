@@ -1,0 +1,449 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "block-0": {
+          "type": "slide",
+          "settings": {
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "media_link": "",
+            "text_position": "center_center",
+            "text_position_mobile": "center_center",
+            "accent": "",
+            "title": "Slideshow",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-1",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "<p>Use this section to make a bold statement</p>",
+            "text_font_class": "fs-body-100",
+            "link_1": "",
+            "link_text_1": "Read more",
+            "button_style_1": "btn--primary",
+            "link_2": "",
+            "link_text_2": "Read more",
+            "button_style_2": "btn--primary",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 40
+          }
+        },
+        "block-1": {
+          "type": "slide",
+          "settings": {
+            "focal_point": "image_presentation",
+            "mobile_focal_point": "image_presentation",
+            "media_link": "",
+            "text_position": "center_center",
+            "text_position_mobile": "center_center",
+            "accent": "",
+            "title": "Slideshow",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-1",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "<p>Use this section to make a bold statement</p>",
+            "text_font_class": "fs-body-100",
+            "link_1": "",
+            "link_text_1": "Read more",
+            "button_style_1": "btn--primary",
+            "link_2": "",
+            "link_text_2": "Read more",
+            "button_style_2": "btn--primary",
+            "text_color": "#ffffff",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "",
+            "overlay_opacity": 40
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "block-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "enable_autoplay": true,
+        "duration_autoplay": 6,
+        "navigation_alignment": "center",
+        "navigation_color_foreground": "#ffffff",
+        "navigation_color_background": "",
+        "navigation_background_opacity": 100,
+        "enable_animation": true,
+        "section_padding": "none"
+      }
+    },
+    "image-with-text-1": {
+      "type": "image-with-text",
+      "blocks": {
+        "block-0": {
+          "type": "heading",
+          "settings": {
+            "title": "About us",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "block-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text area to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "block-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "left",
+        "aspect_ratio": "square",
+        "focal_point": "image_presentation",
+        "image_caption": "",
+        "show_small_image": false,
+        "image_small_aspect_ratio": "square",
+        "image_small_focal_point": "center",
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "image-with-text-2": {
+      "type": "image-with-text",
+      "blocks": {
+        "1661612015fe8eae74-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Image with text",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-1-base"
+          }
+        },
+        "6a4f5d32-f759-4a1c-942b-4c3e1f87ecc9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use these sections to promote a particular feature with editorial photography</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "1661612015fe8eae74-0",
+        "6a4f5d32-f759-4a1c-942b-4c3e1f87ecc9"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_position": "left",
+        "text_alignment": "left",
+        "aspect_ratio": "square",
+        "focal_point": "image_presentation",
+        "image_caption": "",
+        "show_small_image": false,
+        "image_small_aspect_ratio": "square",
+        "image_small_focal_point": "center",
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "image_banner_TMFy3W": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_n3pUnQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Fencer to Fencers",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_n3pUnQ"
+      ],
+      "settings": {
+        "unique_class": "",
+        "image": "shopify://shop_images/Kairo2022_a1073edd-2b7e-40f1-b850-ec559cf0ce70.png",
+        "image_tab": "shopify://shop_images/Fencing_Duel.jpg",
+        "image_mobile": "shopify://shop_images/Fencing_Duel.jpg",
+        "image_overlay_opacity": 100,
+        "image_height": "large",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "single_image_JfVqkh": {
+      "type": "single-image",
+      "settings": {
+        "image": "shopify://shop_images/Group_400_1.png"
+      }
+    },
+    "rich_textt_8Xz3qN": {
+      "type": "rich-textt",
+      "blocks": {
+        "heading_AGjQah": {
+          "type": "heading",
+          "settings": {
+            "heading": "Azza Besbes  founder of Azza Fencing",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AGjQah"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_de8kcw": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4dBMB3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/about_icon_3.png",
+            "title": "",
+            "text": "<p>A legacy spanning the 2008, 2012, and 2016 Summer Olympics.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dqwXfA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/about_icon_2.png",
+            "title": "",
+            "text": "<p>A remarkable achievement: silver medalist at the 2017 World Championships.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NPmQkX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/about_icon_85ed54e9-0585-4ab3-b9e0-567acf6e2569.png",
+            "title": "",
+            "text": "<p>An outstanding record: 11-time African champion.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_4dBMB3",
+        "column_dqwXfA",
+        "column_NPmQkX"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 20
+      }
+    },
+    "rich_textt_ntymYw": {
+      "type": "rich-textt",
+      "blocks": {
+        "text_tyWwtr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Frustrated by subpar fencing shoe quality? It's time for a change. Our brand is here to revolutionize the game. <br/><br/>No more settling for less. Step into excellence and elevate your performance on the strip. Together, let's raise the bar for fencing excellence.<br/></p>"
+          }
+        },
+        "heading_LjUP3w": {
+          "type": "heading",
+          "settings": {
+            "heading": "Finally I’ve decided it’s time for a fencer to offer the best fencing shoes to its peers.",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "text_tyWwtr",
+        "heading_LjUP3w"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "about_blocks_eRmNVi": {
+      "type": "about-blocks",
+      "blocks": {
+        "image_azrRtM": {
+          "type": "image",
+          "settings": {
+            "content_positon": "left",
+            "heading": "MAY 2000",
+            "text": "<p>In-depth research based on the Hong Kong Research Institute of Textile & Apparel,<br/>as well as partnering with CTC to frame the technical requirements and the brand vision</p>",
+            "image": "shopify://shop_images/Group_468.png"
+          }
+        },
+        "image_mng9HM": {
+          "type": "image",
+          "settings": {
+            "content_positon": "right",
+            "heading": "NOV 2000",
+            "text": "<p>Partnering up with footwear experts around the world to kick-off the design and development process</p>",
+            "image": "shopify://shop_images/Ellipse_43_45a0aecb-c154-452c-b5c8-155199210e46.png"
+          }
+        },
+        "image_yNih79": {
+          "type": "image",
+          "settings": {
+            "content_positon": "left",
+            "heading": "MAR 2021",
+            "text": "<p>Sampling of AF Version 1 with a well-known footwear factory based in China.<br/>Creating a first set of samples for the testing phase.</p>",
+            "image": "shopify://shop_images/Ellipse_43_1.png"
+          }
+        },
+        "image_PFdqQc": {
+          "type": "image",
+          "settings": {
+            "content_positon": "right",
+            "heading": "JUL 2021",
+            "text": "<p>Testing the samples under real conditions during the Tokyo Olympics.<br/>Receiving feedback by professional athletes and the testing institute</p>",
+            "image": "shopify://shop_images/Ellipse_44.png"
+          }
+        },
+        "image_VaNXYr": {
+          "type": "image",
+          "settings": {
+            "content_positon": "left",
+            "heading": "DEC 2021",
+            "text": "<p>Incorporating feedback and test results. Refining the design and technical features<br/>leading to Versions 2&3. Further testing and refinement.</p>",
+            "image": "shopify://shop_images/Ellipse_45.png"
+          }
+        },
+        "image_zMbwi4": {
+          "type": "image",
+          "settings": {
+            "content_positon": "right",
+            "heading": "JAN 2022",
+            "text": "<p>The final samples are now ready for bulk production, offering modern colorways that cater to contemporary tastes. <br/><br/>Innovation lies at the core of our product, with features specifically tailored to meet the needs of modern fencers.</p>",
+            "image": "shopify://shop_images/Ellipse_46.png"
+          }
+        },
+        "image_xJFw4r": {
+          "type": "image",
+          "settings": {
+            "content_positon": "left",
+            "heading": "JUN 2022",
+            "text": "<p>Get ready! The formal pre-sales phase is about to begin.</p>",
+            "image": "shopify://shop_images/Ellipse_47.png"
+          }
+        },
+        "image_4ecTUe": {
+          "type": "image",
+          "settings": {
+            "content_positon": "right",
+            "heading": "DEC 2022",
+            "text": "<p>Exciting news! Production is now complete, and we have started delivering our top-quality fencing shoes to our valued customers.</p>",
+            "image": "shopify://shop_images/Ellipse_45.png"
+          }
+        },
+        "image_cq6N44": {
+          "type": "image",
+          "settings": {
+            "content_positon": "left",
+            "heading": "MAR 2023",
+            "text": "<p>Gear up for the future! We're already working on our second collection, gearing up for the 2024 Paris Olympic Games. Expect more innovation and excellence in fencing footwear.</p>",
+            "image": "shopify://shop_images/Ellipse_43_1.png"
+          }
+        },
+        "image_rxQrjV": {
+          "type": "image",
+          "settings": {
+            "content_positon": "bottom",
+            "heading": "",
+            "text": "<p>In addition, We are proud to announce our partnership with an international R&D lab, collaborating to develop high-tech shoes that will revolutionize the game of fencing and set new standards in footwear technology. Get ready to experience the cutting-edge advancements we are bringing to the sport.</p>",
+            "image": "shopify://shop_images/Group_468.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_azrRtM",
+        "image_mng9HM",
+        "image_yNih79",
+        "image_PFdqQc",
+        "image_VaNXYr",
+        "image_zMbwi4",
+        "image_xJFw4r",
+        "image_4ecTUe",
+        "image_cq6N44",
+        "image_rxQrjV"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "slideshow",
+    "image-with-text-1",
+    "image-with-text-2",
+    "image_banner_TMFy3W",
+    "single_image_JfVqkh",
+    "rich_textt_8Xz3qN",
+    "multicolumn_de8kcw",
+    "rich_textt_ntymYw",
+    "about_blocks_eRmNVi"
+  ]
+}

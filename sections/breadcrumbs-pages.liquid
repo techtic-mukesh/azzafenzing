@@ -1,0 +1,51 @@
+  {% if section.settings.show_breadcrumbs or section.settings.show_navigation_buttons -%}
+    <div class="product__breadcrumbs section-breadcrumbs">
+      {% render 'breadcrumbs',
+        show_breadcrumbs: section.settings.show_breadcrumbs,
+        show_navigation_buttons: section.settings.show_navigation_buttons
+      %}
+    </div>
+  {%- endif %}
+  <style>
+    /* .section-breadcrumbs{
+          max-width: calc(1440px + 6.6vw);
+    max-width: calc(var(--max-width) + calc(var(--space-outer)* 2));
+    }
+    @media (min-width: 960px) {
+    .section-breadcrumbs{
+              padding: 0 var(--space-outer);
+      padding-top:40px;
+    }
+    } */
+    .Breadcrumbs-section{
+      padding-bottom:0;
+    }
+    .breadcrumbs__list li:last-child span{
+      color:#6A6A6A;
+    }
+  </style>
+{% schema %}
+  {
+    "name": "Breadcrumbs",
+    "class": "section Breadcrumbs-section",
+    "settings": [
+      {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:shared.settings.show_breadcrumbs.label",
+      "default": false
+    },
+       {
+      "type": "checkbox",
+      "id": "show_navigation_buttons",
+      "label": "t:shared.settings.show_navigation_buttons.label",
+      "default": false
+    }
+    ],
+    "presets": [
+      {
+        "name": "Breadcrumbs"
+      }
+    ]
+  }
+{% endschema %}

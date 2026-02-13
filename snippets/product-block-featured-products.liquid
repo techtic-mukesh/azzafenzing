@@ -1,0 +1,617 @@
+{%- liquid
+  assign max_products = block.settings.max_products
+  assign should_render_content = false
+
+  if block.settings.product_source == 'custom-product-list' and block.settings.product_list.count > 0
+    assign should_render_content = true
+  elsif block.settings.product_source == 'app-recommendations'
+    assign should_render_content = true
+  endif
+-%}
+
+{%- if should_render_content -%}
+  <div class="you-may-also-like-section" {{ block.shopify_attributes }}>
+    <style>
+      .you-may-also-like-section {
+        background: #FAFAFA;
+        border-radius: 12px;
+        padding: 0;
+        margin: 20px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      } 
+
+      .you-may-also-like-section .section-title {
+          color: #000;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 100%;
+          padding: 15px 15px 20px;
+          font-family: 'Inter', sans-serif;
+      }
+
+      .you-may-also-like-carousel {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .you-may-also-like-wrapper {
+        display: flex;
+        gap: 16px;
+        transition: transform 0.3s ease;
+        will-change: transform;
+      }
+      .you-may-also-like-wrapper.dragging {
+        cursor: grabbing;
+        user-select: none;
+      }
+
+      .you-may-also-like-wrapper.dragging * {
+        user-select: none;
+        pointer-events: none;
+      }
+        .main__content_for__product {
+          padding: 0 12px;
+        }
+      .you-may-also-like-product-card {
+        flex: 0 0 calc(33.333% - 11px);
+        min-width: 0;
+        background: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .you-may-also-like-product-card {
+          flex: 0 0 calc(50% - 8px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .you-may-also-like-product-card {
+          flex: 0 0 85%;
+        }
+      }
+
+      .product-card-image-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        background: #f5f5f5;
+      }
+
+      .product-card-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-card-rating-options-row {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          gap: 8px;
+          flex-direction: column;
+      }
+
+      .product-card-rating {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        background: #f5f5f5;
+        border-radius: 6px;
+        font-size: 12px;
+      }
+
+      .product-card-rating .star-icon {
+        width: 12px;
+        height: 12px;
+        fill: #FFD700;
+        color: #FFD700;
+        flex-shrink: 0;
+      }
+
+      .product-card-rating .rating-number {
+        font-weight: 500;
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        line-height: 1;
+      }
+
+      .product-card-variants {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .product-card-variant-btn {
+        padding: 5px;
+        border: 1px solid #e0e0e0;
+        background: #E6E6E6;
+        border-radius: 4px;
+        color: #000;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: 'Inter', sans-serif;
+        min-width: 28px;
+        text-align: center;
+        line-height: 1.2;
+        font-weight: 500;
+        font-size: 9.45px;
+        line-height: 100%;
+      }
+
+      .product-card-variant-btn:hover:not(:disabled) {
+        border-color: #000;
+        background: #f9f9f9;
+      }
+
+      .product-card-variant-btn.selected {
+        border-color: #000;
+        background: #000;
+        color: #fff;
+      }
+
+      .product-card-variant-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      .product-card-color-swatches,
+      .product-card-swatches,
+      .product-card-sibling-swatches,
+      .product-card-model-swatches {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .product-card-model-swatches .swatch {
+        width: 28px;
+        height: 28px;
+        border-radius: 4px;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: block;
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .product-card-model-swatches .swatch:hover {
+        border-color: #000;
+        transform: scale(1.1);
+      }
+
+      .product-card-model-swatches .swatch.active {
+        border-color: #000;
+        border-width: 1px;
+      }
+
+      .product-card-model-swatches .swatch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-card-sibling-swatches-inner {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .product-card-sibling-swatches .product__color-swatch {
+        width: 24px !important;
+        height: 24px !important;
+        min-width: 24px !important;
+        max-width: 24px !important;
+        border-radius: 4px;
+        border: 1px solid #e0e0e0 !important;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: block;
+        text-decoration: none;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent;
+      }
+
+      .product-card-sibling-swatches .product__color-swatch:hover {
+        border-color: #000 !important;
+        transform: scale(1.1);
+      }
+
+      .product-card-sibling-swatches .product__color-swatch.selected {
+        border-color: #000 !important;
+        border-width: 2px !important;
+      }
+
+      .product-card-sibling-swatches .product__color-swatch img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+
+      .product-card-sibling-swatches .product__color-swatch > div {
+        width: 100%;
+        height: 100%;
+      }
+
+      .product-card-color-swatch {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .product-card-color-swatch:hover {
+        border-color: #000;
+        transform: scale(1.1);
+      }
+
+      .product-card-color-swatch.selected {
+        border-color: #000;
+        border-width: 2px;
+      }
+
+      .product-card-color-swatch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-card-swatches .product-swatches-options__item {
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 4px;
+        border: 1px solid #e0e0e0 !important;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        overflow: hidden;
+        flex-shrink: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        position: relative;
+        display: block;
+      }
+
+      .product-card-swatches .product-swatches-options__item:hover {
+        border-color: #000 !important;
+        transform: scale(1.1);
+      }
+
+      .product-card-swatches .product-swatches-options__item.selected {
+        border-color: #000 !important;
+        border-width: 2px !important;
+      }
+
+      .product-card-swatches .product-swatches-options__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-card-swatches .product-swatches-options__item > div {
+        width: 100%;
+        height: 100%;
+      }
+
+      .product-card-name {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 8px;
+        line-height: 100%;
+        font-family: 'Inter', sans-serif;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .product-card-name a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .product-card-name a:hover {
+        text-decoration: underline;
+      }
+
+      .product-card-price {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .product-card-price .current-price {
+        line-height: 100%;
+        font-weight: 600;
+        font-size: 14px;
+        color: #000;
+      }
+
+      .product-card-price .original-price {
+        text-decoration: line-through;
+        font-size: 14px;
+        color: #999;
+      }
+
+      .product-card-add-btn {
+        width: 100%;
+        padding: 8px 20px;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        text-transform: capitalize;
+        min-width: 121px;
+        min-height: 30px;
+      }
+      .product__price__with__atc__main {
+          display: flex;
+          align-items: stretch;
+          justify-content: space-between;
+          gap: 10px;
+      }
+      .product-card-add-btn:hover {
+        background: #333;
+      }
+
+      .product-card-add-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .product-card-add-btn.loading {
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      .carousel-pagination {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 20px 0;
+      }
+
+      .pagination-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #e0e0e0;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        border: none;
+        padding: 0;
+      }
+
+      .pagination-dot.active {
+        background: #e81f25;
+        width: 22px;
+        border-radius: 4px;
+      }
+
+      .carousel-nav-btn {
+        display: none !important;
+      }
+      [data-carousel-container] {
+        overflow: hidden;
+        padding: 0 20px;
+      }
+
+      [data-carousel-wrapper] {
+        display: flex;
+        gap: 16px;
+        transition: transform 0.35s ease;
+      }
+
+      .you-may-also-like-product-card {
+        flex: 0 0 calc((100% / 2.3) - 16px);
+      }
+
+      @media (max-width: 768px) {
+        .you-may-also-like-product-card {
+          flex: 0 0 calc((100% / 2) - 16px);
+        }
+
+        .product-card-name a {
+          font-size: 16px;
+        }
+
+        .product-card-price .current-price {
+          font-size: 14px;  
+        }
+      }
+
+      @media (max-width: 480px) {
+        .you-may-also-like-product-card {
+          flex: 0 0 100%;
+        }
+      }
+
+    </style>
+
+    {%- unless block.settings.heading == blank -%}
+      <h2 class="section-title">{{ block.settings.heading | default: 'You May Also Like' }}</h2>
+    {%- else -%}
+      <h2 class="section-title">You May Also Like</h2>
+    {%- endunless -%}
+
+    <div class="you-may-also-like-carousel" data-carousel-container>
+      <button class="carousel-nav-btn prev" data-carousel-prev aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      
+      <div class="you-may-also-like-wrapper" data-carousel-wrapper>
+        {%- if block.settings.product_source == 'custom-product-list' -%}
+          {%- for product_item in block.settings.product_list limit: max_products -%}
+            {%- render 'product-card-custom', prod: product_item -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- if recommendations.performed and recommendations.products_count > 0 -%}
+            {%- for product_item in recommendations.products limit: max_products -%}
+              {%- render 'product-card-custom', prod: product_item -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+
+      <button class="carousel-nav-btn next" data-carousel-next aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="carousel-pagination" data-carousel-pagination></div>
+  </div>
+
+<script>
+(function () {
+  const container = document.querySelector('[data-carousel-container]');
+  if (!container) return;
+
+  const wrapper = container.querySelector('[data-carousel-wrapper]');
+  const pagination = document.querySelector('[data-carousel-pagination]');
+  const cards = wrapper.querySelectorAll('.you-may-also-like-product-card');
+
+  if (!cards.length) return;
+
+  let currentIndex = 0;
+  let startX = 0;
+  let isDragging = false;
+  let cardWidth = 0;
+  let startTranslate = 0;
+  let currentTranslate = 0;
+
+  function getCardsPerView() {
+    if (window.innerWidth > 768) return 2.3;
+    if (window.innerWidth > 480) return 2;
+    return 1;
+  }
+
+  function updateCarousel() {
+    cardWidth = cards[0].offsetWidth + 16;
+    currentTranslate = -currentIndex * cardWidth;
+    wrapper.style.transform = `translateX(${currentTranslate}px)`;
+    updatePagination();
+  }
+
+  function updatePagination() {
+    if (!pagination) return;
+
+    const cardsPerView = getCardsPerView();
+    const totalSlides = Math.ceil(cards.length - cardsPerView + 1);
+
+    pagination.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'pagination-dot' + (i === currentIndex ? ' active' : '');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+      pagination.appendChild(dot);
+    }
+  }
+
+  /* ---------- Touch (Mobile) ---------- */
+  wrapper.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+
+  wrapper.addEventListener('touchend', e => {
+    if (!isDragging) return;
+    isDragging = false;
+    handleSwipe(startX - e.changedTouches[0].clientX);
+  });
+
+  /* ---------- Mouse (Desktop) ---------- */
+  wrapper.addEventListener('mousedown', e => {
+    e.preventDefault();
+    startX = e.clientX;
+    startTranslate = currentTranslate;
+    isDragging = true;
+    wrapper.classList.add('dragging');
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const diff = e.clientX - startX;
+    currentTranslate = startTranslate + diff;
+    wrapper.style.transform = `translateX(${currentTranslate}px)`;
+  });
+
+  document.addEventListener('mouseup', e => {
+    if (!isDragging) return;
+    isDragging = false;
+    wrapper.classList.remove('dragging');
+    const diff = startX - e.clientX;
+    handleSwipe(diff);
+  });
+
+  function handleSwipe(diff) {
+    const cardsPerView = getCardsPerView();
+    const maxIndex = Math.ceil(cards.length - cardsPerView);
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && currentIndex < maxIndex) {
+        currentIndex++;
+      } else if (diff < 0 && currentIndex > 0) {
+        currentIndex--;
+      }
+    }
+    updateCarousel();
+  }
+
+  /* ---------- Resize ---------- */
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      currentIndex = 0;
+      updateCarousel();
+    }, 200);
+  });
+
+  updateCarousel();
+})();
+</script>
+
+{%- endif -%}

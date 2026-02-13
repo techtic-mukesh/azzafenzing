@@ -1,0 +1,345 @@
+<section class="coll-faq-content">
+  <div class="coll-faq-content-inner">
+    <div class="coll_faq_main">
+      <div class="coll_faq_left">
+        <div class="coll-faq-title">
+          <h1>{{ section.settings.faq_title }}</h1>
+        </div>
+        <div class="coll-faq-details">
+          <p>{{ section.settings.faq_title_details }}</p>
+        </div>
+        <div class="banner__buttons">
+          <a href="{{ section.settings.btn_url }}" class="button button--primary  btn btn--overlay  btn--primary">
+            {{- section.settings.btn_title }}
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.00003 15.8334L15.8333 5M15.8333 5V15.4M15.8333 5H5.43336" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="coll_faq_right">
+        {% for block in section.blocks %}
+          {% if block.type == 'collection_faq' %}
+            <div class="coll-faq_que_ans">
+              <div class="coll_faq_questions {% if forloop.first %}active{% endif %}" style="display: flex;">
+                <div class="que_icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style="    margin-bottom: -5px;"
+                  >
+                    <path d="M9 9.00001C9 5.49998 14.5 5.50001 14.5 9.00001C14.5 11.5 12 10.9999 12 13.9999" stroke="#E81F25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12 18.0101L12.01 17.999" stroke="#E81F25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.8214 2.48697 15.5291 3.33782 17L2.5 21.5L7 20.6622C8.47087 21.513 10.1786 22 12 22Z" stroke="#E81F25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <div class="heading">
+                  <h2 class="coll_faq_questions {% if forloop.first %}active{% endif %}">
+                    {{ block.settings.faq_qus }}
+                  </h2>
+                </div>
+                <div class="drop_DOWN_icon">
+                  <span class="coll-icon-span {% if forloop.first %}coll-faq-sign-active{% endif %}">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-down coll-faq-sign"
+                      viewBox="0 0 16 16"
+                    >
+                      <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="coll_faq_answer {% if forloop.first %}active{% endif %}">
+                <div class="coll_faq_answer_content">
+                  <p>{{ block.settings.faq_ans }}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+  <script>
+    $('.coll_faq_questions').click(function(){
+        $(this).toggleClass('active');
+        $(this).parent().find('.coll-icon-span').toggleClass('coll-faq-sign-active');
+            $(this).parent().find('.coll_faq_answer').slideToggle();
+    });
+  </script>
+-->
+
+<style>
+          .coll-faq-title h1 {
+            text-align:left;
+                font-size: 26px;
+          }
+            .coll-faq-title {
+              text-align: center;
+          }
+          .coll-faq-title h2 {
+              font-size: 22px;
+              font-weight: 600;
+          }
+          .coll_faq_left .banner__buttons
+          {
+            width: 50%;
+            margin: 25px 0px;
+          }
+          .coll_faq_left div
+          {
+            width:60%;
+          }
+          .coll_faq_left
+          {
+            width:40%;
+          }
+          .coll_faq_right
+          {
+            width:60%;
+          }
+          .coll-faq_que_ans{
+            background-color: #F8F9FA;
+            width: 100%;
+            margin: 15px 0px;
+            padding: 0px 15px;
+            border-radius: 5px;
+        }
+          }
+          .coll-faq-content{
+            max-width:1400px;
+            margin:0px auto;
+            padding-bottom:50px;
+          }
+          .coll_faq_main
+          {
+            display:flex;
+          }
+          .coll-faq-content .coll_faq_main .coll_faq_questions {
+            padding: 15px 15px 15px 5px;
+            line-height: 30px;
+            position: relative;
+            font-size: 17px;
+            margin: 0 0 -1px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #000;
+          }
+          .coll-faq-content-inner{
+            padding:0 40px;
+            max-width:1400px;
+            margin:0px auto;
+          }
+    .coll-faq-content .coll_faq_main .coll_faq_questions svg{
+      margin-right:10px;
+    }
+          @media (min-width: 768px) and (max-width: 991px){
+            .coll-faq-content .coll_faq_main .coll_faq_questions {
+              font-size: 16px;
+            }
+            .coll_faq_main
+            {
+              display:block;
+            }
+            .coll_faq_left,.coll_faq_right,.coll_faq_left div
+            {
+              width:100%;
+            }
+          }
+
+          @media (max-width: 767px) {
+      .coll-faq-title h1{
+            font-family: Poppins;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 28px;
+          }
+          .coll_faq_main  .coll-faq-details p{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #3C3B3C;
+            }
+            .coll_faq_left .banner__buttons{
+              width:100%;
+            }
+            .coll-faq-content .coll_faq_main .coll_faq_questions {
+              font-size: 15px;
+              padding: 15px 0 15px 0;
+            }
+            .coll_faq_main
+            {
+              display:block;
+            }
+            .coll_faq_left,.coll_faq_right,.coll_faq_left div
+            {
+              width:100%;
+            }
+          }
+
+          @media (max-width: 320px) {
+            .coll-faq-content .coll_faq_main .coll_faq_questions {
+                font-size: 14px;
+                padding: 10px 0px;
+            }
+            .drop_DOWN_icon {
+                right: -7px !important;
+            }
+          }
+
+          .coll-faq-content .coll_faq_main .coll_faq_questions .coll-faq-sign {
+            float: right;
+            line-height: 30px;
+            width: 25px;
+            height: 25px;
+          }
+          .coll-faq-content .coll_faq_main .coll_faq_questions .coll-faq-sign-active .coll-faq-sign{
+            transform: rotate(180deg);
+          }
+          .coll-faq-content .coll_faq_main .coll_faq_answer {
+            margin: 0;
+            display: none;
+            line-height: 28px;
+            padding-left:5px;
+                padding-bottom: 5px;
+          }
+
+          @media (max-width: 480px) {
+            .coll-faq-content .coll_faq_main .coll_faq_answer {
+              padding: 15px 0 15px 0;
+            }
+          }
+
+          @media (max-width: 320px) {
+            .coll-faq-content .coll_faq_main .coll_faq_questions .coll-faq-sign {
+                width: 20px;
+                height: 20px;
+            }
+            .coll-faq-content .coll_faq_main .coll_faq_answer {
+              padding: 15px 0 15px 0;
+            }
+          }
+
+          .coll-faq-content .coll_faq_main .coll_faq_answer .coll_faq_answer_content p {
+            margin-top: 5px;
+            font-size: 15px;
+            color: #000;
+          }
+
+          @media (min-width: 768px) and (max-width: 991px) {
+            .coll-faq-content .coll_faq_main .coll_faq_answer .coll_faq_answer_content p {
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 767px) {
+            .coll-faq-content .coll_faq_main .coll_faq_answer .coll_faq_answer_content p {
+              font-size: 13px;
+            }
+            .coll-description-info-inner{
+              padding:0 20px;
+            }
+            .coll-faq-content-inner{
+              padding:0 20px;
+            }
+          }
+
+          .coll-description-info .coll-description-info-inner .show-more-height {
+            height: 250px;
+            overflow:hidden;
+          }
+          .coll-description-info .coll-description-info-inner .show-more{
+            margin-top:20px;
+            cursor: pointer;
+          }
+
+          .coll-faq-content .coll_faq_main .coll_faq_answer.active {
+            display: block;
+          }
+        .template-page h2
+        {
+          color:white;
+          font-weight:600;
+        }
+        .coll_faq_questions
+        {
+          display: flex;
+          align-items: center;
+        }
+    .heading
+    {
+      width:80%;
+    }
+  .drop_DOWN_icon{
+    position: absolute;
+    right: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Faq",
+  "settings": [
+    {
+      "type":"text",
+      "id":"faq_title",
+      "label":"Faq Title"
+    },
+    {
+      "type":"textarea",
+      "id":"faq_title_details",
+      "label":"Faq Details"
+    },
+    {
+      "type":"text",
+      "id":"btn_title",
+      "label":"Button Title"
+    },
+    {
+      "type":"url",
+      "id":"btn_url",
+      "label":"Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type":"collection_faq",
+      "name":"Faq",
+      "settings":[
+        {
+          "type":"text",
+          "id":"faq_qus",
+          "label":"Question"
+        },
+        {
+          "type":"richtext",
+          "id":"faq_ans",
+          "label":"Answer"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Collection Faq"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

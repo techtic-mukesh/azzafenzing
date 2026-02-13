@@ -1,0 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "show_product_currency": true,
+        "cross_sells_position": "below-line-items"
+      }
+    },
+    "featured_collection_grid_hMfp4q": {
+      "type": "featured-collection-grid",
+      "blocks": {
+        "collection_Ebi8XU": {
+          "type": "collection",
+          "settings": {
+            "collection": "azza-fencing-15-14"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Ebi8XU"
+      ],
+      "settings": {
+        "heading": "Featured collection",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "shopify://collections",
+        "link_text": "",
+        "maximum_collections": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "solid",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_grid_hMfp4q"
+  ]
+}

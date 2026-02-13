@@ -1,0 +1,716 @@
+{%- liquid
+  assign desktop_columns = 1
+  case block.type
+    when 'two_column_tab'
+      assign desktop_columns = 2
+    when 'three_column_tab'
+      assign desktop_columns = 3
+  endcase
+-%}
+
+<div
+  class="
+    product-tabs__tab-item-content
+    product-tabs__tab-item-content--vertical-alignment-{{ block.settings.content_vertical_alignment }}
+  "
+  style="
+    --grid-columns-desktop: {{ desktop_columns }};
+    --grid-gap-column-desktop: {{ block.settings.column_spacing | default: 28 }}px;
+    {%- if block.settings.text_max_width != blank and block.settings.content_width == 'custom' -%}
+      --text-max-width: {{ block.settings.text_max_width }}px;
+    {%- else -%}
+      --text-max-width: 100%;
+    {%- endif -%}
+  "
+>
+  {%- case block.type -%}
+    {%- when 'product_description' -%}
+      <div class="product-tabs__tab-column">
+        <div class="product-tabs__tab-text-container">
+          {%- unless block.settings.heading == blank -%}
+            <{{ block.settings.heading_tag }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class }}">
+              {{ block.settings.heading }}
+            </{{ block.settings.heading_tag }}>
+          {%- endunless -%}
+          <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class }} rte">
+            {{ product.description }}
+          </div>
+        </div>
+        <div class="text-icon-title">
+          <h4>{{ block.settings.title_material }}</h4>
+        </div>
+        <div class="text-icon-wrapper">
+          <div class="text-icon">
+            {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+            {%- liquid
+              assign prioritize_loading = false
+              if section.index == 1
+                assign prioritize_loading = true
+              endif
+              assign placeholder_aspect_ratio = 'square'
+            -%}
+            {% if product.metafields.custom.svg_column_1 != blank %}
+              {{ product.metafields.custom.svg_column_1 }}
+            {% elsif block.settings.svg_column_1 != blank %}
+              {{ block.settings.svg_column_1 }}
+            {% elsif block.settings.icon_column_1 != blank %}
+              <div class="icon">
+                {%- render 'image',
+                  wrapper_class: 'lazyload',
+                  image: block.settings.icon_column_1,
+                  sizes: image_sizes,
+                  animate: true,
+                  include_placeholder: true,
+                  animate: true,
+                  prioritize_loading: prioritize_loading,
+                  placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                  placeholder_name: 'lifestyle-2'
+                -%}
+              </div>
+            {% endif %}
+            {% if block.settings.title_column_1 != blank %}
+              <div class="text-icon-wrapper">
+                <span>{{ block.settings.title_column_1 }}</span>
+              </div>
+            {% endif %}
+            {% if block.settings.description_column_1 != blank %}
+              <div class="content-wrapper">
+                {{ block.settings.description_column_1 }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="text-icon">
+            {% if product.metafields.custom.svg_column_2 != blank %}
+              {{ product.metafields.custom.svg_column_2 }}
+            {% elsif block.settings.svg_column_2 != blank %}
+              {{ block.settings.svg_column_2 }}
+            {% elsif block.settings.icon_column_2 != blank %}
+              <div class="icon">
+                {%- render 'image',
+                  wrapper_class: 'lazyload',
+                  image: block.settings.icon_column_2,
+                  sizes: image_sizes,
+                  animate: true,
+                  include_placeholder: true,
+                  animate: true,
+                  prioritize_loading: prioritize_loading,
+                  placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                  placeholder_name: 'lifestyle-2'
+                -%}
+              </div>
+            {% endif %}
+            {% if block.settings.title_column_2 != blank %}
+              <div class="text-icon-wrapper">
+                <span>{{ block.settings.title_column_2 }}</span>
+              </div>
+            {% endif %}
+            {% if block.settings.description_column_2 != blank %}
+              <div class="content-wrapper">
+                {{ block.settings.description_column_2 }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="text-icon">
+            {% if product.metafields.custom.svg_column_3 != blank %}
+              {{ product.metafields.custom.svg_column_3 }}
+            {% elsif block.settings.svg_column_3 != blank %}
+              {{ block.settings.svg_column_3 }}
+            {% elsif block.settings.icon_column_3 != blank %}
+              <div class="icon">
+                {%- render 'image',
+                  wrapper_class: 'lazyload',
+                  image: block.settings.icon_column_3,
+                  sizes: image_sizes,
+                  animate: true,
+                  include_placeholder: true,
+                  animate: true,
+                  prioritize_loading: prioritize_loading,
+                  placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                  placeholder_name: 'lifestyle-2'
+                -%}
+              </div>
+            {% endif %}
+            {% if block.settings.title_column_3 != blank %}
+              <div class="text-icon-wrapper">
+                <span>{{ block.settings.title_column_3 }}</span>
+              </div>
+            {% endif %}
+            {% if block.settings.description_column_3 != blank %}
+              <div class="content-wrapper">
+                {{ block.settings.description_column_3 }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="text-icon">
+            {% if product.metafields.custom.svg_column_4 != blank %}
+              {{ product.metafields.custom.svg_column_4 }}
+            {% elsif block.settings.svg_column_4 != blank %}
+              {{ block.settings.svg_column_4 }}
+            {% elsif block.settings.icon_column_4 != blank %}
+              <div class="icon">
+                {%- render 'image',
+                  wrapper_class: 'lazyload',
+                  image: block.settings.icon_column_4,
+                  sizes: image_sizes,
+                  animate: true,
+                  include_placeholder: true,
+                  animate: true,
+                  prioritize_loading: prioritize_loading,
+                  placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                  placeholder_name: 'lifestyle-2'
+                -%}
+              </div>
+            {% endif %}
+            {% if block.settings.title_column_4 != blank %}
+              <div class="text-icon-wrapper">
+                <span>{{ block.settings.title_column_4 }}</span>
+              </div>
+            {% endif %}
+            {% if block.settings.description_column_4 != blank %}
+              <div class="content-wrapper">
+                {{ block.settings.description_column_4 }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        {% if block.settings.link != blank and block.settings.link_label != blank %}
+          <div class="link-extra">
+            <a href="{{ block.settings.link }}">
+              {{- block.settings.link_label -}}
+              {% render 'icon-up-arrow' -%}
+            </a>
+          </div>
+        {% endif %}
+        {% if block.settings.video_url != blank %}
+          <div class="video-outer-wrapper">
+            <div class="video-content">
+              <div class="content-video">
+                {% if block.settings.title_video != blank %}
+                  <h4>{{ block.settings.title_video }}</h4>
+                {% endif %}
+                {% if block.settings.description_video != blank %}
+                  {{ block.settings.description_video }}
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="video-inner-wrapper">
+              {% if block.settings.video_url != blank %}
+                <div class="video-wrapper">
+                  <div class="video-container-new" id="video-container">
+                    <style>
+                      .video-inner-wrapper{
+                        aspect-ratio:{{ block.settings.video_img.aspect_ratio}};
+                      }
+                    </style>
+                    {% if block.settings.video_url != blank %}
+                      <video
+                        id="video"
+                        class="vid-poster"
+                        poster="{{ block.settings.video_img | img_url:'master' }}"
+                        controls="false"
+                        loop="true"
+                      >
+                        <source src="{{ block.settings.video_url }}" type="video/mp4">
+                      </video>
+
+                      <div class="play-button-wrapper-product paused">
+                        <div title="Play video" class="play-gif" id="circle-play-b">
+                          <svg
+                            width="56"
+                            height="56"
+                            viewBox="0 0 56 56"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect width="56" height="56" rx="28" fill="#E81F25"/>
+                            <path d="M37 26.2679C38.3333 27.0377 38.3333 28.9623 37 29.7321L25 36.6603C23.6667 37.4301 22 36.4678 22 34.9282L22 21.0718C22 19.5322 23.6667 18.5699 25 19.3397L37 26.2679Z" fill="white"/>
+                          </svg>
+                        </div>
+                      </div>
+                    {% else %}
+                      <img src="{{ block.settings.video_img | img_url:'master' }}">
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {%- when 'one_column', 'two_column_tab', 'three_column_tab' -%}
+      <div class="product-tabs__tab-column">
+        {%- capture image_figure_column_1 -%}
+          <figure
+            class="product-tabs__tab-image-figure"
+            style="--image-max-width: {{ block.settings.image_width_column_1 }}%;"
+          >
+            <div class="product-tabs__tab-image-wrapper">
+              {%- capture image_sizes -%}
+                (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
+                {{ block.settings.image_width_column_1 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
+              {%- endcapture -%}
+              {%-
+                render 'image' with
+                wrapper_class: "product-tabs__tab-image",
+                image: block.settings.image_column_1,
+                sizes: image_sizes
+              -%}
+            </div>
+          </figure>
+        {%- endcapture -%}
+
+        {%- if block.settings.image_column_1 != blank and block.settings.image_position_column_1 == 'above_text' -%}
+          {{ image_figure_column_1 }}
+        {%- endif -%}
+
+        <div class="product-tabs__tab-text-container">
+          {%- capture content_column_1 -%}
+            {%- if block.settings.custom_liquid_column_1 != blank -%}
+              {{ block.settings.custom_liquid_column_1 }}
+            {%- elsif block.settings.page_for_content_column_1 != blank -%}
+              {%- assign content_page = pages[block.settings.page_for_content_column_1] -%}
+
+              {%- if content_page and content_page != blank -%}
+                {{ content_page.content }}
+              {%- else -%}
+                {{ block.settings.text_column_1 }}
+              {%- endif -%}
+            {%- else -%}
+              {{ block.settings.text_column_1 }}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- unless block.settings.heading_column_1 == blank -%}
+            <{{ block.settings.heading_tag_column_1 }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class_column_1 }}">
+              {{ block.settings.heading_column_1 }}
+            </{{ block.settings.heading_tag_column_1 }}>
+          {%- endunless -%}
+          {%- unless content_column_1 == blank -%}
+            <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class_column_1 }} rte">
+              {{ content_column_1 }}
+            </div>
+          {%- endunless -%}
+        </div>
+
+        {%- if block.settings.image_column_1 != blank and block.settings.image_position_column_1 == 'below_text' -%}
+          {{ image_figure_column_1 }}
+        {%- endif -%}
+      </div>
+    {%- when 'two_column_tab', 'three_column_tab' -%}
+      <div class="product-tabs__tab-column">
+        {%- capture image_figure_column_2 -%}
+          <figure
+            class="product-tabs__tab-image-figure"
+            style="--image-max-width: {{ block.settings.image_width_column_2 }}%;"
+          >
+            <div class="product-tabs__tab-image-wrapper">
+              {%- capture image_sizes -%}
+                (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
+                {{ block.settings.image_width_column_2 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
+              {%- endcapture -%}
+              {%-
+                render 'image' with
+                wrapper_class: "product-tabs__tab-image",
+                image: block.settings.image_column_2,
+                sizes: image_sizes,
+                include_placeholder: true
+              -%}
+            </div>
+          </figure>
+        {%- endcapture -%}
+
+        {%- if block.settings.image_column_2 != blank and block.settings.image_position_column_2 == 'above_text' -%}
+          {{ image_figure_column_2 }}
+        {%- endif -%}
+
+        <div class="product-tabs__tab-text-container">
+          {%- capture content_column_2 -%}
+            {%- if block.settings.custom_liquid_column_2 != blank -%}
+              {{ block.settings.custom_liquid_column_2 }}
+            {%- elsif block.settings.page_for_content_column_2 != blank -%}
+              {%- assign content_page = pages[block.settings.page_for_content_column_2] -%}
+
+              {%- if content_page and content_page != blank -%}
+                {{ content_page.content }}
+              {%- else -%}
+                {{ block.settings.text_column_2 }}
+              {%- endif -%}
+            {%- else -%}
+              {{ block.settings.text_column_2 }}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- unless block.settings.heading_column_2 == blank -%}
+            <{{ block.settings.heading_tag_column_2 }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class_column_2 }}">
+              {{ block.settings.heading_column_2 }}
+            </{{ block.settings.heading_tag_column_2 }}>
+          {%- endunless -%}
+          {%- unless content_column_2 == blank -%}
+            <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class_column_2 }} rte">
+              {{ content_column_2 }}
+            </div>
+          {%- endunless -%}
+        </div>
+
+        {%- if block.settings.image_column_2 != blank and block.settings.image_position_column_2 == 'below_text' -%}
+          {{ image_figure_column_2 }}
+        {%- endif -%}
+      </div>
+    {%- when 'three_column_tab' -%}
+      <div class="product-tabs__tab-column">
+        {%- capture image_figure_column_3 -%}
+          <figure
+            class="product-tabs__tab-image-figure"
+            style="--image-max-width: {{ block.settings.image_width_column_3 }}%;"
+          >
+            <div class="product-tabs__tab-image-wrapper">
+              {%- capture image_sizes -%}
+                (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
+                {{ block.settings.image_width_column_3 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
+              {%- endcapture -%}
+              {%-
+                render 'image' with
+                wrapper_class: "product-tabs__tab-image",
+                image: block.settings.image_column_3,
+                sizes: image_sizes,
+                include_placeholder: true
+              -%}
+            </div>
+          </figure>
+        {%- endcapture -%}
+
+        {%- if block.settings.image_column_3 != blank and block.settings.image_position_column_3 == 'above_text' -%}
+          {{ image_figure_column_3 }}
+        {%- endif -%}
+
+        <div class="product-tabs__tab-text-container">
+          {%- capture content_column_3 -%}
+            {%- if block.settings.custom_liquid_column_3 != blank -%}
+              {{ block.settings.custom_liquid_column_3 }}
+            {%- elsif block.settings.page_for_content_column_3 != blank -%}
+              {%- assign content_page = pages[block.settings.page_for_content_column_3] -%}
+
+              {%- if content_page and content_page != blank -%}
+                {{ content_page.content }}
+              {%- else -%}
+                {{ block.settings.text_column_3 }}
+              {%- endif -%}
+            {%- else -%}
+              {{ block.settings.text_column_3 }}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- unless block.settings.heading_column_3 == blank -%}
+            <{{ block.settings.heading_tag_column_3 }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class_column_3 }}">
+              {{ block.settings.heading_column_3 }}
+            </{{ block.settings.heading_tag_column_3 }}>
+          {%- endunless -%}
+          {%- unless content_column_3 == blank -%}
+            <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class_column_3 }} rte">
+              {{ content_column_3 }}
+            </div>
+          {%- endunless -%}
+        </div>
+
+        {%- if block.settings.image_column_3 != blank and block.settings.image_position_column_3 == 'below_text' -%}
+          {{ image_figure_column_3 }}
+        {%- endif -%}
+      </div>
+    {% when 'reviews' %}
+      <div class="product-tabs__tab-column">
+        <div class="product-tabs__tab-text-container">
+          {%- unless block.settings.heading == blank -%}
+            <{{ block.settings.heading_tag }} class="product-tabs__tab-heading ff-heading">
+              {{ block.settings.heading }}
+            </{{ block.settings.heading_tag }}>
+          {%- endunless -%}
+          <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class }}">
+            <div id="klaviyo-reviews-list" data-id="{{product.id}}"></div>
+          </div>
+        </div>
+      </div>
+    {% when 'performance' %}
+                    {%- if block.settings.image_row_1 != blank and block.settings.title_row_1 != blank  and  block.settings.text_row_1 != blank  and block.settings.image_row_2 != blank and block.settings.title_row_2 != blank and block.settings.text_row_2 != blank and block.settings.image_row_3 != blank and block.settings.title_row_3 != blank and block.settings.text_row_3 != blank and block.settings.image_row_4 != blank and block.settings.title_row_4 != blank and block.settings.text_row_4 != blank and block.settings.image_row_5 != blank and block.settings.title_row_5 != blank and block.settings.text_row_5 != blank and block.settings.image_row_6 != blank and block.settings.title_row_6 != blank and block.settings.text_row_6 != blank  -%}
+      <div class="product-tabs__tab-column">
+        <div class="product-tabs__tab-text-container">
+          {%- unless block.settings.heading == blank -%}
+            <{{ block.settings.heading_tag }} class="product-tabs__tab-heading ff-heading">
+              {{ block.settings.heading }}
+            </{{ block.settings.heading_tag }}>
+          {%- endunless -%}
+          <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class }}">
+            <div class="performance-wrapper-new">
+              <div class="w-100">
+                <div class="image-text-wrapper-product">
+                  <div class="media-div">
+              {%- if block.settings.image_row_1 != blank -%}
+                    {%- capture image_sizes -%}
+                              (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+                          {%- endcapture -%}
+                      {%- liquid
+                        assign prioritize_loading = false
+                        if section.index == 1
+                          assign prioritize_loading = true
+                        endif
+                        assign placeholder_aspect_ratio = 'square'
+                      -%}
+                      {%-
+                        render 'image' with
+                        wrapper_class: "lazyload",
+                        image:  block.settings.image_row_1,
+                        sizes: image_sizes,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading
+                      -%}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+                  <div class="media-content">
+                    <div class="media-inner">
+                      {% if block.settings.title_row_1 != blank %}
+                        <div class="media-title">
+                          <h4>{{ block.settings.title_row_1 }}</h4>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text_row_1 != blank %}
+                        <div>
+                          {{ block.settings.text_row_1 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100">
+                <div class="image-text-wrapper-product">
+                  <div class="media-div">
+                    {%- if block.settings.image_row_2 != blank -%}
+                      {%- capture image_sizes -%}
+                          (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+                      {%- endcapture -%}
+                      {%- liquid
+                        assign prioritize_loading = false
+                        if section.index == 1
+                          assign prioritize_loading = true
+                        endif
+                        assign placeholder_aspect_ratio = 'square'
+                      -%}
+                      {%-
+                        render 'image' with
+                        wrapper_class: "lazyload",
+                        image:  block.settings.image_row_2,
+                        sizes: image_sizes,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading
+                      -%}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+                  <div class="media-content">
+                    <div class="media-inner">
+                      {% if block.settings.title_row_2 != blank %}
+                        <div class="media-title">
+                          <h4>{{ block.settings.title_row_2 }}</h4>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text_row_2 != blank %}
+                        <div>
+                          {{ block.settings.text_row_2 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100">
+                <div class="image-text-wrapper-product">
+                  <div class="media-div">
+                    {%- if block.settings.image_row_3 != blank -%}
+                      {%- capture image_sizes -%}
+                          (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+                      {%- endcapture -%}
+                      {%- liquid
+                        assign prioritize_loading = false
+                        if section.index == 1
+                          assign prioritize_loading = true
+                        endif
+                        assign placeholder_aspect_ratio = 'square'
+                      -%}
+                      {%-
+                        render 'image' with
+                        wrapper_class: "lazyload",
+                        image:  block.settings.image_row_3,
+                        sizes: image_sizes,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading
+                      -%}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+                  <div class="media-content">
+                    <div class="media-inner">
+                      {% if block.settings.title_row_3 != blank %}
+                        <div class="media-title">
+                          <h4>{{ block.settings.title_row_3 }}</h4>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text_row_3 != blank %}
+                        <div>
+                          {{ block.settings.text_row_3 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100">
+                <div class="image-text-wrapper-product">
+                  <div class="media-div">
+                    {%- if block.settings.image_row_4 != blank -%}
+                      {%- capture image_sizes -%}
+                          (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+                      {%- endcapture -%}
+                      {%- liquid
+                        assign prioritize_loading = false
+                        if section.index == 1
+                          assign prioritize_loading = true
+                        endif
+                        assign placeholder_aspect_ratio = 'square'
+                      -%}
+                      {%-
+                        render 'image' with
+                        wrapper_class: "lazyload",
+                        image:  block.settings.image_row_4,
+                        sizes: image_sizes,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading
+                      -%}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+
+                  <div class="media-content">
+                    <div class="media-inner">
+                      {% if block.settings.title_row_4 != blank %}
+                        <div class="media-title">
+                          <h4>{{ block.settings.title_row_4 }}</h4>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text_row_4 != blank %}
+                        <div>
+                          {{ block.settings.text_row_4 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-100">
+                <div class="image-text-wrapper-product">
+                  <div class="media-div">
+                    {%- if block.settings.image_row_5 != blank -%}
+                      {%- capture image_sizes -%}
+                          (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+                      {%- endcapture -%}
+                      {%- liquid
+                        assign prioritize_loading = false
+                        if section.index == 1
+                          assign prioritize_loading = true
+                        endif
+                        assign placeholder_aspect_ratio = 'square'
+                      -%}
+                      {%-
+                        render 'image' with
+                        wrapper_class: "lazyload",
+                        image:  block.settings.image_row_5,
+                        sizes: image_sizes,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading
+                      -%}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+
+                  <div class="media-content">
+                    <div class="media-inner">
+                      {% if block.settings.title_row_5 != blank %}
+                        <div class="media-title">
+                          <h4>{{ block.settings.title_row_5 }}</h4>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text_row_5 != blank %}
+                        <div>
+                          {{ block.settings.text_row_5 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-100">
+                <div class="image-text-wrapper-product">
+                  <div class="media-div">
+                    {%- if block.settings.image_row_6 != blank -%}
+                      {%- capture image_sizes -%}
+                          (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+                      {%- endcapture -%}
+                      {%- liquid
+                        assign prioritize_loading = false
+                        if section.index == 1
+                          assign prioritize_loading = true
+                        endif
+                        assign placeholder_aspect_ratio = 'square'
+                      -%}
+                      {%-
+                        render 'image' with
+                        wrapper_class: "lazyload",
+                        image:  block.settings.image_row_6,
+                        sizes: image_sizes,
+                        include_placeholder: true,
+                        animate: true,
+                        prioritize_loading: prioritize_loading
+                      -%}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+
+                  <div class="media-content">
+                    <div class="media-inner">
+                      {% if block.settings.title_row_6 != blank %}
+                        <div class="media-title">
+                          <h4>{{ block.settings.title_row_6 }}</h4>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text_row_6 != blank %}
+                        <div>
+                          {{ block.settings.text_row_6 }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+              {% endif %}
+
+  {%- endcase -%}
+</div>

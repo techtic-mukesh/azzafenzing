@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_pages_MqhUe4": {
+      "type": "breadcrumbs-pages",
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": false
+      }
+    },
+    "main": {
+      "type": "main-new-blog",
+      "settings": {
+        "title": "What’s New",
+        "blog": "whats-new"
+      }
+    },
+    "blog-post-section": {
+      "type": "blog-post-section",
+      "settings": {
+        "title": "Blog",
+        "blog": "news",
+        "display_option": "slider"
+      }
+    },
+    "custom_liquid_KNFjU4": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script src=\"https://static.elfsight.com/platform/platform.js\" data-use-service-core defer></script>\n<div class=\"elfsight-app-2efc0f30-e483-4ae0-a3ee-9b1fc48a0929\" data-elfsight-app-lazy></div>",
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_pages_MqhUe4",
+    "main",
+    "blog-post-section",
+    "custom_liquid_KNFjU4"
+  ]
+}

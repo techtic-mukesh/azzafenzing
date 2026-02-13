@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "breadcrumbs_pages_Gf78QP": {
+      "type": "breadcrumbs-pages",
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": false
+      }
+    },
+    "image_banner_performance_a6qhDK": {
+      "type": "image-banner-performance",
+      "settings": {
+        "unique_class": "",
+        "image": "shopify://shop_images/Mask_group_2.png",
+        "image_mobile": "shopify://shop_images/62I4632_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "adapt_height_first_image": true,
+        "show_text_box": true,
+        "heading": "<p>Performance</p>",
+        "banner_text": ""
+      }
+    },
+    "index_img_with_text_NWPjcQ": {
+      "type": "index-img-with-text",
+      "blocks": {
+        "heading_UzjcpM": {
+          "type": "heading",
+          "settings": {
+            "heading": "We have thought of it all, so you don't have to.",
+            "heading_size": "h1"
+          }
+        },
+        "text_PAWmGE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Product is King and our product rises to the top. We are the only Fencing Brand made from the unique insights of an Olympian. How cool is that?</p><p>That means that every product created is built with Performance, Cushion, Durability, and Flexibility in mind, because those are the insights directly from Olympians.</p><p>Through every step, every lunge, and every parry, AZZA Fencing creates a new standard for fencing footwear incorporating those sights.</p><p>We are the fencing product of Champions no matter your age, division, or weapon. Can other brands say that?</p>",
+            "text_style": "body"
+          }
+        },
+        "button_X9ixqW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_UzjcpM",
+        "text_PAWmGE",
+        "button_X9ixqW"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/RED_details.png",
+        "mobile_image": "shopify://shop_images/RED_details_mobile.png",
+        "border": false,
+        "border-color": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "science_cprkY9": {
+      "type": "science",
+      "blocks": {
+        "featured_content_FCDpgQ": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Cushioning",
+            "description": "Indulge in the ultimate comfort and dynamic response of our fencing shoes' high-density midsole. With its perfect blend of cushioning and rebound, it absorbs impact and propels you forward, optimizing your performance on the strip."
+          }
+        },
+        "featured_content_LDNxBB": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Strength",
+            "description": "Unleash your power with confidence in our fencing shoes. The ultra-performance upper combines unrivaled strength with a sleek appearance, ensuring durability without compromising style. Conquer the competition and showcase your strength in every move."
+          }
+        },
+        "featured_content_6bUeJ7": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Flexibility",
+            "description": "Experience unparalleled agility and traction with our fencing shoes. Their flexible design enables seamless transitions and exceptional maneuverability on the strip, letting you effortlessly dominate your opponents and unleash your full potential"
+          }
+        },
+        "featured_content_z4bEk6": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Durability",
+            "description": "Our fencing shoes are fortified with high wrapping rubber, providing exceptional lunge protection. The robust rubber construction ensures long-lasting durability, allowing you to focus on your game without worrying about wear and tear."
+          }
+        },
+        "featured_content_qfgKQy": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Comfort",
+            "description": "Experience ultimate fencing comfort with powerful combination of cushion and foot stability. The carefully designed interior provides a plush feel, while the foot lock ensures a secure and stable fit, giving you confidence in the most intense bouts."
+          }
+        },
+        "featured_content_GfGcVU": {
+          "type": "featured_content",
+          "settings": {
+            "title": "Lightweight",
+            "description": "Enhance your agility with our fencing shoes that are meticulously crafter using strong, yet lightweight materials. Discover the winning combination of durability, comfort, and lightweight design in our fencing shoes. Embrace the confidence to lunge fearlessly."
+          }
+        }
+      },
+      "block_order": [
+        "featured_content_FCDpgQ",
+        "featured_content_LDNxBB",
+        "featured_content_6bUeJ7",
+        "featured_content_z4bEk6",
+        "featured_content_qfgKQy",
+        "featured_content_GfGcVU"
+      ],
+      "settings": {
+        "main_title": "Innovative Performance Footwear Designed for Fencers",
+        "no_of_column": "3"
+      }
+    },
+    "perfomance_text_img_HYRxQk": {
+      "type": "perfomance-text-img",
+      "blocks": {
+        "heading_weCPwR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Outsole Material Innovations  for Enhanced Performance in Fencing Footwear",
+            "heading_lable": "",
+            "heading_size": "h1"
+          }
+        },
+        "subtitle_9E8Chb": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>Non-marking outsole for every fencing surface</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "subtitle_McQ9Py": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>Pivot points for ultra traction</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "subtitle_FWcdcf": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>A – NYL TECH for enhanced stability</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "subtitle_BfVy9F": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>Heel Rubber wrap for grip during heel strike</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "subtitle_y9xtPa": {
+          "type": "subtitle",
+          "settings": {
+            "subtext": "<p>Outrigger for confident lateral movement</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_CKiHgB": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "icon_BEWxzV": {
+          "type": "icon",
+          "settings": {
+            "checkbox-id": true,
+            "icon1_img": "shopify://shop_images/Frame_1171275187_7115c36e-c29f-492e-81af-61f493529694.png",
+            "icon1_txt": "Intertek",
+            "icon2_img": "shopify://shop_images/HP_Mark_Footwear_all_descriptors_1.png",
+            "icon2_txt": "Intertek",
+            "icon3_txt": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_weCPwR",
+        "subtitle_9E8Chb",
+        "subtitle_McQ9Py",
+        "subtitle_FWcdcf",
+        "subtitle_BfVy9F",
+        "subtitle_y9xtPa",
+        "button_CKiHgB",
+        "icon_BEWxzV"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/HKOC7343_1.png",
+        "image-second": "shopify://shop_images/Suspended_blue_a2a53849-3a19-4144-8d28-67a59f84875c.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "single_image_g3EhVw": {
+      "type": "single-image",
+      "settings": {
+        "image": "shopify://shop_images/border_shoes.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_pages_Gf78QP",
+    "image_banner_performance_a6qhDK",
+    "index_img_with_text_NWPjcQ",
+    "science_cprkY9",
+    "perfomance_text_img_HYRxQk",
+    "single_image_g3EhVw"
+  ]
+}

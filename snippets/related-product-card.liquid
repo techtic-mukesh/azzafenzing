@@ -1,0 +1,125 @@
+{%- liquid
+  comment
+    Related Product Card with hover Add to Cart button
+  endcomment
+
+  assign current_variant = prod.selected_or_first_available_variant
+  assign has_compare_price = false
+  if current_variant.compare_at_price > current_variant.price
+    assign has_compare_price = true
+  endif
+
+  # Get rating
+  assign reviews = prod.metafields.reviews
+  assign rating = 0
+  if reviews.rating.value != blank and reviews.rating.value.scale_max != blank
+    assign rating = reviews.rating.value.rating | times: 5.0 | divided_by: reviews.rating.value.scale_max | round: 1
+  endif
+
+  # Check for Model swatches (custom.other_products metafield)
+  assign model_products = prod.metafields.custom.other_products.value
+  assign has_model_products = false
+  if model_products and model_products.size > 0
+    assign has_model_products = true
+  endif
+
+  # Generate unique ID for this product card
+  if index
+    assign card_id = 'related-product-card-' | append: prod.id | append: '-' | append: index
+  else
+    assign card_id = 'related-product-card-' | append: prod.id
+  endif
+-%}
+
+<div class="related-product-card" data-product-id="{{ prod.id }}" data-card-id="{{ card_id }}">
+  <div class="related-product-card__image-wrapper">
+    <a href="{{ prod.url }}" aria-label="{{ prod.title }}">
+      {%- if prod.featured_image -%}
+        <img 
+          src="{{ prod.featured_image | img_url: '400x400' }}" 
+          alt="{{ prod.featured_image.alt | escape }}"
+          loading="lazy"
+          class="related-product-card__image"
+          data-product-image
+        >
+      {%- else -%}
+        <div class="related-product-card__image-placeholder">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </a>
+    
+    {%- if rating > 0 -%}
+      <div class="related-product-card__rating">
+        <svg class="related-product-card__star-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <span class="related-product-card__rating-number">{{ rating }}</span>
+      </div>
+    {%- endif -%}
+  </div>
+    <div class="main__wrapper__related__product">
+        <div class="related-product-card__content-wrapper">
+            <div class="related-product-card__variants">
+            {%- if has_model_products and model_products.size > 0 -%}
+                <div class="related-product-card__model-swatches">
+                {%- for related_product in model_products limit: 4 -%}
+                    {%- assign is_current = false -%}
+                    {%- if related_product.id == prod.id -%}
+                    {%- assign is_current = true -%}
+                    {%- endif -%}
+                    {%- if related_product.available -%}
+                    <a 
+                        href="{{ related_product.url }}"
+                        class="related-product-card__swatch{% if is_current %} active{% endif %}"
+                        aria-label="{{ related_product.title }}"
+                    >
+                        {%- if related_product.images[0] -%}
+                        <img 
+                            src="{{ related_product.images[0] | img_url: '50x50' }}"
+                            alt="{{ related_product.title }}"
+                            loading="lazy"
+                        >
+                        {%- else -%}
+                        <div style="width: 100%; height: 100%; background: #f0f0f0; border-radius: 4px;"></div>
+                        {%- endif -%}
+                    </a>
+                    {%- endif -%}
+                {%- endfor -%}
+                </div>
+            {%- endif -%}
+            </div>
+
+            <h3 class="related-product-card__title">
+            <a href="{{ prod.url }}">{{ prod.title }}</a>
+            </h3>
+
+            <div class="related-product-card__price" data-product-price>
+            {%- if has_compare_price -%}
+                <span class="related-product-card__compare-price" data-compare-price>{{ current_variant.compare_at_price | money }}</span>
+            {%- endif -%}
+            <span class="related-product-card__current-price" data-current-price>{{ current_variant.price | money }}</span>
+            </div>
+            <div class="related-product-card__add-to-cart-wrapper">
+                <form class="related-product-card__add-to-cart-form" data-product-form>
+                <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-input>
+                <button 
+                    type="submit" 
+                    class="related-product-card__add-to-cart-btn"
+                    data-add-to-cart
+                    {% unless current_variant.available %}disabled{% endunless %}
+                >
+                    <span data-icon-add>
+                        {% render 'icon-add-cart' %}
+                    </span>
+                    <span data-add-to-cart-text>Add To Cart</span>
+                </button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+

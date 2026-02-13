@@ -1,0 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:groups.footer_group.name",
+  "sections": {
+    "multicolumn_a3cWGF": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Rxt3FF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/scrime.jpg",
+            "title": "Made by Fencers",
+            "text": "<p>Designed by Fencing Professionals</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eLCX3Q": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/box.jpg",
+            "title": "Hassle-free return",
+            "text": "<p>Not the perfect fit ? No worries. Return within 14 days</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PgGyE3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/chatter.jpg",
+            "title": "Chat available 7 days",
+            "text": "<p>Chat support available daily</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NdBWq6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/money.jpg",
+            "title": "Secured payment",
+            "text": "<p>By SSL secured protocol</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Rxt3FF",
+        "column_eLCX3Q",
+        "column_PgGyE3",
+        "column_NdBWq6"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "index_newsletter_jPKCck": {
+      "type": "index-newsletter",
+      "disabled": true,
+      "settings": {
+        "title": "Subscribe to the Newsletter",
+        "description": "Stay up-to-date on all the news.Register to recieve exclusive offers & access to new products.",
+        "bg": "shopify://shop_images/HKOC5464_1.png",
+        "mobilebg": "shopify://shop_images/HKOC5464_1_d3a2476f-5549-4408-8a33-05e0d53291ae.png"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_jRnXBV": {
+          "type": "text",
+          "settings": {
+            "desktop_width": 20,
+            "desktop_padding": 0,
+            "collapse_on_mobile": false,
+            "title": "",
+            "show_title_on_desktop": true,
+            "text": "",
+            "image": "shopify://shop_images/image_1.png",
+            "image_max_width": 200,
+            "image_placement": "below_text",
+            "show_social_icons": true,
+            "enable_follow_on_shop": false
+          }
+        },
+        "footer-2": {
+          "type": "links",
+          "settings": {
+            "desktop_width": 17,
+            "desktop_padding": 0,
+            "collapse_on_mobile": true,
+            "title": "Azza Fencing",
+            "show_title_on_desktop": true,
+            "link_list": "azza-fencing"
+          }
+        },
+        "footer-3": {
+          "type": "links",
+          "settings": {
+            "desktop_width": 17,
+            "desktop_padding": 0,
+            "collapse_on_mobile": true,
+            "title": "Find Out More",
+            "show_title_on_desktop": true,
+            "link_list": "find-out-more"
+          }
+        },
+        "link_list_bottom_84MrFB": {
+          "type": "link_list_bottom",
+          "disabled": true,
+          "settings": {
+            "menu_bottom": "footer4"
+          }
+        },
+        "links_DWzEUL": {
+          "type": "links",
+          "settings": {
+            "desktop_width": 17,
+            "desktop_padding": 0,
+            "collapse_on_mobile": true,
+            "title": "Explore",
+            "show_title_on_desktop": true,
+            "link_list": "explore"
+          }
+        },
+        "links_zaEki4": {
+          "type": "links",
+          "settings": {
+            "desktop_width": 17,
+            "desktop_padding": 0,
+            "collapse_on_mobile": true,
+            "title": "Privacy Pages",
+            "show_title_on_desktop": true,
+            "link_list": "privacy-pages"
+          }
+        },
+        "newsletter_ae7Nkp": {
+          "type": "newsletter",
+          "settings": {
+            "desktop_width": 27,
+            "desktop_padding": 0,
+            "collapse_on_mobile": false,
+            "title": "We Are in Social:",
+            "show_title_on_desktop": true,
+            "text": "<p>Join our email list and be the first to know about new limited edition products.</p>",
+            "show_social_icons": true,
+            "enable_follow_on_shop": false
+          }
+        }
+      },
+      "block_order": [
+        "text_jRnXBV",
+        "footer-2",
+        "footer-3",
+        "link_list_bottom_84MrFB",
+        "links_DWzEUL",
+        "links_zaEki4",
+        "newsletter_ae7Nkp"
+      ],
+      "settings": {
+        "enable_locale_selector": false,
+        "enable_country_selector": false,
+        "show_payment_icons": true,
+        "additional_copyright_text": ""
+      }
+    }
+  },
+  "order": [
+    "multicolumn_a3cWGF",
+    "index_newsletter_jPKCck",
+    "footer"
+  ]
+}

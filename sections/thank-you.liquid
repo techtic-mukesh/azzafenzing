@@ -1,0 +1,57 @@
+<div class="t4s-container">
+<div class="title-wrapper">
+  <h1>{{ section.settings.title }}</h1>
+</div>
+  <div class="button-links">
+      {% if section.settings.link_url != blank %}
+          <a href="{{ section.settings.link_url }}" class="btn">{{ section.settings.btn_label }}</a>
+      {% endif %}
+  </div>
+  
+</div>
+<style>
+  .title-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:100px auto;
+    text-align:center;
+  }
+    .title-wrapper h1{
+      text-align:center;
+    }
+  .button-links{
+    margin:auto;
+    text-align:center;
+  }
+  .button-links a{
+        border: 1px solid #151515;
+    background: #151515;
+    color: #fff;
+    font-family: Poppins;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Thank you",
+  "class":"section thank-you-page",
+    "settings": [
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Title",
+        "default":"Un merci sincère à nos précieux participants"
+      },
+      {
+        "type":"url",
+        "id":"link_url",
+        "label":"Link Url"
+      },
+      {
+        "type":"text",
+        "id":"btn_label",
+        "label":"Button Label"
+      }
+    ]
+  }
+{% endschema %}

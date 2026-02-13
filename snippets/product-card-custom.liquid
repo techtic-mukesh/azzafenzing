@@ -1,0 +1,595 @@
+{%- liquid
+  comment
+    Custom product card for "You May Also Like" section
+    Matches the design from the image with variant selection
+  endcomment
+
+  assign current_variant = prod.selected_or_first_available_variant
+  assign has_compare_price = false
+  if current_variant.compare_at_price > current_variant.price
+    assign has_compare_price = true
+  endif
+
+  # Get rating
+  assign reviews = prod.metafields.reviews
+  assign rating = 0
+  if reviews.rating.value != blank and reviews.rating.value.scale_max != blank
+    assign rating = reviews.rating.value.rating | times: 5.0 | divided_by: reviews.rating.value.scale_max | round: 1
+  endif
+
+  # Check for Model swatches (custom.other_products metafield) - highest priority
+  assign model_products = prod.metafields.custom.other_products.value
+  assign has_model_products = false
+  if model_products and model_products.size > 0
+    assign has_model_products = true
+  endif
+
+  # Check for sibling products (stiletto metafield) - second priority
+  assign sibling_products = prod.metafields.stiletto.sibling_collection.value.products | default: prod.metafields.stiletto.siblings_collection.value.products
+  assign has_sibling_products = false
+  if sibling_products and sibling_products.size > 0
+    unless has_model_products
+      assign has_sibling_products = true
+    endunless
+  endif
+
+  # Calculate swatch dimensions for sibling products (small size for featured products)
+  assign swatch_width = 24
+  assign swatch_image_width = 50
+  if settings.swatch_shape == 'rectangle'
+    assign swatch_width = 24
+    assign swatch_image_width = 50
+  endif
+
+  capture swatch_style
+    echo '--swatch-width: ' | append: swatch_width | append: 'px;'
+    if settings.swatch_image_fit != blank
+      echo '--swatch-image-fit: ' | append: settings.swatch_image_fit | append: ';'
+    endif
+  endcapture
+
+  # Check if product has swatches configured (only if no model/sibling products)
+  assign swatch_options = settings.swatch_options | downcase | split: ', '
+  assign has_swatches = false
+  assign swatch_option = null
+  
+  unless has_model_products or has_sibling_products
+    # Find first option that matches swatch_options
+    for option in prod.options_with_values
+      assign option_name_lower = option.name | downcase
+      if swatch_options contains option_name_lower
+        assign has_swatches = true
+        assign swatch_option = option
+        break
+      endif
+    endfor
+  endunless
+
+  # Get all options - prioritize Model, then Color, then Size (only if no swatches and no model/sibling products)
+  assign model_option = null
+  assign size_option = null
+  assign color_option = null
+  unless has_swatches or has_model_products or has_sibling_products
+    for option in prod.options_with_values
+      assign option_name_lower = option.name | downcase
+      if option_name_lower contains 'model'
+        assign model_option = option
+      elsif option_name_lower contains 'color' or option_name_lower contains 'colour'
+        assign color_option = option
+      elsif option_name_lower contains 'size'
+        assign size_option = option
+      endif
+    endfor
+  endunless
+
+  # Generate unique ID for this product card
+  assign card_id = 'product-card-' | append: prod.id
+-%}
+
+<div class="you-may-also-like-product-card" data-product-id="{{ prod.id }}" data-card-id="{{ card_id }}">
+  <div class="product-card-image-wrapper">
+    <a href="{{ prod.url }}" aria-label="{{ prod.title }}">
+      {%- if prod.featured_image -%}
+        <img 
+          src="{{ prod.featured_image | img_url: '400x400' }}" 
+          alt="{{ prod.featured_image.alt | escape }}"
+          loading="lazy"
+          data-product-image
+        >
+      {%- else -%}
+        <div style="width: 100%; height: 100%; background: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #999;">
+          No Image
+        </div>
+      {%- endif -%}
+    </a>
+  </div>
+    <div class="main__content_for__product">
+        <div class="product-card-rating-options-row">
+            {%- if rating > 0 -%}
+            <div class="product-card-rating">
+                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span class="rating-number">{{ rating }}</span>
+            </div>
+            {%- else -%}
+            <div></div>
+            {%- endif -%}
+
+            <div class="product-card-variants">
+                {%- if has_model_products and model_products.size > 0 -%}
+                {%- comment -%} Show Model swatches (custom.other_products metafield) - same as variant picker {%- endcomment -%}
+                <div class="product-card-model-swatches">
+                    {%- for related_product in model_products -%}
+                    {%- assign is_current = false -%}
+                    {%- if related_product.id == prod.id -%}
+                        {%- assign is_current = true -%}
+                    {%- endif -%}
+                    {%- if related_product.available -%}
+                        <a 
+                        href="{{ related_product.url }}"
+                        class="swatch{% if is_current %} active{% endif %}"
+                        aria-label="{{ related_product.title }}"
+                        >
+                        {%- if related_product.images[0] -%}
+                            <img 
+                            src="{{ related_product.images[0] | img_url: '50x50' }}"
+                            alt="{{ related_product.title }}"
+                            loading="lazy"
+                            >
+                        {%- else -%}
+                            <div style="width: 100%; height: 100%; background: #f0f0f0; border-radius: 4px;"></div>
+                        {%- endif -%}
+                        </a>
+                    {%- endif -%}
+                    {%- endfor -%}
+                </div>
+                {%- elsif has_sibling_products and sibling_products.size > 0 -%}
+                {%- comment -%} Show sibling products as swatches (stiletto metafield) - using product-swatch snippet {%- endcomment -%}
+                <div class="product-card-sibling-swatches" style="{{ swatch_style }}">
+                    <div class="product-card-sibling-swatches-inner">
+                    {%- for sibling_product in sibling_products -%}
+                        {% render 'product-swatch',
+                        context: 'product-page',
+                        prod: prod,
+                        forloop_index: forloop.index,
+                        swatch_size: swatch_width,
+                        swatch_image_width: swatch_image_width,
+                        sibling_product: sibling_product,
+                        option_name: settings.siblings_option_name,
+                        option_value: sibling_product.metafields.stiletto.sibling_option_name
+                        %}
+                    {%- endfor -%}
+                    </div>
+                </div>
+            {%- elsif has_swatches and swatch_option and swatch_option.values.size > 0 -%}
+                {%- comment -%} Show product swatches {%- endcomment -%}
+                <div class="product-card-swatches">
+                {%- for value in swatch_option.values limit: 3 -%}
+                    {%- assign variant_for_swatch = null -%}
+                    {%- for variant in prod.variants -%}
+                    {%- if swatch_option.position == 1 and variant.option1 == value -%}
+                        {%- assign variant_for_swatch = variant -%}
+                        {%- break -%}
+                    {%- elsif swatch_option.position == 2 and variant.option2 == value -%}
+                        {%- assign variant_for_swatch = variant -%}
+                        {%- break -%}
+                    {%- elsif swatch_option.position == 3 and variant.option3 == value -%}
+                        {%- assign variant_for_swatch = variant -%}
+                        {%- break -%}
+                    {%- endif -%}
+                    {%- endfor -%}
+                    {%- if variant_for_swatch -%}
+                    <div 
+                        class="product-swatches-options__item product-swatches-options__item--swatch {% if forloop.first %}selected{% endif %}"
+                        data-variant-id="{{ variant_for_swatch.id }}"
+                        data-option-position="{{ swatch_option.position }}"
+                        data-option-value="{{ value | escape }}"
+                        data-product-id="{{ prod.id }}"
+                        style="width: 24px; height: 24px; border-radius: 4px; border: 1px solid #e0e0e0; cursor: pointer; overflow: hidden; position: relative;"
+                    >
+                        {%- comment -%} Render swatch image or color {%- endcomment -%}
+                        {%- if variant_for_swatch.featured_image -%}
+                        <img src="{{ variant_for_swatch.featured_image | img_url: '50x50' }}" alt="{{ value }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        {%- else -%}
+                        {%- assign swatch_color = value | downcase | replace: ' ', '' -%}
+                        <div style="width: 100%; height: 100%; background-color: {{ swatch_color }};"></div>
+                        {%- endif -%}
+                    </div>
+                    {%- endif -%}
+                {%- endfor -%}
+                </div>
+            {%- elsif model_option and model_option.values.size > 0 -%}
+                {%- comment -%} Show model buttons (prioritize model) {%- endcomment -%}
+                {%- for value in model_option.values limit: 4 -%}
+                {%- assign variant_available = false -%}
+                {%- assign variant_id = null -%}
+                {%- for variant in prod.variants -%}
+                    {%- if model_option.position == 1 and variant.option1 == value -%}
+                    {%- assign variant_available = variant.available -%}
+                    {%- assign variant_id = variant.id -%}
+                    {%- break -%}
+                    {%- elsif model_option.position == 2 and variant.option2 == value -%}
+                    {%- assign variant_available = variant.available -%}
+                    {%- assign variant_id = variant.id -%}
+                    {%- break -%}
+                    {%- elsif model_option.position == 3 and variant.option3 == value -%}
+                    {%- assign variant_available = variant.available -%}
+                    {%- assign variant_id = variant.id -%}
+                    {%- break -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                <button 
+                    type="button" 
+                    class="product-card-variant-btn {% if forloop.first and variant_available %}selected{% endif %} {% unless variant_available %}disabled{% endunless %}"
+                    data-variant-id="{{ variant_id }}"
+                    data-option-position="{{ model_option.position }}"
+                    data-option-value="{{ value | escape }}"
+                    data-product-id="{{ prod.id }}"
+                    {% unless variant_available %}disabled{% endunless %}
+                >
+                    {{ value }}
+                </button>
+                {%- endfor -%}
+            {%- elsif color_option and color_option.values.size > 0 -%}
+                {%- comment -%} Show color swatches {%- endcomment -%}
+                <div class="product-card-color-swatches">
+                {%- for value in color_option.values limit: 3 -%}
+                    {%- assign variant_for_color = null -%}
+                    {%- for variant in prod.variants -%}
+                    {%- if color_option.position == 1 and variant.option1 == value -%}
+                        {%- assign variant_for_color = variant -%}
+                        {%- break -%}
+                    {%- elsif color_option.position == 2 and variant.option2 == value -%}
+                        {%- assign variant_for_color = variant -%}
+                        {%- break -%}
+                    {%- elsif color_option.position == 3 and variant.option3 == value -%}
+                        {%- assign variant_for_color = variant -%}
+                        {%- break -%}
+                    {%- endif -%}
+                    {%- endfor -%}
+                    {%- if variant_for_color and variant_for_color.featured_image -%}
+                    <button 
+                        type="button" 
+                        class="product-card-color-swatch {% if forloop.first %}selected{% endif %}"
+                        data-variant-id="{{ variant_for_color.id }}"
+                        data-option-position="{{ color_option.position }}"
+                        data-option-value="{{ value | escape }}"
+                        data-product-id="{{ prod.id }}"
+                        aria-label="Select {{ value }}"
+                    >
+                        <img src="{{ variant_for_color.featured_image | img_url: '50x50' }}" alt="{{ value }}">
+                    </button>
+                    {%- endif -%}
+                {%- endfor -%}
+                </div>
+            {%- elsif size_option and size_option.values.size > 0 -%}
+                {%- comment -%} Show size buttons {%- endcomment -%}
+                {%- for value in size_option.values limit: 4 -%}
+                {%- assign variant_available = false -%}
+                {%- assign variant_id = null -%}
+                {%- for variant in prod.variants -%}
+                    {%- if size_option.position == 1 and variant.option1 == value -%}
+                    {%- assign variant_available = variant.available -%}
+                    {%- assign variant_id = variant.id -%}
+                    {%- break -%}
+                    {%- elsif size_option.position == 2 and variant.option2 == value -%}
+                    {%- assign variant_available = variant.available -%}
+                    {%- assign variant_id = variant.id -%}
+                    {%- break -%}
+                    {%- elsif size_option.position == 3 and variant.option3 == value -%}
+                    {%- assign variant_available = variant.available -%}
+                    {%- assign variant_id = variant.id -%}
+                    {%- break -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                <button 
+                    type="button" 
+                    class="product-card-variant-btn {% if forloop.first and variant_available %}selected{% endif %} {% unless variant_available %}disabled{% endunless %}"
+                    data-variant-id="{{ variant_id }}"
+                    data-option-position="{{ size_option.position }}"
+                    data-option-value="{{ value | escape }}"
+                    data-product-id="{{ prod.id }}"
+                    {% unless variant_available %}disabled{% endunless %}
+                >
+                    {{ value | replace: 'EU ', '' | replace: 'US ', '' }}
+                </button>
+                {%- endfor -%}
+            {%- endif -%}
+            </div>
+        </div>
+
+        <h3 class="product-card-name">
+            <a href="{{ prod.url }}">{{ prod.title }}</a>
+        </h3>
+
+        <div class="product__price__with__atc__main">
+            <div class="product-card-price" data-product-price>
+                {%- if has_compare_price -%}
+                <span class="original-price" data-compare-price>{{ current_variant.compare_at_price | money }}</span>
+                {%- endif -%}
+                <span class="current-price" data-current-price>{{ current_variant.price | money }}</span>
+            </div>
+
+            <form class="product-card-form" data-product-form>
+                <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-input>
+                <button 
+                type="submit" 
+                class="product-card-add-btn"
+                data-add-to-cart
+                {% unless current_variant.available %}disabled{% endunless %}
+                >
+                {%- if current_variant.available -%}
+                    Add
+                {%- else -%}
+                    Sold Out
+                {%- endif -%}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+  (function() {
+    // Helper function to format money - handles all Shopify money format types
+    function formatMoney(cents) {
+      if (!cents || isNaN(cents)) return '';
+      
+      // Try to use Shopify's formatMoney if available (most reliable)
+      if (window.Shopify && window.Shopify.formatMoney) {
+        try {
+          return window.Shopify.formatMoney(cents);
+        } catch(e) {
+          console.warn('Shopify.formatMoney failed, using fallback');
+        }
+      }
+      
+      // Try to get format from theme settings
+      let format = '${{amount}}';
+      if (window.theme && window.theme.moneyFormat) {
+        format = window.theme.moneyFormat;
+      }
+      
+      // Parse the format string and replace placeholders
+      const amount = cents / 100;
+      let formattedAmount = '';
+      
+      // Handle different format types - check for all possible placeholders
+      if (format.includes('{{amount_no_decimals}}')) {
+        formattedAmount = Math.round(amount).toString();
+        return format.replace(/\{\{amount_no_decimals\}\}/g, formattedAmount);
+      } else if (format.includes('{{amount_with_comma_separator}}')) {
+        formattedAmount = amount.toFixed(2).replace('.', ',');
+        return format.replace(/\{\{amount_with_comma_separator\}\}/g, formattedAmount);
+      } else if (format.includes('{{amount_no_decimals_with_comma_separator}}')) {
+        formattedAmount = Math.round(amount).toString();
+        return format.replace(/\{\{amount_no_decimals_with_comma_separator\}\}/g, formattedAmount);
+      } else if (format.includes('{{amount}}')) {
+        formattedAmount = amount.toFixed(2);
+        return format.replace(/\{\{amount\}\}/g, formattedAmount);
+      }
+      
+      // Fallback formatting
+      return amount.toFixed(2) + ' €';
+    }
+    
+    // Fix any incorrectly formatted prices on page load
+    function fixPriceFormatting() {
+      const priceElements = card.querySelectorAll('[data-current-price], [data-compare-price]');
+      priceElements.forEach(function(el) {
+        const text = el.textContent || el.innerText;
+        // Check if price contains unprocessed format placeholders
+        // Use indexOf to check for pattern without triggering Liquid parsing
+        const hasPlaceholder = text.indexOf('{') !== -1 && text.indexOf('{', text.indexOf('{') + 1) !== -1 && text.indexOf('amount') !== -1;
+        if (hasPlaceholder) {
+          // Extract numeric value (could be before or after the placeholder)
+          const match = text.match(/([\d,]+\.?\d*)/);
+          if (match) {
+            const numericValue = parseFloat(match[1].replace(/,/g, ''));
+            if (!isNaN(numericValue)) {
+              // Convert to cents and reformat
+              const cents = Math.round(numericValue * 100);
+              const formatted = formatMoney(cents);
+              if (formatted) {
+                el.textContent = formatted;
+              }
+            }
+          } else {
+            // If no number found, try to get price from variant data
+            const variantId = parseInt('{{ current_variant.id }}');
+            if (variantId && variants && variants.length > 0) {
+              const variant = variants.find(v => v.id === variantId);
+              if (variant) {
+                const price = el.hasAttribute('data-compare-price') ? variant.compare_at_price : variant.price;
+                if (price) {
+                  el.textContent = formatMoney(price);
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    const card = document.querySelector('[data-card-id="{{ card_id }}"]');
+    if (!card) return;
+
+    const productId = {{ prod.id }};
+    const variants = {{ prod.variants | json }};
+    
+    // Fix price formatting on load (after variants are defined)
+    fixPriceFormatting();
+    const form = card.querySelector('[data-product-form]');
+    const variantInput = card.querySelector('[data-variant-input]');
+    const priceContainer = card.querySelector('[data-product-price]');
+    const addBtn = card.querySelector('[data-add-to-cart]');
+    const variantButtons = card.querySelectorAll('.product-card-variant-btn, .product-card-color-swatch, .product-swatches-options__item[data-variant-id]');
+    const productImage = card.querySelector('[data-product-image]');
+
+    let selectedVariantId = {{ current_variant.id }};
+
+    // Handle variant selection
+    variantButtons.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (this.disabled || this.classList.contains('disabled')) return;
+
+        const variantId = parseInt(this.getAttribute('data-variant-id'));
+        if (!variantId) return;
+
+        // Update selected state
+        variantButtons.forEach(b => {
+          b.classList.remove('selected');
+        });
+        this.classList.add('selected');
+
+        // Find variant data
+        const variant = variants.find(v => v.id === variantId);
+        if (!variant) return;
+
+        selectedVariantId = variantId;
+        variantInput.value = variantId;
+
+        // Update price
+        if (priceContainer) {
+          const comparePrice = priceContainer.querySelector('[data-compare-price]');
+          const currentPrice = priceContainer.querySelector('[data-current-price]');
+          
+          if (currentPrice) {
+            // Format price - use Shopify's money format helper if available
+            const priceInCents = variant.price;
+            const formattedPrice = formatMoney(priceInCents);
+            currentPrice.textContent = formattedPrice;
+          }
+
+          if (variant.compare_at_price && variant.compare_at_price > variant.price) {
+            if (!comparePrice) {
+              const compareSpan = document.createElement('span');
+              compareSpan.className = 'original-price';
+              compareSpan.setAttribute('data-compare-price', '');
+              priceContainer.insertBefore(compareSpan, currentPrice);
+            }
+            const newComparePrice = priceContainer.querySelector('[data-compare-price]');
+            if (newComparePrice) {
+              const comparePriceInCents = variant.compare_at_price;
+              const formattedComparePrice = formatMoney(comparePriceInCents);
+              newComparePrice.textContent = formattedComparePrice;
+            }
+          } else {
+            const comparePriceEl = priceContainer.querySelector('[data-compare-price]');
+            if (comparePriceEl) {
+              comparePriceEl.remove();
+            }
+          }
+        }
+
+        // Update image if color/swatch variant has different image
+        if (variant.featured_image && productImage && (this.classList.contains('product-card-color-swatch') || this.classList.contains('product-swatches-options__item'))) {
+          productImage.src = variant.featured_image;
+          productImage.alt = variant.featured_image.alt || '{{ prod.title }}';
+        }
+
+        // Update button state
+        if (addBtn) {
+          if (variant.available) {
+            addBtn.disabled = false;
+            addBtn.textContent = 'Add';
+          } else {
+            addBtn.disabled = true;
+            addBtn.textContent = 'Sold Out';
+          }
+        }
+      });
+    });
+
+    // Handle add to cart
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (!selectedVariantId || addBtn.disabled) return;
+
+        // Show loading state
+        addBtn.classList.add('loading');
+        addBtn.textContent = 'Adding...';
+
+        // Function to trigger cart drawer - open it directly
+        function triggerCartDrawer() {
+          // Wait a bit for cart to update, then open drawer
+          setTimeout(function() {
+            // Find the quick-cart component
+            const quickCart = document.querySelector('[data-section-type="quick-cart"], .quick-cart');
+            if (quickCart) {
+              const cartWrapper = quickCart.querySelector('.quick-cart__wrapper');
+              if (cartWrapper) {
+                // Add active class to open the drawer
+                cartWrapper.classList.add('active');
+                document.body.setAttribute('data-fluorescent-overlay-open', 'true');
+                
+                // Also trigger the apps event as backup
+                if (document.dispatchEvent) {
+                  document.dispatchEvent(new CustomEvent('apps:product-added-to-cart'));
+                }
+              }
+            }
+          }, 350);
+        }
+
+        // Use theme's cart API (this should automatically trigger events)
+        if (window.cart && typeof window.cart.addItemById === 'function') {
+          window.cart.addItemById(selectedVariantId, 1).then(function(result) {
+            addBtn.classList.remove('loading');
+            addBtn.textContent = 'Add';
+            
+            // The cart API should trigger events automatically, but ensure drawer opens
+            triggerCartDrawer();
+          }).catch(function(error) {
+            console.error('Error adding to cart:', error);
+            addBtn.classList.remove('loading');
+            addBtn.textContent = 'Add';
+            alert('Unable to add product to cart. Please try again.');
+          });
+        } else {
+          // Fallback: use Shopify's cart API directly
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              items: [{
+                id: selectedVariantId,
+                quantity: 1
+              }]
+            })
+          }).then(function(response) {
+            if (!response.ok) {
+              throw new Error('Failed to add to cart');
+            }
+            return response.json();
+          }).then(function(data) {
+            addBtn.classList.remove('loading');
+            addBtn.textContent = 'Add';
+            
+            // Trigger cart drawer events
+            triggerCartDrawer();
+          }).catch(function(error) {
+            console.error('Error:', error);
+            addBtn.classList.remove('loading');
+            addBtn.textContent = 'Add';
+            alert('Unable to add product to cart. Please try again.');
+          });
+        }
+      });
+    }
+  })();
+</script>
+
+<style>
+  .product-card-form {
+    margin: 0;
+  }
+</style>

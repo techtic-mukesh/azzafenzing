@@ -1,0 +1,341 @@
+{{ 'video-banner.css' | asset_url | stylesheet_tag }}
+
+
+<a href="{{ section.settings.destination }}">
+
+<div class="video-banner">
+
+      <div class="videolinked"  id="videoheader">
+     
+    
+     <!-- Desktop video -->
+    {% if section.settings.video_pc %}
+      <div class="desktop-video-wrapper" style="position:relative; width:100vw; height:100vh; overflow:hidden;">
+        {{ section.settings.video_pc | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, preload: 'auto', style: 'width:100%; height:100%; object-fit:cover;' }}
+        <div class="video-overlay-top" style="position:absolute; top:0; left:0; width:100%; height:20%; pointer-events:none;">-</div>
+      </div>
+    {% endif %}
+
+    <!-- Mobile video -->
+    {% if section.settings.video_mob %}
+      <div class="mobile-video-wrapper" style="position:relative; width:100vw; height:100vh; overflow:hidden;">
+        {{ section.settings.video_mob | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, preload: 'auto', style: 'width:100%; height:100%; object-fit:cover;' }}
+        <div class="video-overlay-top" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;">-</div>
+      </div>
+    {% endif %}
+
+
+        
+        
+            <div class="contentonvideo">
+              <h1>{{ section.settings.bantitre }}</h1>
+              <h2>{{ section.settings.banndesc }}</h2>
+                       {% if section.settings.buttontitle != blank %}
+                         <button style="text-shadow: 0 0 55px rgba(0, 0, 0, 1);">{{ section.settings.buttontitle }}</button>
+                         {% endif %} 
+            </div>
+
+      </div>
+
+  
+
+ 
+</div>
+</a> 
+
+
+
+
+
+
+
+
+
+
+  
+  
+<style>
+  .contentonvideo h1, .contentonvideo h2{
+    color:{{ section.settings.body_text }};
+  }
+
+
+   .contentonvideo h1{
+    font-size:{{ section.settings.title_size }}px;
+    line-height: 1em;
+            text-shadow: 0 0 55px rgba(0, 0, 0, 1);
+  }
+
+    .contentonvideo h2{
+    font-size:{{ section.settings.subtitle_size }}px;
+            text-shadow: 0 0 55px rgba(0, 0, 0, 1);
+  }
+
+
+
+
+
+ @media screen and (max-width:989px){
+
+
+   .contentonvideo h1{
+    font-size:{{ section.settings.title_size_mobil }}px;
+  }
+
+    .contentonvideo h2{
+    font-size:{{ section.settings.subtitle_size_mobil }}px;
+  }
+
+
+  .contentonvideo {
+    width: 100vw;
+    padding: 3%;
+}
+
+
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if section.settings.video_url_mob != blank %}
+  <style>
+    @media screen and (max-width:989px){
+.defaultpcvideo{
+  display:none;
+}  
+}
+  </style>
+{% else %}
+    <style>
+    @media screen and (max-width:989px){
+.mobilevideo{
+  display:none;
+}  
+}
+  </style>
+{% endif %}
+
+    {% if section.settings.hidetextmobil %} 
+ <style> 
+  @media screen and (max-width:989px){
+    .contentonvideo{
+      display:none;
+    }
+  }
+ </style> 
+  {% endif %}
+
+
+  
+  
+  {% if section.settings.reducetextspace %} 
+ <style> 
+ .contentonvideo h1, .contentonvideo h2{
+  margin:0;
+}
+ </style> 
+  {% endif %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if section.settings.centercontent %} 
+
+<style>
+.contentonvideo{
+left: 50%;
+transform: translate(-50%, -50%);
+text-align:center;
+}
+</style>
+
+{% else %} 
+    
+<style>
+.contentonvideo{
+  left: 5%; 
+  transform: translateY(-50%); 
+}
+</style>
+{% endif %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+  {% schema %}
+{
+  "name": "Video Header",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video_pc",
+      "label": "Vidéo"
+    },
+     {
+      "type": "video",
+      "id": "video_mob",
+      "label": "Vidéo mobile",
+       "info": "(Facultatif)"
+    },
+    {
+  "type": "url",
+  "id": "destination",
+  "label": "Destination au clic"
+},
+    {
+  "type": "color",
+  "id": "body_text",
+  "label": "Couleur du texte",
+  "default": "#000000"
+},
+    {
+      "type": "text",
+      "id": "bantitre",
+      "label": "Titre",
+      "default": "Nouvelle Collection"
+    },
+
+    {
+  "type": "range",
+  "id": "title_size",
+  "min": 20,
+  "max": 90,
+  "step": 10,
+  "unit": "px",
+  "label": "Font size",
+  "default": 40
+},
+
+    {
+  "type": "range",
+  "id": "title_size_mobil",
+  "min": 10,
+  "max": 60,
+  "step": 2,
+  "unit": "px",
+  "label": "Font size Mobile",
+  "default": 40
+},
+    
+    {
+      "type": "text",
+      "id": "banndesc",
+      "label": "Sous-titre",
+      "default": "Duo Précieux"
+    },
+    {
+  "type": "range",
+  "id": "subtitle_size",
+  "min": 20,
+  "max": 90,
+  "step": 10,
+  "unit": "px",
+  "label": "Font size",
+  "default": 40
+},
+    {
+  "type": "range",
+  "id": "subtitle_size_mobil",
+  "min": 10,
+  "max": 40,
+  "step": 2,
+  "unit": "px",
+  "label": "Font size Mobile",
+  "default": 20
+},
+
+   {
+  "type": "checkbox",
+  "id": "centercontent",
+  "label": "Centrer le content",
+  "default": true
+},
+
+
+
+
+
+
+
+    
+    {
+  "type": "checkbox",
+  "id": "hidetextmobil",
+  "label": "Masquer le content sur mobile",
+  "default": true
+},
+        {
+  "type": "checkbox",
+  "id": "reducetextspace",
+  "label": "Réduire l'espace des textes",
+  "default": false
+},
+       {
+      "type": "text",
+      "id": "buttontitle",
+      "label": "Titre du bouton",
+      "default": "Découvrir"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Video Header",
+      "category": "Image & Vidéo"
+    }
+  ]
+}
+{% endschema %}
+
+

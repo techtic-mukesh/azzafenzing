@@ -1,0 +1,166 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {}
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "featured_image",
+        "content"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "e05359ef-6f85-46b1-96ce-c370ead7142b": {
+      "type": "slideshow-new",
+      "blocks": {
+        "template--19139335127372__e05359ef-6f85-46b1-96ce-c370ead7142b-168737542481e7c118-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/img4_39298e33-f907-45b9-87af-599c3739956d.jpg",
+            "heading": "FENCING IS MUCH MORE THAN JUST FIGHTING",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 90,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--19139335127372__e05359ef-6f85-46b1-96ce-c370ead7142b-168737542481e7c118-0"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "3bbd9f78-de6e-4bcc-a6d8-a6ec942f97f0": {
+      "type": "fencing-booths",
+      "blocks": {
+        "072999e4-8bf8-4e8c-8ee5-1c156bad083a": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/img5_9bc51eba-e6aa-41cc-b755-af6c2c3ed641.jpg",
+            "sub": "Uhlmann : Milano 2023, Italy"
+          }
+        },
+        "fb68fe07-c7f1-49f0-adb3-95f1d6f86b9d": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/img6_36e6c12f-4bbd-458c-99b0-7e585a9ca501.jpg",
+            "sub": "Royal Escrime : U23 French Championships, Clermont-Ferrand, France"
+          }
+        },
+        "aba1516f-1c60-4065-8579-6c2788a89946": {
+          "type": "bannner",
+          "settings": {
+            "image": "shopify://shop_images/img7.jpg",
+            "sub": "Radical Fencing : US 2023 Summer Nationals, USA"
+          }
+        }
+      },
+      "block_order": [
+        "072999e4-8bf8-4e8c-8ee5-1c156bad083a",
+        "fb68fe07-c7f1-49f0-adb3-95f1d6f86b9d",
+        "aba1516f-1c60-4065-8579-6c2788a89946"
+      ],
+      "settings": {
+        "upcoming": "Upcoming events",
+        "sub1": "",
+        "url1": "",
+        "sub2": "FIND OUR SHOES IN OUR DISTRIBUTORS BOOTH",
+        "url2": ""
+      }
+    },
+    "a96f9723-22e6-4d5a-b64f-c86c378d689a": {
+      "type": "previou-events",
+      "blocks": {
+        "12606744-55ba-4ae6-8727-812451b62501": {
+          "type": "bannner",
+          "settings": {
+            "image2": "shopify://shop_images/Project_7a20fdf9-61e5-45fa-ae00-f25ce9a14095.jpg",
+            "evet-name": "Cairo",
+            "locat": "Cairo",
+            "date": "May 2023"
+          }
+        },
+        "21b2558d-3399-4fde-94ab-7ad5b456f0f9": {
+          "type": "bannner",
+          "settings": {
+            "image2": "shopify://shop_images/Project_7a20fdf9-61e5-45fa-ae00-f25ce9a14095.jpg",
+            "evet-name": "Cairo",
+            "locat": "Cairo",
+            "date": "May 2023"
+          }
+        },
+        "6b4eb000-3e6b-4733-8a18-694867168b8e": {
+          "type": "bannner",
+          "settings": {
+            "image2": "shopify://shop_images/Project_7a20fdf9-61e5-45fa-ae00-f25ce9a14095.jpg",
+            "evet-name": "Cairo",
+            "locat": "Cairo",
+            "date": "May 2023"
+          }
+        },
+        "8a403d85-8181-4efa-9ca2-13adfe98a98d": {
+          "type": "bannner",
+          "settings": {
+            "image2": "shopify://shop_images/Project_7a20fdf9-61e5-45fa-ae00-f25ce9a14095.jpg",
+            "evet-name": "Cairo",
+            "locat": "Cairo",
+            "date": "May 2023"
+          }
+        }
+      },
+      "block_order": [
+        "12606744-55ba-4ae6-8727-812451b62501",
+        "21b2558d-3399-4fde-94ab-7ad5b456f0f9",
+        "6b4eb000-3e6b-4733-8a18-694867168b8e",
+        "8a403d85-8181-4efa-9ca2-13adfe98a98d"
+      ],
+      "settings": {
+        "Previou": "PREVIOUS EVENTS"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "e05359ef-6f85-46b1-96ce-c370ead7142b",
+    "3bbd9f78-de6e-4bcc-a6d8-a6ec942f97f0",
+    "a96f9723-22e6-4d5a-b64f-c86c378d689a"
+  ]
+}

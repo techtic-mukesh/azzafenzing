@@ -1,0 +1,521 @@
+{%- liquid
+  assign section_id = section.id
+  assign padding_top = section.settings.padding_top | default: 60
+  assign padding_bottom = section.settings.padding_bottom | default: 60
+-%}
+
+{%- style -%}
+  .faq-section-{{ section_id }}-padding {
+    padding-top: {{ padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .faq-section-{{ section_id }}-padding {
+      padding-top: {{ padding_top }}px;
+      padding-bottom: {{ padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="faq-section-content faq-section-{{ section_id }}-padding" data-section-id="{{ section_id }}">
+  <div class="faq-section-content-inner section">
+    <div class="faq-section-main">
+      <div class="faq-section-left">
+        <div class="faq-section-title">
+          <h1>{{ section.settings.faq_title }}</h1>
+        </div>
+        <div class="faq-section-details">
+          <p>{{ section.settings.faq_title_details }}</p>
+        </div>
+        <div class="faq-section-button">
+          <a href="{{ section.settings.btn_url }}" class="faq-contact-button">
+            {{ section.settings.btn_title }}
+          </a>
+        </div>
+      </div>
+      <div class="faq-section-right">
+        {% for block in section.blocks %}
+          {% if block.type == 'faq_item' %}
+            <div class="faq-item">
+              <div class="faq-question {% if forloop.first %}active{% endif %}" data-faq-index="{{ forloop.index }}">
+                <h2 class="faq-question-text">{{ block.settings.faq_qus }}</h2>
+                <div class="faq-toggle-icon">
+                  <span class="faq-icon-minus {% if forloop.first %}active{% endif %}">
+                    <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="0" y1="1" x2="16" y2="1" stroke="#101010" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <span class="faq-icon-plus {% unless forloop.first %}active{% endunless %}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="8" y1="0" x2="8" y2="16" stroke="#101010" stroke-width="2" stroke-linecap="round"/>
+                      <line x1="0" y1="8" x2="16" y2="8" stroke="#101010" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="faq-answer {% if forloop.first %}active{% endif %}">
+                <div class="faq-answer-content">
+                  {{ block.settings.faq_ans }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section-content {
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  .faq-section-content-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .faq-section-main {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .faq-section-left {
+    width: 40%;
+    flex-shrink: 0;
+  }
+
+  .faq-section-right {
+    width: 60%;
+    flex: 1;
+  }
+
+  .faq-section-title h1 {
+        font-size: 34px;
+        font-weight: 700;
+        color: #1F1F1F;
+        margin: 0 0 20px 0;
+        line-height: 56px;
+        font-family: 'Inter', sans-serif;
+    }
+
+  .faq-section-details {
+    margin-bottom: 32px;
+  }
+
+  .faq-section-details p {
+        font-size: 16px;
+        line-height: 22px;
+        color: #6B7280;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+    }
+
+  .faq-section-button {
+    margin-top: 32px;
+  }
+
+  .faq-contact-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 17px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    line-height: 100%;
+    letter-spacing: 0;
+    min-width: 132px;
+    text-align: center;
+  }
+
+  .faq-contact-button:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+  }
+
+  .faq-contact-button:active {
+    transform: translateY(0);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 24px 0;
+  }
+
+  .faq-item:first-child {
+    padding-top: 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+  }
+
+  .faq-question-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: #000;
+        margin: 0;
+        flex: 1;
+        padding-right: 40px;
+        line-height: 100%;
+        font-family: 'Inter', sans-serif;
+    }
+
+  .faq-toggle-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .faq-icon-minus,
+  .faq-icon-plus {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #101010;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .faq-icon-minus {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+
+  .faq-icon-plus {
+    opacity: 1;
+  }
+
+  .faq-question.active ~ .faq-answer .faq-icon-minus,
+  .faq-item .faq-question.active + .faq-answer ~ .faq-icon-minus {
+    /* This won't work, need to handle in JS */
+  }
+
+  .faq-item .faq-question.active .faq-icon-minus {
+    opacity: 1;
+  }
+
+  .faq-item .faq-question.active .faq-icon-plus {
+    opacity: 0;
+  }
+
+  .faq-answer {
+    display: none;
+    padding-top: 16px;
+    padding-right: 40px;
+  }
+
+  .faq-answer.active {
+    display: block;
+  }
+
+  .faq-answer-content {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666666;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .faq-answer-content p {
+    margin: 0 0 16px 0;
+    color: #6B7280;
+    line-height: 22px;
+  }
+
+  .faq-answer-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .faq-section-main {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .faq-section-left,
+    .faq-section-right {
+      width: 100%;
+    }
+
+    .faq-section-title h1 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .faq-section-content-inner {
+      padding: 0 20px;
+    }
+
+    .faq-section-main {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .faq-section-left,
+    .faq-section-right {
+      width: 100%;
+    }
+
+    .faq-section-title h1 {
+      font-size: 24px;
+      line-height: 100%;
+      margin-bottom: 20px;
+    }
+
+    .faq-toggle-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .faq-section-details {
+      margin-bottom: 24px;
+    }
+
+    .faq-section-details p {
+      font-size: 16px;
+    }
+
+    .faq-contact-button {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+
+    .faq-question-text {
+      font-size: 16px;
+      padding-right: 32px;
+    }
+
+    .faq-answer {
+      padding-right: 32px;
+    }
+
+    .faq-answer-content {
+      font-size: 16px;
+    }
+
+    .faq-item {
+      padding: 20px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .faq-section-content-inner {
+      padding: 0 15px;
+    }
+
+  }
+</style>
+
+<script>
+  (function() {
+    function initFAQSection() {
+      const section = document.querySelector('[data-section-id="{{ section_id }}"]');
+      if (!section) return;
+
+      const faqQuestions = section.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(function(question) {
+        question.addEventListener('click', function() {
+          const faqItem = this.closest('.faq-item');
+          const answer = faqItem.querySelector('.faq-answer');
+          const iconMinus = this.querySelector('.faq-icon-minus');
+          const iconPlus = this.querySelector('.faq-icon-plus');
+          const isActive = this.classList.contains('active');
+
+          // Close all other FAQ items
+          section.querySelectorAll('.faq-question').forEach(function(otherQuestion) {
+            if (otherQuestion !== question) {
+              otherQuestion.classList.remove('active');
+              const otherAnswer = otherQuestion.closest('.faq-item').querySelector('.faq-answer');
+              const otherIconMinus = otherQuestion.querySelector('.faq-icon-minus');
+              const otherIconPlus = otherQuestion.querySelector('.faq-icon-plus');
+              
+              if (otherAnswer) {
+                otherAnswer.classList.remove('active');
+              }
+              if (otherIconMinus) {
+                otherIconMinus.classList.remove('active');
+              }
+              if (otherIconPlus) {
+                otherIconPlus.classList.add('active');
+              }
+            }
+          });
+
+          // Toggle current FAQ item
+          if (isActive) {
+            this.classList.remove('active');
+            if (answer) {
+              answer.classList.remove('active');
+            }
+            if (iconMinus) {
+              iconMinus.classList.remove('active');
+            }
+            if (iconPlus) {
+              iconPlus.classList.add('active');
+            }
+          } else {
+            this.classList.add('active');
+            if (answer) {
+              answer.classList.add('active');
+            }
+            if (iconMinus) {
+              iconMinus.classList.add('active');
+            }
+            if (iconPlus) {
+              iconPlus.classList.remove('active');
+            }
+          }
+        });
+      });
+    }
+
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFAQSection);
+    } else {
+      initFAQSection();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "tag": "section",
+  "class": "faq-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "FAQ Title",
+      "default": "FAQs"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_title_details",
+      "label": "FAQ Description",
+      "default": "We love our Fencing culture, but we know it can be confusing at times. Please look through our Frequently asked questions and let us know if you need any other Fencing information. We are happy to help."
+    },
+    {
+      "type": "text",
+      "id": "btn_title",
+      "label": "Button Title",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_qus",
+          "label": "Question",
+          "default": "Are fencing shoes necessary for fencing?"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_ans",
+          "label": "Answer",
+          "default": "<p>Fencing shoes are specifically designed for the unique movements and demands of fencing. They offer features like reinforced soles, lateral support, and specialized grip patterns that enhance agility and stability on the fencing strip.</p><p>While not strictly mandatory, using proper fencing shoes significantly reduces the risk of injury and improves performance compared to regular athletic shoes.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Are fencing shoes necessary for fencing?",
+            "faq_ans": "<p>Fencing shoes are specifically designed for the unique movements and demands of fencing. They offer features like reinforced soles, lateral support, and specialized grip patterns that enhance agility and stability on the fencing strip.</p><p>While not strictly mandatory, using proper fencing shoes significantly reduces the risk of injury and improves performance compared to regular athletic shoes.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Have you tried fencing shoes during a game?",
+            "faq_ans": "<p>Yes, many fencers find that fencing shoes provide better grip and support during matches.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Are fencing shoes different from other shoes? What is special about them?",
+            "faq_ans": "<p>Fencing shoes are specifically engineered for the sport with features like reinforced soles, lateral support, and specialized grip patterns.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Can you play badminton or squash in fencing shoes?",
+            "faq_ans": "<p>While fencing shoes are designed for fencing, they may work for other court sports, though sport-specific shoes are generally recommended.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

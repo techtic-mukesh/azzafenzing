@@ -1,0 +1,10 @@
+<div class="payment-icons">
+  {% for type in shop.enabled_payment_types %}
+    <div class="payment-icons__icon">
+{% comment %}      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+    {% endcomment %}      
+ <img src="{{ type | payment_type_img_url }}" width="50"   class='icon icon--full-color' >
+
+    </div>
+  {% endfor %}
+</div>

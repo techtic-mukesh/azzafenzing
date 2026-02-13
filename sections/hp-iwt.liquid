@@ -1,0 +1,112 @@
+{%- liquid
+  assign prioritize_loading = false
+  if section.index == 1
+    assign prioritize_loading = true
+  endif
+  assign placeholder_aspect_ratio = 'square'
+-%}
+<section class="{{ section.settings.unique_class }}">
+  <div class="hp-iwt-wrapper">
+    {% for block in section.blocks %}
+      <div class="hp_wrapper">
+        {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+
+        {% if block.settings.desktop_image != blank %}
+          <div class="image_wrapper">
+            {%- render 'image',
+              wrapper_class: 'desktop_image lazyload',
+              image: block.settings.desktop_image,
+              sizes: image_sizes,
+              animate: true,
+              include_placeholder: true,
+              animate: true,
+              prioritize_loading: prioritize_loading,
+              placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+              placeholder_name: 'lifestyle-2'
+            -%}
+            {%- render 'image',
+              wrapper_class: 'tab_image lazyload',
+              image: block.settings.tab_image,
+              sizes: image_sizes,
+              animate: true,
+              include_placeholder: true,
+              animate: true,
+              prioritize_loading: prioritize_loading
+            -%}
+            {%- render 'image',
+              wrapper_class: 'mobile_image lazyload',
+              image: block.settings.mobile_image,
+              sizes: image_sizes,
+              animate: true,
+              include_placeholder: true,
+              animate: true,
+              prioritize_loading: prioritize_loading
+            -%}
+          </div>
+        {% endif %}
+        <div class="content">
+          {% if block.settings.block_title != blank %}
+            <p>{{ block.settings.block_title }}</p>
+          {% endif %}
+          {% if block.settings.section_button != blank %}
+            <a href="{{ block.settings.button_url }}">{{ block.settings.section_button }}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "hp-iwt",
+  "settings": [
+     {
+      "type":"text",
+      "id":"unique_class",
+      "label":"Don't Change This Text",
+      "info":"Don't remove this text"
+    }
+  ],
+  "blocks":[
+          {
+            "type":"text",
+            "name":"hp-iwt",
+            "settings":[
+                    {
+                      "type":"image_picker",
+                      "id": "desktop_image",
+                      "label"  : "Chooce Image"
+                    },
+                      {
+                      "type":"image_picker",
+                      "id": "tab_image",
+                      "label"  : "Chooce Image"
+                    },
+                    {
+                      "type":"image_picker",
+                      "id": "mobile_image",
+                      "label": "Chooce Image"
+                    },
+                      {
+                      "type":"text",
+                      "id":"block_title",
+                      "label": "Enter Heading"
+                    },
+                    {
+                      "type":"text",
+                      "id":"section_button",
+                      "label": "Enter Button Text"
+                    },
+                     {
+                      "type":"url",
+                      "id":"button_url",
+                      "label": "Select Button URL"
+                    }
+                 ]
+                }
+            ],
+  "presets":[{"name":"hp-iwt"}]
+}
+{% endschema %}

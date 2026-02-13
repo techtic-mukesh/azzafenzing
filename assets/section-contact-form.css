@@ -1,0 +1,404 @@
+main#main.Contact .section{
+     padding: 0;
+}
+
+.contact img {
+  max-width: 100%;
+}
+.contact.page-width {
+  max-width: 1332px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+.contact .form-and-text{
+display: flex;
+}
+.contact .contact-head{
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin:0 0 10px 0;
+}
+.contact .get-in-touch{
+      width: 50%;
+      padding-right: 50px;
+}
+.contact form{
+  width: 100%;
+}
+.get-in-touch a,.get-in-touch p{
+  color:#000;
+  text-decoration:none;
+}
+.get-in-touch p{
+  color:#000;
+  line-height: 28.4px;
+  font-size:14px;
+  margin: 0 0 41px 0;
+}
+.get-in-touch h3 {
+    letter-spacing: 0px;
+  font-size:22px;
+   line-height: 27.5px;
+    margin: 0 0 41px 0;
+}
+.get-in-touch h3:last-of-type {
+    margin: 0 0 5px 0;
+}
+.contact .form__message {
+  align-items: flex-start;
+}
+.contact .field.check-box{
+flex-direction: row;
+}
+.contact .field.check-box span{
+    font-size: 14px;
+    line-height: 19.6px;
+    color: #505050;
+    /* max-width: 421px; */
+    letter-spacing: 0.5px;
+}
+.contact .field.check-box span.req-check{
+font-family: initial;
+    
+    padding:0 5px;
+}
+.contact input[type=checkbox]{
+width: 21px;
+    height: 16px;
+  margin-left: 0;
+}
+.contact .icon-success {
+  margin-top: 2px;
+}
+
+.contact .field {
+  border:1px solid #E2E2E2;
+  margin-bottom: 15px;
+  flex-direction: column-reverse;
+}
+.contact .field:before, .contact .field:after{
+  display:none;
+}
+.contact .field label{
+  font-size: 14px!important;
+  line-height: 18px!important;
+  opacity: 1!important;
+  color: #000!important;
+  letter-spacing: 2px !important;
+  text-transform: capitalize;
+  margin-bottom: 9px!important;
+  position: unset !important;
+  text-transform: uppercase;
+}
+.contact .field .field__input{
+  border: 1px solid #D2DADE!important;
+  background: #fff!important;
+  padding: 8px 10px  !important;
+  height: 40px!important;
+}
+.contact .form-status.form-status-list.form__message {
+  color: #009200;
+  margin: 0 0 20px 0;
+  line-height: 18px;
+}
+.contact *:focus-visible{
+  outline:0 !important;
+  box-shadow:none !important;
+}
+.contact .form-status, .contact .form-status-list a, .contact .field--with-error span.form__message{
+  color:red;
+}
+.contact .form-status-list {
+  margin: 2rem 0;
+}
+.contact .field textarea.field__input{
+  height: 114px!important;
+}
+.contact .field__input:focus{
+  padding:8px 15px 8px 2px;
+}
+.contact .field label span{
+  font-family: initial;
+  font-weight: bold;
+}
+.contact-submit-btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0 3rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  transition: box-shadow 0.1s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #231F20;
+}
+.contact .button{
+  width:100%;
+  font-size: 18px;
+  line-height: 23.13px;
+  padding: 11.95px 24.36px;
+  min-height: auto;
+  height: auto;
+  letter-spacing: 0;
+  text-transform: unset;
+}
+.contact__button button:hover {
+    background-color: #4d4d4d !important;
+    border-color: inherit !important;
+}
+.button:focus{
+      outline: 0;
+}
+.iframe-main iframe{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    max-width: 100%;
+}
+.iframe-main{
+    line-height:0;
+    
+}
+
+.field {
+    position: relative;
+    width: 100%;
+    display: flex;
+    transition: box-shadow var(--duration-short) ease;
+}
+.contact .field {
+    margin-bottom: 1.5rem;
+    flex-direction: column-reverse;
+}
+.field .field__input, .select__select, .customer .field input, .customer select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: box-shadow 0.1s ease;
+    border-radius: 0;
+    height: 45px;
+    min-height: 1px* 2);
+    min-width: calc(70px +1* 2));
+    position: relative;
+    border: 0;
+}
+.field .field__input, .customer .field input {
+    flex-grow: 1;
+    text-align: left;
+    padding: 15px;
+    margin: 1px;
+    transition: box-shadow 0.1s ease;
+      line-height: 24px;
+    letter-spacing: 0.4px;
+}
+
+.field__input:focus, .select__select:focus, .customer .field input:focus, .customer select:focus, .localization-form__select:focus.localization-form__select:after {
+    box-shadow: 0 0 0 calc(1px + 1px) #000);
+    outline: 0;
+    border-radius: 0;
+}
+.field__input:focus, .field__input:not(:placeholder-shown), .field__input:-webkit-autofill, .customer .field input:focus, .customer .field input:not(:placeholder-shown), .customer .field input:-webkit-autofill {
+ 
+    margin:1px;
+}
+.contact *:focus-visible {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+.field__input:focus-visible, .select__select:focus-visible, .customer .field input:focus-visible, .customer select:focus-visible, .localization-form__select:focus-visible.localization-form__select:after {
+
+    border-radius: 0;
+}
+.field__input::placeholder {
+  color: #fff;
+}
+.check-box input[type=checkbox] {
+      -webkit-appearance: checkbox;
+}
+.check-box input[type=checkbox]:before{
+  content:unset;
+}
+
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 24px;
+  }
+}
+
+.contact__button {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 750px) {
+  .contact__button {
+    margin-top: 50px
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contact__fields {
+    display: grid;
+    
+    grid-column-gap: 20px;
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+@media(max-width:768px){
+  .contact.page-width {
+    padding: 20px 30px;
+}
+  .contact .get-in-touch {
+    padding-right: 20px;
+}
+}
+@media(max-width:749px){
+  .contact .get-in-touch {
+    width: 100%;
+    padding-right: 0px;
+}
+  .contact form {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 24px;
+}
+  .contact.page-width {
+    padding: 10px 10px;
+}
+  .contact .form-and-text {
+    flex-wrap: wrap;
+}
+  .contact .button {
+    width: 100%;
+}
+  .contact__button {
+ text-align:center;
+}
+  .iframe-main iframe{
+ height:500px;
+}
+  .contact .contact-head {
+       margin: 0 0 0px;
+}
+}
+
+
+/* Contact Us Page Umang CSS */
+.contact_information{
+  width:100%;
+}
+.contact_information {
+  --bs-gutter-y: 0; /* Vertical gutters */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -.5);
+  margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+.contact_information > * {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+.contact_information_div
+{
+    flex: 0 0 auto;
+  width: 50%; 
+  max-width: 50%;
+}
+.contact_information_heading
+{
+  font-weight:600 !important;
+}
+.conact_us_social a
+{
+padding: 0px 6px 6px 0px;
+    margin-right: 5px;
+}
+.conact_us_social
+{
+  margin-top:-35px;
+}
+.contact_form
+{
+  width:50%;
+  background-color:#F8F9FA;
+}
+.contact_form form
+{
+  padding:50px;
+}
+.input_field
+{
+  padding: 10px 15px;
+    border: 1px solid #fff;
+  background:#fff;
+}
+.main_breadcrumbs
+{
+  max-width: 1332px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+#ContactForm-phone
+{
+  width:100%;
+}
+@media screen and (max-width: 600px) {
+  .contact_form {
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact_information_div{
+    width:100%;
+    max-width:100%;
+  }
+  .email_mobile_div{
+    flex-wrap:wrap;
+  }
+  .contact_form form {
+    padding: 30px;
+  }
+  .contact .contact-head{
+font-family: Poppins;
+font-size: 20px;
+font-weight: 600;
+line-height: 28px;
+text-align: left;
+  }
+.get-in-touch p{
+font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 20px;
+text-align: left;
+}
+}
+@media screen and (max-width: 449px) {
+    .contact_form form {
+        padding: 20px;
+    }
+}
+.email_mobile_div{
+  display:flex;
+  gap:20px;
+}

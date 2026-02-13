@@ -1,0 +1,128 @@
+{%- liquid
+  assign open = false
+  if block_settings.expand_by_default or expand_by_default
+    assign open = true
+  endif
+
+  # Note: these two classes must also be applied to the icon wrapper for vertical alignment
+
+  unless label_font
+    assign label_font = 'ff-heading'
+  endunless
+  unless label_font_size
+    assign label_font_size = 'fs-heading-5-base'
+  endunless
+
+  if block_settings.page_for_content
+    assign content_page = pages[block_settings.page_for_content]
+
+    if content_page and content_page != blank
+      assign content = content_page.content
+    endif
+  endif
+
+  if block_settings.custom_liquid != blank
+    assign content = block_settings.custom_liquid
+  endif
+-%}
+
+{% if content != blank or request.design_mode %}
+      {% if block.settings.tab_heading == "Performance" %}
+         {%- if block.settings.image_row_1 != blank and block.settings.title_row_1 != blank  and  block.settings.text_row_1 != blank  and block.settings.image_row_2 != blank and block.settings.title_row_2 != blank and block.settings.text_row_2 != blank and block.settings.image_row_3 != blank and block.settings.title_row_3 != blank and block.settings.text_row_3 != blank and block.settings.image_row_4 != blank and block.settings.title_row_4 != blank and block.settings.text_row_4 != blank and block.settings.image_row_5 != blank and block.settings.title_row_5 != blank and block.settings.text_row_5 != blank and block.settings.image_row_6 != blank and block.settings.title_row_6 != blank and block.settings.text_row_6 != blank  -%}
+                        <div class="accordion {{ classes }}" {{ block.shopify_attributes }}>
+                          <div
+                            class="accordion__inner"
+                            data-index="{{ forloop.index0 }}"
+                            data-open="{% if open %}true{% else %}false{% endif %}"
+                            {{ block.shopify_attributes }}
+                          >
+                            <button
+                              class="accordion__label"
+                              aria-expanded="{% if open %}true{% else %}false{% endif %}"
+                              aria-controls="{{ block.id }}"
+                            >
+                              {%- liquid
+                                assign heading_tag = 'h3'
+                                if block.settings.heading_tag
+                                  assign heading_tag = block.settings.heading_tag
+                                elsif block.settings.title_tag
+                                  assign heading_tag = block.settings.title_tag
+                                endif
+                              -%}
+                              <{{ heading_tag }} class="{{ label_font }} {{ label_font_size }}">
+                                {{ heading }}
+                              </{{ heading_tag }}>
+                              <div class="accordion__label-icons">
+                                <svg class="accordion-icon accordion-icon-plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {% if open %}style="display: none"{% endif %}>
+                                  <path d="M6 12H18" stroke="#101010" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M12 18V6" stroke="#101010" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <svg class="accordion-icon accordion-icon-minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {% unless open %}style="display: none"{% endunless %}>
+                                  <path d="M6 12H18" stroke="#101010" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </div>
+                            </button>
+                            <div
+                              class="accordion__content fs-body-100{% unless disable_rte %} rte non-page-rte{% endunless %}"
+                              aria-hidden="{% if open %}false{% else %}true{% endif %}"
+                              {% unless open %}
+                                style="display: none"
+                              {% endunless %}
+                              id="accordion-content-{{ block.id }}"
+                            >
+                              {{ content }}
+                            </div>
+                          </div>
+                        </div>
+          {% else %}
+
+           
+          {% endif %}
+  {% else %}
+  <div class="accordion {{ classes }}" {{ block.shopify_attributes }}>
+    <div
+      class="accordion__inner"
+      data-index="{{ forloop.index0 }}"
+      data-open="{% if open %}true{% else %}false{% endif %}"
+      {{ block.shopify_attributes }}
+    >
+      <button
+        class="accordion__label"
+        aria-expanded="{% if open %}true{% else %}false{% endif %}"
+        aria-controls="{{ block.id }}"
+      >
+        {%- liquid
+          assign heading_tag = 'h3'
+          if block.settings.heading_tag
+            assign heading_tag = block.settings.heading_tag
+          elsif block.settings.title_tag
+            assign heading_tag = block.settings.title_tag
+          endif
+        -%}
+        <{{ heading_tag }} class="{{ label_font }} {{ label_font_size }}">
+          {{ heading }}
+        </{{ heading_tag }}>
+        <div class="accordion__label-icons">
+          <svg class="accordion-icon accordion-icon-plus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {% if open %}style="display: none"{% endif %}>
+            <path d="M6 12H18" stroke="#101010" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 18V6" stroke="#101010" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="accordion-icon accordion-icon-minus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {% unless open %}style="display: none"{% endunless %}>
+            <path d="M6 12H18" stroke="#101010" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </button>
+      <div
+        class="accordion__content fs-body-100{% unless disable_rte %} rte non-page-rte{% endunless %}"
+        aria-hidden="{% if open %}false{% else %}true{% endif %}"
+        {% unless open %}
+          style="display: none"
+        {% endunless %}
+        id="accordion-content-{{ block.id }}"
+      >
+        {{ content }}
+      </div>
+    </div>
+  </div>
+          {% endif %}
+{% endif %}

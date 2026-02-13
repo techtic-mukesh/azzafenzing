@@ -1,0 +1,290 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 200,
+        "padding_bottom": 200
+      }
+    },
+    "store_locator_g9WW76": {
+      "type": "store-locator",
+      "disabled": true,
+      "settings": {}
+    },
+    "multi_column_YEwMpa": {
+      "type": "multi-column",
+      "blocks": {
+        "column_fULnfR": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "Uhlmann Fechtsport GmbH & Co. KG",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> Uhlandstr. 12, 88471 Laupheim,   Baden-Wuerttemberg, Germany</p><p><strong>Opening Hours:</strong><br/>08:00 AM - 12:00 PM & 01:00 PM - 04:00 PM <br/><strong>Saturday:</strong><br/>08:00 AM - 04:00 PM<br/><br/><strong>Phone:</strong> +49 7392 9697-10<br/><strong>Website:</strong> <a href=\"https://uhlmann-fechtsport.com/en\">uhlmann-fechtsport.co</a></p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "https://maps.app.goo.gl/hoxkaxX8yzy4nXRM7",
+            "link_text": "Get Directions",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_EdEGPj": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "Henry Georges",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> 150 W 28th St Ste 1501, New York, NY 10001, USA</p><p><strong>Opening Hours:</strong><br/>Monday to Saturday: 11:00 AM - 07:00 PM</p><p><strong>Phone:</strong> +1 212-858-3645<br/><strong>Website:</strong> <a href=\"https://radicalfencing.com\">radicalfencing.com</a></p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "https://maps.app.goo.gl/ySzMgcBPY83WQ6zbA",
+            "link_text": "Get Directions",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_fAWwYX": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "EUROSPORT SPA s.r.o.",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> Krusnohorska 438/23, Bohatice, 360 04 Karlovy Vary, Karlovarsky, Czech Republic</p><p><strong>Opening Hours:</strong><br/>Monday to Friday: 10:00 AM - 05:00 PM</p><p><strong>Phone:</strong> +420 777 441 609<br/><strong>Website:</strong> <a href=\"https://www.rubyfencing.cz/\">rubyfencing.cz</a></p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_dVABLc": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "Allstar",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> In der Braike 13, D-72127 Kusterdingen, Baden-Wuerttemberg, Germany</p><p><strong>Opening Hours:</strong><br/>Monday to Friday: 08:00 AM - 12:00 PM & 01:00 PM - 04:00 PM<br/>Saturday: 09:00 AM - 05:00 PM</p><p><strong>Phone:</strong> +49 (0)7071 / 75 425-13<br/><strong>Website:</strong> <a href=\"https://allstar.de/en\">allstar.de/en</a></p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_HFApNp": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "SHANGHAI YUJIA SPORTS CULTURE DEVELOPMENT CENTER",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> Room 311, No. 39, Lane 1200, Changqing Road, Pudong New Area, Shanghai, 200124, China</p><p><strong>Opening Hours:</strong><br/>Monday to Saturday: 10:00 AM to 05:00 PM</p><p><strong>Phone:</strong> +86 18918181445</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_RkdKjU": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "RUBY FENCING",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> 8 impasse les vignes, 78550 MAULETTE, France</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_JFrXTp": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "MICHAEL PICCA GARIN",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> VIA MICHELANGELO BUONARROTI N.8, 13030 CARESANABLOT, Italy</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_iCg8DM": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "UHLMANN",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> Uhlandstraße 12, 88471 Laupheim, Germany</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_b7hdNW": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "BLAZING STAR FENCING",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> G2, 3rd Floor, Phase 2 Kaiser Estate, Man Yue Street, Hunghom<br/>999077 Kowloon</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_gXRUca": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "TOUCHE FENCING CLUB",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> No 124, Jalan Tun Mamat 35/91, Alam Impian, Seksyen 35 40470 selangor, Malaysia</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_4nzGcT": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "YUJIA SPORTS",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> Shanghai, Room 311, No 39, Lane 1200, Changqing Road. Pudong new area, China</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_WfJRJQ": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "BLUE GAUNTLET",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> 280 N. Midland Ave. Bldg K. Saddle Brook. NJ. 07663. USA</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_ADiFgM": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "SPORT 7",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> 202 Rue du Faubourg Saint-Antoine, 75012 Paris, France</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        },
+        "column_CYYaTV": {
+          "type": "column",
+          "settings": {
+            "accent": "",
+            "heading": "DIMTRY RIGIN",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "text": "<p><strong>Address:</strong> SIA \"KORS N\"<br/>LV40003510611<br/>Adress Latgales iela 377-78, Riga, LV-1063, Russia</p>",
+            "text_font_class": "fs-body-100",
+            "text_max_width": 100,
+            "link": "",
+            "link_text": "",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_fULnfR",
+        "column_EdEGPj",
+        "column_fAWwYX",
+        "column_dVABLc",
+        "column_HFApNp",
+        "column_RkdKjU",
+        "column_JFrXTp",
+        "column_iCg8DM",
+        "column_b7hdNW",
+        "column_gXRUca",
+        "column_4nzGcT",
+        "column_WfJRJQ",
+        "column_ADiFgM",
+        "column_CYYaTV"
+      ],
+      "settings": {
+        "title": "Find Our Stores",
+        "heading_tag": "h2",
+        "subheading": "",
+        "heading_font_class": "fs-heading-3-base",
+        "heading_alignment": "left",
+        "content_vertical_alignment": "top",
+        "content_background_padding": "medium",
+        "columns": "3",
+        "column_spacing": 28,
+        "row_spacing": 28,
+        "column_alignment": "left",
+        "enable_slider_mobile": false,
+        "columns_mobile": "2",
+        "column_spacing_mobile": 12,
+        "row_spacing_mobile": 48,
+        "column_alignment_mobile": "center",
+        "background_behind_columns": false,
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "button_label": "Learn More",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "store_locator_g9WW76",
+    "multi_column_YEwMpa"
+  ]
+}

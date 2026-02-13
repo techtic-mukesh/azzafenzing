@@ -1,0 +1,136 @@
+{{ 'fil-ariane.css' | asset_url | stylesheet_tag }}
+
+
+<div class="containerwidth">
+  <div class="containeralign">
+    <nav class="breadcrumb">
+      <a href="/collections/all">TOUS NOS PRODUITS</a>
+      {% if collection %}
+        <span>></span>
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+        {% unless template == 'collection' %}
+          <span>></span>
+        {% endunless %}
+      {% elsif product.collections.size > 0 %}
+        <span>></span>
+        <a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a>
+        <span>></span>
+      {% endif %}
+      {% if template == 'product' %}
+        <span class="current">{{ product.title }}</span>
+      {% endif %}
+    </nav>
+  </div>
+</div>
+
+
+
+
+
+
+<style>
+  
+.containerwidth {
+background-color:{{ section.settings.color_bg }};
+  }
+
+  .breadcrumb a {
+color:{{ section.settings.color }};
+  }
+  .breadcrumb .current {
+opacity:0.6;
+  }
+
+
+
+
+  .containerwidth {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+background-color:#FAFAFA;
+  }
+
+
+
+  .containeralign {
+    max-width: 1550px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+  .breadcrumb {
+    font-size: 14px;   
+    letter-spacing: 0px;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-top: 10px;
+ padding-bottom: 10px;
+  }
+
+
+  .breadcrumb a {
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover{
+    opacity:0.8;
+    transition: opacity 0.2s ease;
+  }
+
+
+  .breadcrumb .current {
+    font-weight: bold;
+  }
+  .breadcrumb span {
+    margin: 0 5px;
+  }
+
+
+@media screen and (max-width:989px){
+  .breadcrumb {
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom:10px;
+  }
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Fil d'ariane Allstar",
+  "settings": [
+    {
+  "type": "color",
+  "id": "color",
+  "label": "Couleur",
+  "default": "#1655F3"
+},
+        {
+  "type": "color",
+  "id": "color_bg",
+  "label": "Couleur du fond",
+  "default": "#FFFFFF"
+}
+  ],
+  "presets": [
+    {
+      "name": "Fil d'ariane Allstar",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

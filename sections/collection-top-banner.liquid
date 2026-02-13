@@ -1,0 +1,83 @@
+<section class="collection-top-banner">
+  <div class="section">
+    <div class="collection-banner-breadcrumb">
+      {% render 'breadcrumbs', show_breadcrumbs: section.settings.show_breadcrumbs %}
+    </div>
+    <div class="collection-title section-introduction animation--section-introduction">
+      <h2 class="collection-list-grid__heading ff-heading fs-heading-3-base section-introduction__heading">
+        Our store
+      </h2>
+    </div>
+    <div class="collection-banner-img-main">
+      {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+      {%- liquid
+        assign prioritize_loading = false
+        if section.index == 1
+          assign prioritize_loading = true
+        endif
+        assign placeholder_aspect_ratio = 'square'
+      -%}
+      {% if section.settings.coll_banner_img != blank %}
+        {%- render 'image',
+          wrapper_class: 'desk_coll_banner lazyload',
+          image: section.settings.coll_banner_img,
+          sizes: image_sizes,
+          animate: true,
+          include_placeholder: true,
+          animate: true,
+          prioritize_loading: prioritize_loading,
+          placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+          placeholder_name: 'lifestyle-2'
+        -%}
+      {% endif %}
+      {% if section.settings.mob_coll_img != blank %}
+        {%- render 'image',
+          wrapper_class: 'mob_coll_banner lazyload',
+          image: section.settings.mob_coll_img,
+          sizes: image_sizes,
+          animate: true,
+          include_placeholder: true,
+          animate: true,
+          prioritize_loading: prioritize_loading
+        -%}
+      {% else %}
+        {%- render 'image',
+          wrapper_class: 'mob_coll_banner lazyload',
+          image: section.settings.coll_banner_img,
+          sizes: image_sizes,
+          animate: true,
+          include_placeholder: true,
+          animate: true,
+          prioritize_loading: prioritize_loading,
+          placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+          placeholder_name: 'lifestyle-2'
+        -%}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:shared.settings.show_breadcrumbs.label"
+    },
+    {
+      "type":"image_picker",
+      "id":"coll_banner_img",
+      "label":"Desktop Collection Banner Image"
+    },
+    {
+      "type":"image_picker",
+      "id":"mob_coll_img",
+      "label":"Mobile Collection Banner Image"
+    }
+  ]
+}
+{% endschema %}

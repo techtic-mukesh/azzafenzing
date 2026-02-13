@@ -1,0 +1,357 @@
+{%- comment -%}
+  Pass in:
+  - blocks: section's blocks
+  - prod: product object
+  - featured_media
+  - aspect_ratio
+  - current_variant
+  - is_quick: boolean to indicate if we are rendering quick product or not. Some sections omitted if true
+  - is_featured: boolean to indicate if we are rendering featured product or not.
+  - column (optional): "left" or "right" to filter by "column_placement"
+  - price_content_type: "price" or "custom" or "hide" after checking both $0 and sold out pricing display settings
+  - custom_price_content: the translation to populate price if sold out or free, depending on logic checks and settings
+{%- endcomment -%}
+{%- capture product_url -%}{{ shop.url | append: prod.url }}{%- endcapture -%}
+{% assign current_variant = product.selected_or_first_available_variant %}
+{%- for block in blocks -%}
+  {% assign renderBlock = false %}
+  {% if column == block.settings.column_placement
+    or column == 'right'
+    and block.settings.column_placement == blank
+    or column == blank
+  %}
+    {% assign renderBlock = true %}
+  {% endif %}
+
+  {% if renderBlock == true %}
+    {%- case block.type -%}
+      {%- when '@app' -%}
+        {% render block %}
+      {% when 'review-count' %}
+        <div class="review-badge-wrapper">
+          <div class="review-counts">
+            <span class="review-stars">
+              {% render 'product-rating', prod: product %}
+            </span>
+            {% comment %}
+              {% if product.metafields.custom.sold_count.value != blank %}
+                <span class="dot"></span>
+                <span class="sold-count">{{ product.metafields.custom.sold_count.value }}</span>
+              {% endif %}
+            {% endcomment %}
+          </div>
+          <div class="inventory-status">
+            <span class="inventory-label {% if current_variant.available %} in-stock {% else %} out-of-stock {% endif %}">
+              {%- if current_variant.available -%}
+                {{- section.settings.in_stock_label -}}
+              {%- else -%}
+                {{- section.settings.out_stock_label -}}
+              {%- endif -%}
+            </span>
+          </div>
+        </div>
+      {% when 'swatches-custom' %}
+        {% if product.tags contains 'color::' %}
+          <div class="product_model_main">
+            {%- for tag in product.tags -%}
+              {% if forloop.index == 1 %}
+                {% if tag contains 'color::' %}
+                  <p>{{ block.settings.title }}:</p>
+                {% endif %}
+              {% endif %}
+            {%- endfor -%}
+            <div class="product_model">
+              {%- for tag in product.tags -%}
+                {% if tag contains 'color::' %}
+                  {%- assign cat = tag | split: '::' | first -%}
+                  {% assign colour = tag | split: '::' %}
+                  {% assign colour_link = colour | last %}
+                  {% assign prd = all_products[colour_link] %}
+                  <span class="prod-link-color {% if product.handle contains colour_link %}is-active {% endif %}">
+                    {% if prd.featured_image != blank %}
+                      {% assign img = prd.featured_image | img_url: 'master' %}
+                    {% else %}
+                      {% assign img = colour[1]
+                        | replace: ' ', ''
+                        | append: '.png'
+                        | append: file_extension
+                        | asset_url
+                      %}
+                    {% endif %}
+                    <a
+                      href="{{ prd.url }}"
+                      data-product-handle="{{ colour_link }}"
+                      data-title="{{ colour[1]  | split:'ring-'| last}}"
+                      style="background-color:{{colour[1] | replace:' ',''  }}; background-image:url({{ img }});background-size: contain;"
+                    >
+                    </a>
+                  </span>
+                {% endif %}
+              {%- endfor -%}
+            </div>
+          </div>
+        {% endif %}
+      {%- when 'product_header' -%}
+        {% if is_quick %}<div class="quick-product--header-block-wrap">{% endif %}
+        {%-
+          render 'product-block-header' with
+          product: prod,
+          block: block,
+          block_settings: block.settings,
+          current_variant: current_variant,
+          is_quick: is_quick,
+          is_featured: is_featured,
+          featured_media: featured_media,
+          price_content_type: price_content_type,
+          custom_price_content: custom_price_content
+        -%}
+        {% if is_quick %}</div>{% endif %}
+      {%- when 'spacer' -%}
+        <div
+          class="product-block-spacer product__block product__block--medium"
+          style="height: {{ block.settings.space }}px"
+          {{ block.shopify_attributes }}
+        ></div>
+      {% when 'divider' %}
+        <div
+          class="product-block-divider product__block product__block--medium {% if block.settings.hide_on_mobile %}hide-on-mobile{% endif %}"
+          style="border-top: 1px solid {{ block.settings.divider_color }}; margin-top: {{ block.settings.divider_margin_top }}px; margin-bottom: {{ block.settings.divider_margin_botton }}px;"
+          {{ block.shopify_attributes }}
+        ></div>
+      {%- when 'variant_picker' -%}
+        {%- if prod != blank -%}
+          {%- render 'product-block-variant-picker',
+            product: prod,
+            block: block,
+            block_settings: block.settings,
+            current_variant: current_variant,
+            use_variant_images: settings.use_variant_image_swatches,
+            show_siblings: settings.enable_product_sibling_swatches,
+            section: section
+          -%}
+        {%- endif -%}
+
+      {%- when 'quantity_selector' -%}
+        {%- if prod != blank -%}
+          {%-
+            render 'product-block-quantity-selector' with
+            product: prod,
+            block: block,
+            block_settings: block.settings,
+          -%}
+        {%- endif -%}
+
+      {%- when 'custom_option' -%}
+        {%- render 'product-block-custom-option', block: block, field_type: block.settings.field_type -%}
+
+      {%- when 'buy_buttons' -%}
+        {%- if prod != blank -%}
+          <div class="quantity_atc__btn__main">
+            <div class="quantity_atc__btn__inner">
+              {%-
+                render 'product-block-quantity-selector' with
+                product: prod,
+                block: block,
+                block_settings: block.settings,
+              -%}
+              {%-
+                render 'product-block-buy-buttons' with
+                prod: prod,
+                block: block,
+                blocks: blocks,
+                block_settings: block.settings,
+                current_variant: current_variant,
+                featured_media: featured_media,
+                aspect_ratio: aspect_ratio,
+                price_content_type: price_content_type,
+                custom_price_content: custom_price_content
+              -%}
+            </div>
+          </div>
+        {%- else -%}
+          <div class="product-form">
+            <div class="product-form__controls-group product-form__controls-group--submit">
+              <button
+                type="button"
+                aria-disabled="true"
+                disabled
+                class="product-form__cart-submit btn btn--medium btn--full"
+              >
+                <span>
+                  {{ 'products.product.add_to_cart' | t }}
+                </span>
+              </button>
+            </div>
+          </div>
+        {%- endif -%}
+
+      {%- when 'description' -%}
+        {%-
+          render 'product-block-description' with
+          product: prod,
+          block: block,
+          block_settings: block.settings,
+        -%}
+
+      {%- when 'product_callouts' -%}
+        {%- render 'product-block-callouts' with block: block, block_settings: block.settings %}
+
+      {%- when 'product_callouts_mini' -%}
+        {%- render 'product-block-callouts-mini' with block: block, block_settings: block.settings %}
+
+      {%- when 'text' -%}
+        {%
+          render 'product-block-text' with
+          content: block.settings.text,
+          block_settings: block.settings,
+          block: block,
+        %}
+
+      {%- when 'share' -%}
+        {%- if prod != blank -%}
+          {%- liquid
+            assign share_alignment = 'left-below'
+
+            if is_quick or is_featured
+              assign share_alignment = 'left-above'
+            endif
+          -%}
+
+          <div class="product-block-social-share product__block product__block--medium" {{ block.shopify_attributes }}>
+            {% render 'social-share',
+              url: product_url,
+              title: product.title,
+              image: product.featured_image,
+              alignment: share_alignment
+            %}
+          </div>
+        {%- endif -%}
+
+      {%- when 'inventory-counter' -%}
+        {%- if prod != blank -%}
+          {%-
+            render 'inventory-counter' with
+            product: prod,
+            block: block,
+            block_settings: block.settings,
+            current_variant: current_variant,
+          -%}
+        {%- endif -%}
+
+      {%- when 'accordion' -%}
+        {%- render 'product-block-accordion',
+          block: block,
+          block_settings: block.settings,
+          heading: block.settings.heading,
+          content: block.settings.content
+        -%}
+
+      {%- when 'custom_liquid' -%}
+        {%- unless block.settings.custom_liquid == blank -%}
+          <div class="product-block-custom-liquid product__block product__block--medium" {{ block.shopify_attributes }}>
+            {{ block.settings.custom_liquid }}
+          </div>
+        {%- endunless -%}
+
+      {%- when 'information_popup' -%}
+        {%- assign popup_modal_page = pages[block.settings.popup_page] -%}
+
+        {%- if block.settings.popup_text != blank and popup_modal_page.content != blank -%}
+          {%
+            render 'product-block-information-popup' with
+            block: block,
+            popup_page_target: block.settings.popup_page,
+            popup_page: popup_modal_page,
+            icon: block.settings.popup_icon,
+            custom_icon_image: block.settings.custom_icon_image,
+            text: block.settings.popup_text
+          %}
+        {%- endif -%}
+      {%- when 'featured_products' -%}
+        {%- render 'product-block-featured-products', block: block, product: prod -%}
+
+      {%- when 'image' -%}
+        <div
+          class="
+            product-block-image
+            product__block
+            product__block--medium
+          "
+        >
+          {%-
+            render 'image-block' with
+            shopify_attributes: block.shopify_attributes,
+            wrapper_class: 'product-block-image__text-container-image  section-blocks__image',
+            image: block.settings.image,
+            width: block.settings.image_size,
+            mobile_width: block.settings.image_size_mobile,
+            break_to_mobile_at: '720',
+            align: block.settings.alignment,
+          -%}
+        </div>
+      {% when 'icon-with-text' %}
+        {%- capture image_sizes -%}
+            (min-width: 720px) calc(calc(50vw - clamp(18px, 3.3vw, 3.3vw)), calc(100vw - 80px)
+        {%- endcapture -%}
+        {%- liquid
+          assign prioritize_loading = false
+          if section.index == 1
+            assign prioritize_loading = true
+          endif
+          assign placeholder_aspect_ratio = 'square'
+        -%}
+        <div class="icon-with-text-wrapper">
+          <div class="icon-with-text">
+            <div class="icon">
+              {%- render 'image',
+                wrapper_class: 'lazyload',
+                image: block.settings.icon_1,
+                sizes: image_sizes,
+                animate: true,
+                include_placeholder: true,
+                animate: true,
+                prioritize_loading: prioritize_loading,
+                placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                placeholder_name: 'lifestyle-2'
+              -%}
+            </div>
+            <span>{{ block.settings.title_1 }}</span>
+          </div>
+          <div class="icon-with-text">
+            <div class="icon">
+              {%- render 'image',
+                wrapper_class: 'lazyload',
+                image: block.settings.icon_2,
+                sizes: image_sizes,
+                animate: true,
+                include_placeholder: true,
+                animate: true,
+                prioritize_loading: prioritize_loading,
+                placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                placeholder_name: 'lifestyle-2'
+              -%}
+            </div>
+            <span>{{ block.settings.title_2 }}</span>
+          </div>
+          <div class="icon-with-text">
+            <div class="icon">
+              {%- render 'image',
+                wrapper_class: 'lazyload',
+                image: block.settings.icon_3,
+                sizes: image_sizes,
+                animate: true,
+                include_placeholder: true,
+                animate: true,
+                prioritize_loading: prioritize_loading,
+                placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                placeholder_name: 'lifestyle-2'
+              -%}
+            </div>
+            <span>{{ block.settings.title_3 }}</span>
+          </div>
+        </div>
+      {%- when 'secure_payment' -%}
+        {%- render 'product-block-secure-payment', product: prod, block: block, block_settings: block.settings -%}
+    {%- endcase -%}
+  {% endif %}
+{%- endfor -%}
