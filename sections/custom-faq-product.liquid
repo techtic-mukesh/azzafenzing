@@ -1,0 +1,348 @@
+{%- liquid
+  assign section_id = section.id
+  assign padding_top = section.settings.padding_top | default: 60
+  assign padding_bottom = section.settings.padding_bottom | default: 60
+-%}
+{%- style -%}
+  .faq-section-{{ section_id }}-padding {
+    padding-top: {{ padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .faq-section-{{ section_id }}-padding {
+      padding-top: {{ padding_top }}px;
+      padding-bottom: {{ padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="faq-section-content faq-section-{{ section_id }}-padding"
+  data-section-id="{{ section_id }}"
+>
+  <div class="faq-section-content-inner section">
+    <div class="faq-section-main">
+      <!-- LEFT CONTENT -->
+      <div class="faq-section-left">
+        {% if section.settings.faq_title != blank %}
+          <div class="faq-section-title">
+            <h1>{{ section.settings.faq_title }}</h1>
+          </div>
+        {% endif %}
+        {% if section.settings.faq_title_details != blank %}
+          <div class="faq-section-details">
+            <p>{{ section.settings.faq_title_details }}</p>
+          </div>
+        {% endif %}
+        {% if section.settings.btn_title != blank and section.settings.btn_url != blank %}
+          <div class="faq-section-button">
+            <a href="{{ section.settings.btn_url }}" class="faq-contact-button">
+              {{ section.settings.btn_title }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="faq-section-right">
+        {% assign faq_index = 0 %}
+        {% if product.metafields.custom.pdp_faqs.value != blank %}
+          {% for faq in product.metafields.custom.pdp_faqs.value reversed %}
+            {% assign faq_index = faq_index | plus: 1 %}
+            <div class="faq-item">
+              <div
+                class="faq-question {% if faq_index == 1 %}active{% endif %}"
+              >
+                <h2 class="faq-question-text">
+                  {{ faq.question }}
+                </h2>
+                <div class="faq-toggle-icon">
+                  <span class="faq-icon-minus {% if faq_index == 1 %}active{% endif %}"> − </span>
+                  <span class="faq-icon-plus {% unless faq_index == 1 %}active{% endunless %}"> + </span>
+                </div>
+              </div>
+              <div class="faq-answer {% if faq_index == 1 %}active{% endif %}">
+                <div class="faq-answer-content">
+                  {{ faq.answer | metafield_tag }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+
+        {% else %}
+          {% for block in section.blocks %}
+            {% if block.type == 'faq_item' %}
+              {% assign faq_index = faq_index | plus: 1 %}
+
+              <div class="faq-item" {{ block.shopify_attributes }}>
+                <div
+                  class="faq-question {% if faq_index == 1 %}active{% endif %}"
+                >
+                  <h2 class="faq-question-text">
+                    {{ block.settings.faq_qus }}
+                  </h2>
+                  <div class="faq-toggle-icon">
+                    <span class="faq-icon-minus {% if faq_index == 1 %}active{% endif %}"> − </span>
+                    <span class="faq-icon-plus {% unless faq_index == 1 %}active{% endunless %}"> + </span>
+                  </div>
+                </div>
+                <div class="faq-answer {% if faq_index == 1 %}active{% endif %}">
+                  <div class="faq-answer-content">
+                    {{ block.settings.faq_ans }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* MAIN */
+  .faq-section-content{
+    width:100%;
+    background:#fff;
+  }
+
+  .faq-section-content-inner{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  .faq-section-main{
+    display:flex;
+    gap:60px;
+  }
+
+  .faq-section-left{
+    width:40%;
+  }
+
+  .faq-section-right{
+    width:60%;
+  }
+
+
+  /* TITLES */
+
+  .faq-section-title h1{
+    font-size:34px;
+    font-weight:700;
+  }
+
+  .faq-section-details{
+    margin-bottom:25px;
+  }
+
+  .faq-section-details p{
+    color:#6B7280;
+  }
+
+
+  /* BUTTON */
+
+  .faq-contact-button{
+    display:inline-block;
+    background:#000;
+    color:#fff;
+    padding:15px 25px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+  }
+
+
+  /* FAQ */
+
+  .faq-item{
+    border-bottom:1px solid #e5e5e5;
+    padding:22px 0;
+  }
+
+  .faq-question{
+    display:flex;
+    justify-content:space-between;
+    cursor:pointer;
+  }
+
+  .faq-question-text{
+    font-size:18px;
+    font-weight:600;
+  }
+
+  .faq-toggle-icon{
+    position:relative;
+    width:20px;
+  }
+
+  .faq-icon-minus,
+  .faq-icon-plus{
+    position:absolute;
+    font-size:20px;
+    font-weight:600;
+  }
+
+  .faq-icon-minus{
+    opacity:0;
+  }
+
+  .faq-icon-plus{
+    opacity:1;
+  }
+
+  .faq-question.active .faq-icon-minus{
+    opacity:1;
+  }
+
+  .faq-question.active .faq-icon-plus{
+    opacity:0;
+  }
+
+  .faq-answer{
+    display:none;
+    padding-top:12px;
+  }
+
+  .faq-answer.active{
+    display:block;
+  }
+
+  .faq-answer-content{
+    color:#666;
+    line-height:1.6;
+  }
+
+
+  /* MOBILE */
+
+  @media(max-width:991px){
+
+    .faq-section-main{
+      flex-direction:column;
+    }
+
+    .faq-section-left,
+    .faq-section-right{
+      width:100%;
+    }
+
+    .faq-section-content-inner{
+      padding:0 20px;
+    }
+
+  }
+</style>
+
+<script>
+  (function () {
+    const section = document.querySelector('[data-section-id="{{ section_id }}"]');
+    if (!section) return;
+
+    const questions = section.querySelectorAll('.faq-question');
+
+    questions.forEach((question) => {
+      question.addEventListener('click', function () {
+        const item = this.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+
+        const isOpen = this.classList.contains('active');
+
+        // Close all
+        section.querySelectorAll('.faq-question').forEach((q) => {
+          q.classList.remove('active');
+        });
+
+        section.querySelectorAll('.faq-answer').forEach((a) => {
+          a.classList.remove('active');
+        });
+
+        // Open current
+        if (!isOpen) {
+          this.classList.add('active');
+          answer.classList.add('active');
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "FAQ Title",
+      "default": "FAQs"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_title_details",
+      "label": "FAQ Description"
+    },
+    {
+      "type": "text",
+      "id": "btn_title",
+      "label": "Button Title",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_qus",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_ans",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product FAQ"
+    }
+  ]
+}
+{% endschema %}

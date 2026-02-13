@@ -173,6 +173,7 @@
     {% if has_grid_reveal -%} animation--item-initial {%- endif %}
   "
   style="--z-index-item: {{ forloop.index }};"
+  data-tags="{{ prod.tags | join: ', ' }}"
 >
   <div class="product-item__inner">
    

@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        
+        .ge-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+             display:none;
+        }
+        .ge-container h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .ge-container .user-location {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .ge-container .user-location strong {
+            color: #1976d2;
+        }
+        .ge-container .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        .ge-container .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .ge-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .ge-container th, .ge-container td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .ge-container th {
+            background-color: #1976d2;
+            color: white;
+            font-weight: bold;
+        }
+        .ge-container tr:hover {
+            background-color: #f5f5f5;
+        }
+        .ge-container .distance {
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .ge-container .country-code {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="ge-container">
+        <h1>🌍 Country Distance Calculator</h1>
+        <div id="userLocation" class="user-location" style="display: none;">
+            <strong>Your Location:</strong> <span id="userLocText"></span>
+        </div>
+        <div id="loading" class="loading">Loading your location and calculating distances...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="results" style="display: none;">
+            <h2>Distance to Countries (sorted by distance)</h2>
+            <table id="distanceTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Country</th>
+                        <th>Country Code</th>
+                        <th>Distance</th>
+                        <th>Coordinates</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let userLat = null;
+            let userLng = null;
+            let currentWarehouseTag = null;
+            
+            // Warehouse configuration with tags
+            const WAREHOUSES = {
+                evry: {
+                    name: 'Evry (France)',
+                    tag: 'evry',
+                    lat: 48.6292,
+                    lng: 2.4300,
+                    countries: ['FR', 'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB', 'NO', 'IS', 'LI'],
+                    markets: ['FR', 'EU & UK & Nordics']
+                },
+                snapl: {
+                    name: 'Snapl (USA)',
+                    tag: 'snapl',
+                    lat: 40.7128,
+                    lng: -74.0060,
+                    countries: ['US', 'CA', 'MX'],
+                    markets: ['Amérique du Nord']
+                },
+                shenzhen: {
+                    name: 'Shenzhen (China)',
+                    tag: 'shenzhen',
+                    lat: 22.5431,
+                    lng: 114.0579,
+                    countries: ['CN', 'SG', 'MY', 'TH', 'ID', 'PH', 'VN', 'MM', 'KH', 'LA', 'BN', 'AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'JO', 'LB', 'AU', 'NZ', 'FJ', 'PG', 'US', 'CA', 'MX', 'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB', 'NO', 'IS', 'LI'],
+                    excludeCountries: ['FR'],
+                    markets: ['South East Asia', 'Middle East & Australia', 'Amérique du Nord', 'EU & UK & Nordics']
+                }
+            };
+
+            // Embedded countries data
+            const countries = [
+                {
+                    "country": "CN",
+                    "latitude": 35.86166,
+                    "longitude": 104.195397,
+                    "name": "China"
+                },
+                {
+                    "country": "US",
+                    "latitude": 37.09024,
+                    "longitude": -95.712891,
+                    "name": "United States"
+                },
+                {
+                    "country": "FR",
+                    "latitude": 46.227638,
+                    "longitude": 2.213749,
+                    "name": "France"
+                }
+            ];
+
+            // Function to calculate distance between two coordinates using Haversine formula
+            function calculateDistance(lat1, lon1, lat2, lon2) {
+                const R = 6371; // Radius of the Earth in kilometers
+                const dLat = (lat2 - lat1) * Math.PI / 180;
+                const dLon = (lon2 - lon1) * Math.PI / 180;
+                const a = 
+                    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                const distance = R * c; // Distance in kilometers
+                return distance;
+            }
+
+            // Function to format distance
+            function formatDistance(km) {
+                if (km < 1) {
+                    return (km * 1000).toFixed(0) + ' m';
+                } else if (km < 1000) {
+                    return km.toFixed(2) + ' km';
+                } else {
+                    return km.toFixed(0) + ' km';
+                }
+            }
+
+            // Determine closest warehouse based on country
+            function determineClosestWarehouse(countryCode) {
+                console.log('🔍 Determining closest warehouse for:', countryCode);
+                
+                // Check if country matches a warehouse's country list
+                for (const [key, warehouse] of Object.entries(WAREHOUSES)) {
+                    if (warehouse.countries.includes(countryCode)) {
+                        // Check exclusions (e.g., France excluded from Shenzhen)
+                        if (warehouse.excludeCountries && warehouse.excludeCountries.includes(countryCode)) {
+                            console.log(`⛔ ${warehouse.name} excluded for ${countryCode}`);
+                            continue;
+                        }
+                        console.log(`✅ Matched by country: ${warehouse.name} (tag: ${warehouse.tag})`);
+                        return warehouse;
+                    }
+                }
+
+                // If no country match, calculate distance to all warehouses
+                if (userLat && userLng) {
+                    let closest = null;
+                    let minDistance = Infinity;
+
+                    for (const [key, warehouse] of Object.entries(WAREHOUSES)) {
+                        if (warehouse.excludeCountries && warehouse.excludeCountries.includes(countryCode)) {
+                            continue;
+                        }
+
+                        const distance = calculateDistance(userLat, userLng, warehouse.lat, warehouse.lng);
+                        console.log(`📏 Distance to ${warehouse.name}: ${distance.toFixed(2)} km`);
+
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closest = warehouse;
+                        }
+                    }
+
+                    if (closest) {
+                        console.log(`✅ Closest by distance: ${closest.name} (tag: ${closest.tag})`);
+                        return closest;
+                    }
+                }
+
+                // Fallback: default to Shenzhen
+                console.log('📍 Defaulting to Shenzhen warehouse');
+                return WAREHOUSES.shenzhen;
+            }
+
+            // Get user's location via IP geolocation
+            function getUserLocation() {
+                $.ajax({
+                    url: 'https://ipapi.co/json/',
+                    method: 'GET',
+                    dataType: 'json',
+                    timeout: 10000,
+                    success: function(data) {
+                        if (data.latitude && data.longitude) {
+                            userLat = parseFloat(data.latitude);
+                            userLng = parseFloat(data.longitude);
+                            
+                            const locationText = `${data.city || 'Unknown'}, ${data.region || ''}, ${data.country_name || ''} (${userLat.toFixed(4)}, ${userLng.toFixed(4)})`;
+                            $('#userLocText').text(locationText);
+                            $('#userLocation').show();
+                            
+                            // Determine closest warehouse and show alert
+                            const countryCode = data.country_code ? data.country_code.toUpperCase() : null;
+                            if (countryCode) {
+                                const closestWarehouse = determineClosestWarehouse(countryCode);
+                                
+                                if (closestWarehouse) {
+                                    // Filter products by warehouse tag (this will show alert with counts)
+                                    filterProductsByWarehouseTag(closestWarehouse.tag, data.country_name || countryCode, closestWarehouse);
+                                }
+                            }
+                            
+                            calculateDistances();
+                        } else {
+                            showError('Could not determine your location. Please try again.');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error getting location:', error);
+                        showError('Failed to get your location. Please check your internet connection.');
+                    }
+                });
+            }
+
+            // Calculate distances and display results
+            function calculateDistances() {
+                if (!userLat || !userLng || !countries.length) {
+                    showError('Missing location or countries data.');
+                    return;
+                }
+
+                // Calculate distance for each country
+                const distances = countries.map(function(country) {
+                    const distance = calculateDistance(
+                        userLat, 
+                        userLng, 
+                        country.latitude, 
+                        country.longitude
+                    );
+                    return {
+                        country: country.name,
+                        code: country.country,
+                        latitude: country.latitude,
+                        longitude: country.longitude,
+                        distance: distance
+                    };
+                });
+
+                // Sort by distance (closest first)
+                distances.sort(function(a, b) {
+                    return a.distance - b.distance;
+                });
+
+                // Display results
+                displayResults(distances);
+            }
+
+            // Display results in table
+            function displayResults(distances) {
+                $('#loading').hide();
+                $('#results').show();
+                
+                const tbody = $('#tableBody');
+                tbody.empty();
+                
+                distances.forEach(function(item, index) {
+                    const row = $('<tr>');
+                    row.append($('<td>').text(index + 1));
+                    row.append($('<td>').text(item.country));
+                    row.append($('<td>').addClass('country-code').text(item.code));
+                    row.append($('<td>').addClass('distance').text(formatDistance(item.distance)));
+                    row.append($('<td>').text(`${item.latitude.toFixed(4)}, ${item.longitude.toFixed(4)}`));
+                    tbody.append(row);
+                });
+            }
+
+            // Show error message
+            function showError(message) {
+                $('#loading').hide();
+                $('#error').text(message).show();
+            }
+
+           /**
+ * Filter a single product item
+ */
+function filterSingleProduct(item, warehouseTag) {
+    // Skip if already processed
+    if (item.hasAttribute('data-warehouse-filtered')) {
+        return null;
+    }
+    
+    // Get product tags from data attribute or inner element
+    let productTags = '';
+    
+    // Try multiple ways to get tags
+    if (item.hasAttribute('data-tags')) {
+        productTags = item.getAttribute('data-tags');
+    } else if (item.hasAttribute('data-warehouse-tags')) {
+        productTags = item.getAttribute('data-warehouse-tags');
+    } else {
+        // Look for inner element with tags
+        const innerElement = item.querySelector('.product-item, [data-tags], [data-warehouse-tags]');
+        if (innerElement) {
+            productTags = innerElement.getAttribute('data-tags') || 
+                         innerElement.getAttribute('data-warehouse-tags') || '';
+        }
+    }
+
+    // Convert to lowercase for comparison
+    const tagsLower = productTags.toLowerCase();
+    
+    // Check if product has the warehouse tag
+    const hasWarehouseTag = tagsLower.includes(warehouseTag.toLowerCase());
+
+    // Mark as processed
+    item.setAttribute('data-warehouse-filtered', 'true');
+
+    // Find parent slick-slide if exists
+    const slickSlide = item.closest('.slick-slide');
+
+    if (hasWarehouseTag) {
+        // Show product
+        item.style.display = '';
+        item.classList.remove('warehouse-hidden');
+        item.classList.add('warehouse-visible');
+        
+        // Show parent slick-slide
+        if (slickSlide) {
+            slickSlide.style.display = '';
+        }
+        
+        return 'matched';
+    } else {
+        // Hide product
+        item.style.display = 'none';
+        item.classList.add('warehouse-hidden');
+        item.classList.remove('warehouse-visible');
+        
+        // Hide parent slick-slide
+        if (slickSlide) {
+            slickSlide.style.display = 'none';
+        }
+        
+        return 'hidden';
+    }
+}
+
+            /**
+             * Filter products by warehouse tag
+             * Shows only products with matching tag, hides others
+             */
+            function filterProductsByWarehouseTag(warehouseTag, countryName, warehouse) {
+                console.log(`🏷️ Filtering products by warehouse tag: ${warehouseTag}`);
+                
+                // Store globally
+                currentWarehouseTag = warehouseTag;
+                
+                // Find all product items
+                const selectors = [
+                    '.product-item',
+                    '.t4s-product',
+                    '[data-tags]',
+                    '[data-warehouse-tags]',
+                    '.product-card',
+                    '.product-grid-item'
+                ];
+
+                let allProductItems = [];
+                selectors.forEach(selector => {
+                    const items = document.querySelectorAll(selector);
+                    if (items.length > 0) {
+                        allProductItems = Array.from(items);
+                    }
+                });
+
+                // Remove duplicates
+                allProductItems = [...new Set(allProductItems)];
+
+                const totalProducts = allProductItems.length;
+                let matchedCount = 0;
+                let notMatchedCount = 0;
+
+                allProductItems.forEach(item => {
+                    const result = filterSingleProduct(item, warehouseTag);
+                    if (result === 'matched') matchedCount++;
+                    if (result === 'hidden') notMatchedCount++;
+                });
+
+                console.log(`✅ Product filtering complete:`);
+                console.log(`   Total Products: ${totalProducts}`);
+                console.log(`   Matched (${warehouseTag}): ${matchedCount}`);
+                console.log(`   Not Matched (hidden): ${notMatchedCount}`);
+
+                // Show comprehensive alert with location, warehouse, and product counts
+                const alertMessage = `📍 Your Location: ${countryName || 'Unknown'}\n\n🏭 Closest Warehouse: ${warehouse.name}\n🏷️ Warehouse Tag: ${warehouse.tag}\n\nMarkets: ${warehouse.markets ? warehouse.markets.join(', ') : 'N/A'}\n\n📊 Product Filtering Results:\n📦 Total Products: ${totalProducts}\n✅ Matched Tag "${warehouseTag}": ${matchedCount}\n❌ Not Matched (Hidden): ${notMatchedCount}`;
+                {% comment %} alert(alertMessage); {% endcomment %}
+
+                // Setup MutationObserver to watch for dynamically loaded products
+                setupProductObserver(warehouseTag);
+
+                // Trigger resize event for carousels/sliders
+                window.dispatchEvent(new Event('resize'));
+                
+                // Reinitialize carousels if function exists
+                if (typeof reinitCarousels === 'function') {
+                    setTimeout(() => {
+                        reinitCarousels();
+                    }, 100);
+                }
+
+                // Reinitialize Flickity if it exists
+                if (typeof initFlickityt4s === 'function') {
+                    setTimeout(() => {
+                        initFlickityt4s();
+                    }, 150);
+                }
+            }
+
+            /**
+             * Setup MutationObserver to filter dynamically loaded products
+             */
+            function setupProductObserver(warehouseTag) {
+                console.log('👀 Setting up MutationObserver for dynamic products');
+
+                const observer = new MutationObserver(function(mutations) {
+                    let newProductsFound = false;
+                    
+                    mutations.forEach(function(mutation) {
+                        mutation.addedNodes.forEach(function(node) {
+                            // Check if node is an element
+                            if (node.nodeType === 1) {
+                                // Check if node itself is a product
+                                const selectors = [
+                                    '.product-item',
+                                    '.t4s-product',
+                                    '[data-tags]',
+                                    '[data-warehouse-tags]',
+                                    '.product-card',
+                                    '.product-grid-item'
+                                ];
+                                
+                                let isProduct = false;
+                                selectors.forEach(selector => {
+                                    if (node.matches && node.matches(selector)) {
+                                        isProduct = true;
+                                    }
+                                });
+
+                                if (isProduct && !node.hasAttribute('data-warehouse-filtered')) {
+                                    console.log('🆕 New product detected:', node);
+                                    filterSingleProduct(node, warehouseTag);
+                                    newProductsFound = true;
+                                }
+
+                                // Check for products inside the added node
+                                selectors.forEach(selector => {
+                                    const products = node.querySelectorAll ? node.querySelectorAll(selector) : [];
+                                    products.forEach(product => {
+                                        if (!product.hasAttribute('data-warehouse-filtered')) {
+                                            console.log('🆕 New product detected inside node:', product);
+                                            filterSingleProduct(product, warehouseTag);
+                                            newProductsFound = true;
+                                        }
+                                    });
+                                });
+                            }
+                        });
+                    });
+
+                    // Reinitialize carousels if new products were added
+                    if (newProductsFound) {
+                        window.dispatchEvent(new Event('resize'));
+                        if (typeof reinitCarousels === 'function') {
+                            setTimeout(reinitCarousels, 100);
+                        }
+                        if (typeof initFlickityt4s === 'function') {
+                            setTimeout(initFlickityt4s, 150);
+                        }
+                    }
+                });
+
+                // Start observing the entire document body
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+
+                console.log('✅ MutationObserver active - watching for new products');
+            }
+
+            // Initialize
+            getUserLocation();
+        });
+    </script>
+</body> 
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Market Debug Tool - Complete Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .config-section {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .config-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            padding: 30px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .all-markets-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid #90caf9;
+        }
+
+        .all-markets-section h2 {
+            color: #1565c0;
+            margin-bottom: 16px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .market-card-full {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .market-card-full.active {
+            border-left-color: #4caf50;
+            background: #f1f8f4;
+        }
+
+        .market-card-full.draft {
+            border-left-color: #ff9800;
+            background: #fff8e1;
+        }
+
+        .market-card-full h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #212529;
+        }
+
+        .market-status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .badge-active {
+            background: #4caf50;
+            color: white;
+        }
+
+        .badge-draft {
+            background: #ff9800;
+            color: white;
+        }
+
+        .market-regions {
+            font-size: 13px;
+            color: #6c757d;
+            margin-top: 4px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .products-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .product-card {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212529;
+            flex: 1;
+        }
+
+        .product-status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 16px;
+        }
+
+        .status-available {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-unavailable {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .product-info {
+            margin-bottom: 16px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .info-label {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #212529;
+            font-weight: 600;
+        }
+
+        .market-availability-section {
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .market-availability-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .market-status-grid {
+            display: grid;
+            gap: 8px;
+        }
+
+        .market-status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #dee2e6;
+            font-size: 13px;
+        }
+
+        .market-status-item.included {
+            border-left-color: #4caf50;
+            background: #f1f8f4;
+        }
+
+        .market-status-item.excluded {
+            border-left-color: #f44336;
+            background: #fef5f5;
+        }
+
+        .market-status-item.unavailable {
+            border-left-color: #9e9e9e;
+            background: #f5f5f5;
+            opacity: 0.7;
+        }
+
+        .market-name {
+            font-weight: 500;
+            color: #212529;
+        }
+
+        .market-status-label {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .label-included {
+            background: #4caf50;
+            color: white;
+        }
+
+        .label-excluded {
+            background: #f44336;
+            color: white;
+        }
+
+        .label-unavailable {
+            background: #9e9e9e;
+            color: white;
+        }
+
+        .warehouse-info {
+            background: #e7f3ff;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .warehouse-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #004085;
+        }
+
+        .warehouse-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #bee5eb;
+        }
+
+        .warehouse-item:last-child {
+            border-bottom: none;
+        }
+
+        .warehouse-name {
+            font-size: 13px;
+            color: #004085;
+            font-weight: 500;
+        }
+
+        .warehouse-stock {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .stock-available {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .stock-unavailable {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .warning-message {
+            background: #fff3cd;
+            color: #856404;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .info-message {
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #17a2b8;
+        }
+
+        @media (max-width: 768px) {
+            .config-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .markets-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Shopify Market Complete Debug Tool</h1>
+            <p>Detailed analysis of product availability across ALL markets with Include/Exclude status</p>
+        </div>
+
+        <div class="config-section">
+            <div class="config-grid">
+                <div class="input-group">
+                    <label>Store Domain</label>
+                    <input type="text" id="shopDomain" value="azza-fenzing.myshopify.com" placeholder="yourstore.myshopify.com">
+                </div>
+                <div class="input-group">
+                    <label>Storefront API Access Token</label>
+                    <input type="text" id="accessToken" value="3b47196c7b3c85af81f8d9bbeb1b6b5c" placeholder="Your token here">
+                </div>
+            </div>
+            <button class="btn-primary" id="fetchBtn" onclick="fetchCompleteData()">
+                🚀 Complete Market Analysis
+            </button>
+        </div>
+
+        <div class="results-section" id="results">
+            <div class="info-message">
+                <strong>ℹ️ What this tool shows:</strong>
+                <ul style="margin-top: 10px; padding-left: 20px; line-height: 1.8;">
+                    <li><strong>All Markets</strong> - Active aur Draft sab markets ki list</li>
+                    <li><strong>Product-wise Analysis</strong> - Har product kis market mein INCLUDED hai aur kis mein EXCLUDED</li>
+                    <li><strong>Warehouse Mapping</strong> - Konsa warehouse konse market ko serve karta hai</li>
+                    <li><strong>Inventory Status</strong> - Product available hai ya out of stock</li>
+                </ul>
+                <br>
+                👆 Click "Complete Market Analysis" button to start
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // All markets from your store
+        const ALL_MARKETS = [
+            { name: 'Africa', status: 'draft', regions: 59, emoji: '🌍' },
+            { name: 'Amérique du Nord', status: 'active', regions: 3, emoji: '🇺🇸' },
+            { name: 'Asia', status: 'draft', regions: 29, emoji: '🌏' },
+            { name: 'Asia+Africa (duties not collected)', status: 'draft', regions: 20, emoji: '🌏' },
+            { name: 'China', status: 'draft', regions: 1, emoji: '🇨🇳' },
+            { name: 'EU & UK & Nordics', status: 'active', regions: 28, emoji: '🇪🇺' },
+            { name: 'Europe', status: 'draft', regions: 26, emoji: '🇪🇺' },
+            { name: 'European Union (duties not collected)', status: 'draft', regions: 3, emoji: '🇪🇺' },
+            { name: 'France', status: 'active', regions: 1, emoji: '🇫🇷' },
+            { name: 'Middle East & Australia', status: 'active', regions: 7, emoji: '🌏' },
+            { name: 'North Africa', status: 'draft', regions: 34, emoji: '🌍' },
+            { name: 'Oceania', status: 'draft', regions: 20, emoji: '🌏' },
+            { name: 'South America', status: 'draft', regions: 14, emoji: '🌎' },
+            { name: 'South East Asia', status: 'active', regions: 9, emoji: '🌏' }
+        ];
+
+        async function fetchCompleteData() {
+            const shopDomain = document.getElementById('shopDomain').value.trim();
+            const accessToken = document.getElementById('accessToken').value.trim();
+            const resultsDiv = document.getElementById('results');
+            const fetchBtn = document.getElementById('fetchBtn');
+
+            if (!shopDomain || !accessToken) {
+                resultsDiv.innerHTML = '<div class="error-message">⚠️ Please enter both Store Domain and Access Token</div>';
+                return;
+            }
+
+            fetchBtn.disabled = true;
+            fetchBtn.textContent = '⏳ Analyzing...';
+            
+            resultsDiv.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Fetching complete data from ${shopDomain}...</p>
+                    <p style="font-size: 12px; margin-top: 10px; opacity: 0.7;">This may take a moment...</p>
+                </div>
+            `;
+
+            try {
+                const query = `
+                {
+                    products(first: 50) {
+                        edges {
+                            node {
+                                id
+                                title
+                                handle
+                                availableForSale
+                                totalInventory
+                                variants(first: 10) {
+                                    edges {
+                                        node {
+                                            id
+                                            title
+                                            availableForSale
+                                            quantityAvailable
+                                        }
+                                    }
+                                }
+                                tags
+                            }
+                        }
+                    }
+                }`;
+
+                const response = await fetch(`https://${shopDomain}/api/2024-01/graphql.json`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Shopify-Storefront-Access-Token': accessToken
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                if (data.errors) {
+                    throw new Error(data.errors[0].message);
+                }
+
+                displayCompleteResults(data.data.products.edges);
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="error-message">
+                        <strong>❌ Error:</strong> ${error.message}
+                        <br><br>
+                        <strong>Possible Issues:</strong>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Check if your store domain is correct</li>
+                            <li>Verify your Storefront API access token</li>
+                            <li>Ensure Storefront API permissions are enabled</li>
+                            <li>Storefront API does not expose market catalog data directly</li>
+                        </ul>
+                        <br>
+                        <strong>💡 Solution:</strong> Market inclusion/exclusion is detected through product tags. 
+                        Add tags like "market-france", "exclude-asia" to your products.
+                    </div>
+                `;
+            } finally {
+                fetchBtn.disabled = false;
+                fetchBtn.textContent = '🚀 Complete Market Analysis';
+            }
+        }
+
+        function displayCompleteResults(products) {
+            const resultsDiv = document.getElementById('results');
+            
+            const totalProducts = products.length;
+            const availableProducts = products.filter(p => p.node.availableForSale).length;
+            const unavailableProducts = totalProducts - availableProducts;
+            const totalInventory = products.reduce((sum, p) => sum + (p.node.totalInventory || 0), 0);
+            const activeMarkets = ALL_MARKETS.filter(m => m.status === 'active').length;
+
+            let html = `
+                <!-- All Markets Section -->
+                <div class="all-markets-section">
+                    <h2>🌍 All Markets in Your Store</h2>
+                    <div class="markets-grid">
+                        ${ALL_MARKETS.map(market => `
+                            <div class="market-card-full ${market.status}">
+                                <h3>
+                                    ${market.emoji} ${market.name}
+                                    <span class="market-status-badge badge-${market.status}">
+                                        ${market.status.toUpperCase()}
+                                    </span>
+                                </h3>
+                                <div class="market-regions">
+                                    📍 ${market.regions} region${market.regions > 1 ? 's' : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>${ALL_MARKETS.length}</h3>
+                        <p>Total Markets</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${activeMarkets}</h3>
+                        <p>Active Markets</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${totalProducts}</h3>
+                        <p>Total Products</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${availableProducts}</h3>
+                        <p>Available Products</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${totalInventory}</h3>
+                        <p>Total Inventory</p>
+                    </div>
+                </div>
+
+                <!-- Products Section -->
+                <h2 style="margin-bottom: 20px; color: #212529;">📦 Product-wise Market Analysis</h2>
+                <div class="products-grid">
+            `;
+
+            products.forEach(({node: product}) => {
+                const isAvailable = product.availableForSale;
+                const statusClass = isAvailable ? 'status-available' : 'status-unavailable';
+                const statusText = isAvailable ? '✓ Available' : '✗ Unavailable';
+                const tags = product.tags || [];
+
+                // Market detection logic
+                const marketAnalysis = analyzeProductMarkets(product, tags);
+
+                html += `
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div class="product-title">${product.title}</div>
+                            <div class="product-status ${statusClass}">${statusText}</div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="info-row">
+                                <span class="info-label">Product ID:</span>
+                                <span class="info-value">${product.id.split('/').pop()}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Total Inventory:</span>
+                                <span class="info-value">${product.totalInventory || 0} units</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Variants:</span>
+                                <span class="info-value">${product.variants.edges.length}</span>
+                            </div>
+                        </div>
+
+                        <!-- Market Availability for ALL Markets -->
+                        <div class="market-availability-section">
+                            <h4>🌍 Market Availability Status (All Markets)</h4>
+                            <div class="market-status-grid">
+                                ${ALL_MARKETS.map(market => {
+                                    const analysis = marketAnalysis[market.name];
+                                    let statusClass, statusLabel, statusText;
+                                    
+                                    if (!isAvailable) {
+                                        statusClass = 'unavailable';
+                                        statusLabel = 'label-unavailable';
+                                        statusText = 'Product Unavailable';
+                                    } else if (analysis.included) {
+                                        statusClass = 'included';
+                                        statusLabel = 'label-included';
+                                        statusText = market.status === 'active' ? '✓ INCLUDED' : '✓ Included (Draft)';
+                                    } else if (analysis.excluded) {
+                                        statusClass = 'excluded';
+                                        statusLabel = 'label-excluded';
+                                        statusText = '✗ EXCLUDED';
+                                    } else {
+                                        statusClass = 'unavailable';
+                                        statusLabel = 'label-unavailable';
+                                        statusText = '− No Data';
+                                    }
+
+                                    return `
+                                        <div class="market-status-item ${statusClass}">
+                                            <span class="market-name">${market.emoji} ${market.name}</span>
+                                            <span class="market-status-label ${statusLabel}">${statusText}</span>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Warehouse Info -->
+                        <div class="warehouse-info">
+                            <h4>🏭 Warehouse Availability</h4>
+                            ${getWarehouseInfoDetailed(product, marketAnalysis)}
+                        </div>
+
+                        ${tags.length > 0 ? `
+                        <div class="market-availability-section" style="margin-top: 12px;">
+                            <h4>🏷️ Product Tags (${tags.length})</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+                                ${tags.slice(0, 15).map(tag => `
+                                    <span style="background: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; border: 1px solid #dee2e6;">
+                                        ${tag}
+                                    </span>
+                                `).join('')}
+                                ${tags.length > 15 ? `<span style="color: #6c757d; font-size: 11px;">+${tags.length - 15} more</span>` : ''}
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            html += `
+                </div>
+                
+                <div class="warning-message" style="margin-top: 30px;">
+                    <strong>⚠️ Important Information:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px; line-height: 1.8;">
+                        <li><strong>Storefront API Limitation:</strong> Shopify's Storefront API does not expose direct market catalog mappings</li>
+                        <li><strong>Market Detection Method:</strong> This tool detects markets through product tags</li>
+                        <li><strong>How to use:</strong> Add tags to your products like:
+                            <ul style="margin-top: 5px; padding-left: 20px;">
+                                <li>"include-france" or "market-france" → Product included in France market</li>
+                                <li>"exclude-asia" or "no-asia" → Product excluded from Asia markets</li>
+                                <li>"usa-only" → Product only in USA/North America</li>
+                            </ul>
+                        </li>
+                        <li><strong>For accurate market data:</strong> You need Shopify Admin API with catalog/market permissions</li>
+                        <li><strong>Default behavior:</strong> If no market tags found, product is assumed available in all active markets (if in stock)</li>
+                    </ul>
+                </div>
+            `;
+
+            resultsDiv.innerHTML = html;
+        }
+
+        function analyzeProductMarkets(product, tags) {
+            const isAvailable = product.availableForSale;
+            const analysis = {};
+
+            // Market keyword mappings
+            const marketKeywords = {
+                'Africa': ['africa', 'african'],
+                'Amérique du Nord': ['amerique-du-nord', 'north-america', 'usa', 'canada', 'mexico', 'us-only', 'usa-only'],
+                'Asia': ['asia', 'asian'],
+                'Asia+Africa (duties not collected)': ['asia-africa', 'asia+africa'],
+                'China': ['china', 'chinese', 'cn'],
+                'EU & UK & Nordics': ['eu', 'europe', 'uk', 'nordics', 'european', 'eu-uk'],
+                'Europe': ['europe', 'european'],
+                'European Union (duties not collected)': ['eu-no-duties', 'european-union'],
+                'France': ['france', 'fr', 'french'],
+                'Middle East & Australia': ['middle-east', 'australia', 'oceania', 'uae', 'middle-east-australia'],
+                'North Africa': ['north-africa', 'north-african'],
+                'Oceania': ['oceania', 'pacific'],
+                'South America': ['south-america', 'latin-america', 'southamerica'],
+                'South East Asia': ['south-east-asia', 'southeast-asia', 'sea', 'southeastasia']
+            };
+
+            ALL_MARKETS.forEach(market => {
+                const keywords = marketKeywords[market.name] || [];
+                let included = false;
+                let excluded = false;
+
+                // Check for inclusion tags
+                tags.forEach(tag => {
+                    const tagLower = tag.toLowerCase();
+                    keywords.forEach(keyword => {
+                        if (tagLower.includes(keyword) && 
+                            (tagLower.includes('include') || tagLower.includes('market-') || tagLower === keyword)) {
+                            included = true;
+                        }
+                        if (tagLower.includes(keyword) && 
+                            (tagLower.includes('exclude') || tagLower.includes('no-') || tagLower.includes('not-'))) {
+                            excluded = true;
+                        }
+                    });
+                });
+
+                // Default: if product is available and active market, assume included unless explicitly excluded
+                if (isAvailable && market.status === 'active' && !included && !excluded) {
+                    included = true; // Default inclusion for active markets
+                }
+
+                analysis[market.name] = { included, excluded };
+            });
+
+            return analysis;
+        }
+
+        function getWarehouseInfoDetailed(product, marketAnalysis) {
+            const inventory = product.totalInventory || 0;
+            const isAvailable = product.availableForSale;
+            
+            let html = '';
+
+            // FR Evry - France + EU & UK & Nordics
+            const evryMarkets = ['France', 'EU & UK & Nordics'];
+            const evryIncluded = evryMarkets.some(m => marketAnalysis[m]?.included);
+            if (evryIncluded) {
+                const stockClass = isAvailable && inventory > 0 ? 'stock-available' : 'stock-unavailable';
+                html += `
+                    <div class="warehouse-item">
+                        <span class="warehouse-name">🇫🇷 FR Evry → France + EU & UK & Nordics</span>
+                        <span class="warehouse-stock ${stockClass}">
+                            ${isAvailable && inventory > 0 ? 'In Stock' : 'Out of Stock'}
+                        </span>
+                    </div>
+                `;
+            }
+
+            // SNAPL (USA) - Amérique du Nord
+            if (marketAnalysis['Amérique du Nord']?.included) {
+                const stockClass = isAvailable && inventory > 0 ? 'stock-available' : 'stock-unavailable';
+                html += `
+                    <div class="warehouse-item">
+                        <span class="warehouse-name">🇺🇸 SNAPL (USA) → Amérique du Nord</span>
+                        <span class="warehouse-stock ${stockClass}">
+                            ${isAvailable && inventory > 0 ? 'In Stock' : 'Out of Stock'}
+                        </span>
+                    </div>
+                `;
+            }
+
+            // cn Shenzhen - Multiple markets (excluding France)
+            const shenzhenMarkets = ['South East Asia', 'Middle East & Australia', 'Amérique du Nord', 'EU & UK & Nordics'];
+            const shenzhenIncluded = shenzhenMarkets.some(m => marketAnalysis[m]?.included);
+            const franceExcluded = !marketAnalysis['France']?.included;
+            
+            if (shenzhenIncluded && franceExcluded) {
+                const stockClass = isAvailable && inventory > 0 ? 'stock-available' : 'stock-unavailable';
+                html += `
+                    <div class="warehouse-item">
+                        <span class="warehouse-name">🇨🇳 cn Shenzhen → SEA + Middle East + Americas + EU (no France)</span>
+                        <span class="warehouse-stock ${stockClass}">
+                            ${isAvailable && inventory > 0 ? 'In Stock' : 'Out of Stock'}
+                        </span>
+                    </div>
+                `;
+            }
+
+            if (!html) {
+                html = `
+                    <div class="warehouse-item">
+                        <span class="warehouse-name" style="color: #6c757d;">No warehouse assignment detected</span>
+                        <span class="warehouse-stock stock-unavailable">N/A</span>
+                    </div>
+                `;
+            }
+
+            return html;
+        }
+    </script>
+</body>
+</html> {% endcomment %}

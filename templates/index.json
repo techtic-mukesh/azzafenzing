@@ -8,13 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
+  "sections": { 
     "video_banner_MxAGfW": {
       "type": "video-banner",
       "disabled": true,
       "name": "Video Header",
       "settings": {
-        "video_pc": "shopify://files/videos/V3 RECAP - AZZA FENCING.mp4",
+        // "video_pc": "shopify://files/videos/V3 RECAP - AZZA FENCING.mp4",
         "destination": "shopify://collections/azza-fencing-15-14",
         "body_text": "#ffffff",
         "bantitre": "15 / 14",

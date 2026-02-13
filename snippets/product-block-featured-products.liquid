@@ -10,7 +10,7 @@
 -%}
 
 {%- if should_render_content -%}
-  <div class="you-may-also-like-section" {{ block.shopify_attributes }}>
+  <div class="product__block-featured-products you-may-also-like-section{% if block.settings.product_source == 'app-recommendations' %} hidden{% endif %}" {{ block.shopify_attributes }}>
     <style>
       .you-may-also-like-section {
         background: #FAFAFA;
@@ -470,32 +470,46 @@
       <h2 class="section-title">You May Also Like</h2>
     {%- endunless -%}
 
-    <div class="you-may-also-like-carousel" data-carousel-container>
-      <button class="carousel-nav-btn prev" data-carousel-prev aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M15 18l-6-6 6-6"/>
-        </svg>
-      </button>
-      
-      <div class="you-may-also-like-wrapper" data-carousel-wrapper>
-        {%- if block.settings.product_source == 'custom-product-list' -%}
-          {%- for product_item in block.settings.product_list limit: max_products -%}
-            {%- render 'product-card-custom', prod: product_item -%}
-          {%- endfor -%}
-        {%- else -%}
-          {%- if recommendations.performed and recommendations.products_count > 0 -%}
-            {%- for product_item in recommendations.products limit: max_products -%}
+    <div
+      class="you-may-also-like-carousel"
+      data-carousel-container
+      {% if block.settings.product_source == 'app-recommendations' %}
+        data-featured-products
+        data-recommendations-type="app-recommendations"
+        data-product-id="{{ product.id }}"
+        data-section-id="main-product--default"
+        data-max-recommendations="{{ max_products }}"
+        data-enable-mobile-swiper="false"
+      {% endif %}
+    >
+      <div data-featured-products-content>
+        <button class="carousel-nav-btn prev" data-carousel-prev aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        
+        <div class="you-may-also-like-wrapper" data-carousel-wrapper>
+          {%- if block.settings.product_source == 'custom-product-list' -%}
+            {%- for product_item in block.settings.product_list limit: max_products -%}
               {%- render 'product-card-custom', prod: product_item -%}
             {%- endfor -%}
+          {%- else -%}
+            {%- comment -%}Complementary products are fetched via JS (Product Recommendations API with intent=complementary). When section is rendered via that API, recommendations.products is populated.{%- endcomment -%}
+            {%- if recommendations.performed and recommendations.products_count > 0 -%}
+              {%- for product_item in recommendations.products limit: max_products -%}
+                {%- render 'product-card-custom', prod: product_item -%}
+              {%- endfor -%}
+            {%- endif -%}
           {%- endif -%}
-        {%- endif -%}
-      </div>
+        </div>
 
-      <button class="carousel-nav-btn next" data-carousel-next aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 18l6-6-6-6"/>
-        </svg>
-      </button>
+        <button class="carousel-nav-btn next" data-carousel-next aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div class="carousel-pagination" data-carousel-pagination></div>
@@ -503,114 +517,173 @@
 
 <script>
 (function () {
-  const container = document.querySelector('[data-carousel-container]');
-  if (!container) return;
+  const section = document.querySelector('.you-may-also-like-section');
+  if (!section) return;
 
-  const wrapper = container.querySelector('[data-carousel-wrapper]');
-  const pagination = document.querySelector('[data-carousel-pagination]');
-  const cards = wrapper.querySelectorAll('.you-may-also-like-product-card');
-
-  if (!cards.length) return;
-
-  let currentIndex = 0;
-  let startX = 0;
-  let isDragging = false;
-  let cardWidth = 0;
-  let startTranslate = 0;
-  let currentTranslate = 0;
-
-  function getCardsPerView() {
-    if (window.innerWidth > 768) return 2.3;
-    if (window.innerWidth > 480) return 2;
-    return 1;
-  }
-
-  function updateCarousel() {
-    cardWidth = cards[0].offsetWidth + 16;
-    currentTranslate = -currentIndex * cardWidth;
-    wrapper.style.transform = `translateX(${currentTranslate}px)`;
-    updatePagination();
-  }
-
-  function updatePagination() {
-    if (!pagination) return;
-
-    const cardsPerView = getCardsPerView();
-    const totalSlides = Math.ceil(cards.length - cardsPerView + 1);
-
-    pagination.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('button');
-      dot.className = 'pagination-dot' + (i === currentIndex ? ' active' : '');
-      dot.addEventListener('click', () => {
-        currentIndex = i;
-        updateCarousel();
+  {%- if block.settings.product_source == 'app-recommendations' -%}
+  (function complementaryFallback() {
+    const block = section.querySelector('[data-featured-products]');
+    if (!block || !block.dataset.productId) return;
+    const productId = block.dataset.productId;
+    const maxRecs = block.dataset.maxRecommendations || '4';
+    const baseUrl = (window.theme && window.theme.routes && window.theme.routes.productRecommendations) || '{{ routes.product_recommendations_url }}';
+    const sectionUrl = baseUrl + '?section_id=main-product--default&limit=' + maxRecs + '&product_id=' + productId + '&intent=complementary';
+    const jsonBase = baseUrl.replace(/\/products\/?(\?|$)/, '/products.json$1').split('?')[0];
+    const jsonUrl = jsonBase + '?limit=' + maxRecs + '&product_id=' + productId + '&intent=complementary';
+    function showProducts() {
+      if (!section.classList.contains('hidden')) return;
+      fetch(sectionUrl).then(function(r) { return r.text(); }).then(function(html) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        const content = div.querySelector('[data-featured-products-content]');
+        if (content && content.innerHTML.trim().length) {
+          block.innerHTML = content.innerHTML;
+          section.classList.remove('hidden');
+          section.dispatchEvent(new CustomEvent('complementary-products-loaded'));
+          return true;
+        }
+        return false;
+      }).catch(function() { return false; }).then(function(done) {
+        if (!done) {
+          fetch(jsonUrl).then(function(r) { return r.json(); }).then(function(data) {
+            if (data.products && data.products.length) {
+              var wrapper = block.querySelector('.you-may-also-like-wrapper') || block;
+              var cards = data.products.map(function(p) {
+                var imgUrl = (typeof p.featured_image === 'string') ? p.featured_image : (p.featured_image && p.featured_image.src) ? p.featured_image.src : '';
+                var img = imgUrl ? '<img src="' + imgUrl.replace(/"/g, '&quot;') + '" alt="' + (p.title || '').replace(/"/g, '&quot;') + '" loading="lazy">' : '';
+                var price = p.price != null ? (p.price / 100).toFixed(2) : '';
+                var title = (p.title || '').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                var url = (p.url || '/products/' + (p.handle || '')).replace(/"/g, '&quot;');
+                return '<a href="' + url + '" class="you-may-also-like-product-card" data-product-id="' + p.id + '"><div class="product-card-image-wrapper">' + img + '</div><div class="product-card-name"><span>' + title + '</span></div><div class="product-card-price"><span class="current-price">' + price + '</span></div></a>';
+              }).join('');
+              if (wrapper.classList && wrapper.classList.contains('you-may-also-like-wrapper')) {
+                wrapper.innerHTML = cards;
+              } else {
+                block.innerHTML = '<button class="carousel-nav-btn prev" data-carousel-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button><div class="you-may-also-like-wrapper" data-carousel-wrapper>' + cards + '</div><button class="carousel-nav-btn next" data-carousel-next aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>';
+              }
+              section.classList.remove('hidden');
+              section.dispatchEvent(new CustomEvent('complementary-products-loaded'));
+            }
+          }).catch(function() {});
+        }
       });
-      pagination.appendChild(dot);
     }
-  }
+    setTimeout(showProducts, 1500);
+  })();
+  {%- endif -%}
 
-  /* ---------- Touch (Mobile) ---------- */
-  wrapper.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-  }, { passive: true });
+  const container = section.querySelector('[data-carousel-container]');
+  const wrapper = section.querySelector('[data-carousel-wrapper]');
+  const pagination = section.querySelector('[data-carousel-pagination]');
 
-  wrapper.addEventListener('touchend', e => {
-    if (!isDragging) return;
-    isDragging = false;
-    handleSwipe(startX - e.changedTouches[0].clientX);
-  });
+  function initCarousel() {
+    const cards = wrapper.querySelectorAll('.you-may-also-like-product-card');
+    if (!cards.length) return;
+    if (section.dataset.carouselInited) return;
+    section.dataset.carouselInited = '1';
 
-  /* ---------- Mouse (Desktop) ---------- */
-  wrapper.addEventListener('mousedown', e => {
-    e.preventDefault();
-    startX = e.clientX;
-    startTranslate = currentTranslate;
-    isDragging = true;
-    wrapper.classList.add('dragging');
-  });
+    let currentIndex = 0;
+    let startX = 0;
+    let isDragging = false;
+    let cardWidth = 0;
+    let startTranslate = 0;
+    let currentTranslate = 0;
 
-  document.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    const diff = e.clientX - startX;
-    currentTranslate = startTranslate + diff;
-    wrapper.style.transform = `translateX(${currentTranslate}px)`;
-  });
+    function getCardsPerView() {
+      if (window.innerWidth > 768) return 2.3;
+      if (window.innerWidth > 480) return 2;
+      return 1;
+    }
 
-  document.addEventListener('mouseup', e => {
-    if (!isDragging) return;
-    isDragging = false;
-    wrapper.classList.remove('dragging');
-    const diff = startX - e.clientX;
-    handleSwipe(diff);
-  });
-
-  function handleSwipe(diff) {
-    const cardsPerView = getCardsPerView();
-    const maxIndex = Math.ceil(cards.length - cardsPerView);
-
-    if (Math.abs(diff) > 50) {
-      if (diff > 0 && currentIndex < maxIndex) {
-        currentIndex++;
-      } else if (diff < 0 && currentIndex > 0) {
-        currentIndex--;
+    function updateCarousel() {
+      if (!cards[0]) return;
+      cardWidth = cards[0].offsetWidth + 16;
+      currentTranslate = -currentIndex * cardWidth;
+      wrapper.style.transform = `translateX(${currentTranslate}px)`;
+      if (pagination) {
+        const cardsPerView = getCardsPerView();
+        const totalSlides = Math.max(0, Math.ceil(cards.length - cardsPerView + 1));
+        pagination.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'pagination-dot' + (i === currentIndex ? ' active' : '');
+          dot.addEventListener('click', () => {
+            currentIndex = i;
+            updateCarousel();
+          });
+          pagination.appendChild(dot);
+        }
       }
     }
+
+    wrapper.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', e => {
+      if (!isDragging) return;
+      isDragging = false;
+      const diff = startX - e.changedTouches[0].clientX;
+      const cardsPerView = getCardsPerView();
+      const maxIndex = Math.max(0, Math.ceil(cards.length - cardsPerView));
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && currentIndex < maxIndex) currentIndex++;
+        else if (diff < 0 && currentIndex > 0) currentIndex--;
+      }
+      updateCarousel();
+    });
+
+    wrapper.addEventListener('mousedown', e => {
+      e.preventDefault();
+      startX = e.clientX;
+      startTranslate = currentTranslate;
+      isDragging = true;
+      wrapper.classList.add('dragging');
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      const diff = e.clientX - startX;
+      currentTranslate = startTranslate + diff;
+      wrapper.style.transform = `translateX(${currentTranslate}px)`;
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      wrapper.classList.remove('dragging');
+      const diff = startX - e.clientX;
+      const cardsPerView = getCardsPerView();
+      const maxIndex = Math.max(0, Math.ceil(cards.length - cardsPerView));
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && currentIndex < maxIndex) currentIndex++;
+        else if (diff < 0 && currentIndex > 0) currentIndex--;
+      }
+      updateCarousel();
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        currentIndex = 0;
+        updateCarousel();
+      }, 200);
+    });
+
     updateCarousel();
   }
 
-  /* ---------- Resize ---------- */
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      currentIndex = 0;
-      updateCarousel();
-    }, 200);
-  });
-
-  updateCarousel();
+  if (wrapper) {
+    initCarousel();
+    var observer = new MutationObserver(function() {
+      if (wrapper.querySelector('.you-may-also-like-product-card') && !section.dataset.carouselInited) {
+        initCarousel();
+      }
+    });
+    observer.observe(wrapper, { childList: true, subtree: true });
+  }
 })();
 </script>
 
